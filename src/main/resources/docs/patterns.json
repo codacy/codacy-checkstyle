@@ -1,0 +1,45 @@
+{
+  "name":"checkstyle",
+  "patterns":[
+    {
+      "patternId":"MethodName",
+      "level":"Info",
+      "category":"CodeStyle"
+    },
+    {
+      "patternId":"Indentation",
+      "level":"Info",
+      "category":"CodeStyle",
+      "parameters": [
+        {
+          "name": "basicOffset",
+          "default": 4
+        },
+        {
+          "name": "braceAdjustment",
+          "default": 0
+        },
+        {
+          "name": "caseIndent",
+          "default": 4
+        },
+        {
+          "name": "throwsIndent",
+          "default": 4
+        },
+        {
+          "name": "arrayInitIndent",
+          "default": 4
+        },
+        {
+          "name": "lineWrappingIndentation",
+          "default": 4
+        },
+        {
+          "name": "forceStrictCondition",
+          "default": false
+        }
+      ]
+    }
+  ]
+}

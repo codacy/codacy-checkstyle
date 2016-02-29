@@ -1,0 +1,44 @@
+[
+  {
+    "patternId": "MethodName",
+    "title": "Prohibits unused private fields",
+    "description": "Prohibits writing private fields that are not used",
+    "timeToFix": 5
+  },
+  {
+    "patternId":"Indentation",
+    "title": "Prohibits unused private fields",
+    "description": "Prohibits writing private fields that are not used",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "basicOffset",
+        "description": "How many spaces to use for new indentation level"
+      },
+      {
+        "name": "braceAdjustment",
+        "description": "How far braces should be indented when on the next line"
+      },
+      {
+        "name": "caseIndent",
+        "description": "How many spaces to indent a case label"
+      },
+      {
+        "name": "throwsIndent",
+        "description": "How far a throws clause should be indented when on next line"
+      },
+      {
+        "name": "arrayInitIndent",
+        "description": "How many spaces to indent an array initialisation when on next line"
+      },
+      {
+        "name": "lineWrappingIndentation",
+        "description": "How far continuation line should be indented when line-wrapping is present"
+      },
+      {
+        "name": "forceStrictCondition",
+        "description": "Force strict condition in line wrapping case. If value is true, line wrap indent have to be same as lineWrappingIndentation parameter"
+      }
+    ]
+  }
+]
