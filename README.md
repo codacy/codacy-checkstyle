@@ -1,4 +1,4 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/grade/d0f04e048bba4a01a7ef0166bf5b8d32)](https://www.codacy.com/app/Codacy/codacy-checkstyle)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/edc090bb5ed64aa5a009ace701e41d63)](https://www.codacy.com/app/Codacy/codacy-checkstyle)
 [![Build Status](https://circleci.com/gh/codacy/codacy-checkstyle.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/codacy/codacy-checkstyle)
 
 # Codacy Checkstyle
