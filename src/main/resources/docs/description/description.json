@@ -1,11 +1,5 @@
 [
   {
-    "patternId": "MethodName",
-    "title": "Prohibits unused private fields",
-    "description": "Prohibits writing private fields that are not used",
-    "timeToFix": 5
-  },
-  {
     "patternId":"Indentation",
     "title": "Prohibits unused private fields",
     "description": "Prohibits writing private fields that are not used",
@@ -40,5 +34,917 @@
         "description": "Force strict condition in line wrapping case. If value is true, line wrap indent have to be same as lineWrappingIndentation parameter"
       }
     ]
+  },
+  {
+    "patternId": "AbbreviationAsWordInName",
+    "title": "The Check validate abbreviations(consecutive capital letters) length in identifier name, it also allow in enforce camel case naming",
+    "description": "The Check validate abbreviations(consecutive capital letters) length in identifier name, it also allow in enforce camel case naming.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "AbstractClassName",
+    "title": "Ensures that the names of abstract classes conforming to some regular expression",
+    "description": "Ensures that the names of abstract classes conforming to some regular expression.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "AnnotationLocation",
+    "title": "Check location of annotation on language elements",
+    "description": "Check location of annotation on language elements.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "AnnotationUseStyle",
+    "title": "This check controls the style with the usage of annotations",
+    "description": "This check controls the style with the usage of annotations.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "AnonInnerLength",
+    "title": "Checks for long anonymous inner classes",
+    "description": "Checks for long anonymous inner classes.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "ArrayTrailingComma",
+    "title": "Checks if array initialization contains optional trailing comma",
+    "description": "Checks if array initialization contains optional trailing comma.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "ArrayTypeStyle",
+    "title": "Checks the style of array type definitions",
+    "description": "Checks the style of array type definitions.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "AtclauseOrder",
+    "title": "Checks the order of at-clauses",
+    "description": "Checks the order of at-clauses.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "AvoidEscapedUnicodeCharacters",
+    "title": "Restrict using Unicode escapes",
+    "description": "Restrict using Unicode escapes.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "AvoidInlineConditionals",
+    "title": "Detects inline conditionals",
+    "description": "Detects inline conditionals.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "AvoidNestedBlocks",
+    "title": "Finds nested blocks",
+    "description": "Finds nested blocks.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "AvoidStarImport",
+    "title": "Check that finds import statements that use the * notation",
+    "description": "Check that finds import statements that use the * notation.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "AvoidStaticImport",
+    "title": "Check that finds static imports",
+    "description": "Check that finds static imports.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "BooleanExpressionComplexity",
+    "title": "Restricts nested boolean operators (&&, ||, &, | and ^) to a specified depth (default = 3)",
+    "description": "Restricts nested boolean operators (&&, ||, &, | and ^) to a specified depth (default = 3).",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "CatchParameterName",
+    "title": "Checks that catch parameter names conform to a format specified by the format property",
+    "description": "Checks that catch parameter names conform to a format specified by the format property.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "ClassDataAbstractionCoupling",
+    "title": "This metric measures the number of instantiations of other classes within the given class",
+    "description": "This metric measures the number of instantiations of other classes within the given class.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "ClassFanOutComplexity",
+    "title": "The number of other classes a given class relies on",
+    "description": "The number of other classes a given class relies on.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "ClassTypeParameterName",
+    "title": "Checks that class type parameter names conform to a format specified by the format property",
+    "description": "Checks that class type parameter names conform to a format specified by the format property.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "ConstantName",
+    "title": "Checks that constant names conform to a format specified by the format property",
+    "description": "Checks that constant names conform to a format specified by the format property.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "CommentsIndentation",
+    "title": "Controls the indentation between comments and surrounding code",
+    "description": "Controls the indentation between comments and surrounding code.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "CovariantEquals",
+    "title": "Checks that if a class defines a covariant method equals, then it defines method equals(java.lang.Object)",
+    "description": "Checks that if a class defines a covariant method equals, then it defines method equals(java.lang.Object).",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "CustomImportOrder",
+    "title": "Checks that the groups of import declarations appear in the order specified by the user",
+    "description": "Checks that the groups of import declarations appear in the order specified by the user.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "CyclomaticComplexity",
+    "title": "Checks cyclomatic complexity against a specified limit",
+    "description": "Checks cyclomatic complexity against a specified limit.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "DeclarationOrder",
+    "title": "Checks that the parts of a class or interface declaration appear in the order suggested by the Code Conventions for the Java Programming Language",
+    "description": "Checks that the parts of a class or interface declaration appear in the order suggested by the Code Conventions for the Java Programming Language.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "DefaultComesLast",
+    "title": "Check that the default is after all the cases in a switch statement",
+    "description": "Check that the default is after all the cases in a switch statement.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "DescendantToken",
+    "title": "Checks for restricted tokens beneath other tokens",
+    "description": "Checks for restricted tokens beneath other tokens.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "DesignForExtension",
+    "title": "Checks that classes are designed for inheritance",
+    "description": "Checks that classes are designed for inheritance.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "EmptyBlock",
+    "title": "Checks for empty blocks",
+    "description": "Checks for empty blocks.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "EmptyCatchBlock",
+    "title": "Checks for empty catch blocks with few options to skip violation",
+    "description": "Checks for empty catch blocks with few options to skip violation.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "EmptyForInitializerPad",
+    "title": "Checks the padding of an empty for initializer; that is whether a space is required at an empty for initializer, or such spaces are forbidden",
+    "description": "Checks the padding of an empty for initializer; that is whether a space is required at an empty for initializer, or such spaces are forbidden.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "EmptyForIteratorPad",
+    "title": "Checks the padding of an empty for iterator; that is whether a space is required at an empty for iterator, or such spaces are forbidden",
+    "description": "Checks the padding of an empty for iterator; that is whether a space is required at an empty for iterator, or such spaces are forbidden.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "EmptyLineSeparator",
+    "title": "Checks for blank line separators",
+    "description": "Checks for blank line separators.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "EmptyStatement",
+    "title": "Detects empty statements (standalone ';')",
+    "description": "Detects empty statements (standalone ';').",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "EqualsAvoidNull",
+    "title": "Checks that any combination of String literals is on the left side of an equals() comparison",
+    "description": "Checks that any combination of String literals is on the left side of an equals() comparison.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "EqualsHashCode",
+    "title": "Checks that classes that override equals() also override hashCode()",
+    "description": "Checks that classes that override equals() also override hashCode().",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "ExecutableStatementCount",
+    "title": "Restricts the number of executable statements to a specified limit (default = 30)",
+    "description": "Restricts the number of executable statements to a specified limit (default = 30).",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "ExplicitInitialization",
+    "title": "Checks if any class or object member explicitly initialized to default for its type value (null for object references, zero for numeric types and char and false for boolean",
+    "description": "Checks if any class or object member explicitly initialized to default for its type value (null for object references, zero for numeric types and char and false for boolean.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "FallThrough",
+    "title": "Checks for fall through in switch statements Finds locations where a case contains Java code - but lacks a break, return, throw or continue statement",
+    "description": "Checks for fall through in switch statements Finds locations where a case contains Java code - but lacks a break, return, throw or continue statement.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "FileLength",
+    "title": "Checks for long source files",
+    "description": "Checks for long source files.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "FileTabCharacter",
+    "title": "Checks to see if a file contains a tab character",
+    "description": "Checks to see if a file contains a tab character.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "FinalClass",
+    "title": "Checks that class which has only private constructors is declared as final",
+    "description": "Checks that class which has only private constructors is declared as final.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "FinalLocalVariable",
+    "title": "Ensures that local variables that never get their values changed, must be declared final",
+    "description": "Ensures that local variables that never get their values changed, must be declared final.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "FinalParameters",
+    "title": "Check that method/constructor/catch/foreach parameters are final",
+    "description": "Check that method/constructor/catch/foreach parameters are final.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "GenericWhitespace",
+    "title": "Checks that the whitespace around the Generic tokens < and > are correct to the typical convention",
+    "description": "Checks that the whitespace around the Generic tokens < and > are correct to the typical convention.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "Header",
+    "title": "Checks the header of the source against a fixed header file",
+    "description": "Checks the header of the source against a fixed header file.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "HiddenField",
+    "title": "Checks that a local variable or a parameter does not shadow a field that is defined in the same class",
+    "description": "Checks that a local variable or a parameter does not shadow a field that is defined in the same class.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "HideUtilityClassConstructor",
+    "title": "Make sure that utility classes (classes that contain only static methods) do not have a public constructor",
+    "description": "Make sure that utility classes (classes that contain only static methods) do not have a public constructor.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "IllegalCatch",
+    "title": "Catching java.lang.Exception, java.lang.Error or java.lang.RuntimeException is almost never acceptable",
+    "description": "Catching java.lang.Exception, java.lang.Error or java.lang.RuntimeException is almost never acceptable.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "IllegalImport",
+    "title": "Checks for imports from a set of illegal packages",
+    "description": "Checks for imports from a set of illegal packages.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "IllegalInstantiation",
+    "title": "Checks for illegal instantiations where a factory method is preferred",
+    "description": "Checks for illegal instantiations where a factory method is preferred.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "IllegalThrows",
+    "title": "Throwing java.lang.Error or java.lang.RuntimeException is almost never acceptable",
+    "description": "Throwing java.lang.Error or java.lang.RuntimeException is almost never acceptable.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "IllegalToken",
+    "title": "Checks for illegal tokens",
+    "description": "Checks for illegal tokens.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "IllegalTokenText",
+    "title": "Checks for illegal token text",
+    "description": "Checks for illegal token text.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "IllegalType",
+    "title": "Checks that particular class are never used as types in variable declarations, return values or parameters",
+    "description": "Checks that particular class are never used as types in variable declarations, return values or parameters.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "ImportControl",
+    "title": "Check that controls what packages can be imported in each package",
+    "description": "Check that controls what packages can be imported in each package.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "ImportOrder",
+    "title": "Ensures that groups of imports come in a specific order",
+    "description": "Ensures that groups of imports come in a specific order.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "InnerAssignment",
+    "title": "Checks for assignments in subexpressions, such as in String s = Integer.toString(i = 2);",
+    "description": "Checks for assignments in subexpressions, such as in String s = Integer.toString(i = 2);.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "InnerTypeLast",
+    "title": "Check nested (internal) classes/interfaces are declared at the bottom of the class after all method and field declarations",
+    "description": "Check nested (internal) classes/interfaces are declared at the bottom of the class after all method and field declarations.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "InterfaceIsType",
+    "title": "Implements Bloch, Effective Java, Item 17 - Use Interfaces only to define types",
+    "description": "Implements Bloch, Effective Java, Item 17 - Use Interfaces only to define types.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "InterfaceTypeParameterName",
+    "title": "Checks that interface type parameter names conform to a format specified by the format property",
+    "description": "Checks that interface type parameter names conform to a format specified by the format property.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "JavaNCSS",
+    "title": "This check calculates the Non Commenting Source Statements (NCSS) metric for Java source files and methods",
+    "description": "This check calculates the Non Commenting Source Statements (NCSS) metric for Java source files and methods.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "JavadocMethod",
+    "title": "Checks the Javadoc of a method or constructor",
+    "description": "Checks the Javadoc of a method or constructor.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "JavadocPackage",
+    "title": "Checks that all packages have a package documentation",
+    "description": "Checks that all packages have a package documentation.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "JavadocTagContinuationIndentation",
+    "title": "Checks the indentation of the continuation lines in at-clauses",
+    "description": "Checks the indentation of the continuation lines in at-clauses.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "JavadocParagraph",
+    "title": "Checks Javadoc paragraphs",
+    "description": "Checks Javadoc paragraphs.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "JavadocStyle",
+    "title": "Custom Checkstyle Check to validate Javadoc",
+    "description": "Custom Checkstyle Check to validate Javadoc.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "JavadocType",
+    "title": "Checks the Javadoc of a type",
+    "description": "Checks the Javadoc of a type.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "JavadocVariable",
+    "title": "Checks that a variable has Javadoc comment",
+    "description": "Checks that a variable has Javadoc comment.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "LeftCurly",
+    "title": "Checks the placement of left curly braces on types, methods and other blocks:",
+    "description": "Checks the placement of left curly braces on types, methods and other blocks:",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "LineLength",
+    "title": "Checks for long lines",
+    "description": "Checks for long lines.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "LocalFinalVariableName",
+    "title": "Checks that local final variable names conform to a format specified by the format property",
+    "description": "Checks that local final variable names conform to a format specified by the format property.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "LocalVariableName",
+    "title": "Checks that local, non-final variable names conform to a format specified by the format property",
+    "description": "Checks that local, non-final variable names conform to a format specified by the format property.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "MagicNumber",
+    "title": "Checks for magic numbers",
+    "description": "Checks for magic numbers.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "MemberName",
+    "title": "Checks that instance variable names conform to a format specified by the format property",
+    "description": "Checks that instance variable names conform to a format specified by the format property.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "MethodCount",
+    "title": "Checks the number of methods declared in each type",
+    "description": "Checks the number of methods declared in each type.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "MethodLength",
+    "title": "Checks for long methods",
+    "description": "Checks for long methods.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "MethodName",
+    "title": "Prohibits unused private fields",
+    "description": "Prohibits writing private fields that are not used",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "MethodParamPad",
+    "title": "Checks the padding between the identifier of a method definition, constructor definition, method call, or constructor invocation; and the left parenthesis of the parameter list",
+    "description": "Checks the padding between the identifier of a method definition, constructor definition, method call, or constructor invocation; and the left parenthesis of the parameter list.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "MethodTypeParameterName",
+    "title": "Checks that class type parameter names conform to a format specified by the format property",
+    "description": "Checks that class type parameter names conform to a format specified by the format property.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "MissingCtor",
+    "title": "Checks that classes (except abstract one) define a ctor and don't rely on the default one",
+    "description": "Checks that classes (except abstract one) define a ctor and don't rely on the default one.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "MissingDeprecated",
+    "title": "This class is used to verify that both the java.lang.Deprecated annotation is present and the @deprecated Javadoc tag is present when either is present",
+    "description": "This class is used to verify that both the java.lang.Deprecated annotation is present and the @deprecated Javadoc tag is present when either is present.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "MissingOverride",
+    "title": "This class is used to verify that the java.lang.Override annotation is present when the {@inheritDoc} javadoc tag is present",
+    "description": "This class is used to verify that the java.lang.Override annotation is present when the {@inheritDoc} javadoc tag is present.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "MissingSwitchDefault",
+    "title": "Checks that switch statement has \"default\" clause",
+    "description": "Checks that switch statement has \"default\" clause.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "ModifiedControlVariable",
+    "title": "Check for ensuring that for loop control variables are not modified inside the for block",
+    "description": "Check for ensuring that for loop control variables are not modified inside the for block.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "ModifierOrder",
+    "title": "Checks that the order of modifiers conforms to the suggestions in the Java Language specification, sections 8.1.1, 8.3.1 and 8.4.3",
+    "description": "Checks that the order of modifiers conforms to the suggestions in the Java Language specification, sections 8.1.1, 8.3.1 and 8.4.3.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "MultipleStringLiterals",
+    "title": "Checks for multiple occurrences of the same string literal within a single file",
+    "description": "Checks for multiple occurrences of the same string literal within a single file.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "MultipleVariableDeclarations",
+    "title": "Checks that each variable declaration is in its own statement and on its own line",
+    "description": "Checks that each variable declaration is in its own statement and on its own line.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "MutableException",
+    "title": "Ensures that exceptions (defined as any class name conforming to some regular expression) are immutable",
+    "description": "Ensures that exceptions (defined as any class name conforming to some regular expression) are immutable.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "NPathComplexity",
+    "title": "Checks the npath complexity against a specified limit (default = 200)",
+    "description": "Checks the npath complexity against a specified limit (default = 200).",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "NeedBraces",
+    "title": "Checks for braces around code blocks",
+    "description": "Checks for braces around code blocks.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "NestedForDepth",
+    "title": "Restricts nested for blocks to a specified depth (default = 1)",
+    "description": "Restricts nested for blocks to a specified depth (default = 1).",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "NestedIfDepth",
+    "title": "Restricts nested if-else blocks to a specified depth (default = 1)",
+    "description": "Restricts nested if-else blocks to a specified depth (default = 1).",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "NestedTryDepth",
+    "title": "Restricts nested try-catch-finally blocks to a specified depth (default = 1)",
+    "description": "Restricts nested try-catch-finally blocks to a specified depth (default = 1).",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "NewlineAtEndOfFile",
+    "title": "Checks that there is a newline at the end of each file",
+    "description": "Checks that there is a newline at the end of each file.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "NoClone",
+    "title": "Checks that the clone method is not overridden from the Object class",
+    "description": "Checks that the clone method is not overridden from the Object class.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "NoFinalizer",
+    "title": "Checks that no method having zero parameters is defined using the name finalize",
+    "description": "Checks that no method having zero parameters is defined using the name finalize.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "NonEmptyAtclauseDescription",
+    "title": "Checks that the at-clause tag is followed by description ",
+    "description": "Checks that the at-clause tag is followed by description .",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "NoLineWrap",
+    "title": "Checks that chosen statements are not line-wrapped",
+    "description": "Checks that chosen statements are not line-wrapped.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "NoWhitespaceAfter",
+    "title": "Checks that there is no whitespace after a token",
+    "description": "Checks that there is no whitespace after a token.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "NoWhitespaceBefore",
+    "title": "Checks that there is no whitespace before a token",
+    "description": "Checks that there is no whitespace before a token.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "OneStatementPerLine",
+    "title": "Checks that there is only one statement per line",
+    "description": "Checks that there is only one statement per line.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "OneTopLevelClass",
+    "title": "Checks that each top-level class, interfaces or enum resides in a source file of its own",
+    "description": "Checks that each top-level class, interfaces or enum resides in a source file of its own.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "OperatorWrap",
+    "title": "Checks line wrapping for operators",
+    "description": "Checks line wrapping for operators.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "OuterTypeFilename",
+    "title": "Checks that the outer type name and the file name match",
+    "description": "Checks that the outer type name and the file name match.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "OuterTypeNumber",
+    "title": "Checks for the number of defined types at the \"outer\" level",
+    "description": "Checks for the number of defined types at the \"outer\" level.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "OverloadMethodsDeclarationOrder",
+    "title": "Checks that overload methods are grouped together",
+    "description": "Checks that overload methods are grouped together.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "PackageAnnotation",
+    "title": "This check makes sure that all package annotations are in the package-info.java file",
+    "description": "This check makes sure that all package annotations are in the package-info.java file.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "PackageDeclaration",
+    "title": "Ensures there is a package declaration and (optionally) in the correct directory",
+    "description": "Ensures there is a package declaration and (optionally) in the correct directory.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "PackageName",
+    "title": "Checks that package names conform to a format specified by the format property",
+    "description": "Checks that package names conform to a format specified by the format property.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "ParameterAssignment",
+    "title": "Disallow assignment of parameters",
+    "description": "Disallow assignment of parameters.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "ParameterName",
+    "title": "Checks that parameter names conform to a format specified by the format property",
+    "description": "Checks that parameter names conform to a format specified by the format property.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "ParameterNumber",
+    "title": "Checks the number of parameters that a method or constructor has",
+    "description": "Checks the number of parameters that a method or constructor has.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "ParenPad",
+    "title": "Checks the padding of parentheses; that is whether a space is required after a left parenthesis and before a right parenthesis, or such spaces are forbidden, with the exception that it does not check for padding of the right parenthesis at an empty for iterator",
+    "description": "Checks the padding of parentheses; that is whether a space is required after a left parenthesis and before a right parenthesis, or such spaces are forbidden, with the exception that it does not check for padding of the right parenthesis at an empty for iterator.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "RedundantImport",
+    "title": "Checks for imports that are redundant",
+    "description": "Checks for imports that are redundant.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "RedundantModifier",
+    "title": "Checks for redundant modifiers in interface and annotation definitions, final modifier on methods of final classes, inner interface declarations that are declared as static, non public class constructors and enum constructors, nested enum definitions that are declared as static",
+    "description": "Checks for redundant modifiers in interface and annotation definitions, final modifier on methods of final classes, inner interface declarations that are declared as static, non public class constructors and enum constructors, nested enum definitions that are declared as static.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "Regexp",
+    "title": "A check that makes sure that a specified pattern exists (or not) in the file",
+    "description": "A check that makes sure that a specified pattern exists (or not) in the file.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "RegexpHeader",
+    "title": "Checks the header of the source against a header file that contains a",
+    "description": "Checks the header of the source against a header file that contains a",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "RegexpMultiline",
+    "title": "Implementation of a check that looks that matches across multiple lines in any file type",
+    "description": "Implementation of a check that looks that matches across multiple lines in any file type.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "RegexpOnFilename",
+    "title": "Implementation of a check that matches based on file and/or folder path",
+    "description": "Implementation of a check that matches based on file and/or folder path.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "RegexpSingleline",
+    "title": "Implementation of a check that looks for a single line in any file type",
+    "description": "Implementation of a check that looks for a single line in any file type.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "RegexpSinglelineJava",
+    "title": "Implementation of a check that looks for a single line in Java files",
+    "description": "Implementation of a check that looks for a single line in Java files.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "RequireThis",
+    "title": "Checks that code doesn't rely on the \"this\" default",
+    "description": "Checks that code doesn't rely on the \"this\" default.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "ReturnCount",
+    "title": "Restricts return statements to a specified count (default = 2)",
+    "description": "Restricts return statements to a specified count (default = 2).",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "RightCurly",
+    "title": "Checks the placement of right curly braces",
+    "description": "Checks the placement of right curly braces.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "SeparatorWrap",
+    "title": "Checks line wrapping with separators",
+    "description": "Checks line wrapping with separators.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "SingleLineJavadoc",
+    "title": "Checks that a JavaDoc block which can fit on a single line and doesn't contain at-clauses",
+    "description": "Checks that a JavaDoc block which can fit on a single line and doesn't contain at-clauses",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "SimplifyBooleanExpression",
+    "title": "Checks for overly complicated boolean expressions",
+    "description": "Checks for overly complicated boolean expressions.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "SimplifyBooleanReturn",
+    "title": "Checks for overly complicated boolean return statements",
+    "description": "Checks for overly complicated boolean return statements.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "StaticVariableName",
+    "title": "Checks that static, non-final variable names conform to a format specified by the format property",
+    "description": "Checks that static, non-final variable names conform to a format specified by the format property.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "StringLiteralEquality",
+    "title": "Checks that string literals are not used with == or !=",
+    "description": "Checks that string literals are not used with == or !=.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "SummaryJavadoc",
+    "title": "Checks that Javadoc summary sentence does not contain phrases that are not recommended to use",
+    "description": "Checks that Javadoc summary sentence does not contain phrases that are not recommended to use.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "SuperClone",
+    "title": "Checks that an overriding clone() method invokes super.clone()",
+    "description": "Checks that an overriding clone() method invokes super.clone().",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "SuperFinalize",
+    "title": "Checks that an overriding finalize() method invokes super.finalize()",
+    "description": "Checks that an overriding finalize() method invokes super.finalize().",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "SuppressWarnings",
+    "title": "This check allows you to specify what warnings that",
+    "description": "This check allows you to specify what warnings that",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "SuppressWarningsHolder",
+    "title": "This check allows for finding code that should not be reported by Checkstyle",
+    "description": "This check allows for finding code that should not be reported by Checkstyle",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "ThrowsCount",
+    "title": "Restricts throws statements to a specified count (default = 4)",
+    "description": "Restricts throws statements to a specified count (default = 4).",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "TodoComment",
+    "title": "A check for TODO comments",
+    "description": "A check for TODO comments.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "TrailingComment",
+    "title": "The check to ensure that requires that comments be the only thing on a line",
+    "description": "The check to ensure that requires that comments be the only thing on a line.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "Translation",
+    "title": "The TranslationCheck class helps to ensure the correct translation of code by checking property files for consistency regarding their keys",
+    "description": "The TranslationCheck class helps to ensure the correct translation of code by checking property files for consistency regarding their keys.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "TypeName",
+    "title": "Checks that type names conform to a format specified by the format property",
+    "description": "Checks that type names conform to a format specified by the format property.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "TypecastParenPad",
+    "title": "Checks the padding of parentheses for typecasts",
+    "description": "Checks the padding of parentheses for typecasts.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "UncommentedMain",
+    "title": "Detects uncommented main methods",
+    "description": "Detects uncommented main methods.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "UniqueProperties",
+    "title": "Detects duplicated keys in properties files",
+    "description": "Detects duplicated keys in properties files.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "UnnecessaryParentheses",
+    "title": "Checks if unnecessary parentheses are used in a statement or expression",
+    "description": "Checks if unnecessary parentheses are used in a statement or expression.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "UnusedImports",
+    "title": "Checks for unused import statements",
+    "description": "Checks for unused import statements.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "UpperEll",
+    "title": "Checks that long constants are defined with an upper ell",
+    "description": "Checks that long constants are defined with an upper ell.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "VariableDeclarationUsageDistance",
+    "title": "Checks the distance between declaration of variable and its first usage",
+    "description": "Checks the distance between declaration of variable and its first usage.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "VisibilityModifier",
+    "title": "Checks visibility of class members",
+    "description": "Checks visibility of class members.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "WhitespaceAfter",
+    "title": "Checks that a token is followed by whitespace, with the exception that it does not check for whitespace after the semicolon of an empty for iterator",
+    "description": "Checks that a token is followed by whitespace, with the exception that it does not check for whitespace after the semicolon of an empty for iterator.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "WhitespaceAround",
+    "title": "Checks that a token is surrounded by whitespace",
+    "description": "Checks that a token is surrounded by whitespace.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "WriteTag",
+    "title": "Outputs a JavaDoc tag as information",
+    "description": "Outputs a JavaDoc tag as information.",
+    "timeToFix": 5
+  },
+  {
+    "patternId": "Copyright",
+    "title": "© 2001–2016. All rights reserved",
+    "description": "© 2001–2016. All rights reserved.",
+    "timeToFix": 5
   }
 ]
