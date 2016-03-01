@@ -790,11 +790,6 @@
       "patternId":"WriteTag",
       "level":"Info",
       "category":"CodeStyle"
-    },
-    {
-      "patternId":"Copyright",
-      "level":"Info",
-      "category":"CodeStyle"
     }
   ]
 }

@@ -940,11 +940,5 @@
     "title": "Outputs a JavaDoc tag as information",
     "description": "Outputs a JavaDoc tag as information.",
     "timeToFix": 5
-  },
-  {
-    "patternId": "Copyright",
-    "title": "© 2001–2016. All rights reserved",
-    "description": "© 2001–2016. All rights reserved.",
-    "timeToFix": 5
   }
 ]
