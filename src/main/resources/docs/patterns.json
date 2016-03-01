@@ -1,5 +1,5 @@
 {
-  "name":"checkstyle",
+  "name":"Checkstyle",
   "patterns":[
     {
       "patternId":"Indentation",
