@@ -4,10 +4,10 @@ import java.nio.file.Path
 
 import codacy.dockerApi._
 import codacy.dockerApi.utils.{CommandRunner, FileHelper, ToolHelper}
-import play.api.libs.json.Json
+import play.api.libs.json.{JsString, JsValue}
 
 import scala.util.Try
-import scala.xml.Elem
+import scala.xml.{XML, Elem}
 
 object Checkstyle extends Tool {
 
@@ -19,12 +19,16 @@ object Checkstyle extends Tool {
           paths.map(_.toString).toList
       }
       val configFile = generateConfig(fullConfig)
+      val resultFile = FileHelper.createTmpFile("", "result", ".xml")
 
-      val command = Seq("java", "-jar", "checkstyle.jar", "-c", configFile.toString) ++ filesToLint
+      val command = Seq("java", "-jar", "checkstyle.jar", "-c", configFile.toString, "-f", "xml",
+        "-o", resultFile.toAbsolutePath.toString) ++ filesToLint
 
       CommandRunner.exec(command.toList) match {
         case Right(resultFromTool) =>
-          parseToolResult(resultFromTool.stdout, resultFromTool.stderr, path)
+          //If it throws we want to crash, because the checkstyle always return a valid XML
+          val resultFromToolXml = XML.loadFile(resultFile.toFile)
+          parseToolResult(resultFromToolXml, resultFromTool.stderr, filesToLint)
         case Left(failure) =>
           throw failure
       }
@@ -52,7 +56,6 @@ object Checkstyle extends Tool {
           </module>
         </module>
     }
-
     FileHelper.createTmpFile(doctype + xmlConfig.toString)
   }
 
@@ -70,23 +73,37 @@ object Checkstyle extends Tool {
   }
 
   private def generateParameterConfig(parameter: ParameterDef): Elem = {
-      <property name={parameter.name.value} value={Json.stringify(parameter.value)}/>
+      <property name={parameter.name.value} value={jsValueToString(parameter.value)}/>
   }
 
-  def parseToolResult(lines: List[String], errLines: List[String], path: Path): List[Result] = {
+  private def parseToolResult(outputXml: Elem, errLines: List[String], filesAnalysed: List[String]): List[Result] = {
+    val results = if (errLines.nonEmpty) {
+      errLines.flatMap {
+        case _ =>
+          //Ceckstyle crashes all the tool when we have a problem in just a single file
+          filesAnalysed.map(filename => FileError(SourcePath(filename), None))
+      }
+    } else {
+      (outputXml \ "file").flatMap {
+        file =>
+          val filename = file \@ "name"
 
-    val RegMatch = """\[ERROR\]\s*(.+?):([0-9]+):[0-9]*:?\s*(.+)\s*\[(.+)\]""".r
-    val FileErrorMatch = """([^C]\S+):([0-9]+:[0-9]+:.*)""".r
-
-    val issues = lines.collect {
-      case RegMatch(filePath, line, message, patternId) =>
-        Issue(SourcePath(filePath), ResultMessage(message), PatternId(patternId), ResultLine(line.toInt))
+          (file \ "error").map {
+            error =>
+              val line = (error \@ "line").toInt
+              val message = error \@ "message"
+              val patternId = (error \@ "source").split("\\.").last.stripSuffix("Check")
+              Issue(SourcePath(filename), ResultMessage(message), PatternId(patternId), ResultLine(line))
+          }
+      }
     }
+    results.toList
+  }
 
-    val errors = errLines.collect {
-      case FileErrorMatch(filename, message) =>
-        FileError(SourcePath(filename), Some(ErrorMessage(message)))
+  private def jsValueToString(value: JsValue) = {
+    value match {
+      case JsString(v) => v
+      case v => v.toString
     }
-    issues ++ errors
   }
 }
