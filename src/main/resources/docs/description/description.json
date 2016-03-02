@@ -1,8 +1,8 @@
 [
   {
     "patternId":"Indentation",
-    "title": "Prohibits unused private fields",
-    "description": "Prohibits writing private fields that are not used",
+    "title": "Checks correct indentation",
+    "description": "Checks correct indentation of Java Code.",
     "timeToFix": 5,
     "parameters": [
       {
