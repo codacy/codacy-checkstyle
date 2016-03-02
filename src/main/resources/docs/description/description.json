@@ -709,8 +709,8 @@
   },
   {
     "patternId": "ParenPad",
-    "title": "Checks the padding of parentheses; that is whether a space is required after a left parenthesis and before a right parenthesis, or such spaces are forbidden, with the exception that it does not check for padding of the right parenthesis at an empty for iterator",
-    "description": "Checks the padding of parentheses; that is whether a space is required after a left parenthesis and before a right parenthesis, or such spaces are forbidden, with the exception that it does not check for padding of the right parenthesis at an empty for iterator.",
+    "title": "Checks the padding of parentheses",
+    "description": "Checks the padding of parentheses.",
     "timeToFix": 5
   },
   {
@@ -721,8 +721,8 @@
   },
   {
     "patternId": "RedundantModifier",
-    "title": "Checks for redundant modifiers in interface and annotation definitions, final modifier on methods of final classes, inner interface declarations that are declared as static, non public class constructors and enum constructors, nested enum definitions that are declared as static",
-    "description": "Checks for redundant modifiers in interface and annotation definitions, final modifier on methods of final classes, inner interface declarations that are declared as static, non public class constructors and enum constructors, nested enum definitions that are declared as static.",
+    "title": "Checks for redundant modifiers in interface and annotation definitions",
+    "description": "Checks for redundant modifiers in interface and annotation definitions.",
     "timeToFix": 5
   },
   {
@@ -925,7 +925,7 @@
   },
   {
     "patternId": "WhitespaceAfter",
-    "title": "Checks that a token is followed by whitespace, with the exception that it does not check for whitespace after the semicolon of an empty for iterator",
+    "title": "Checks that a token is followed by whitespace",
     "description": "Checks that a token is followed by whitespace, with the exception that it does not check for whitespace after the semicolon of an empty for iterator.",
     "timeToFix": 5
   },
