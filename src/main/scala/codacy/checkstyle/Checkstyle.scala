@@ -49,8 +49,11 @@ object Checkstyle extends Tool {
     "http://www.puppycrawl.com/dtds/configuration_1_3.dtd" >"""
 
     val xmlConfig = conf.fold(defaultConfig) {
-      patterns =>
+      allPatterns =>
+        val (globalPatterns, patterns) = allPatterns.partition(isGlobalPattern)
+
         <module name="Checker">
+          {globalPatterns.map(generatePatternConfig)}
           <module name="TreeWalker">
             {patterns.map(generatePatternConfig)}
           </module>
@@ -105,5 +108,27 @@ object Checkstyle extends Tool {
       case JsString(v) => v
       case v => v.toString
     }
+  }
+
+  private lazy val globalPatterns: Set[String] = Set(
+    "SeverityMatchFilter",
+    "SuppressionCommentFilter",
+    "SuppressionFilter",
+    "SuppressWithNearbyCommentFilter",
+    "Header",
+    "RegexpHeader",
+    "JavadocPackage",
+    "Translation",
+    "RegexpMultiline",
+    "RegexpSingleline",
+    "RegexpOnFilename",
+    "FileLength",
+    "FileTabCharacter",
+    "NewlineAtEndOfFile",
+    "UniqueProperties"
+  )
+
+  private def isGlobalPattern(pattern: PatternDef) = {
+    globalPatterns.contains(pattern.patternId.value)
   }
 }
