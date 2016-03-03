@@ -42,11 +42,6 @@
       "category":"CodeStyle"
     },
     {
-      "patternId":"AbstractClassName",
-      "level":"Info",
-      "category":"CodeStyle"
-    },
-    {
       "patternId":"AnnotationLocation",
       "level":"Info",
       "category":"CodeStyle"
@@ -127,11 +122,6 @@
       "category":"CodeStyle"
     },
     {
-      "patternId":"ConstantName",
-      "level":"Info",
-      "category":"CodeStyle"
-    },
-    {
       "patternId":"CommentsIndentation",
       "level":"Info",
       "category":"CodeStyle"
@@ -147,17 +137,7 @@
       "category":"CodeStyle"
     },
     {
-      "patternId":"CyclomaticComplexity",
-      "level":"Info",
-      "category":"CodeStyle"
-    },
-    {
       "patternId":"DeclarationOrder",
-      "level":"Info",
-      "category":"CodeStyle"
-    },
-    {
-      "patternId":"DefaultComesLast",
       "level":"Info",
       "category":"CodeStyle"
     },
@@ -173,11 +153,6 @@
     },
     {
       "patternId":"EmptyBlock",
-      "level":"Info",
-      "category":"CodeStyle"
-    },
-    {
-      "patternId":"EmptyCatchBlock",
       "level":"Info",
       "category":"CodeStyle"
     },
@@ -202,27 +177,12 @@
       "category":"CodeStyle"
     },
     {
-      "patternId":"EqualsAvoidNull",
-      "level":"Info",
-      "category":"CodeStyle"
-    },
-    {
-      "patternId":"EqualsHashCode",
-      "level":"Info",
-      "category":"CodeStyle"
-    },
-    {
       "patternId":"ExecutableStatementCount",
       "level":"Info",
       "category":"CodeStyle"
     },
     {
       "patternId":"ExplicitInitialization",
-      "level":"Info",
-      "category":"CodeStyle"
-    },
-    {
-      "patternId":"FallThrough",
       "level":"Info",
       "category":"CodeStyle"
     },
@@ -238,11 +198,6 @@
     },
     {
       "patternId":"FinalClass",
-      "level":"Info",
-      "category":"CodeStyle"
-    },
-    {
-      "patternId":"FinalLocalVariable",
       "level":"Info",
       "category":"CodeStyle"
     },
@@ -268,11 +223,6 @@
     },
     {
       "patternId":"HideUtilityClassConstructor",
-      "level":"Info",
-      "category":"CodeStyle"
-    },
-    {
-      "patternId":"IllegalCatch",
       "level":"Info",
       "category":"CodeStyle"
     },
@@ -412,16 +362,6 @@
       "category":"CodeStyle"
     },
     {
-      "patternId":"MethodLength",
-      "level":"Info",
-      "category":"CodeStyle"
-    },
-    {
-      "patternId":"MethodName",
-      "level":"Info",
-      "category":"CodeStyle"
-    },
-    {
       "patternId":"MethodParamPad",
       "level":"Info",
       "category":"CodeStyle"
@@ -443,11 +383,6 @@
     },
     {
       "patternId":"MissingOverride",
-      "level":"Info",
-      "category":"CodeStyle"
-    },
-    {
-      "patternId":"MissingSwitchDefault",
       "level":"Info",
       "category":"CodeStyle"
     },
@@ -477,11 +412,6 @@
       "category":"CodeStyle"
     },
     {
-      "patternId":"NPathComplexity",
-      "level":"Info",
-      "category":"CodeStyle"
-    },
-    {
       "patternId":"NeedBraces",
       "level":"Info",
       "category":"CodeStyle"
@@ -503,11 +433,6 @@
     },
     {
       "patternId":"NewlineAtEndOfFile",
-      "level":"Info",
-      "category":"CodeStyle"
-    },
-    {
-      "patternId":"NoClone",
       "level":"Info",
       "category":"CodeStyle"
     },
@@ -612,36 +537,6 @@
       "category":"CodeStyle"
     },
     {
-      "patternId":"Regexp",
-      "level":"Info",
-      "category":"CodeStyle"
-    },
-    {
-      "patternId":"RegexpHeader",
-      "level":"Info",
-      "category":"CodeStyle"
-    },
-    {
-      "patternId":"RegexpMultiline",
-      "level":"Info",
-      "category":"CodeStyle"
-    },
-    {
-      "patternId":"RegexpOnFilename",
-      "level":"Info",
-      "category":"CodeStyle"
-    },
-    {
-      "patternId":"RegexpSingleline",
-      "level":"Info",
-      "category":"CodeStyle"
-    },
-    {
-      "patternId":"RegexpSinglelineJava",
-      "level":"Info",
-      "category":"CodeStyle"
-    },
-    {
       "patternId":"RequireThis",
       "level":"Info",
       "category":"CodeStyle"
@@ -667,37 +562,12 @@
       "category":"CodeStyle"
     },
     {
-      "patternId":"SimplifyBooleanExpression",
-      "level":"Info",
-      "category":"CodeStyle"
-    },
-    {
-      "patternId":"SimplifyBooleanReturn",
-      "level":"Info",
-      "category":"CodeStyle"
-    },
-    {
       "patternId":"StaticVariableName",
       "level":"Info",
       "category":"CodeStyle"
     },
     {
-      "patternId":"StringLiteralEquality",
-      "level":"Info",
-      "category":"CodeStyle"
-    },
-    {
       "patternId":"SummaryJavadoc",
-      "level":"Info",
-      "category":"CodeStyle"
-    },
-    {
-      "patternId":"SuperClone",
-      "level":"Info",
-      "category":"CodeStyle"
-    },
-    {
-      "patternId":"SuperFinalize",
       "level":"Info",
       "category":"CodeStyle"
     },
@@ -753,11 +623,6 @@
     },
     {
       "patternId":"UnnecessaryParentheses",
-      "level":"Info",
-      "category":"CodeStyle"
-    },
-    {
-      "patternId":"UnusedImports",
       "level":"Info",
       "category":"CodeStyle"
     },

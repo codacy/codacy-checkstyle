@@ -42,12 +42,6 @@
     "timeToFix": 5
   },
   {
-    "patternId": "AbstractClassName",
-    "title": "Ensures that the names of abstract classes conforming to some regular expression",
-    "description": "Ensures that the names of abstract classes conforming to some regular expression.",
-    "timeToFix": 5
-  },
-  {
     "patternId": "AnnotationLocation",
     "title": "Check location of annotation on language elements",
     "description": "Check location of annotation on language elements.",
@@ -144,12 +138,6 @@
     "timeToFix": 5
   },
   {
-    "patternId": "ConstantName",
-    "title": "Checks that constant names conform to a format specified by the format property",
-    "description": "Checks that constant names conform to a format specified by the format property.",
-    "timeToFix": 5
-  },
-  {
     "patternId": "CommentsIndentation",
     "title": "Controls the indentation between comments and surrounding code",
     "description": "Controls the indentation between comments and surrounding code.",
@@ -168,21 +156,9 @@
     "timeToFix": 5
   },
   {
-    "patternId": "CyclomaticComplexity",
-    "title": "Checks cyclomatic complexity against a specified limit",
-    "description": "Checks cyclomatic complexity against a specified limit.",
-    "timeToFix": 5
-  },
-  {
     "patternId": "DeclarationOrder",
     "title": "Checks that the parts of a class or interface declaration appear in the order suggested by the Code Conventions for the Java Programming Language",
     "description": "Checks that the parts of a class or interface declaration appear in the order suggested by the Code Conventions for the Java Programming Language.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "DefaultComesLast",
-    "title": "Check that the default is after all the cases in a switch statement",
-    "description": "Check that the default is after all the cases in a switch statement.",
     "timeToFix": 5
   },
   {
@@ -201,12 +177,6 @@
     "patternId": "EmptyBlock",
     "title": "Checks for empty blocks",
     "description": "Checks for empty blocks.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "EmptyCatchBlock",
-    "title": "Checks for empty catch blocks with few options to skip violation",
-    "description": "Checks for empty catch blocks with few options to skip violation.",
     "timeToFix": 5
   },
   {
@@ -234,18 +204,6 @@
     "timeToFix": 5
   },
   {
-    "patternId": "EqualsAvoidNull",
-    "title": "Checks that any combination of String literals is on the left side of an equals() comparison",
-    "description": "Checks that any combination of String literals is on the left side of an equals() comparison.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "EqualsHashCode",
-    "title": "Checks that classes that override equals() also override hashCode()",
-    "description": "Checks that classes that override equals() also override hashCode().",
-    "timeToFix": 5
-  },
-  {
     "patternId": "ExecutableStatementCount",
     "title": "Restricts the number of executable statements to a specified limit (default = 30)",
     "description": "Restricts the number of executable statements to a specified limit (default = 30).",
@@ -255,12 +213,6 @@
     "patternId": "ExplicitInitialization",
     "title": "Checks if any class or object member explicitly initialized to default for its type value (null for object references, zero for numeric types and char and false for boolean",
     "description": "Checks if any class or object member explicitly initialized to default for its type value (null for object references, zero for numeric types and char and false for boolean.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "FallThrough",
-    "title": "Checks for fall through in switch statements Finds locations where a case contains Java code - but lacks a break, return, throw or continue statement",
-    "description": "Checks for fall through in switch statements Finds locations where a case contains Java code - but lacks a break, return, throw or continue statement.",
     "timeToFix": 5
   },
   {
@@ -279,12 +231,6 @@
     "patternId": "FinalClass",
     "title": "Checks that class which has only private constructors is declared as final",
     "description": "Checks that class which has only private constructors is declared as final.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "FinalLocalVariable",
-    "title": "Ensures that local variables that never get their values changed, must be declared final",
-    "description": "Ensures that local variables that never get their values changed, must be declared final.",
     "timeToFix": 5
   },
   {
@@ -315,12 +261,6 @@
     "patternId": "HideUtilityClassConstructor",
     "title": "Make sure that utility classes (classes that contain only static methods) do not have a public constructor",
     "description": "Make sure that utility classes (classes that contain only static methods) do not have a public constructor.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "IllegalCatch",
-    "title": "Catching java.lang.Exception, java.lang.Error or java.lang.RuntimeException is almost never acceptable",
-    "description": "Catching java.lang.Exception, java.lang.Error or java.lang.RuntimeException is almost never acceptable.",
     "timeToFix": 5
   },
   {
@@ -486,18 +426,6 @@
     "timeToFix": 5
   },
   {
-    "patternId": "MethodLength",
-    "title": "Checks for long methods",
-    "description": "Checks for long methods.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "MethodName",
-    "title": "Checks that method names conform to a format specified by the format property",
-    "description": "Checks that method names conform to a format specified by the format property.",
-    "timeToFix": 5
-  },
-  {
     "patternId": "MethodParamPad",
     "title": "Checks the padding between the identifier of a method definition, constructor definition, method call, or constructor invocation; and the left parenthesis of the parameter list",
     "description": "Checks the padding between the identifier of a method definition, constructor definition, method call, or constructor invocation; and the left parenthesis of the parameter list.",
@@ -525,12 +453,6 @@
     "patternId": "MissingOverride",
     "title": "This class is used to verify that the java.lang.Override annotation is present when the {@inheritDoc} javadoc tag is present",
     "description": "This class is used to verify that the java.lang.Override annotation is present when the {@inheritDoc} javadoc tag is present.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "MissingSwitchDefault",
-    "title": "Checks that switch statement has \"default\" clause",
-    "description": "Checks that switch statement has \"default\" clause.",
     "timeToFix": 5
   },
   {
@@ -564,12 +486,6 @@
     "timeToFix": 5
   },
   {
-    "patternId": "NPathComplexity",
-    "title": "Checks the npath complexity against a specified limit (default = 200)",
-    "description": "Checks the npath complexity against a specified limit (default = 200).",
-    "timeToFix": 5
-  },
-  {
     "patternId": "NeedBraces",
     "title": "Checks for braces around code blocks",
     "description": "Checks for braces around code blocks.",
@@ -597,12 +513,6 @@
     "patternId": "NewlineAtEndOfFile",
     "title": "Checks that there is a newline at the end of each file",
     "description": "Checks that there is a newline at the end of each file.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "NoClone",
-    "title": "Checks that the clone method is not overridden from the Object class",
-    "description": "Checks that the clone method is not overridden from the Object class.",
     "timeToFix": 5
   },
   {
@@ -726,42 +636,6 @@
     "timeToFix": 5
   },
   {
-    "patternId": "Regexp",
-    "title": "A check that makes sure that a specified pattern exists (or not) in the file",
-    "description": "A check that makes sure that a specified pattern exists (or not) in the file.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "RegexpHeader",
-    "title": "Checks the header of the source against a header file that contains a",
-    "description": "Checks the header of the source against a header file that contains a",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "RegexpMultiline",
-    "title": "Implementation of a check that looks that matches across multiple lines in any file type",
-    "description": "Implementation of a check that looks that matches across multiple lines in any file type.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "RegexpOnFilename",
-    "title": "Implementation of a check that matches based on file and/or folder path",
-    "description": "Implementation of a check that matches based on file and/or folder path.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "RegexpSingleline",
-    "title": "Implementation of a check that looks for a single line in any file type",
-    "description": "Implementation of a check that looks for a single line in any file type.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "RegexpSinglelineJava",
-    "title": "Implementation of a check that looks for a single line in Java files",
-    "description": "Implementation of a check that looks for a single line in Java files.",
-    "timeToFix": 5
-  },
-  {
     "patternId": "RequireThis",
     "title": "Checks that code doesn't rely on the \"this\" default",
     "description": "Checks that code doesn't rely on the \"this\" default.",
@@ -792,45 +666,15 @@
     "timeToFix": 5
   },
   {
-    "patternId": "SimplifyBooleanExpression",
-    "title": "Checks for overly complicated boolean expressions",
-    "description": "Checks for overly complicated boolean expressions.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "SimplifyBooleanReturn",
-    "title": "Checks for overly complicated boolean return statements",
-    "description": "Checks for overly complicated boolean return statements.",
-    "timeToFix": 5
-  },
-  {
     "patternId": "StaticVariableName",
     "title": "Checks that static, non-final variable names conform to a format specified by the format property",
     "description": "Checks that static, non-final variable names conform to a format specified by the format property.",
     "timeToFix": 5
   },
   {
-    "patternId": "StringLiteralEquality",
-    "title": "Checks that string literals are not used with == or !=",
-    "description": "Checks that string literals are not used with == or !=.",
-    "timeToFix": 5
-  },
-  {
     "patternId": "SummaryJavadoc",
     "title": "Checks that Javadoc summary sentence does not contain phrases that are not recommended to use",
     "description": "Checks that Javadoc summary sentence does not contain phrases that are not recommended to use.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "SuperClone",
-    "title": "Checks that an overriding clone() method invokes super.clone()",
-    "description": "Checks that an overriding clone() method invokes super.clone().",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "SuperFinalize",
-    "title": "Checks that an overriding finalize() method invokes super.finalize()",
-    "description": "Checks that an overriding finalize() method invokes super.finalize().",
     "timeToFix": 5
   },
   {
@@ -897,12 +741,6 @@
     "patternId": "UnnecessaryParentheses",
     "title": "Checks if unnecessary parentheses are used in a statement or expression",
     "description": "Checks if unnecessary parentheses are used in a statement or expression.",
-    "timeToFix": 5
-  },
-  {
-    "patternId": "UnusedImports",
-    "title": "Checks for unused import statements",
-    "description": "Checks for unused import statements.",
     "timeToFix": 5
   },
   {
