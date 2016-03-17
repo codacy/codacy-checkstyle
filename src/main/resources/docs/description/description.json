@@ -505,7 +505,13 @@
     "patternId": "NestedForDepth",
     "title": "Restricts nested for blocks to a specified depth (default = 1)",
     "description": "Restricts nested for blocks to a specified depth (default = 1).",
-    "timeToFix": 5
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "max",
+        "description": "allowed nesting depth"
+      }
+    ]
   },
   {
     "patternId": "NestedIfDepth",
