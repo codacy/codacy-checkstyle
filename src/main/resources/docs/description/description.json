@@ -503,8 +503,8 @@
   },
   {
     "patternId": "NestedForDepth",
-    "title": "Restricts nested for blocks to a specified depth (default = 1)",
-    "description": "Restricts nested for blocks to a specified depth (default = 1).",
+    "title": "Restricts nested for blocks to a specified depth",
+    "description": "Restricts nested for blocks to a specified depth.",
     "timeToFix": 5,
     "parameters": [
       {
