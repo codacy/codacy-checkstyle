@@ -709,8 +709,8 @@
   },
   {
     "patternId": "TrailingComment",
-    "title": "The check to ensure that requires that comments be the only thing on a line",
-    "description": "The check to ensure that requires that comments be the only thing on a line.",
+    "title": "Requires that comments be the only thing on a line",
+    "description": "Requires that comments be the only thing on a line.",
     "timeToFix": 5
   },
   {
