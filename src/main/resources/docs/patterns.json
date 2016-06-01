@@ -334,7 +334,17 @@
     {
       "patternId":"LineLength",
       "level":"Info",
-      "category":"CodeStyle"
+      "category":"CodeStyle",
+      "parameters": [
+        {
+          "name": "max",
+          "default": 80
+        },
+        {
+          "name": "ignorePattern",
+          "default": "^$"
+        }
+      ]
     },
     {
       "patternId":"LocalFinalVariableName",
