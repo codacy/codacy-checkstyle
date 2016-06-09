@@ -393,7 +393,17 @@
     "patternId": "LineLength",
     "title": "Checks for long lines",
     "description": "Checks for long lines.",
-    "timeToFix": 5
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "max",
+        "description": "maximum allowable line length"
+      },
+      {
+        "name": "ignorePattern",
+        "description": "pattern for lines to ignore (regex)"
+      }
+    ]
   },
   {
     "patternId": "LocalFinalVariableName",
