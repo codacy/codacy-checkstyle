@@ -193,8 +193,8 @@
   },
   {
     "patternId": "EmptyLineSeparator",
-    "title": "Checks for blank line separators",
-    "description": "Checks for blank line separators.",
+    "title": "Check for blank line separators between specific statements",
+    "description": "Checks for empty line separators after header, package, all import declarations, fields, constructors, methods, nested classes, static initializers and instance initializers.",
     "timeToFix": 5
   },
   {
