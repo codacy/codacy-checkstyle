@@ -659,9 +659,15 @@
   },
   {
     "patternId": "ReturnCount",
-    "title": "Restricts return statements to a specified count (default = 2)",
-    "description": "Restricts return statements to a specified count (default = 2).",
-    "timeToFix": 5
+    "title": "Restricts return statements to a specified count",
+    "description": "Restricts return statements to a specified count.",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "max",
+        "description": "allowed number of returns"
+      }
+    ]
   },
   {
     "patternId": "RightCurly",

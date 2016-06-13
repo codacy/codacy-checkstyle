@@ -560,7 +560,13 @@
     {
       "patternId":"ReturnCount",
       "level":"Info",
-      "category":"CodeStyle"
+      "category":"CodeStyle",
+      "parameters": [
+        {
+          "name": "max",
+          "default": 2
+        }
+      ]
     },
     {
       "patternId":"RightCurly",
