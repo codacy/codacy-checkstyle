@@ -720,8 +720,14 @@
   {
     "patternId": "TodoComment",
     "title": "A check for TODO comments",
-    "description": "A check for TODO comments.",
-    "timeToFix": 5
+    "description": "Triggers whenever there is a TODO comment in the code.",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "format",
+        "description": "Regular expression to match comments against"
+      }
+    ]
   },
   {
     "patternId": "TrailingComment",

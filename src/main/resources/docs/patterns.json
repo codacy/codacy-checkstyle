@@ -611,7 +611,13 @@
     {
       "patternId":"TodoComment",
       "level":"Info",
-      "category":"CodeStyle"
+      "category":"CodeStyle",
+      "parameters": [
+        {
+          "name": "format",
+          "default": "TODO:"
+        }
+      ]
     },
     {
       "patternId":"TrailingComment",
