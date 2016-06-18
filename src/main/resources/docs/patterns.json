@@ -576,7 +576,13 @@
     {
       "patternId":"SeparatorWrap",
       "level":"Info",
-      "category":"CodeStyle"
+      "category":"CodeStyle",
+      "parameters": [
+        {
+          "name": "option",
+          "default": "eol"
+        }
+      ]
     },
     {
       "patternId":"SingleLineJavadoc",
