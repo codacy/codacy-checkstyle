@@ -576,7 +576,13 @@
     {
       "patternId":"SeparatorWrap",
       "level":"Info",
-      "category":"CodeStyle"
+      "category":"CodeStyle",
+      "parameters": [
+        {
+          "name": "option",
+          "default": "eol"
+        }
+      ]
     },
     {
       "patternId":"SingleLineJavadoc",
@@ -611,7 +617,13 @@
     {
       "patternId":"TodoComment",
       "level":"Info",
-      "category":"CodeStyle"
+      "category":"CodeStyle",
+      "parameters": [
+        {
+          "name": "format",
+          "default": "TODO:"
+        }
+      ]
     },
     {
       "patternId":"TrailingComment",

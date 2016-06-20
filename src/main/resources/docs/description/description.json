@@ -193,8 +193,8 @@
   },
   {
     "patternId": "EmptyLineSeparator",
-    "title": "Checks for blank line separators",
-    "description": "Checks for blank line separators.",
+    "title": "Check for blank line separators between specific statements",
+    "description": "Checks for empty line separators after header, package, all import declarations, fields, constructors, methods, nested classes, static initializers and instance initializers.",
     "timeToFix": 5
   },
   {
@@ -679,7 +679,13 @@
     "patternId": "SeparatorWrap",
     "title": "Checks line wrapping with separators",
     "description": "Checks line wrapping with separators.",
-    "timeToFix": 5
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "option",
+        "description": "policy on how to wrap lines (nl = separator must be on a new line, eol = separator must be at the end of the line)"
+      }
+    ]
   },
   {
     "patternId": "SingleLineJavadoc",
@@ -720,8 +726,14 @@
   {
     "patternId": "TodoComment",
     "title": "A check for TODO comments",
-    "description": "A check for TODO comments.",
-    "timeToFix": 5
+    "description": "Triggers whenever there is a TODO comment in the code.",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "format",
+        "description": "Regular expression to match comments against"
+      }
+    ]
   },
   {
     "patternId": "TrailingComment",
