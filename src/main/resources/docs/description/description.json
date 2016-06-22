@@ -195,7 +195,17 @@
     "patternId": "EmptyLineSeparator",
     "title": "Check for blank line separators between specific statements",
     "description": "Checks for empty line separators after header, package, all import declarations, fields, constructors, methods, nested classes, static initializers and instance initializers.",
-    "timeToFix": 5
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "allowNoEmptyLineBetweenFields",
+        "description": "Allow no empty line between fields"
+      },
+      {
+        "name": "allowMultipleEmptyLines",
+        "description": "Allow multiple empty lines between class members"
+      }
+    ]
   },
   {
     "patternId": "EmptyStatement",
