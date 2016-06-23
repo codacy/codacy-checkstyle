@@ -591,6 +591,10 @@
         {
           "name": "option",
           "default": "eol"
+        },
+        {
+          "name": "tokens",
+          "default": "DOT, COMMA"
         }
       ]
     },

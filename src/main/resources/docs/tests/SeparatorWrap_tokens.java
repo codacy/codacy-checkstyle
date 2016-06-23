@@ -1,4 +1,4 @@
-//#Patterns: SeparatorWrap
+//#Patterns: SeparatorWrap: {"option": "nl", "tokens": "DOT"}
 
 public class Something {
     private void AAAfoo() {
@@ -6,7 +6,9 @@ public class Something {
     } // unused
 
     private void ____bar() {
+        //#Info: SeparatorWrap
         System.
+            //#Info: SeparatorWrap
             out.
             print("This private method is called!");
     }
@@ -20,10 +22,8 @@ public class Something {
 
     public void doSomething() {
         System
-            //#Info: SeparatorWrap
             .out
-            //#Info: SeparatorWrap
-            .print("That works");
+            .print("That works!");
     }
 
            public void doSomething() {
