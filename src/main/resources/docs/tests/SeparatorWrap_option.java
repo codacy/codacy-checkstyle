@@ -13,6 +13,16 @@ public class Something {
             print("This private method is called!");
     }
 
+    private int[] mData = {
+        //#Info: SeparatorWrap
+        1,
+        //#Info: SeparatorWrap
+        2,
+        //#Info: SeparatorWrap
+        3,
+        4
+    };
+
     public void doSomething() {
         System
             .out
