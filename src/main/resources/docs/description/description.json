@@ -587,7 +587,13 @@
     "patternId": "OperatorWrap",
     "title": "Checks line wrapping for operators",
     "description": "Checks line wrapping for operators.",
-    "timeToFix": 5
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "option",
+        "description": "policy on how to wrap lines (nl = the token must be on a new line, eol = the token must be at the end of the line)"
+      }
+    ]
   },
   {
     "patternId": "OuterTypeFilename",

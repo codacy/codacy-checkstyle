@@ -500,8 +500,14 @@
     {
       "patternId":"OperatorWrap",
       "level":"Info",
-      "category":"CodeStyle"
-    },
+      "category":"CodeStyle",
+      "parameters": [
+        {
+          "name": "option",
+          "default": "nl"
+        }
+      ]
+     },
     {
       "patternId":"OuterTypeFilename",
       "level":"Info",
