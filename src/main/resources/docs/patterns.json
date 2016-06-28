@@ -189,7 +189,17 @@
     {
       "patternId":"ExecutableStatementCount",
       "level":"Info",
-      "category":"CodeStyle"
+      "category":"CodeStyle",
+      "parameters": [
+        {
+          "name": "max",
+          "default": 30
+        },
+        {
+          "name": "tokens",
+          "default": "CTOR_DEF, METHOD_DEF, INSTANCE_INIT, STATIC_INIT"
+        }
+      ]
     },
     {
       "patternId":"ExplicitInitialization",
@@ -500,8 +510,14 @@
     {
       "patternId":"OperatorWrap",
       "level":"Info",
-      "category":"CodeStyle"
-    },
+      "category":"CodeStyle",
+      "parameters": [
+        {
+          "name": "option",
+          "default": "nl"
+        }
+      ]
+     },
     {
       "patternId":"OuterTypeFilename",
       "level":"Info",

@@ -215,9 +215,19 @@
   },
   {
     "patternId": "ExecutableStatementCount",
-    "title": "Restricts the number of executable statements to a specified limit (default = 30)",
-    "description": "Restricts the number of executable statements to a specified limit (default = 30).",
-    "timeToFix": 5
+    "title": "Restricts the number of executable statements to a specified limit",
+    "description": "Limits the number of executable statements within a specified token (e.g. a constructor or a method definition).",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "max",
+        "description": "the maximum threshold allowed"
+      },
+      {
+        "name": "tokens",
+        "description": "tokens to check, subset of CTOR_DEF, METHOD_DEF, INSTANCE_INIT, STATIC_INIT"
+      }
+    ]
   },
   {
     "patternId": "ExplicitInitialization",
@@ -587,7 +597,13 @@
     "patternId": "OperatorWrap",
     "title": "Checks line wrapping for operators",
     "description": "Checks line wrapping for operators.",
-    "timeToFix": 5
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "option",
+        "description": "policy on how to wrap lines (nl = the token must be on a new line, eol = the token must be at the end of the line)"
+      }
+    ]
   },
   {
     "patternId": "OuterTypeFilename",
