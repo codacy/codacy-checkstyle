@@ -314,37 +314,37 @@
     {
       "patternId":"JavadocMethod",
       "level":"Info",
-      "category":"Documentation"
+      "category":"CodeStyle"
     },
     {
       "patternId":"JavadocPackage",
       "level":"Info",
-      "category":"Documentation"
+      "category":"CodeStyle"
     },
     {
       "patternId":"JavadocTagContinuationIndentation",
       "level":"Info",
-      "category":"Documentation"
+      "category":"CodeStyle"
     },
     {
       "patternId":"JavadocParagraph",
       "level":"Info",
-      "category":"Documentation"
+      "category":"CodeStyle"
     },
     {
       "patternId":"JavadocStyle",
       "level":"Info",
-      "category":"Documentation"
+      "category":"CodeStyle"
     },
     {
       "patternId":"JavadocType",
       "level":"Info",
-      "category":"Documentation"
+      "category":"CodeStyle"
     },
     {
       "patternId":"JavadocVariable",
       "level":"Info",
-      "category":"Documentation"
+      "category":"CodeStyle"
     },
     {
       "patternId":"LeftCurly",
@@ -617,7 +617,7 @@
     {
       "patternId":"SingleLineJavadoc",
       "level":"Info",
-      "category":"Documentation"
+      "category":"CodeStyle"
     },
     {
       "patternId":"StaticVariableName",
@@ -627,7 +627,7 @@
     {
       "patternId":"SummaryJavadoc",
       "level":"Info",
-      "category":"Documentation"
+      "category":"CodeStyle"
     },
     {
       "patternId":"SuppressWarnings",
