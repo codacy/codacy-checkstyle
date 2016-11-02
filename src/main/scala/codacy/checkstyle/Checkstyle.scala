@@ -6,8 +6,9 @@ import codacy.dockerApi._
 import codacy.dockerApi.utils.{CommandRunner, FileHelper, ToolHelper}
 import play.api.libs.json.{JsString, JsValue}
 
-import scala.util.Try
-import scala.xml.{XML, Elem}
+import scala.util.{Success, Try}
+import scala.xml.dtd.{DocType, PublicID}
+import scala.xml.{Elem, XML}
 
 object Checkstyle extends Tool {
 
@@ -18,10 +19,10 @@ object Checkstyle extends Tool {
         paths =>
           paths.map(_.toString).toList
       }
-      val configFile = generateConfig(fullConfig)
+      val configFile = generateConfig(path, fullConfig)
       val resultFile = FileHelper.createTmpFile("", "result", ".xml")
 
-      val command = Seq("java", "-jar", "checkstyle.jar", "-c", configFile.toString, "-f", "xml",
+      val command = Seq("java", "-jar", "checkstyle.jar", "-c", configFile.toAbsolutePath.toString, "-f", "xml",
         "-o", resultFile.toAbsolutePath.toString) ++ filesToLint
 
       CommandRunner.exec(command.toList) match {
@@ -35,31 +36,37 @@ object Checkstyle extends Tool {
     }
   }
 
-  private def generateConfig(conf: Option[List[PatternDef]]): Path = {
-    lazy val defaultConfig =
-      <module name="Checker">
-        <module name="TreeWalker">
-        </module>
-      </module>
-
-    val doctype =
-      """<?xml version="1.0"?>
+  private lazy val nativeConfigFileNames = Set("checkstyle.xml")
+  //TODO: the right thing to do here would be to read the default xml @ compile time and extract the doctype!
+  private val doctype =
+    """<?xml version="1.0"?>
     <!DOCTYPE module PUBLIC
     "-//Puppy Crawl//DTD Check Configuration 1.3//EN"
     "http://www.puppycrawl.com/dtds/configuration_1_3.dtd" >"""
 
-    val xmlConfig = conf.fold(defaultConfig) {
-      allPatterns =>
-        val (globalPatterns, patterns) = allPatterns.partition(isGlobalPattern)
 
-        <module name="Checker">
-          {globalPatterns.map(generatePatternConfig)}
-          <module name="TreeWalker">
-            {patterns.map(generatePatternConfig)}
-          </module>
-        </module>
+  private def generateConfig(projectRoot:Path, conf: Option[List[PatternDef]]): Path = {
+    lazy val defaultConfig = (better.files.File.root / "docs" / "checkstyle.xml").path
+
+    lazy val nativeConfig = {
+      nativeConfigFileNames.map(filename => Try(new better.files.File(projectRoot) / filename) )
+        .collectFirst{ case Success(file) if file.isRegularFile => file.path }
     }
-    FileHelper.createTmpFile(doctype + xmlConfig.toString)
+
+    lazy val codacyConfig = conf.map{ case allPatterns =>
+      val (globalPatterns, patterns) = allPatterns.partition(isGlobalPattern)
+
+      val xmlConfig = <module name="Checker">
+        {globalPatterns.map(generatePatternConfig)}
+        <module name="TreeWalker">
+          {patterns.map(generatePatternConfig)}
+        </module>
+      </module>
+
+      FileHelper.createTmpFile(doctype + xmlConfig.toString)
+    }
+
+    codacyConfig orElse nativeConfig getOrElse defaultConfig
   }
 
   private def generatePatternConfig(pattern: PatternDef): Elem = {
