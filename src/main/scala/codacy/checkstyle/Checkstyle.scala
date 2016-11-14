@@ -1,13 +1,10 @@
 package codacy.checkstyle
 
-import java.nio.file.Path
-
 import codacy.dockerApi._
 import codacy.dockerApi.utils.{CommandRunner, FileHelper, ToolHelper}
+import java.nio.file.Path
 import play.api.libs.json.{JsString, JsValue}
-
 import scala.util.{Success, Try}
-import scala.xml.dtd.{DocType, PublicID}
 import scala.xml.{Elem, XML}
 
 object Checkstyle extends Tool {
@@ -22,10 +19,10 @@ object Checkstyle extends Tool {
       val configFile = generateConfig(path, fullConfig)
       val resultFile = FileHelper.createTmpFile("", "result", ".xml")
 
-      val command = Seq("java", "-jar", "checkstyle.jar", "-c", configFile.toAbsolutePath.toString, "-f", "xml",
+      val command = Seq("java", "-jar", "/opt/docker/checkstyle.jar", "-c", configFile.toAbsolutePath.toString, "-f", "xml",
         "-o", resultFile.toAbsolutePath.toString) ++ filesToLint
 
-      CommandRunner.exec(command.toList) match {
+      CommandRunner.exec(command.toList, Some(path.toFile)) match {
         case Right(resultFromTool) =>
           //If it throws we want to crash, because the checkstyle always return a valid XML
           val resultFromToolXml = XML.loadFile(resultFile.toFile)
