@@ -1,10 +1,13 @@
 package codacy.checkstyle
 
+import java.nio.file.Path
+
+import better.files.File
 import codacy.dockerApi._
 import codacy.dockerApi.utils.{CommandRunner, FileHelper, ToolHelper}
-import java.nio.file.Path
 import play.api.libs.json.{JsString, JsValue}
-import scala.util.{Success, Try}
+
+import scala.util.Try
 import scala.xml.{Elem, XML}
 
 object Checkstyle extends Tool {
@@ -42,15 +45,19 @@ object Checkstyle extends Tool {
     "http://www.puppycrawl.com/dtds/configuration_1_3.dtd" >"""
 
 
-  private def generateConfig(projectRoot:Path, conf: Option[List[PatternDef]]): Path = {
+  private def generateConfig(projectRoot: Path, conf: Option[List[PatternDef]]): Path = {
     lazy val defaultConfig = (better.files.File.root / "docs" / "checkstyle.xml").path
 
-    lazy val nativeConfig = {
-      nativeConfigFileNames.map(filename => Try(new better.files.File(projectRoot) / filename) )
-        .collectFirst{ case Success(file) if file.isRegularFile => file.path }
-    }
+    lazy val nativeConfig =
+      nativeConfigFileNames.flatMap { nativeConfigFileName =>
+        new File(projectRoot).listRecursively.filter(f => f.name == nativeConfigFileName)
+          .map(_.path)
+      }
+        .to[List]
+        .sortBy(_.toString.length)
+        .headOption
 
-    lazy val codacyConfig = conf.map{ case allPatterns =>
+    lazy val codacyConfig = conf.map { allPatterns =>
       val (globalPatterns, patterns) = allPatterns.partition(isGlobalPattern)
 
       val xmlConfig = <module name="Checker">
@@ -85,10 +92,9 @@ object Checkstyle extends Tool {
 
   private def parseToolResult(outputXml: Elem, errLines: List[String], filesAnalysed: List[String]): List[Result] = {
     val results = if (errLines.nonEmpty) {
-      errLines.flatMap {
-        case _ =>
-          //Ceckstyle crashes all the tool when we have a problem in just a single file
-          filesAnalysed.map(filename => FileError(SourcePath(filename), None))
+      errLines.flatMap { _ =>
+        //Checkstyle crashes all the tool when we have a problem in just a single file
+        filesAnalysed.map(filename => FileError(SourcePath(filename), None))
       }
     } else {
       (outputXml \ "file").flatMap {
