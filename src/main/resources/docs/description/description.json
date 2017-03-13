@@ -109,9 +109,19 @@
   },
   {
     "patternId": "BooleanExpressionComplexity",
-    "title": "Restricts nested boolean operators (&&, ||, &, | and ^) to a specified depth (default = 3)",
-    "description": "Restricts nested boolean operators (&&, ||, &, | and ^) to a specified depth (default = 3).",
-    "timeToFix": 5
+    "title": "Restricts nested boolean operators (&&, ||, &, | and ^) to a specified depth",
+    "description": "Restricts nested boolean operators (&&, ||, &, | and ^) to a specified depth.",
+    "timeToFix": 5,
+    "parameters": [
+      {
+        "name": "max",
+        "description": "the maximum allowed number of boolean operations in one expression."
+      },
+      {
+        "name": "tokens",
+        "description": "tokens to check"
+      }
+    ]
   },
   {
     "patternId": "CatchParameterName",
