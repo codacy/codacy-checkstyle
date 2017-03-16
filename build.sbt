@@ -63,7 +63,7 @@ dockerCommands := dockerCommands.value.flatMap {
   )
   case cmd@(Cmd("ADD", "opt /opt")) => List(cmd,
     Cmd("RUN", "mv /opt/docker/docs /docs"),
-    Cmd("RUN", "mv /opt/docker/checkstyle-6.16-all.jar /opt/docker/checkstyle.jar"),
+    Cmd("RUN", "mv /opt/docker/checkstyle-7.6-all.jar /opt/docker/checkstyle.jar"),
     Cmd("RUN", s"adduser -u 2004 -D $dockerUser"),
     ExecCmd("RUN", Seq("chown", "-R", s"$dockerUser:$dockerGroup", "/docs"): _*)
   )
