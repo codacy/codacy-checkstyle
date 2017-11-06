@@ -19,15 +19,17 @@ object Checkstyle extends Tool {
         paths =>
           paths.map(_.toString).toList
       }
-      val configFile = generateConfig(path, fullConfig)
+      val configFile = generateConfig(path, fullConfig).fold[Seq[String]](Seq.empty)(cpath => Seq("-c", cpath.toAbsolutePath.toString))
       val resultFile = FileHelper.createTmpFile("", "result", ".xml")
 
-      val command = Seq("java", "-jar", "/opt/docker/checkstyle.jar", "-c", configFile.toAbsolutePath.toString, "-f", "xml",
-        "-o", resultFile.toAbsolutePath.toString) ++ filesToLint
+      val command = Seq("java", "-jar", "/opt/docker/checkstyle.jar") ++
+        configFile ++
+        Seq("-f", "xml", "-o", resultFile.toAbsolutePath.toString) ++
+        filesToLint
 
       CommandRunner.exec(command.toList, Some(path.toFile)) match {
         case Right(resultFromTool) =>
-          //If it throws we want to crash, because the checkstyle always return a valid XML
+          // If it throws we want to crash, because the checkstyle always return a valid XML
           val resultFromToolXml = XML.loadFile(resultFile.toFile)
           parseToolResult(resultFromToolXml, resultFromTool.stderr, filesToLint)
         case Left(failure) =>
@@ -45,9 +47,7 @@ object Checkstyle extends Tool {
     "http://www.puppycrawl.com/dtds/configuration_1_3.dtd" >"""
 
 
-  private def generateConfig(projectRoot: Path, conf: Option[List[PatternDef]]): Path = {
-    lazy val defaultConfig = (better.files.File.root / "docs" / "checkstyle.xml").path
-
+  private def generateConfig(projectRoot: Path, conf: Option[List[PatternDef]]): Option[Path] = {
     lazy val nativeConfig =
       nativeConfigFileNames.flatMap { nativeConfigFileName =>
         new File(projectRoot).listRecursively.filter(f => f.name == nativeConfigFileName)
@@ -60,17 +60,18 @@ object Checkstyle extends Tool {
     lazy val codacyConfig = conf.map { allPatterns =>
       val (globalPatterns, patterns) = allPatterns.partition(isGlobalPattern)
 
-      val xmlConfig = <module name="Checker">
-        {globalPatterns.map(generatePatternConfig)}
-        <module name="TreeWalker">
-          {patterns.map(generatePatternConfig)}
+      val xmlConfig =
+        <module name="Checker">
+          {globalPatterns.map(generatePatternConfig)}
+          <module name="TreeWalker">
+            {patterns.map(generatePatternConfig)}
+          </module>
         </module>
-      </module>
 
       FileHelper.createTmpFile(doctype + xmlConfig.toString)
     }
 
-    codacyConfig orElse nativeConfig getOrElse defaultConfig
+    codacyConfig orElse nativeConfig
   }
 
   private def generatePatternConfig(pattern: PatternDef): Elem = {
