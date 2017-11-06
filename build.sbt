@@ -1,8 +1,10 @@
 import com.typesafe.sbt.packager.docker.{Cmd, ExecCmd}
+import scala.util.parsing.json.JSON
+import scala.io.Source
 
 name := """codacy-engine-checkstyle"""
 
-version := "1.0-SNAPSHOT"
+version := "1.0.0-SNAPSHOT"
 
 val languageVersion = "2.11.7"
 
@@ -23,11 +25,25 @@ enablePlugins(JavaAppPackaging)
 
 enablePlugins(DockerPlugin)
 
-version in Docker := "1.0"
+version in Docker := "1.0.0"
 
-val installAll =
-  s"""apk --no-cache add bash
+lazy val toolVersion = TaskKey[String]("Retrieve the version of the underlying tool from patterns.json")
+
+toolVersion := {
+  val jsonFile = (resourceDirectory in Compile).value / "docs" / "patterns.json"
+  val toolMap = JSON.parseFull(Source.fromFile(jsonFile).getLines().mkString)
+    .getOrElse(throw new Exception("patterns.json is not a valid json"))
+    .asInstanceOf[Map[String, String]]
+  toolMap.getOrElse[String]("version", throw new Exception("Failed to retrieve 'version' from patterns.json"))
+}
+
+lazy val installAll = TaskKey[String]("Retrieve the install commands")
+
+installAll := {
+  s"""apk --no-cache add bash wget
+      |&& wget --no-check-certificate http://downloads.sourceforge.net/project/checkstyle/checkstyle/${toolVersion.value}/checkstyle-${toolVersion.value}-all.jar -O /tmp/checkstyle.jar
       |&& rm -rf /var/cache/apk/*""".stripMargin.replaceAll(System.lineSeparator(), " ")
+}
 
 mappings in Universal <++= (resourceDirectory in Compile) map { (resourceDir: File) =>
   val src = resourceDir / "docs"
@@ -37,15 +53,6 @@ mappings in Universal <++= (resourceDirectory in Compile) map { (resourceDir: Fi
     path <- (src ***).get
     if !path.isDirectory
   } yield path -> path.toString.replaceFirst(src.toString, dest)
-}
-
-mappings in Universal <++= (baseDirectory in Compile) map { (directory: File) =>
-  val src = directory / "jar"
-
-  for {
-    path <- (src ***).get
-    if !path.isDirectory
-  } yield path -> src.toPath.relativize(path.toPath).toString
 }
 
 val dockerUser = "docker"
@@ -59,11 +66,11 @@ dockerBaseImage := "develar/java"
 
 dockerCommands := dockerCommands.value.flatMap {
   case cmd@Cmd("WORKDIR", _) => List(cmd,
-    Cmd("RUN", installAll)
+    Cmd("RUN", installAll.value)
   )
   case cmd@(Cmd("ADD", "opt /opt")) => List(cmd,
     Cmd("RUN", "mv /opt/docker/docs /docs"),
-    Cmd("RUN", "mv /opt/docker/checkstyle-7.6-all.jar /opt/docker/checkstyle.jar"),
+    Cmd("RUN", "mv /tmp/checkstyle.jar /opt/docker/checkstyle.jar"),
     Cmd("RUN", s"adduser -u 2004 -D $dockerUser"),
     ExecCmd("RUN", Seq("chown", "-R", s"$dockerUser:$dockerGroup", "/docs"): _*)
   )
