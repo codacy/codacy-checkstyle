@@ -16,9 +16,10 @@ resolvers ++= Seq(
 )
 
 libraryDependencies ++= Seq(
-  "com.typesafe.play" %% "play-json" % "2.3.8" withSources(),
+  "com.typesafe.play" %% "play-json" % "2.4.8" withSources(),
   "org.scala-lang.modules" %% "scala-xml" % "1.0.4" withSources(),
-  "com.codacy" %% "codacy-engine-scala-seed" % "2.7.1"
+  "com.codacy" %% "codacy-engine-scala-seed" % "2.7.9",
+  "com.puppycrawl.tools" % "checkstyle" % "8.5"
 )
 
 enablePlugins(JavaAppPackaging)
@@ -40,8 +41,7 @@ toolVersion := {
 lazy val installAll = TaskKey[String]("Retrieve the install commands")
 
 installAll := {
-  s"""apk --no-cache add bash wget
-      |&& wget --no-check-certificate http://downloads.sourceforge.net/project/checkstyle/checkstyle/${toolVersion.value}/checkstyle-${toolVersion.value}-all.jar -O /tmp/checkstyle.jar
+  s"""apk --no-cache add bash
       |&& rm -rf /var/cache/apk/*""".stripMargin.replaceAll(System.lineSeparator(), " ")
 }
 
@@ -70,7 +70,6 @@ dockerCommands := dockerCommands.value.flatMap {
   )
   case cmd@(Cmd("ADD", "opt /opt")) => List(cmd,
     Cmd("RUN", "mv /opt/docker/docs /docs"),
-    Cmd("RUN", "mv /tmp/checkstyle.jar /opt/docker/checkstyle.jar"),
     Cmd("RUN", s"adduser -u 2004 -D $dockerUser"),
     ExecCmd("RUN", Seq("chown", "-R", s"$dockerUser:$dockerGroup", "/docs"): _*)
   )
