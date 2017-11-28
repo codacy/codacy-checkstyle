@@ -40,21 +40,21 @@ object Checkstyle extends Tool {
       ThreadModeSettings.SINGLE_THREAD_MODE_INSTANCE
     )
 
-    runCheckstyle(filesToLint, config, listener)
+    run(filesToLint, config, listener)
 
     (listener.issues ++ listener.failures).to[List]
   }
 
-  private def runCheckstyle(files: List[String], config: Configuration, listener: AuditListener): Int = {
+  private def run(files: List[String], config: Configuration, listener: AuditListener): Unit = {
     val checker = new Checker()
-    try {
+    Try {
       checker.setModuleClassLoader(classOf[Checker].getClassLoader)
       checker.configure(config)
       checker.addListener(listener)
       checker.process(files.map(f => File(f).toJava))
-    } finally {
-      checker.destroy()
     }
+
+    checker.destroy()
   }
 
   private lazy val nativeConfigFileNames = Set("checkstyle.xml")
