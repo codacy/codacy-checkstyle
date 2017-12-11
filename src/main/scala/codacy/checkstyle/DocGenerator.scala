@@ -56,7 +56,7 @@ object DocGenerator extends JsonApi {
               .map(_.\\("td").to[List])
               .collect {
                 case name :: description :: _ :: default :: _ =>
-                  val defaultValue = {
+                  val defaultValue = Option({
                     // Remove spaces and breaklines in default values
                     val defVal = default.text.replaceAll("""\n\s+""", "").trim.stripSuffix(".")
                     // Remove quotes around default values
@@ -65,7 +65,7 @@ object DocGenerator extends JsonApi {
                     } else {
                       defVal
                     }
-                  }
+                  }).filterNot(_.equalsIgnoreCase("null")).getOrElse("")
 
                   (Parameter.Specification(Parameter.Name(name.text), Parameter.Value(JsString(defaultValue))),
                     Parameter.Description(Parameter.Name(name.text), Parameter.DescriptionText(description.text)))
