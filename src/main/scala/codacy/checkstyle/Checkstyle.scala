@@ -3,39 +3,58 @@ package codacy.checkstyle
 import java.nio.file.Path
 
 import better.files.File
-import codacy.dockerApi._
-import codacy.dockerApi.utils.{CommandRunner, FileHelper, ToolHelper}
+import codacy.docker.api
+import codacy.docker.api._
+import codacy.docker.api.utils.ToolHelper
+import codacy.dockerApi.utils.FileHelper
+import com.puppycrawl.tools.checkstyle._
+import com.puppycrawl.tools.checkstyle.api.{AuditListener, Configuration}
 import play.api.libs.json.{JsString, JsValue}
 
+import scala.collection.JavaConversions._
 import scala.util.Try
-import scala.xml.{Elem, XML}
+import scala.xml.Elem
 
 object Checkstyle extends Tool {
 
-  override def apply(path: Path, conf: Option[List[PatternDef]], files: Option[Set[Path]])(implicit spec: Spec): Try[List[Result]] = {
-    Try {
-      val fullConfig = ToolHelper.getPatternsToLint(conf)
-      val filesToLint: List[String] = files.fold(List(path.toString)) {
-        paths =>
-          paths.map(_.toString).toList
-      }
-      val configFile = generateConfig(path, fullConfig).fold[Seq[String]](Seq.empty)(cpath => Seq("-c", cpath.toAbsolutePath.toString))
-      val resultFile = FileHelper.createTmpFile("", "result", ".xml")
-
-      val command = Seq("java", "-jar", "/opt/docker/checkstyle.jar") ++
-        configFile ++
-        Seq("-f", "xml", "-o", resultFile.toAbsolutePath.toString) ++
-        filesToLint
-
-      CommandRunner.exec(command.toList, Some(path.toFile)) match {
-        case Right(resultFromTool) =>
-          // If it throws we want to crash, because the checkstyle always return a valid XML
-          val resultFromToolXml = XML.loadFile(resultFile.toFile)
-          parseToolResult(resultFromToolXml, resultFromTool.stderr, filesToLint)
-        case Left(failure) =>
-          throw failure
-      }
+  override def apply(source: Source.Directory, configuration: Option[List[Pattern.Definition]], files: Option[Set[Source.File]],
+                     options: Map[api.Configuration.Key, api.Configuration.Value])
+                    (implicit specification: Tool.Specification): Try[List[Result]] = Try {
+    val fullConfig = ToolHelper.patternsToLint(configuration)
+    val filesToLint: List[String] = files.fold(List(source.path.toString)) {
+      paths =>
+        paths.map(_.toString).toList
     }
+
+    val configFile = generateConfig(source.path.toString, fullConfig)
+      .map(_.toAbsolutePath.toString)
+      .getOrElse {
+        throw new Exception("Could not generate nor find configuration")
+      }
+
+    val listener = new CodacyListener()
+    val config = ConfigurationLoader.loadConfiguration(
+      configFile,
+      new PropertiesExpander(System.getProperties),
+      ConfigurationLoader.IgnoredModulesOptions.EXECUTE,
+      ThreadModeSettings.SINGLE_THREAD_MODE_INSTANCE
+    )
+
+    run(filesToLint, config, listener)
+
+    (listener.issues ++ listener.failures).to[List]
+  }
+
+  private def run(files: List[String], config: Configuration, listener: AuditListener): Unit = {
+    val checker = new Checker()
+    Try {
+      checker.setModuleClassLoader(classOf[Checker].getClassLoader)
+      checker.configure(config)
+      checker.addListener(listener)
+      checker.process(files.map(f => File(f).toJava))
+    }
+
+    checker.destroy()
   }
 
   private lazy val nativeConfigFileNames = Set("checkstyle.xml")
@@ -47,10 +66,12 @@ object Checkstyle extends Tool {
     "http://www.puppycrawl.com/dtds/configuration_1_3.dtd" >"""
 
 
-  private def generateConfig(projectRoot: Path, conf: Option[List[PatternDef]]): Option[Path] = {
+  private def generateConfig(projectRoot: String, conf: Option[List[Pattern.Definition]]): Option[Path] = {
     lazy val nativeConfig =
       nativeConfigFileNames.flatMap { nativeConfigFileName =>
-        new File(projectRoot).listRecursively.filter(f => f.name == nativeConfigFileName)
+        File(projectRoot)
+          .listRecursively
+          .filter(f => f.name == nativeConfigFileName)
           .map(_.path)
       }
         .to[List]
@@ -62,10 +83,9 @@ object Checkstyle extends Tool {
 
       val xmlConfig =
         <module name="Checker">
-          {globalPatterns.map(generatePatternConfig)}
-          <module name="TreeWalker">
-            {patterns.map(generatePatternConfig)}
-          </module>
+          {globalPatterns.map(generatePatternConfig)}<module name="TreeWalker">
+          {patterns.map(generatePatternConfig)}
+        </module>
         </module>
 
       FileHelper.createTmpFile(doctype + xmlConfig.toString)
@@ -74,7 +94,7 @@ object Checkstyle extends Tool {
     codacyConfig orElse nativeConfig
   }
 
-  private def generatePatternConfig(pattern: PatternDef): Elem = {
+  private def generatePatternConfig(pattern: Pattern.Definition): Elem = {
     lazy val parameterlessPattern = <module name={pattern.patternId.value}/>
 
     pattern.parameters.fold(parameterlessPattern) {
@@ -87,31 +107,8 @@ object Checkstyle extends Tool {
     }
   }
 
-  private def generateParameterConfig(parameter: ParameterDef): Elem = {
+  private def generateParameterConfig(parameter: Parameter.Definition): Elem = {
       <property name={parameter.name.value} value={jsValueToString(parameter.value)}/>
-  }
-
-  private def parseToolResult(outputXml: Elem, errLines: List[String], filesAnalysed: List[String]): List[Result] = {
-    val results = if (errLines.nonEmpty) {
-      errLines.flatMap { _ =>
-        //Checkstyle crashes all the tool when we have a problem in just a single file
-        filesAnalysed.map(filename => FileError(SourcePath(filename), None))
-      }
-    } else {
-      (outputXml \ "file").flatMap {
-        file =>
-          val filename = file \@ "name"
-
-          (file \ "error").map {
-            error =>
-              val line = (error \@ "line").toInt
-              val message = error \@ "message"
-              val patternId = (error \@ "source").split("\\.").last.stripSuffix("Check")
-              Issue(SourcePath(filename), ResultMessage(message), PatternId(patternId), ResultLine(line))
-          }
-      }
-    }
-    results.toList
   }
 
   private def jsValueToString(value: JsValue) = {
@@ -139,7 +136,8 @@ object Checkstyle extends Tool {
     "UniqueProperties"
   )
 
-  private def isGlobalPattern(pattern: PatternDef) = {
+  private def isGlobalPattern(pattern: Pattern.Definition) = {
     globalPatterns.contains(pattern.patternId.value)
   }
+
 }
