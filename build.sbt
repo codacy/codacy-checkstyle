@@ -67,14 +67,19 @@ daemonGroup in Docker := dockerGroup
 
 dockerBaseImage := "develar/java"
 
+dockerEntrypoint := Seq(s"/opt/docker/bin/${name.value}")
+
 dockerCommands := dockerCommands.value.flatMap {
-  case cmd@Cmd("WORKDIR", _) => List(cmd,
+  case cmd@Cmd("WORKDIR", _) => List(
+    Cmd("WORKDIR", "/src"),
     Cmd("RUN", installAll.value),
     Cmd("RUN", s"adduser -u 2004 -D $dockerUser")
   )
-  case cmd@(Cmd("ADD", _)) => List(cmd,
+  case cmd@(Cmd("ADD", _)) => List(
+    cmd,
     Cmd("RUN", "mv /opt/docker/docs /docs"),
-    ExecCmd("RUN", Seq("chown", "-R", s"$dockerUser:$dockerGroup", "/docs"): _*)
+    ExecCmd("RUN", Seq("chown", "-R", s"$dockerUser:$dockerGroup", "/docs"): _*),
+    ExecCmd("RUN", Seq("chown", "-R", s"$dockerUser:$dockerGroup", "/opt"): _*)
   )
   case other => List(other)
 }
