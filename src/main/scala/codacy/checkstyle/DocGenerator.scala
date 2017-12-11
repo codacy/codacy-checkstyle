@@ -10,6 +10,7 @@ import org.jsoup.Jsoup
 import play.api.libs.json.{JsObject, JsString, Json}
 
 import scala.sys.process._
+import scala.util.Try
 import scala.xml._
 
 object DocGenerator extends JsonApi {
@@ -24,7 +25,7 @@ object DocGenerator extends JsonApi {
       throw new Exception("No version provided")
     }
 
-    withRepository { directory =>
+    withRepository(version) { directory =>
       val genPatterns = for {
         xml <- XML.loadFile(s"$directory/src/xdocs/checks.xml").to[List]
         a <- xml.\\("a").to[List]
@@ -65,9 +66,13 @@ object DocGenerator extends JsonApi {
                     } else {
                       defVal
                     }
-                  }).filterNot(_.equalsIgnoreCase("null")).getOrElse("")
+                  }) // Filter out null values
+                    .filterNot(_.equalsIgnoreCase("null")).getOrElse("")
 
-                  (Parameter.Specification(Parameter.Name(name.text), Parameter.Value(JsString(defaultValue))),
+                  // Try to parse numbers and booleans
+                  val jsDefaultValue = Try(Json.parse(defaultValue)).getOrElse(JsString(defaultValue))
+
+                  (Parameter.Specification(Parameter.Name(name.text), Parameter.Value(jsDefaultValue)),
                     Parameter.Description(Parameter.Name(name.text), Parameter.DescriptionText(description.text)))
               }
         }
@@ -119,9 +124,9 @@ object DocGenerator extends JsonApi {
     }
   }
 
-  private def withRepository[T](block: Path => T): T = {
+  private def withRepository[T](version: String)(block: Path => T): T = {
     val directory = Files.createTempDirectory("checkstyle")
-    s"git clone git://github.com/checkstyle/checkstyle $directory".!!
+    s"git clone git://github.com/checkstyle/checkstyle -b checkstyle-$version $directory".!!
     val res = block(directory)
     File(directory).delete(true)
     res

@@ -6,20 +6,6 @@
     "level" : "Info",
     "category" : "CodeStyle"
   }, {
-    "patternId" : "JavaNCSS",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "methodMaximum",
-      "default" : "50"
-    }, {
-      "name" : "classMaximum",
-      "default" : "1500"
-    }, {
-      "name" : "fileMaximum",
-      "default" : "2000"
-    } ]
-  }, {
     "patternId" : "ImportControl",
     "level" : "Info",
     "category" : "CodeStyle",
@@ -31,29 +17,27 @@
       "default" : ".*"
     } ]
   }, {
-    "patternId" : "FallThrough",
+    "patternId" : "HiddenField",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "checkLastCaseGroup",
-      "default" : "false"
+      "name" : "ignoreFormat",
+      "default" : ""
     }, {
-      "name" : "reliefPattern",
-      "default" : "fallthru|falls? ?through"
-    } ]
-  }, {
-    "patternId" : "CyclomaticComplexity",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "max",
-      "default" : "10"
+      "name" : "ignoreSetter",
+      "default" : false
     }, {
-      "name" : "switchBlockAsSingleDecisionPoint",
-      "default" : "false"
+      "name" : "setterCanReturnItsClass",
+      "default" : false
+    }, {
+      "name" : "ignoreAbstractMethods",
+      "default" : false
+    }, {
+      "name" : "ignoreConstructorParameter",
+      "default" : false
     }, {
       "name" : "tokens",
-      "default" : "LITERAL_WHILE,LITERAL_DO,LITERAL_FOR,LITERAL_IF,LITERAL_SWITCH,LITERAL_CASE,LITERAL_CATCH,QUESTION,LAND,LOR"
+      "default" : "VARIABLE_DEF,PARAMETER_DEF,LAMBDA"
     } ]
   }, {
     "patternId" : "LocalFinalVariableName",
@@ -67,6 +51,32 @@
       "default" : "VARIABLE_DEF,PARAMETER_DEF,RESOURCE"
     } ]
   }, {
+    "patternId" : "JavadocStyle",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "excludeScope",
+      "default" : ""
+    }, {
+      "name" : "endOfSentenceFormat",
+      "default" : "([.?!][ \\t\\n\\r\\f<])|([.?!]$)"
+    }, {
+      "name" : "tokens",
+      "default" : "ANNOTATION_DEF,ANNOTATION_FIELD_DEF,CLASS_DEF,CTOR_DEF,ENUM_CONSTANT_DEF,ENUM_DEF,INTERFACE_DEF,METHOD_DEF,PACKAGE_DEF,VARIABLE_DEF"
+    }, {
+      "name" : "checkHtml",
+      "default" : true
+    }, {
+      "name" : "scope",
+      "default" : "private"
+    }, {
+      "name" : "checkEmptyJavadoc",
+      "default" : false
+    }, {
+      "name" : "checkFirstSentence",
+      "default" : true
+    } ]
+  }, {
     "patternId" : "OperatorWrap",
     "level" : "Info",
     "category" : "CodeStyle",
@@ -78,26 +88,29 @@
       "default" : "QUESTION,COLON,EQUAL,NOT_EQUAL,DIV,PLUS,MINUS,STAR,MOD,SR,BSR,GE,GT,SL,LE,LT,BXOR,BOR,LOR,BAND,LAND,TYPE_EXTENSION_AND,LITERAL_INSTANCEOF"
     } ]
   }, {
-    "patternId" : "MethodParamPad",
+    "patternId" : "DefaultComesLast",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "allowLineBreaks",
-      "default" : "false"
-    }, {
-      "name" : "option",
-      "default" : "nospace"
-    }, {
-      "name" : "tokens",
-      "default" : "CTOR_DEF,LITERAL_NEW,METHOD_CALL,METHOD_DEF,SUPER_CTOR_CALL,ENUM_CONSTANT_DEF"
+      "name" : "skipIfLastAndSharedWithCase",
+      "default" : false
     } ]
   }, {
-    "patternId" : "ArrayTypeStyle",
+    "patternId" : "EmptyLineSeparator",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "javaStyle",
-      "default" : "true"
+      "name" : "allowNoEmptyLineBetweenFields",
+      "default" : false
+    }, {
+      "name" : "allowMultipleEmptyLines",
+      "default" : true
+    }, {
+      "name" : "allowMultipleEmptyLinesInsideClassMembers",
+      "default" : true
+    }, {
+      "name" : "tokens",
+      "default" : "PACKAGE_DEF,IMPORT,CLASS_DEF,INTERFACE_DEF,ENUM_DEF,STATIC_INIT,INSTANCE_INIT,METHOD_DEF,CTOR_DEF,VARIABLE_DEF"
     } ]
   }, {
     "patternId" : "OuterTypeFilename",
@@ -116,17 +129,6 @@
     "level" : "Info",
     "category" : "CodeStyle"
   }, {
-    "patternId" : "LineLength",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "ignorePattern",
-      "default" : "^$"
-    }, {
-      "name" : "max",
-      "default" : "80"
-    } ]
-  }, {
     "patternId" : "RedundantModifier",
     "level" : "Info",
     "category" : "CodeStyle",
@@ -135,12 +137,27 @@
       "default" : "METHOD_DEF,VARIABLE_DEF,ANNOTATION_FIELD_DEF,INTERFACE_DEF,CTOR_DEF,CLASS_DEF,ENUM_DEF,RESOURCE"
     } ]
   }, {
-    "patternId" : "AvoidNestedBlocks",
+    "patternId" : "AbbreviationAsWordInName",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "allowInSwitchCase",
-      "default" : "false"
+      "name" : "ignoreOverriddenMethods",
+      "default" : true
+    }, {
+      "name" : "allowedAbbreviations",
+      "default" : ""
+    }, {
+      "name" : "allowedAbbreviationLength",
+      "default" : 3
+    }, {
+      "name" : "tokens",
+      "default" : "CLASS_DEF,INTERFACE_DEF,ENUM_DEF,ANNOTATION_DEF,ANNOTATION_FIELD_DEF,PARAMETER_DEF,VARIABLE_DEF,METHOD_DEF"
+    }, {
+      "name" : "ignoreStatic",
+      "default" : true
+    }, {
+      "name" : "ignoreFinal",
+      "default" : true
     } ]
   }, {
     "patternId" : "WriteTag",
@@ -160,30 +177,77 @@
       "default" : "INTERFACE_DEF,CLASS_DEF,ENUM_DEF,ANNOTATION_DEF"
     } ]
   }, {
-    "patternId" : "LocalVariableName",
+    "patternId" : "ClassFanOutComplexity",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "format",
-      "default" : "^[a-z][a-zA-Z0-9]*$"
+      "name" : "max",
+      "default" : 20
     }, {
-      "name" : "allowOneCharVarInForLoop",
-      "default" : "false"
+      "name" : "excludedClasses",
+      "default" : "boolean, byte, char, double, float, int,long, short, void, Boolean, Byte, Character, Double, Float,Integer, Long, Short, Void,Object, Class, String, StringBuffer, StringBuilder,ArrayIndexOutOfBoundsException, Exception,RuntimeException, IllegalArgumentException,IllegalStateException, IndexOutOfBoundsException,NullPointerException, Throwable, SecurityException,UnsupportedOperationException,List, ArrayList, Deque, Queue, LinkedList,Set, HashSet, SortedSet, TreeSet,Map, HashMap, SortedMap, TreeMap"
+    }, {
+      "name" : "excludeClassesRegexps",
+      "default" : "^$"
+    }, {
+      "name" : "excludedPackages",
+      "default" : { }
+    } ]
+  }, {
+    "patternId" : "RegexpSingleline",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "fileExtensions",
+      "default" : { }
+    }, {
+      "name" : "minimum",
+      "default" : 0
+    }, {
+      "name" : "ignoreCase",
+      "default" : false
+    }, {
+      "name" : "format",
+      "default" : "$."
+    }, {
+      "name" : "message",
+      "default" : "\"\"(empty)"
+    }, {
+      "name" : "maximum",
+      "default" : 0
     } ]
   }, {
     "patternId" : "MultipleVariableDeclarations",
     "level" : "Info",
     "category" : "CodeStyle"
   }, {
-    "patternId" : "IllegalInstantiation",
+    "patternId" : "DescendantToken",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "classes",
-      "default" : "{}"
+      "name" : "sumTokenCounts",
+      "default" : false
     }, {
-      "name" : "tokens",
-      "default" : "CLASS_DEF"
+      "name" : "maximumMessage",
+      "default" : "descendant.token.max"
+    }, {
+      "name" : "minimumDepth",
+      "default" : 0
+    }, {
+      "name" : "limitedTokens",
+      "default" : "empty set"
+    }, {
+      "name" : "minimumMessage",
+      "default" : "descendant.token.min"
+    }, {
+      "name" : "maximumNumber",
+      "default" : "java.lang.Integer.MAX_VALUE"
+    }, {
+      "name" : "maximumDepth",
+      "default" : "java.lang.Integer.MAX_VALUE"
+    }, {
+      "name" : "minimumNumber",
+      "default" : 0
     } ]
   }, {
     "patternId" : "EmptyForIteratorPad",
@@ -223,75 +287,33 @@
       "default" : "never"
     } ]
   }, {
-    "patternId" : "SingleSpaceSeparator",
+    "patternId" : "ParameterName",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "validateComments",
-      "default" : "false"
-    } ]
-  }, {
-    "patternId" : "IllegalThrows",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "illegalClassNames",
-      "default" : "java.lang.Throwable,java.lang.Error, java.lang.RuntimeException"
+      "name" : "format",
+      "default" : "^[a-z][a-zA-Z0-9]*$"
     }, {
-      "name" : "ignoredMethodNames",
-      "default" : "finalize"
+      "name" : "ignoreOverridden",
+      "default" : false
     }, {
-      "name" : "ignoreOverriddenMethods",
-      "default" : "true"
-    } ]
-  }, {
-    "patternId" : "AvoidEscapedUnicodeCharacters",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "allowEscapesForControlCharacters",
-      "default" : "false"
-    }, {
-      "name" : "allowByTailComment",
-      "default" : "false"
-    }, {
-      "name" : "allowIfAllCharactersEscaped",
-      "default" : "false"
-    }, {
-      "name" : "allowNonPrintableEscapes",
-      "default" : "false"
+      "name" : "accessModifiers",
+      "default" : "public, protected, package, private"
     } ]
   }, {
     "patternId" : "NoClone",
     "level" : "Info",
     "category" : "CodeStyle"
   }, {
-    "patternId" : "MissingOverride",
+    "patternId" : "FinalLocalVariable",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "javaFiveCompatibility",
-      "default" : "false"
-    } ]
-  }, {
-    "patternId" : "Header",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "charset",
-      "default" : "the charset property of the parentChecker module"
+      "name" : "validateEnhancedForLoopVariable",
+      "default" : false
     }, {
-      "name" : "ignoreLines",
-      "default" : "{}"
-    }, {
-      "name" : "headerFile",
-      "default" : ""
-    }, {
-      "name" : "header",
-      "default" : ""
-    }, {
-      "name" : "fileExtensions",
-      "default" : "{}"
+      "name" : "tokens",
+      "default" : "VARIABLE_DEF"
     } ]
   }, {
     "patternId" : "AvoidStaticImport",
@@ -302,18 +324,27 @@
       "default" : "empty list"
     } ]
   }, {
-    "patternId" : "ParameterNumber",
+    "patternId" : "MagicNumber",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "max",
-      "default" : "7"
+      "name" : "ignoreFieldDeclaration",
+      "default" : false
     }, {
-      "name" : "ignoreOverriddenMethods",
-      "default" : "false"
+      "name" : "constantWaiverParentToken",
+      "default" : "ASSIGN,ARRAY_INIT,EXPR,UNARY_PLUS,UNARY_MINUS,TYPECAST,ELIST,LITERAL_NEW,METHOD_CALL,STAR,DIV,PLUS,MINUS"
+    }, {
+      "name" : "ignoreAnnotation",
+      "default" : false
+    }, {
+      "name" : "ignoreNumbers",
+      "default" : "-1, 0, 1, 2"
+    }, {
+      "name" : "ignoreHashCodeMethod",
+      "default" : false
     }, {
       "name" : "tokens",
-      "default" : "METHOD_DEF,CTOR_DEF"
+      "default" : "NUM_DOUBLE,NUM_FLOAT,NUM_INT,NUM_LONG"
     } ]
   }, {
     "patternId" : "TypecastParenPad",
@@ -336,52 +367,65 @@
     "level" : "Info",
     "category" : "CodeStyle"
   }, {
-    "patternId" : "Indentation",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "forceStrictCondition",
-      "default" : "false"
-    }, {
-      "name" : "lineWrappingIndentation",
-      "default" : "4"
-    }, {
-      "name" : "braceAdjustment",
-      "default" : "0"
-    }, {
-      "name" : "throwsIndent",
-      "default" : "4"
-    }, {
-      "name" : "caseIndent",
-      "default" : "4"
-    }, {
-      "name" : "arrayInitIndent",
-      "default" : "4"
-    }, {
-      "name" : "basicOffset",
-      "default" : "4"
-    } ]
-  }, {
-    "patternId" : "ExecutableStatementCount",
+    "patternId" : "ThrowsCount",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "max",
-      "default" : "30"
+      "default" : 4
     }, {
-      "name" : "tokens",
-      "default" : "CTOR_DEF,METHOD_DEF,INSTANCE_INIT,STATIC_INIT"
+      "name" : "ignorePrivateMethods",
+      "default" : true
+    } ]
+  }, {
+    "patternId" : "SingleSpaceSeparator",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "validateComments",
+      "default" : false
     } ]
   }, {
     "patternId" : "JavadocTagContinuationIndentation",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "violateExecutionOnNonTightHtml",
-      "default" : "false"
-    }, {
       "name" : "offset",
-      "default" : "4"
+      "default" : 4
+    } ]
+  }, {
+    "patternId" : "Header",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "fileExtensions",
+      "default" : { }
+    }, {
+      "name" : "charset",
+      "default" : "the charset property of the parentChecker module"
+    }, {
+      "name" : "headerFile",
+      "default" : ""
+    }, {
+      "name" : "ignoreLines",
+      "default" : { }
+    }, {
+      "name" : "header",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "LeftCurly",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "option",
+      "default" : "eol"
+    }, {
+      "name" : "ignoreEnums",
+      "default" : true
+    }, {
+      "name" : "tokens",
+      "default" : "INTERFACE_DEF,CLASS_DEF,ANNOTATION_DEF,ENUM_DEF,CTOR_DEF,METHOD_DEF,ENUM_CONSTANT_DEF,LITERAL_WHILE,LITERAL_TRY,LITERAL_CATCH,LITERAL_FINALLY,LITERAL_SYNCHRONIZED,LITERAL_SWITCH,LITERAL_DO,LITERAL_IF,LITERAL_ELSE,LITERAL_FOR,STATIC_INIT,OBJBLOCK,LAMBDA"
     } ]
   }, {
     "patternId" : "SuppressWarnings",
@@ -395,29 +439,29 @@
       "default" : "CLASS_DEF,INTERFACE_DEF,ENUM_DEF,ANNOTATION_DEF,ANNOTATION_FIELD_DEF,ENUM_CONSTANT_DEF,PARAMETER_DEF,VARIABLE_DEF,METHOD_DEF,CTOR_DEF"
     } ]
   }, {
+    "patternId" : "SuperClone",
+    "level" : "Info",
+    "category" : "CodeStyle"
+  }, {
     "patternId" : "StaticVariableName",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "applyToProtected",
-      "default" : "true"
-    }, {
       "name" : "applyToPublic",
-      "default" : "true"
+      "default" : true
+    }, {
+      "name" : "applyToPackage",
+      "default" : true
+    }, {
+      "name" : "applyToProtected",
+      "default" : true
     }, {
       "name" : "applyToPrivate",
-      "default" : "true"
+      "default" : true
     }, {
       "name" : "format",
       "default" : "^[a-z][a-zA-Z0-9]*$"
-    }, {
-      "name" : "applyToPackage",
-      "default" : "true"
     } ]
-  }, {
-    "patternId" : "SuperClone",
-    "level" : "Info",
-    "category" : "CodeStyle"
   }, {
     "patternId" : "NoFinalizer",
     "level" : "Info",
@@ -434,58 +478,133 @@
       "default" : "LITERAL_WHILE,LITERAL_TRY,LITERAL_FINALLY,LITERAL_DO,LITERAL_IF,LITERAL_ELSE,LITERAL_FOR,INSTANCE_INIT,STATIC_INIT,LITERAL_SWITCH,LITERAL_SYNCHRONIZED"
     } ]
   }, {
-    "patternId" : "FinalLocalVariable",
+    "patternId" : "FileTabCharacter",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "validateEnhancedForLoopVariable",
-      "default" : "false"
+      "name" : "eachLine",
+      "default" : false
     }, {
+      "name" : "fileExtensions",
+      "default" : { }
+    } ]
+  }, {
+    "patternId" : "MethodCount",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
       "name" : "tokens",
-      "default" : "VARIABLE_DEF"
-    } ]
-  }, {
-    "patternId" : "SummaryJavadoc",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "violateExecutionOnNonTightHtml",
-      "default" : "false"
+      "default" : "CLASS_DEF,ENUM_CONSTANT_DEF,ENUM_DEF,INTERFACE_DEF,ANNOTATION_DEF"
     }, {
-      "name" : "forbiddenSummaryFragments",
-      "default" : "^$"
+      "name" : "maxPublic",
+      "default" : 100
     }, {
-      "name" : "period",
-      "default" : ""
-    } ]
-  }, {
-    "patternId" : "ClassDataAbstractionCoupling",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "max",
-      "default" : "7"
+      "name" : "maxPackage",
+      "default" : 100
     }, {
-      "name" : "excludedClasses",
-      "default" : "boolean, byte, char, double, float, int,long, short, void, Boolean, Byte, Character, Double, Float,Integer, Long, Short, Void,Object, Class, String, StringBuffer, StringBuilder,ArrayIndexOutOfBoundsException, Exception,RuntimeException, IllegalArgumentException,IllegalStateException, IndexOutOfBoundsException,NullPointerException, Throwable, SecurityException,UnsupportedOperationException,List, ArrayList, Deque, Queue, LinkedList,Set, HashSet, SortedSet, TreeSet,Map, HashMap, SortedMap, TreeMap"
+      "name" : "maxPrivate",
+      "default" : 100
     }, {
-      "name" : "excludeClassesRegexps",
-      "default" : "^$"
+      "name" : "maxTotal",
+      "default" : 100
     }, {
-      "name" : "excludedPackages",
-      "default" : "{}"
+      "name" : "maxProtected",
+      "default" : 100
     } ]
   }, {
     "patternId" : "GenericWhitespace",
     "level" : "Info",
     "category" : "CodeStyle"
   }, {
+    "patternId" : "ConstantName",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToPublic",
+      "default" : true
+    }, {
+      "name" : "applyToPackage",
+      "default" : true
+    }, {
+      "name" : "applyToProtected",
+      "default" : true
+    }, {
+      "name" : "format",
+      "default" : "^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$"
+    }, {
+      "name" : "applyToPrivate",
+      "default" : true
+    } ]
+  }, {
+    "patternId" : "ImportOrder",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "useContainerOrderingForStatic",
+      "default" : false
+    }, {
+      "name" : "ordered",
+      "default" : true
+    }, {
+      "name" : "tokens",
+      "default" : "STATIC_IMPORT"
+    }, {
+      "name" : "caseSensitive",
+      "default" : true
+    }, {
+      "name" : "separated",
+      "default" : false
+    }, {
+      "name" : "sortStaticImportsAlphabetically",
+      "default" : false
+    }, {
+      "name" : "groups",
+      "default" : "empty list"
+    }, {
+      "name" : "option",
+      "default" : "under"
+    } ]
+  }, {
+    "patternId" : "MissingOverride",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "javaFiveCompatibility",
+      "default" : false
+    } ]
+  }, {
+    "patternId" : "RegexpOnFilename",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "fileExtensions",
+      "default" : { }
+    }, {
+      "name" : "ignoreFileNameExtensions",
+      "default" : false
+    }, {
+      "name" : "folderPattern",
+      "default" : ""
+    }, {
+      "name" : "match",
+      "default" : true
+    }, {
+      "name" : "fileNamePattern",
+      "default" : ""
+    } ]
+  }, {
     "patternId" : "RegexpMultiline",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "maximum",
-      "default" : "0"
+      "name" : "fileExtensions",
+      "default" : { }
+    }, {
+      "name" : "minimum",
+      "default" : 0
+    }, {
+      "name" : "ignoreCase",
+      "default" : false
     }, {
       "name" : "format",
       "default" : "$."
@@ -493,259 +612,29 @@
       "name" : "message",
       "default" : "\"\"(empty)"
     }, {
-      "name" : "minimum",
-      "default" : "0"
-    }, {
-      "name" : "ignoreCase",
-      "default" : "false"
-    }, {
-      "name" : "fileExtensions",
-      "default" : "{}"
-    } ]
-  }, {
-    "patternId" : "LeftCurly",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "option",
-      "default" : "eol"
-    }, {
-      "name" : "ignoreEnums",
-      "default" : "true"
-    }, {
-      "name" : "tokens",
-      "default" : "INTERFACE_DEF,CLASS_DEF,ANNOTATION_DEF,ENUM_DEF,CTOR_DEF,METHOD_DEF,ENUM_CONSTANT_DEF,LITERAL_WHILE,LITERAL_TRY,LITERAL_CATCH,LITERAL_FINALLY,LITERAL_SYNCHRONIZED,LITERAL_SWITCH,LITERAL_DO,LITERAL_IF,LITERAL_ELSE,LITERAL_FOR,STATIC_INIT,OBJBLOCK,LAMBDA"
-    } ]
-  }, {
-    "patternId" : "RegexpHeader",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "charset",
-      "default" : "the charset property of the parentChecker module"
-    }, {
-      "name" : "headerFile",
-      "default" : ""
-    }, {
-      "name" : "multiLines",
-      "default" : "{}"
-    }, {
-      "name" : "header",
-      "default" : ""
-    }, {
-      "name" : "fileExtensions",
-      "default" : "{}"
-    } ]
-  }, {
-    "patternId" : "RequireThis",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "checkFields",
-      "default" : "true"
-    }, {
-      "name" : "checkMethods",
-      "default" : "true"
-    }, {
-      "name" : "validateOnlyOverlapping",
-      "default" : "true"
-    } ]
-  }, {
-    "patternId" : "FileTabCharacter",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "eachLine",
-      "default" : "false"
-    }, {
-      "name" : "fileExtensions",
-      "default" : "{}"
-    } ]
-  }, {
-    "patternId" : "JavadocStyle",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "excludeScope",
-      "default" : ""
-    }, {
-      "name" : "endOfSentenceFormat",
-      "default" : "([.?!][ \\t\\n\\r\\f<])|([.?!]$)"
-    }, {
-      "name" : "tokens",
-      "default" : "ANNOTATION_DEF,ANNOTATION_FIELD_DEF,CLASS_DEF,CTOR_DEF,ENUM_CONSTANT_DEF,ENUM_DEF,INTERFACE_DEF,METHOD_DEF,PACKAGE_DEF,VARIABLE_DEF"
-    }, {
-      "name" : "checkHtml",
-      "default" : "true"
-    }, {
-      "name" : "scope",
-      "default" : "private"
-    }, {
-      "name" : "checkFirstSentence",
-      "default" : "true"
-    }, {
-      "name" : "checkEmptyJavadoc",
-      "default" : "false"
-    } ]
-  }, {
-    "patternId" : "NoWhitespaceAfter",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "allowLineBreaks",
-      "default" : "true"
-    }, {
-      "name" : "tokens",
-      "default" : "ARRAY_INIT,AT,INC,DEC,UNARY_MINUS,UNARY_PLUS,BNOT,LNOT,DOT,ARRAY_DECLARATOR,INDEX_OP"
-    } ]
-  }, {
-    "patternId" : "AbstractClassName",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "format",
-      "default" : "^Abstract.+$"
-    }, {
-      "name" : "ignoreModifier",
-      "default" : "false"
-    }, {
-      "name" : "ignoreName",
-      "default" : "false"
+      "name" : "maximum",
+      "default" : 0
     } ]
   }, {
     "patternId" : "ArrayTrailingComma",
     "level" : "Info",
     "category" : "CodeStyle"
   }, {
-    "patternId" : "NPathComplexity",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "max",
-      "default" : "200"
-    } ]
-  }, {
-    "patternId" : "FileLength",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "max",
-      "default" : "2000"
-    }, {
-      "name" : "fileExtensions",
-      "default" : "{}"
-    } ]
-  }, {
-    "patternId" : "InterfaceIsType",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "allowMarkerInterfaces",
-      "default" : "true"
-    } ]
-  }, {
-    "patternId" : "JavadocMethod",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "logLoadErrors",
-      "default" : "true"
-    }, {
-      "name" : "allowUndeclaredRTE",
-      "default" : "false"
-    }, {
-      "name" : "excludeScope",
-      "default" : ""
-    }, {
-      "name" : "allowMissingPropertyJavadoc",
-      "default" : "false"
-    }, {
-      "name" : "allowMissingReturnTag",
-      "default" : "false"
-    }, {
-      "name" : "validateThrows",
-      "default" : "false"
-    }, {
-      "name" : "tokens",
-      "default" : "METHOD_DEF,CTOR_DEF,ANNOTATION_FIELD_DEF"
-    }, {
-      "name" : "scope",
-      "default" : "private"
-    }, {
-      "name" : "allowThrowsTagsForSubclasses",
-      "default" : "false"
-    }, {
-      "name" : "allowedAnnotations",
-      "default" : "Override"
-    }, {
-      "name" : "allowMissingJavadoc",
-      "default" : "false"
-    }, {
-      "name" : "minLineCount",
-      "default" : "-1"
-    }, {
-      "name" : "allowMissingThrowsTags",
-      "default" : "false"
-    }, {
-      "name" : "ignoreMethodNamesRegex",
-      "default" : ""
-    }, {
-      "name" : "suppressLoadErrors",
-      "default" : "false"
-    }, {
-      "name" : "allowMissingParamTags",
-      "default" : "false"
-    } ]
-  }, {
     "patternId" : "AnnotationLocation",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "allowSamelineMultipleAnnotations",
-      "default" : "false"
+      "default" : false
     }, {
       "name" : "allowSamelineSingleParameterlessAnnotation",
-      "default" : "true"
+      "default" : true
     }, {
       "name" : "allowSamelineParameterizedAnnotation",
-      "default" : "false"
+      "default" : false
     }, {
       "name" : "tokens",
       "default" : "CLASS_DEF,INTERFACE_DEF,ENUM_DEF,METHOD_DEF,CTOR_DEF,VARIABLE_DEF"
-    } ]
-  }, {
-    "patternId" : "HiddenField",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "ignoreFormat",
-      "default" : ""
-    }, {
-      "name" : "ignoreConstructorParameter",
-      "default" : "false"
-    }, {
-      "name" : "setterCanReturnItsClass",
-      "default" : "false"
-    }, {
-      "name" : "ignoreSetter",
-      "default" : "false"
-    }, {
-      "name" : "ignoreAbstractMethods",
-      "default" : "false"
-    }, {
-      "name" : "tokens",
-      "default" : "VARIABLE_DEF,PARAMETER_DEF,LAMBDA"
-    } ]
-  }, {
-    "patternId" : "BooleanExpressionComplexity",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "max",
-      "default" : "3"
-    }, {
-      "name" : "tokens",
-      "default" : "LAND,BAND,LOR,BOR,BXOR"
     } ]
   }, {
     "patternId" : "EmptyCatchBlock",
@@ -759,23 +648,46 @@
       "default" : ".*"
     } ]
   }, {
-    "patternId" : "OuterTypeNumber",
+    "patternId" : "JavaNCSS",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "methodMaximum",
+      "default" : 50
+    }, {
+      "name" : "classMaximum",
+      "default" : 1500
+    }, {
+      "name" : "fileMaximum",
+      "default" : 2000
+    } ]
+  }, {
+    "patternId" : "BooleanExpressionComplexity",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "max",
-      "default" : "1"
+      "default" : 3
+    }, {
+      "name" : "tokens",
+      "default" : "LAND,BAND,LOR,BOR,BXOR"
     } ]
   }, {
-    "patternId" : "NonEmptyAtclauseDescription",
+    "patternId" : "IllegalTokenText",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "violateExecutionOnNonTightHtml",
-      "default" : "false"
+      "name" : "format",
+      "default" : "\"$^\" (empty)"
     }, {
-      "name" : "javadocTokens",
-      "default" : "PARAM_LITERAL,RETURN_LITERAL,THROWS_LITERAL,DEPRECATED_LITERAL"
+      "name" : "ignoreCase",
+      "default" : false
+    }, {
+      "name" : "message",
+      "default" : "\"\"(empty)"
+    }, {
+      "name" : "tokens",
+      "default" : "empty"
     } ]
   }, {
     "patternId" : "NoLineWrap",
@@ -786,6 +698,37 @@
       "default" : "PACKAGE_DEF,IMPORT,STATIC_IMPORT"
     } ]
   }, {
+    "patternId" : "IllegalInstantiation",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "classes",
+      "default" : { }
+    }, {
+      "name" : "tokens",
+      "default" : "CLASS_DEF"
+    } ]
+  }, {
+    "patternId" : "RegexpHeader",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "fileExtensions",
+      "default" : { }
+    }, {
+      "name" : "charset",
+      "default" : "the charset property of the parentChecker module"
+    }, {
+      "name" : "multiLines",
+      "default" : { }
+    }, {
+      "name" : "headerFile",
+      "default" : ""
+    }, {
+      "name" : "header",
+      "default" : ""
+    } ]
+  }, {
     "patternId" : "OneTopLevelClass",
     "level" : "Info",
     "category" : "CodeStyle"
@@ -793,6 +736,20 @@
     "patternId" : "InnerTypeLast",
     "level" : "Info",
     "category" : "CodeStyle"
+  }, {
+    "patternId" : "AvoidStarImport",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "excludes",
+      "default" : "empty list"
+    }, {
+      "name" : "allowClassImports",
+      "default" : false
+    }, {
+      "name" : "allowStaticMemberImports",
+      "default" : false
+    } ]
   }, {
     "patternId" : "TrailingComment",
     "level" : "Info",
@@ -805,39 +762,19 @@
       "default" : ""
     } ]
   }, {
-    "patternId" : "AbbreviationAsWordInName",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "ignoreStatic",
-      "default" : "true"
-    }, {
-      "name" : "allowedAbbreviations",
-      "default" : ""
-    }, {
-      "name" : "ignoreFinal",
-      "default" : "true"
-    }, {
-      "name" : "ignoreOverriddenMethods",
-      "default" : "true"
-    }, {
-      "name" : "tokens",
-      "default" : "CLASS_DEF,INTERFACE_DEF,ENUM_DEF,ANNOTATION_DEF,ANNOTATION_FIELD_DEF,PARAMETER_DEF,VARIABLE_DEF,METHOD_DEF"
-    }, {
-      "name" : "allowedAbbreviationLength",
-      "default" : "3"
-    } ]
-  }, {
     "patternId" : "MissingSwitchDefault",
     "level" : "Info",
     "category" : "CodeStyle"
   }, {
-    "patternId" : "NestedTryDepth",
+    "patternId" : "JavadocPackage",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "max",
-      "default" : "1"
+      "name" : "allowLegacy",
+      "default" : false
+    }, {
+      "name" : "fileExtensions",
+      "default" : { }
     } ]
   }, {
     "patternId" : "AnnotationOnSameLine",
@@ -848,71 +785,64 @@
       "default" : "CLASS_DEF,INTERFACE_DEF,ENUM_DEF,METHOD_DEF,CTOR_DEF,VARIABLE_DEF"
     } ]
   }, {
-    "patternId" : "JavadocPackage",
+    "patternId" : "MethodLength",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "allowLegacy",
-      "default" : "false"
+      "name" : "max",
+      "default" : 150
     }, {
-      "name" : "fileExtensions",
-      "default" : "{}"
+      "name" : "countEmpty",
+      "default" : true
+    }, {
+      "name" : "tokens",
+      "default" : "METHOD_DEF,CTOR_DEF"
     } ]
   }, {
     "patternId" : "HideUtilityClassConstructor",
     "level" : "Info",
     "category" : "CodeStyle"
   }, {
-    "patternId" : "IllegalType",
+    "patternId" : "LocalVariableName",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "tokens",
-      "default" : "VARIABLE_DEF,PARAMETER_DEF,METHOD_DEF"
-    }, {
-      "name" : "ignoredMethodNames",
-      "default" : "getInitialContext, getEnvironment"
-    }, {
       "name" : "format",
-      "default" : "^(.*[.])?Abstract.*$"
+      "default" : "^[a-z][a-zA-Z0-9]*$"
     }, {
-      "name" : "validateAbstractClassNames",
-      "default" : "false"
-    }, {
-      "name" : "legalAbstractClassNames",
-      "default" : ""
-    }, {
-      "name" : "illegalClassNames",
-      "default" : "java.util.HashSet, java.util.HashMap, java.util.LinkedHashMap,java.util.LinkedHashSet, java.util.TreeSet,java.util.TreeMap"
-    }, {
-      "name" : "memberModifiers",
-      "default" : ""
+      "name" : "allowOneCharVarInForLoop",
+      "default" : false
     } ]
   }, {
-    "patternId" : "VisibilityModifier",
+    "patternId" : "NestedForDepth",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "allowPublicImmutableFields",
-      "default" : "false"
+      "name" : "max",
+      "default" : 1
+    } ]
+  }, {
+    "patternId" : "CustomImportOrder",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "specialImportsRegExp",
+      "default" : "^$"
     }, {
-      "name" : "publicMemberPattern",
-      "default" : "^serialVersionUID$"
+      "name" : "standardPackageRegExp",
+      "default" : "^(java|javax)\\."
     }, {
-      "name" : "ignoreAnnotationCanonicalNames",
-      "default" : "org.junit.Rule, org.junit.ClassRule, com.google.common.annotations.VisibleForTesting"
+      "name" : "separateLineBetweenGroups",
+      "default" : true
     }, {
-      "name" : "packageAllowed",
-      "default" : "false"
+      "name" : "customImportOrderRules",
+      "default" : ""
     }, {
-      "name" : "protectedAllowed",
-      "default" : "false"
+      "name" : "sortImportsInGroupAlphabetically",
+      "default" : false
     }, {
-      "name" : "immutableClassCanonicalNames",
-      "default" : "java.lang.String, java.lang.Integer, java.lang.Byte, java.lang.Character,java.lang.Short, java.lang.Boolean, java.lang.Long, java.lang.Double, java.lang.Float,java.lang.StackTraceElement, java.math.BigInteger, java.math.BigDecimal, java.io.File,java.util.Locale, java.util.UUID, java.net.URL, java.net.URI,java.net.Inet4Address, java.net.Inet6Address, java.net.InetSocketAddress,"
-    }, {
-      "name" : "allowPublicFinalFields",
-      "default" : "false"
+      "name" : "thirdPartyPackageRegExp",
+      "default" : ".*"
     } ]
   }, {
     "patternId" : "ModifierOrder",
@@ -923,15 +853,15 @@
     "level" : "Info",
     "category" : "CodeStyle"
   }, {
-    "patternId" : "NoWhitespaceBefore",
+    "patternId" : "SingleLineJavadoc",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "allowLineBreaks",
-      "default" : "false"
+      "name" : "ignoredTags",
+      "default" : ""
     }, {
-      "name" : "tokens",
-      "default" : "COMMA,SEMI,POST_INC,POST_DEC,ELLIPSIS"
+      "name" : "ignoreInlineTags",
+      "default" : true
     } ]
   }, {
     "patternId" : "PackageAnnotation",
@@ -946,66 +876,61 @@
       "default" : "SINGLE_LINE_COMMENT,BLOCK_COMMENT_BEGIN"
     } ]
   }, {
-    "patternId" : "SingleLineJavadoc",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "violateExecutionOnNonTightHtml",
-      "default" : "false"
-    }, {
-      "name" : "ignoredTags",
-      "default" : ""
-    }, {
-      "name" : "ignoreInlineTags",
-      "default" : "true"
-    } ]
-  }, {
-    "patternId" : "ThrowsCount",
+    "patternId" : "NPathComplexity",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "max",
-      "default" : "4"
-    }, {
-      "name" : "ignorePrivateMethods",
-      "default" : "true"
+      "default" : 200
     } ]
   }, {
-    "patternId" : "ImportOrder",
+    "patternId" : "Indentation",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "ordered",
-      "default" : "true"
+      "name" : "forceStrictCondition",
+      "default" : false
     }, {
-      "name" : "tokens",
-      "default" : "STATIC_IMPORT"
+      "name" : "lineWrappingIndentation",
+      "default" : 4
     }, {
-      "name" : "caseSensitive",
-      "default" : "true"
+      "name" : "arrayInitIndent",
+      "default" : 4
     }, {
-      "name" : "separated",
-      "default" : "false"
+      "name" : "throwsIndent",
+      "default" : 4
     }, {
-      "name" : "sortStaticImportsAlphabetically",
-      "default" : "false"
+      "name" : "caseIndent",
+      "default" : 4
     }, {
-      "name" : "groups",
-      "default" : "empty list"
+      "name" : "basicOffset",
+      "default" : 4
     }, {
-      "name" : "option",
-      "default" : "under"
-    }, {
-      "name" : "useContainerOrderingForStatic",
-      "default" : "false"
+      "name" : "braceAdjustment",
+      "default" : 0
     } ]
   }, {
-    "patternId" : "ExplicitInitialization",
+    "patternId" : "Regexp",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "onlyObjectReferences",
-      "default" : "false"
+      "name" : "format",
+      "default" : "\"$^\" (empty)"
+    }, {
+      "name" : "errorLimit",
+      "default" : 100
+    }, {
+      "name" : "ignoreComments",
+      "default" : false
+    }, {
+      "name" : "duplicateLimit",
+      "default" : 0
+    }, {
+      "name" : "message",
+      "default" : "\"\"(empty)"
+    }, {
+      "name" : "illegalPattern",
+      "default" : false
     } ]
   }, {
     "patternId" : "MutableException",
@@ -1019,27 +944,34 @@
       "default" : "^.*Exception$|^.*Error$|^.*Throwable$"
     } ]
   }, {
-    "patternId" : "RegexpSingleline",
+    "patternId" : "RequireThis",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "maximum",
-      "default" : "0"
+      "name" : "checkFields",
+      "default" : true
     }, {
-      "name" : "format",
-      "default" : "$."
+      "name" : "checkMethods",
+      "default" : true
     }, {
-      "name" : "message",
-      "default" : "\"\"(empty)"
-    }, {
-      "name" : "minimum",
-      "default" : "0"
-    }, {
-      "name" : "ignoreCase",
-      "default" : "false"
-    }, {
-      "name" : "fileExtensions",
-      "default" : "{}"
+      "name" : "validateOnlyOverlapping",
+      "default" : true
+    } ]
+  }, {
+    "patternId" : "ModifiedControlVariable",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "skipEnhancedForLoopVariable",
+      "default" : false
+    } ]
+  }, {
+    "patternId" : "AnonInnerLength",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "max",
+      "default" : 20
     } ]
   }, {
     "patternId" : "CatchParameterName",
@@ -1048,57 +980,6 @@
     "parameters" : [ {
       "name" : "format",
       "default" : "^(e|t|ex|[a-z][a-z][a-zA-Z]+)$"
-    } ]
-  }, {
-    "patternId" : "ConstantName",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "applyToProtected",
-      "default" : "true"
-    }, {
-      "name" : "applyToPublic",
-      "default" : "true"
-    }, {
-      "name" : "applyToPrivate",
-      "default" : "true"
-    }, {
-      "name" : "format",
-      "default" : "^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$"
-    }, {
-      "name" : "applyToPackage",
-      "default" : "true"
-    } ]
-  }, {
-    "patternId" : "VariableDeclarationUsageDistance",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "allowedDistance",
-      "default" : "3"
-    }, {
-      "name" : "ignoreVariablePattern",
-      "default" : ""
-    }, {
-      "name" : "validateBetweenScopes",
-      "default" : "false"
-    }, {
-      "name" : "ignoreFinal",
-      "default" : "true"
-    } ]
-  }, {
-    "patternId" : "IllegalImport",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "illegalPkgs",
-      "default" : "sun"
-    }, {
-      "name" : "illegalClasses",
-      "default" : "{}"
-    }, {
-      "name" : "regexp",
-      "default" : "false"
     } ]
   }, {
     "patternId" : "UpperEll",
@@ -1125,66 +1006,122 @@
       "default" : "^[A-Z]$"
     } ]
   }, {
-    "patternId" : "PackageDeclaration",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "matchDirectoryStructure",
-      "default" : "true"
-    } ]
-  }, {
-    "patternId" : "JavadocType",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "excludeScope",
-      "default" : ""
-    }, {
-      "name" : "allowUnknownTags",
-      "default" : "false"
-    }, {
-      "name" : "versionFormat",
-      "default" : ""
-    }, {
-      "name" : "authorFormat",
-      "default" : ""
-    }, {
-      "name" : "scope",
-      "default" : "private"
-    }, {
-      "name" : "tokens",
-      "default" : "INTERFACE_DEF,CLASS_DEF,ENUM_DEF,ANNOTATION_DEF"
-    }, {
-      "name" : "allowMissingParamTags",
-      "default" : "false"
-    } ]
-  }, {
     "patternId" : "MethodName",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "applyToProtected",
-      "default" : "true"
-    }, {
       "name" : "applyToPublic",
-      "default" : "true"
+      "default" : true
     }, {
-      "name" : "allowClassName",
-      "default" : "false"
+      "name" : "applyToPackage",
+      "default" : true
+    }, {
+      "name" : "applyToProtected",
+      "default" : true
     }, {
       "name" : "applyToPrivate",
-      "default" : "true"
+      "default" : true
     }, {
       "name" : "format",
       "default" : "^[a-z][a-zA-Z0-9]*$"
     }, {
+      "name" : "allowClassName",
+      "default" : false
+    } ]
+  }, {
+    "patternId" : "NoWhitespaceAfter",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "allowLineBreaks",
+      "default" : true
+    }, {
+      "name" : "tokens",
+      "default" : "ARRAY_INIT,AT,INC,DEC,UNARY_MINUS,UNARY_PLUS,BNOT,LNOT,DOT,ARRAY_DECLARATOR,INDEX_OP"
+    } ]
+  }, {
+    "patternId" : "MemberName",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToPublic",
+      "default" : true
+    }, {
       "name" : "applyToPackage",
-      "default" : "true"
+      "default" : true
+    }, {
+      "name" : "applyToProtected",
+      "default" : true
+    }, {
+      "name" : "applyToPrivate",
+      "default" : true
+    }, {
+      "name" : "format",
+      "default" : "^[a-z][a-zA-Z0-9]*$"
+    } ]
+  }, {
+    "patternId" : "MultipleStringLiterals",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "allowedDuplicates",
+      "default" : 1
+    }, {
+      "name" : "ignoreStringsRegexp",
+      "default" : "^\"\"$"
+    }, {
+      "name" : "ignoreOccurrenceContext",
+      "default" : "ANNOTATION(ignore strings inside the context of an annotation)"
     } ]
   }, {
     "patternId" : "EmptyStatement",
     "level" : "Info",
     "category" : "CodeStyle"
+  }, {
+    "patternId" : "FinalParameters",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignorePrimitiveTypes",
+      "default" : false
+    }, {
+      "name" : "tokens",
+      "default" : "METHOD_DEF,CTOR_DEF"
+    } ]
+  }, {
+    "patternId" : "IllegalType",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "tokens",
+      "default" : "VARIABLE_DEF,PARAMETER_DEF,METHOD_DEF"
+    }, {
+      "name" : "validateAbstractClassNames",
+      "default" : false
+    }, {
+      "name" : "ignoredMethodNames",
+      "default" : "getInitialContext, getEnvironment"
+    }, {
+      "name" : "format",
+      "default" : "^(.*[.])?Abstract.*$"
+    }, {
+      "name" : "legalAbstractClassNames",
+      "default" : ""
+    }, {
+      "name" : "illegalClassNames",
+      "default" : "java.util.HashSet, java.util.HashMap, java.util.LinkedHashMap,java.util.LinkedHashSet, java.util.TreeSet,java.util.TreeMap"
+    }, {
+      "name" : "memberModifiers",
+      "default" : ""
+    } ]
+  }, {
+    "patternId" : "JavadocParagraph",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "allowNewlineParagraph",
+      "default" : true
+    } ]
   }, {
     "patternId" : "TodoComment",
     "level" : "Info",
@@ -1202,52 +1139,86 @@
       "default" : "^$"
     } ]
   }, {
-    "patternId" : "AnonInnerLength",
+    "patternId" : "PackageDeclaration",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "max",
-      "default" : "20"
+      "name" : "matchDirectoryStructure",
+      "default" : true
+    } ]
+  }, {
+    "patternId" : "EqualsAvoidNull",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreEqualsIgnoreCase",
+      "default" : false
+    } ]
+  }, {
+    "patternId" : "IllegalImport",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "illegalPkgs",
+      "default" : "sun"
+    }, {
+      "name" : "illegalClasses",
+      "default" : { }
+    }, {
+      "name" : "regexp",
+      "default" : false
     } ]
   }, {
     "patternId" : "SimplifyBooleanExpression",
     "level" : "Info",
     "category" : "CodeStyle"
   }, {
-    "patternId" : "AtclauseOrder",
+    "patternId" : "FileLength",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "violateExecutionOnNonTightHtml",
-      "default" : "false"
+      "name" : "max",
+      "default" : 2000
     }, {
-      "name" : "target",
-      "default" : "CLASS_DEF,INTERFACE_DEF,ENUM_DEF,METHOD_DEF,CTOR_DEF,VARIABLE_DEF"
-    }, {
-      "name" : "tagOrder",
-      "default" : "@author, @version, @param,@return, @throws, @exception, @see, @since, @serial,@serialField, @serialData, @deprecated"
+      "name" : "fileExtensions",
+      "default" : { }
     } ]
   }, {
-    "patternId" : "NeedBraces",
+    "patternId" : "WhitespaceAround",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "allowSingleLineStatement",
-      "default" : "false"
+      "name" : "allowEmptyLambdas",
+      "default" : false
     }, {
-      "name" : "allowEmptyLoopBody",
-      "default" : "false"
+      "name" : "allowEmptyCatches",
+      "default" : false
+    }, {
+      "name" : "allowEmptyTypes",
+      "default" : false
+    }, {
+      "name" : "allowEmptyLoops",
+      "default" : false
+    }, {
+      "name" : "ignoreEnhancedForColon",
+      "default" : true
+    }, {
+      "name" : "allowEmptyConstructors",
+      "default" : false
     }, {
       "name" : "tokens",
-      "default" : "LITERAL_DO,LITERAL_ELSE,LITERAL_FOR,LITERAL_IF,LITERAL_WHILE"
+      "default" : "ASSIGN,BAND,BAND_ASSIGN,BOR,BOR_ASSIGN,BSR,BSR_ASSIGN,BXOR,BXOR_ASSIGN,COLON,DIV,DIV_ASSIGN,DO_WHILE,EQUAL,GE,GT,LAMBDA,LAND,LCURLY,LE,LITERAL_CATCH,LITERAL_DO,LITERAL_ELSE,LITERAL_FINALLY,LITERAL_FOR,LITERAL_IF,LITERAL_RETURN,LITERAL_SWITCH,LITERAL_SYNCHRONIZED,LITERAL_TRY,LITERAL_WHILE,LOR,LT,MINUS,MINUS_ASSIGN,MOD,MOD_ASSIGN,NOT_EQUAL,PLUS,PLUS_ASSIGN,QUESTION,RCURLY,SL,SLIST,SL_ASSIGN,SR,SR_ASSIGN,STAR,STAR_ASSIGN,LITERAL_ASSERT,TYPE_EXTENSION_AND"
+    }, {
+      "name" : "allowEmptyMethods",
+      "default" : false
     } ]
   }, {
-    "patternId" : "DefaultComesLast",
+    "patternId" : "OuterTypeNumber",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "skipIfLastAndSharedWithCase",
-      "default" : "false"
+      "name" : "max",
+      "default" : 1
     } ]
   }, {
     "patternId" : "WhitespaceAfter",
@@ -1258,104 +1229,76 @@
       "default" : "COMMA,SEMI,TYPECAST,LITERAL_IF,LITERAL_ELSE,LITERAL_WHILE,LITERAL_DO,LITERAL_FOR,DO_WHILE"
     } ]
   }, {
-    "patternId" : "MethodLength",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "max",
-      "default" : "150"
-    }, {
-      "name" : "countEmpty",
-      "default" : "true"
-    }, {
-      "name" : "tokens",
-      "default" : "METHOD_DEF,CTOR_DEF"
-    } ]
-  }, {
-    "patternId" : "IllegalTokenText",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "format",
-      "default" : "\"$^\" (empty)"
-    }, {
-      "name" : "ignoreCase",
-      "default" : "false"
-    }, {
-      "name" : "message",
-      "default" : "\"\"(empty)"
-    }, {
-      "name" : "tokens",
-      "default" : "empty"
-    } ]
-  }, {
     "patternId" : "OneStatementPerLine",
     "level" : "Info",
     "category" : "CodeStyle"
   }, {
-    "patternId" : "AvoidStarImport",
+    "patternId" : "VisibilityModifier",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "excludes",
-      "default" : "empty list"
+      "name" : "packageAllowed",
+      "default" : false
     }, {
-      "name" : "allowClassImports",
-      "default" : "false"
+      "name" : "protectedAllowed",
+      "default" : false
     }, {
-      "name" : "allowStaticMemberImports",
-      "default" : "false"
+      "name" : "publicMemberPattern",
+      "default" : "^serialVersionUID$"
+    }, {
+      "name" : "allowPublicImmutableFields",
+      "default" : false
+    }, {
+      "name" : "ignoreAnnotationCanonicalNames",
+      "default" : "org.junit.Rule, org.junit.ClassRule, com.google.common.annotations.VisibleForTesting"
+    }, {
+      "name" : "allowPublicFinalFields",
+      "default" : false
+    }, {
+      "name" : "immutableClassCanonicalNames",
+      "default" : "java.lang.String, java.lang.Integer, java.lang.Byte, java.lang.Character,java.lang.Short, java.lang.Boolean, java.lang.Long, java.lang.Double, java.lang.Float,java.lang.StackTraceElement, java.math.BigInteger, java.math.BigDecimal, java.io.File,java.util.Locale, java.util.UUID, java.net.URL, java.net.URI,java.net.Inet4Address, java.net.Inet6Address, java.net.InetSocketAddress,"
     } ]
   }, {
-    "patternId" : "UnusedImports",
+    "patternId" : "IllegalThrows",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "processJavadoc",
-      "default" : "true"
+      "name" : "illegalClassNames",
+      "default" : "java.lang.Throwable,java.lang.Error, java.lang.RuntimeException"
+    }, {
+      "name" : "ignoredMethodNames",
+      "default" : "finalize"
+    }, {
+      "name" : "ignoreOverriddenMethods",
+      "default" : true
     } ]
   }, {
-    "patternId" : "Regexp",
+    "patternId" : "AtclauseOrder",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "format",
-      "default" : "\"$^\" (empty)"
+      "name" : "target",
+      "default" : "CLASS_DEF,INTERFACE_DEF,ENUM_DEF,METHOD_DEF,CTOR_DEF,VARIABLE_DEF"
     }, {
-      "name" : "illegalPattern",
-      "default" : "false"
-    }, {
-      "name" : "ignoreComments",
-      "default" : "false"
-    }, {
-      "name" : "duplicateLimit",
-      "default" : "0"
-    }, {
-      "name" : "message",
-      "default" : "\"\"(empty)"
-    }, {
-      "name" : "errorLimit",
-      "default" : "100"
+      "name" : "tagOrder",
+      "default" : "@author, @version, @param,@return, @throws, @exception, @see, @since, @serial,@serialField, @serialData, @deprecated"
     } ]
   }, {
-    "patternId" : "MemberName",
+    "patternId" : "VariableDeclarationUsageDistance",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "applyToProtected",
-      "default" : "true"
+      "name" : "allowedDistance",
+      "default" : 3
     }, {
-      "name" : "applyToPublic",
-      "default" : "true"
+      "name" : "ignoreVariablePattern",
+      "default" : ""
     }, {
-      "name" : "applyToPrivate",
-      "default" : "true"
+      "name" : "validateBetweenScopes",
+      "default" : false
     }, {
-      "name" : "format",
-      "default" : "^[a-z][a-zA-Z0-9]*$"
-    }, {
-      "name" : "applyToPackage",
-      "default" : "true"
+      "name" : "ignoreFinal",
+      "default" : true
     } ]
   }, {
     "patternId" : "JavadocVariable",
@@ -1375,79 +1318,63 @@
       "default" : "ENUM_CONSTANT_DEF"
     } ]
   }, {
-    "patternId" : "NestedIfDepth",
+    "patternId" : "RightCurly",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "option",
+      "default" : "same"
+    }, {
+      "name" : "shouldStartLine",
+      "default" : true
+    }, {
+      "name" : "tokens",
+      "default" : "LITERAL_TRY,LITERAL_CATCH,LITERAL_FINALLY,LITERAL_IF,LITERAL_ELSE"
+    } ]
+  }, {
+    "patternId" : "DeclarationOrder",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignoreConstructors",
+      "default" : false
+    }, {
+      "name" : "ignoreModifiers",
+      "default" : false
+    } ]
+  }, {
+    "patternId" : "AvoidEscapedUnicodeCharacters",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "allowEscapesForControlCharacters",
+      "default" : false
+    }, {
+      "name" : "allowByTailComment",
+      "default" : false
+    }, {
+      "name" : "allowIfAllCharactersEscaped",
+      "default" : false
+    }, {
+      "name" : "allowNonPrintableEscapes",
+      "default" : false
+    } ]
+  }, {
+    "patternId" : "ClassDataAbstractionCoupling",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "max",
-      "default" : "1"
-    } ]
-  }, {
-    "patternId" : "RegexpSinglelineJava",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "ignoreComments",
-      "default" : "false"
+      "default" : 7
     }, {
-      "name" : "maximum",
-      "default" : "0"
+      "name" : "excludedClasses",
+      "default" : "boolean, byte, char, double, float, int,long, short, void, Boolean, Byte, Character, Double, Float,Integer, Long, Short, Void,Object, Class, String, StringBuffer, StringBuilder,ArrayIndexOutOfBoundsException, Exception,RuntimeException, IllegalArgumentException,IllegalStateException, IndexOutOfBoundsException,NullPointerException, Throwable, SecurityException,UnsupportedOperationException,List, ArrayList, Deque, Queue, LinkedList,Set, HashSet, SortedSet, TreeSet,Map, HashMap, SortedMap, TreeMap"
     }, {
-      "name" : "format",
-      "default" : "$."
+      "name" : "excludeClassesRegexps",
+      "default" : "^$"
     }, {
-      "name" : "message",
-      "default" : "\"\"(empty)"
-    }, {
-      "name" : "minimum",
-      "default" : "0"
-    }, {
-      "name" : "ignoreCase",
-      "default" : "false"
-    } ]
-  }, {
-    "patternId" : "ParameterName",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "format",
-      "default" : "^[a-z][a-zA-Z0-9]*$"
-    }, {
-      "name" : "ignoreOverridden",
-      "default" : "false"
-    }, {
-      "name" : "accessModifiers",
-      "default" : "public, protected, package, private"
-    } ]
-  }, {
-    "patternId" : "ModifiedControlVariable",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "skipEnhancedForLoopVariable",
-      "default" : "false"
-    } ]
-  }, {
-    "patternId" : "MultipleStringLiterals",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "allowedDuplicates",
-      "default" : "1"
-    }, {
-      "name" : "ignoreStringsRegexp",
-      "default" : "^\"\"$"
-    }, {
-      "name" : "ignoreOccurrenceContext",
-      "default" : "ANNOTATION(ignore strings inside the context of an annotation)"
-    } ]
-  }, {
-    "patternId" : "MissingDeprecated",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "skipNoJavadoc",
-      "default" : "false"
+      "name" : "excludedPackages",
+      "default" : { }
     } ]
   }, {
     "patternId" : "ParameterAssignment",
@@ -1462,33 +1389,23 @@
     "level" : "Info",
     "category" : "CodeStyle"
   }, {
-    "patternId" : "DescendantToken",
+    "patternId" : "ExplicitInitialization",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "maximumMessage",
-      "default" : "descendant.token.max"
+      "name" : "onlyObjectReferences",
+      "default" : false
+    } ]
+  }, {
+    "patternId" : "NoWhitespaceBefore",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "allowLineBreaks",
+      "default" : false
     }, {
-      "name" : "minimumNumber",
-      "default" : "0"
-    }, {
-      "name" : "limitedTokens",
-      "default" : "empty set"
-    }, {
-      "name" : "sumTokenCounts",
-      "default" : "false"
-    }, {
-      "name" : "minimumMessage",
-      "default" : "descendant.token.min"
-    }, {
-      "name" : "maximumNumber",
-      "default" : "java.lang.Integer.MAX_VALUE"
-    }, {
-      "name" : "minimumDepth",
-      "default" : "0"
-    }, {
-      "name" : "maximumDepth",
-      "default" : "java.lang.Integer.MAX_VALUE"
+      "name" : "tokens",
+      "default" : "COMMA,SEMI,POST_INC,POST_DEC,ELLIPSIS"
     } ]
   }, {
     "patternId" : "MethodTypeParameterName",
@@ -1499,43 +1416,27 @@
       "default" : "^[A-Z]$"
     } ]
   }, {
-    "patternId" : "DeclarationOrder",
+    "patternId" : "RegexpSinglelineJava",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "ignoreConstructors",
-      "default" : "false"
+      "name" : "minimum",
+      "default" : 0
     }, {
-      "name" : "ignoreModifiers",
-      "default" : "false"
-    } ]
-  }, {
-    "patternId" : "ReturnCount",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "max",
-      "default" : "2"
+      "name" : "ignoreCase",
+      "default" : false
     }, {
-      "name" : "maxForVoid",
-      "default" : "1"
+      "name" : "ignoreComments",
+      "default" : false
     }, {
       "name" : "format",
-      "default" : "^equals$"
+      "default" : "$."
     }, {
-      "name" : "tokens",
-      "default" : "CTOR_DEF,METHOD_DEF,LAMBDA"
-    } ]
-  }, {
-    "patternId" : "FinalParameters",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "ignorePrimitiveTypes",
-      "default" : "false"
+      "name" : "message",
+      "default" : "\"\"(empty)"
     }, {
-      "name" : "tokens",
-      "default" : "METHOD_DEF,CTOR_DEF"
+      "name" : "maximum",
+      "default" : 0
     } ]
   }, {
     "patternId" : "UnnecessaryParentheses",
@@ -1546,12 +1447,48 @@
       "default" : "EXPR,IDENT,NUM_DOUBLE,NUM_FLOAT,NUM_INT,NUM_LONG,STRING_LITERAL,LITERAL_NULL,LITERAL_FALSE,LITERAL_TRUE,ASSIGN,BAND_ASSIGN,BOR_ASSIGN,BSR_ASSIGN,BXOR_ASSIGN,DIV_ASSIGN,MINUS_ASSIGN,MOD_ASSIGN,PLUS_ASSIGN,SL_ASSIGN,SR_ASSIGN,STAR_ASSIGN,LAMBDA"
     } ]
   }, {
+    "patternId" : "ParameterNumber",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "max",
+      "default" : 7
+    }, {
+      "name" : "ignoreOverriddenMethods",
+      "default" : false
+    }, {
+      "name" : "tokens",
+      "default" : "METHOD_DEF,CTOR_DEF"
+    } ]
+  }, {
     "patternId" : "EmptyForInitializerPad",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "option",
       "default" : "nospace"
+    } ]
+  }, {
+    "patternId" : "ExecutableStatementCount",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "max",
+      "default" : 30
+    }, {
+      "name" : "tokens",
+      "default" : "CTOR_DEF,METHOD_DEF,INSTANCE_INIT,STATIC_INIT"
+    } ]
+  }, {
+    "patternId" : "SummaryJavadoc",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "forbiddenSummaryFragments",
+      "default" : "^$"
+    }, {
+      "name" : "period",
+      "default" : ""
     } ]
   }, {
     "patternId" : "NewlineAtEndOfFile",
@@ -1565,98 +1502,64 @@
       "default" : "all files"
     } ]
   }, {
+    "patternId" : "ArrayTypeStyle",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "javaStyle",
+      "default" : true
+    } ]
+  }, {
     "patternId" : "EqualsHashCode",
     "level" : "Info",
     "category" : "CodeStyle"
   }, {
-    "patternId" : "WhitespaceAround",
+    "patternId" : "NeedBraces",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "allowEmptyTypes",
-      "default" : "false"
+      "name" : "allowSingleLineStatement",
+      "default" : false
     }, {
-      "name" : "allowEmptyMethods",
-      "default" : "false"
-    }, {
-      "name" : "allowEmptyCatches",
-      "default" : "false"
-    }, {
-      "name" : "allowEmptyLoops",
-      "default" : "false"
-    }, {
-      "name" : "allowEmptyConstructors",
-      "default" : "false"
-    }, {
-      "name" : "allowEmptyLambdas",
-      "default" : "false"
-    }, {
-      "name" : "ignoreEnhancedForColon",
-      "default" : "true"
+      "name" : "allowEmptyLoopBody",
+      "default" : false
     }, {
       "name" : "tokens",
-      "default" : "ASSIGN,BAND,BAND_ASSIGN,BOR,BOR_ASSIGN,BSR,BSR_ASSIGN,BXOR,BXOR_ASSIGN,COLON,DIV,DIV_ASSIGN,DO_WHILE,EQUAL,GE,GT,LAMBDA,LAND,LCURLY,LE,LITERAL_CATCH,LITERAL_DO,LITERAL_ELSE,LITERAL_FINALLY,LITERAL_FOR,LITERAL_IF,LITERAL_RETURN,LITERAL_SWITCH,LITERAL_SYNCHRONIZED,LITERAL_TRY,LITERAL_WHILE,LOR,LT,MINUS,MINUS_ASSIGN,MOD,MOD_ASSIGN,NOT_EQUAL,PLUS,PLUS_ASSIGN,QUESTION,RCURLY,SL,SLIST,SL_ASSIGN,SR,SR_ASSIGN,STAR,STAR_ASSIGN,LITERAL_ASSERT,TYPE_EXTENSION_AND"
-    } ]
-  }, {
-    "patternId" : "RegexpOnFilename",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "folderPattern",
-      "default" : ""
-    }, {
-      "name" : "match",
-      "default" : "true"
-    }, {
-      "name" : "fileNamePattern",
-      "default" : ""
-    }, {
-      "name" : "ignoreFileNameExtensions",
-      "default" : "false"
-    }, {
-      "name" : "fileExtensions",
-      "default" : "{}"
+      "default" : "LITERAL_DO,LITERAL_ELSE,LITERAL_FOR,LITERAL_IF,LITERAL_WHILE"
     } ]
   }, {
     "patternId" : "InnerAssignment",
     "level" : "Info",
     "category" : "CodeStyle"
   }, {
-    "patternId" : "CustomImportOrder",
+    "patternId" : "InterfaceIsType",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "specialImportsRegExp",
-      "default" : "^$"
-    }, {
-      "name" : "sortImportsInGroupAlphabetically",
-      "default" : "false"
-    }, {
-      "name" : "standardPackageRegExp",
-      "default" : "^(java|javax)\\."
-    }, {
-      "name" : "customImportOrderRules",
-      "default" : ""
-    }, {
-      "name" : "separateLineBetweenGroups",
-      "default" : "true"
-    }, {
-      "name" : "thirdPartyPackageRegExp",
-      "default" : ".*"
+      "name" : "allowMarkerInterfaces",
+      "default" : true
     } ]
   }, {
-    "patternId" : "RightCurly",
+    "patternId" : "CyclomaticComplexity",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "option",
-      "default" : "same"
+      "name" : "max",
+      "default" : 10
     }, {
-      "name" : "shouldStartLine",
-      "default" : "true"
+      "name" : "switchBlockAsSingleDecisionPoint",
+      "default" : false
     }, {
       "name" : "tokens",
-      "default" : "LITERAL_TRY,LITERAL_CATCH,LITERAL_FINALLY,LITERAL_IF,LITERAL_ELSE"
+      "default" : "LITERAL_WHILE,LITERAL_DO,LITERAL_FOR,LITERAL_IF,LITERAL_SWITCH,LITERAL_CASE,LITERAL_CATCH,QUESTION,LAND,LOR"
+    } ]
+  }, {
+    "patternId" : "NestedTryDepth",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "max",
+      "default" : 1
     } ]
   }, {
     "patternId" : "UniqueProperties",
@@ -1667,6 +1570,23 @@
       "default" : "properties"
     } ]
   }, {
+    "patternId" : "ReturnCount",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "max",
+      "default" : 2
+    }, {
+      "name" : "maxForVoid",
+      "default" : 1
+    }, {
+      "name" : "format",
+      "default" : "^equals$"
+    }, {
+      "name" : "tokens",
+      "default" : "CTOR_DEF,METHOD_DEF,LAMBDA"
+    } ]
+  }, {
     "patternId" : "DesignForExtension",
     "level" : "Info",
     "category" : "CodeStyle",
@@ -1675,73 +1595,48 @@
       "default" : "Test, Before, After, BeforeClass, AfterClass"
     } ]
   }, {
-    "patternId" : "MethodCount",
+    "patternId" : "AvoidNestedBlocks",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "tokens",
-      "default" : "CLASS_DEF,ENUM_CONSTANT_DEF,ENUM_DEF,INTERFACE_DEF,ANNOTATION_DEF"
-    }, {
-      "name" : "maxPrivate",
-      "default" : "100"
-    }, {
-      "name" : "maxPublic",
-      "default" : "100"
-    }, {
-      "name" : "maxTotal",
-      "default" : "100"
-    }, {
-      "name" : "maxPackage",
-      "default" : "100"
-    }, {
-      "name" : "maxProtected",
-      "default" : "100"
+      "name" : "allowInSwitchCase",
+      "default" : false
     } ]
   }, {
-    "patternId" : "MagicNumber",
+    "patternId" : "NonEmptyAtclauseDescription",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "ignoreAnnotation",
-      "default" : "false"
-    }, {
-      "name" : "ignoreHashCodeMethod",
-      "default" : "false"
-    }, {
-      "name" : "constantWaiverParentToken",
-      "default" : "ASSIGN,ARRAY_INIT,EXPR,UNARY_PLUS,UNARY_MINUS,TYPECAST,ELIST,LITERAL_NEW,METHOD_CALL,STAR,DIV,PLUS,MINUS"
-    }, {
-      "name" : "ignoreNumbers",
-      "default" : "-1, 0, 1, 2"
-    }, {
-      "name" : "tokens",
-      "default" : "NUM_DOUBLE,NUM_FLOAT,NUM_INT,NUM_LONG"
-    }, {
-      "name" : "ignoreFieldDeclaration",
-      "default" : "false"
+      "name" : "javadocTokens",
+      "default" : "PARAM_LITERAL,RETURN_LITERAL,THROWS_LITERAL,DEPRECATED_LITERAL"
     } ]
   }, {
-    "patternId" : "TypeName",
+    "patternId" : "AbstractClassName",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "applyToProtected",
-      "default" : "true"
-    }, {
       "name" : "format",
-      "default" : "^[A-Z][a-zA-Z0-9]*$"
+      "default" : "^Abstract.+$"
     }, {
-      "name" : "applyToPublic",
-      "default" : "true"
+      "name" : "ignoreModifier",
+      "default" : false
     }, {
-      "name" : "applyToPrivate",
-      "default" : "true"
+      "name" : "ignoreName",
+      "default" : false
+    } ]
+  }, {
+    "patternId" : "MethodParamPad",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "allowLineBreaks",
+      "default" : false
     }, {
-      "name" : "applyToPackage",
-      "default" : "true"
+      "name" : "option",
+      "default" : "nospace"
     }, {
       "name" : "tokens",
-      "default" : "CLASS_DEF,INTERFACE_DEF,ENUM_DEF,ANNOTATION_DEF"
+      "default" : "CTOR_DEF,LITERAL_NEW,METHOD_CALL,METHOD_DEF,SUPER_CTOR_CALL,ENUM_CONSTANT_DEF"
     } ]
   }, {
     "patternId" : "FinalClass",
@@ -1760,6 +1655,51 @@
     }, {
       "name" : "requiredTranslations",
       "default" : "empty String Set"
+    } ]
+  }, {
+    "patternId" : "TypeName",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "applyToPublic",
+      "default" : true
+    }, {
+      "name" : "applyToPackage",
+      "default" : true
+    }, {
+      "name" : "format",
+      "default" : "^[A-Z][a-zA-Z0-9]*$"
+    }, {
+      "name" : "applyToProtected",
+      "default" : true
+    }, {
+      "name" : "applyToPrivate",
+      "default" : true
+    }, {
+      "name" : "tokens",
+      "default" : "CLASS_DEF,INTERFACE_DEF,ENUM_DEF,ANNOTATION_DEF"
+    } ]
+  }, {
+    "patternId" : "FallThrough",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "checkLastCaseGroup",
+      "default" : false
+    }, {
+      "name" : "reliefPattern",
+      "default" : "fallthru|falls? ?through"
+    } ]
+  }, {
+    "patternId" : "LineLength",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "ignorePattern",
+      "default" : "^$"
+    }, {
+      "name" : "max",
+      "default" : 80
     } ]
   }, {
     "patternId" : "IllegalToken",
@@ -1781,32 +1721,65 @@
       "default" : "DOT,COMMA"
     } ]
   }, {
-    "patternId" : "JavadocParagraph",
+    "patternId" : "JavadocMethod",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "violateExecutionOnNonTightHtml",
-      "default" : "false"
+      "name" : "excludeScope",
+      "default" : ""
     }, {
-      "name" : "allowNewlineParagraph",
-      "default" : "true"
-    } ]
-  }, {
-    "patternId" : "EmptyLineSeparator",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "allowNoEmptyLineBetweenFields",
-      "default" : "false"
+      "name" : "allowUndeclaredRTE",
+      "default" : false
     }, {
-      "name" : "allowMultipleEmptyLines",
-      "default" : "true"
+      "name" : "validateThrows",
+      "default" : false
     }, {
-      "name" : "allowMultipleEmptyLinesInsideClassMembers",
-      "default" : "true"
+      "name" : "allowMissingReturnTag",
+      "default" : false
+    }, {
+      "name" : "allowMissingParamTags",
+      "default" : false
+    }, {
+      "name" : "suppressLoadErrors",
+      "default" : false
+    }, {
+      "name" : "allowMissingThrowsTags",
+      "default" : false
+    }, {
+      "name" : "allowMissingJavadoc",
+      "default" : false
     }, {
       "name" : "tokens",
-      "default" : "PACKAGE_DEF,IMPORT,CLASS_DEF,INTERFACE_DEF,ENUM_DEF,STATIC_INIT,INSTANCE_INIT,METHOD_DEF,CTOR_DEF,VARIABLE_DEF"
+      "default" : "METHOD_DEF,CTOR_DEF,ANNOTATION_FIELD_DEF"
+    }, {
+      "name" : "scope",
+      "default" : "private"
+    }, {
+      "name" : "allowedAnnotations",
+      "default" : "Override"
+    }, {
+      "name" : "ignoreMethodNamesRegex",
+      "default" : ""
+    }, {
+      "name" : "minLineCount",
+      "default" : -1
+    }, {
+      "name" : "logLoadErrors",
+      "default" : true
+    }, {
+      "name" : "allowMissingPropertyJavadoc",
+      "default" : false
+    }, {
+      "name" : "allowThrowsTagsForSubclasses",
+      "default" : false
+    } ]
+  }, {
+    "patternId" : "MissingDeprecated",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "skipNoJavadoc",
+      "default" : false
     } ]
   }, {
     "patternId" : "PackageName",
@@ -1817,37 +1790,46 @@
       "default" : "^[a-z]+(\\.[a-zA-Z_][a-zA-Z0-9_]*)*$"
     } ]
   }, {
-    "patternId" : "NestedForDepth",
+    "patternId" : "UnusedImports",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "processJavadoc",
+      "default" : true
+    } ]
+  }, {
+    "patternId" : "NestedIfDepth",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "max",
-      "default" : "1"
+      "default" : 1
     } ]
   }, {
-    "patternId" : "EqualsAvoidNull",
+    "patternId" : "JavadocType",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "ignoreEqualsIgnoreCase",
-      "default" : "false"
-    } ]
-  }, {
-    "patternId" : "ClassFanOutComplexity",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "max",
-      "default" : "20"
+      "name" : "excludeScope",
+      "default" : ""
     }, {
-      "name" : "excludedClasses",
-      "default" : "boolean, byte, char, double, float, int,long, short, void, Boolean, Byte, Character, Double, Float,Integer, Long, Short, Void,Object, Class, String, StringBuffer, StringBuilder,ArrayIndexOutOfBoundsException, Exception,RuntimeException, IllegalArgumentException,IllegalStateException, IndexOutOfBoundsException,NullPointerException, Throwable, SecurityException,UnsupportedOperationException,List, ArrayList, Deque, Queue, LinkedList,Set, HashSet, SortedSet, TreeSet,Map, HashMap, SortedMap, TreeMap"
+      "name" : "allowMissingParamTags",
+      "default" : false
     }, {
-      "name" : "excludeClassesRegexps",
-      "default" : "^$"
+      "name" : "versionFormat",
+      "default" : ""
     }, {
-      "name" : "excludedPackages",
-      "default" : "{}"
+      "name" : "allowUnknownTags",
+      "default" : false
+    }, {
+      "name" : "authorFormat",
+      "default" : ""
+    }, {
+      "name" : "scope",
+      "default" : "private"
+    }, {
+      "name" : "tokens",
+      "default" : "INTERFACE_DEF,CLASS_DEF,ENUM_DEF,ANNOTATION_DEF"
     } ]
   } ]
 }

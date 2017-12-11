@@ -1195,9 +1195,6 @@
   "patternId" : "AtclauseOrder",
   "title" : "AtclauseOrder",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "target",
     "description" : "allows to specify targets to check at-clauses."
   }, {
@@ -1270,9 +1267,6 @@
   "patternId" : "JavadocParagraph",
   "title" : "JavadocParagraph",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "allowNewlineParagraph",
     "description" : "whether the <p> tag should be placed immediately before the first word"
   } ]
@@ -1305,9 +1299,6 @@
   "patternId" : "JavadocTagContinuationIndentation",
   "title" : "JavadocTagContinuationIndentation",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "offset",
     "description" : "How many spaces to use for new indentation level."
   } ]
@@ -1356,9 +1347,6 @@
   "patternId" : "NonEmptyAtclauseDescription",
   "title" : "NonEmptyAtclauseDescription",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "javadocTokens",
     "description" : "javadoc tokens to check"
   } ]
@@ -1366,9 +1354,6 @@
   "patternId" : "SingleLineJavadoc",
   "title" : "SingleLineJavadoc",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "ignoredTags",
     "description" : "allows to specify at-clauses which are ignored by the check."
   }, {
@@ -1379,9 +1364,6 @@
   "patternId" : "SummaryJavadoc",
   "title" : "SummaryJavadoc",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "forbiddenSummaryFragments",
     "description" : "forbidden summary fragments"
   }, {
@@ -11432,9 +11414,6 @@
   "patternId" : "AtclauseOrder",
   "title" : "AtclauseOrder",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "target",
     "description" : "allows to specify targets to check at-clauses."
   }, {
@@ -11507,9 +11486,6 @@
   "patternId" : "JavadocParagraph",
   "title" : "JavadocParagraph",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "allowNewlineParagraph",
     "description" : "whether the <p> tag should be placed immediately before the first word"
   } ]
@@ -11542,9 +11518,6 @@
   "patternId" : "JavadocTagContinuationIndentation",
   "title" : "JavadocTagContinuationIndentation",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "offset",
     "description" : "How many spaces to use for new indentation level."
   } ]
@@ -11593,9 +11566,6 @@
   "patternId" : "NonEmptyAtclauseDescription",
   "title" : "NonEmptyAtclauseDescription",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "javadocTokens",
     "description" : "javadoc tokens to check"
   } ]
@@ -11603,9 +11573,6 @@
   "patternId" : "SingleLineJavadoc",
   "title" : "SingleLineJavadoc",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "ignoredTags",
     "description" : "allows to specify at-clauses which are ignored by the check."
   }, {
@@ -11616,9 +11583,6 @@
   "patternId" : "SummaryJavadoc",
   "title" : "SummaryJavadoc",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "forbiddenSummaryFragments",
     "description" : "forbidden summary fragments"
   }, {
@@ -11645,9 +11609,6 @@
   "patternId" : "AtclauseOrder",
   "title" : "AtclauseOrder",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "target",
     "description" : "allows to specify targets to check at-clauses."
   }, {
@@ -11720,9 +11681,6 @@
   "patternId" : "JavadocParagraph",
   "title" : "JavadocParagraph",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "allowNewlineParagraph",
     "description" : "whether the <p> tag should be placed immediately before the first word"
   } ]
@@ -11755,9 +11713,6 @@
   "patternId" : "JavadocTagContinuationIndentation",
   "title" : "JavadocTagContinuationIndentation",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "offset",
     "description" : "How many spaces to use for new indentation level."
   } ]
@@ -11806,9 +11761,6 @@
   "patternId" : "NonEmptyAtclauseDescription",
   "title" : "NonEmptyAtclauseDescription",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "javadocTokens",
     "description" : "javadoc tokens to check"
   } ]
@@ -11816,9 +11768,6 @@
   "patternId" : "SingleLineJavadoc",
   "title" : "SingleLineJavadoc",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "ignoredTags",
     "description" : "allows to specify at-clauses which are ignored by the check."
   }, {
@@ -11829,9 +11778,6 @@
   "patternId" : "SummaryJavadoc",
   "title" : "SummaryJavadoc",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "forbiddenSummaryFragments",
     "description" : "forbidden summary fragments"
   }, {
@@ -11858,9 +11804,6 @@
   "patternId" : "AtclauseOrder",
   "title" : "AtclauseOrder",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "target",
     "description" : "allows to specify targets to check at-clauses."
   }, {
@@ -11933,9 +11876,6 @@
   "patternId" : "JavadocParagraph",
   "title" : "JavadocParagraph",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "allowNewlineParagraph",
     "description" : "whether the <p> tag should be placed immediately before the first word"
   } ]
@@ -11968,9 +11908,6 @@
   "patternId" : "JavadocTagContinuationIndentation",
   "title" : "JavadocTagContinuationIndentation",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "offset",
     "description" : "How many spaces to use for new indentation level."
   } ]
@@ -12019,9 +11956,6 @@
   "patternId" : "NonEmptyAtclauseDescription",
   "title" : "NonEmptyAtclauseDescription",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "javadocTokens",
     "description" : "javadoc tokens to check"
   } ]
@@ -12029,9 +11963,6 @@
   "patternId" : "SingleLineJavadoc",
   "title" : "SingleLineJavadoc",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "ignoredTags",
     "description" : "allows to specify at-clauses which are ignored by the check."
   }, {
@@ -12042,9 +11973,6 @@
   "patternId" : "SummaryJavadoc",
   "title" : "SummaryJavadoc",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "forbiddenSummaryFragments",
     "description" : "forbidden summary fragments"
   }, {
@@ -12071,9 +11999,6 @@
   "patternId" : "AtclauseOrder",
   "title" : "AtclauseOrder",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "target",
     "description" : "allows to specify targets to check at-clauses."
   }, {
@@ -12146,9 +12071,6 @@
   "patternId" : "JavadocParagraph",
   "title" : "JavadocParagraph",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "allowNewlineParagraph",
     "description" : "whether the <p> tag should be placed immediately before the first word"
   } ]
@@ -12181,9 +12103,6 @@
   "patternId" : "JavadocTagContinuationIndentation",
   "title" : "JavadocTagContinuationIndentation",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "offset",
     "description" : "How many spaces to use for new indentation level."
   } ]
@@ -12232,9 +12151,6 @@
   "patternId" : "NonEmptyAtclauseDescription",
   "title" : "NonEmptyAtclauseDescription",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "javadocTokens",
     "description" : "javadoc tokens to check"
   } ]
@@ -12242,9 +12158,6 @@
   "patternId" : "SingleLineJavadoc",
   "title" : "SingleLineJavadoc",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "ignoredTags",
     "description" : "allows to specify at-clauses which are ignored by the check."
   }, {
@@ -12255,9 +12168,6 @@
   "patternId" : "SummaryJavadoc",
   "title" : "SummaryJavadoc",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "forbiddenSummaryFragments",
     "description" : "forbidden summary fragments"
   }, {
@@ -12284,9 +12194,6 @@
   "patternId" : "AtclauseOrder",
   "title" : "AtclauseOrder",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "target",
     "description" : "allows to specify targets to check at-clauses."
   }, {
@@ -12359,9 +12266,6 @@
   "patternId" : "JavadocParagraph",
   "title" : "JavadocParagraph",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "allowNewlineParagraph",
     "description" : "whether the <p> tag should be placed immediately before the first word"
   } ]
@@ -12394,9 +12298,6 @@
   "patternId" : "JavadocTagContinuationIndentation",
   "title" : "JavadocTagContinuationIndentation",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "offset",
     "description" : "How many spaces to use for new indentation level."
   } ]
@@ -12445,9 +12346,6 @@
   "patternId" : "NonEmptyAtclauseDescription",
   "title" : "NonEmptyAtclauseDescription",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "javadocTokens",
     "description" : "javadoc tokens to check"
   } ]
@@ -12455,9 +12353,6 @@
   "patternId" : "SingleLineJavadoc",
   "title" : "SingleLineJavadoc",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "ignoredTags",
     "description" : "allows to specify at-clauses which are ignored by the check."
   }, {
@@ -12468,9 +12363,6 @@
   "patternId" : "SummaryJavadoc",
   "title" : "SummaryJavadoc",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "forbiddenSummaryFragments",
     "description" : "forbidden summary fragments"
   }, {
@@ -12497,9 +12389,6 @@
   "patternId" : "AtclauseOrder",
   "title" : "AtclauseOrder",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "target",
     "description" : "allows to specify targets to check at-clauses."
   }, {
@@ -12572,9 +12461,6 @@
   "patternId" : "JavadocParagraph",
   "title" : "JavadocParagraph",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "allowNewlineParagraph",
     "description" : "whether the <p> tag should be placed immediately before the first word"
   } ]
@@ -12607,9 +12493,6 @@
   "patternId" : "JavadocTagContinuationIndentation",
   "title" : "JavadocTagContinuationIndentation",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "offset",
     "description" : "How many spaces to use for new indentation level."
   } ]
@@ -12658,9 +12541,6 @@
   "patternId" : "NonEmptyAtclauseDescription",
   "title" : "NonEmptyAtclauseDescription",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "javadocTokens",
     "description" : "javadoc tokens to check"
   } ]
@@ -12668,9 +12548,6 @@
   "patternId" : "SingleLineJavadoc",
   "title" : "SingleLineJavadoc",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "ignoredTags",
     "description" : "allows to specify at-clauses which are ignored by the check."
   }, {
@@ -12681,9 +12558,6 @@
   "patternId" : "SummaryJavadoc",
   "title" : "SummaryJavadoc",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "forbiddenSummaryFragments",
     "description" : "forbidden summary fragments"
   }, {
@@ -12710,9 +12584,6 @@
   "patternId" : "AtclauseOrder",
   "title" : "AtclauseOrder",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "target",
     "description" : "allows to specify targets to check at-clauses."
   }, {
@@ -12785,9 +12656,6 @@
   "patternId" : "JavadocParagraph",
   "title" : "JavadocParagraph",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "allowNewlineParagraph",
     "description" : "whether the <p> tag should be placed immediately before the first word"
   } ]
@@ -12820,9 +12688,6 @@
   "patternId" : "JavadocTagContinuationIndentation",
   "title" : "JavadocTagContinuationIndentation",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "offset",
     "description" : "How many spaces to use for new indentation level."
   } ]
@@ -12871,9 +12736,6 @@
   "patternId" : "NonEmptyAtclauseDescription",
   "title" : "NonEmptyAtclauseDescription",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "javadocTokens",
     "description" : "javadoc tokens to check"
   } ]
@@ -12881,9 +12743,6 @@
   "patternId" : "SingleLineJavadoc",
   "title" : "SingleLineJavadoc",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "ignoredTags",
     "description" : "allows to specify at-clauses which are ignored by the check."
   }, {
@@ -12894,9 +12753,6 @@
   "patternId" : "SummaryJavadoc",
   "title" : "SummaryJavadoc",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "forbiddenSummaryFragments",
     "description" : "forbidden summary fragments"
   }, {
@@ -18754,9 +18610,6 @@
   "patternId" : "AtclauseOrder",
   "title" : "AtclauseOrder",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "target",
     "description" : "allows to specify targets to check at-clauses."
   }, {
@@ -18829,9 +18682,6 @@
   "patternId" : "JavadocParagraph",
   "title" : "JavadocParagraph",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "allowNewlineParagraph",
     "description" : "whether the <p> tag should be placed immediately before the first word"
   } ]
@@ -18864,9 +18714,6 @@
   "patternId" : "JavadocTagContinuationIndentation",
   "title" : "JavadocTagContinuationIndentation",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "offset",
     "description" : "How many spaces to use for new indentation level."
   } ]
@@ -18915,9 +18762,6 @@
   "patternId" : "NonEmptyAtclauseDescription",
   "title" : "NonEmptyAtclauseDescription",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "javadocTokens",
     "description" : "javadoc tokens to check"
   } ]
@@ -18925,9 +18769,6 @@
   "patternId" : "SingleLineJavadoc",
   "title" : "SingleLineJavadoc",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "ignoredTags",
     "description" : "allows to specify at-clauses which are ignored by the check."
   }, {
@@ -18938,9 +18779,6 @@
   "patternId" : "SummaryJavadoc",
   "title" : "SummaryJavadoc",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "forbiddenSummaryFragments",
     "description" : "forbidden summary fragments"
   }, {
@@ -24130,9 +23968,6 @@
   "patternId" : "AtclauseOrder",
   "title" : "AtclauseOrder",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "target",
     "description" : "allows to specify targets to check at-clauses."
   }, {
@@ -24205,9 +24040,6 @@
   "patternId" : "JavadocParagraph",
   "title" : "JavadocParagraph",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "allowNewlineParagraph",
     "description" : "whether the <p> tag should be placed immediately before the first word"
   } ]
@@ -24240,9 +24072,6 @@
   "patternId" : "JavadocTagContinuationIndentation",
   "title" : "JavadocTagContinuationIndentation",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "offset",
     "description" : "How many spaces to use for new indentation level."
   } ]
@@ -24291,9 +24120,6 @@
   "patternId" : "NonEmptyAtclauseDescription",
   "title" : "NonEmptyAtclauseDescription",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "javadocTokens",
     "description" : "javadoc tokens to check"
   } ]
@@ -24301,9 +24127,6 @@
   "patternId" : "SingleLineJavadoc",
   "title" : "SingleLineJavadoc",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "ignoredTags",
     "description" : "allows to specify at-clauses which are ignored by the check."
   }, {
@@ -24314,9 +24137,6 @@
   "patternId" : "SummaryJavadoc",
   "title" : "SummaryJavadoc",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "forbiddenSummaryFragments",
     "description" : "forbidden summary fragments"
   }, {
@@ -25039,9 +24859,6 @@
   "patternId" : "AtclauseOrder",
   "title" : "AtclauseOrder",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "target",
     "description" : "allows to specify targets to check at-clauses."
   }, {
@@ -25114,9 +24931,6 @@
   "patternId" : "JavadocParagraph",
   "title" : "JavadocParagraph",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "allowNewlineParagraph",
     "description" : "whether the <p> tag should be placed immediately before the first word"
   } ]
@@ -25149,9 +24963,6 @@
   "patternId" : "JavadocTagContinuationIndentation",
   "title" : "JavadocTagContinuationIndentation",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "offset",
     "description" : "How many spaces to use for new indentation level."
   } ]
@@ -25200,9 +25011,6 @@
   "patternId" : "NonEmptyAtclauseDescription",
   "title" : "NonEmptyAtclauseDescription",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "javadocTokens",
     "description" : "javadoc tokens to check"
   } ]
@@ -25210,9 +25018,6 @@
   "patternId" : "SingleLineJavadoc",
   "title" : "SingleLineJavadoc",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "ignoredTags",
     "description" : "allows to specify at-clauses which are ignored by the check."
   }, {
@@ -25223,9 +25028,6 @@
   "patternId" : "SummaryJavadoc",
   "title" : "SummaryJavadoc",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "forbiddenSummaryFragments",
     "description" : "forbidden summary fragments"
   }, {
@@ -28495,9 +28297,6 @@
   "patternId" : "AtclauseOrder",
   "title" : "AtclauseOrder",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "target",
     "description" : "allows to specify targets to check at-clauses."
   }, {
@@ -28570,9 +28369,6 @@
   "patternId" : "JavadocParagraph",
   "title" : "JavadocParagraph",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "allowNewlineParagraph",
     "description" : "whether the <p> tag should be placed immediately before the first word"
   } ]
@@ -28605,9 +28401,6 @@
   "patternId" : "JavadocTagContinuationIndentation",
   "title" : "JavadocTagContinuationIndentation",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "offset",
     "description" : "How many spaces to use for new indentation level."
   } ]
@@ -28656,9 +28449,6 @@
   "patternId" : "NonEmptyAtclauseDescription",
   "title" : "NonEmptyAtclauseDescription",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "javadocTokens",
     "description" : "javadoc tokens to check"
   } ]
@@ -28666,9 +28456,6 @@
   "patternId" : "SingleLineJavadoc",
   "title" : "SingleLineJavadoc",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "ignoredTags",
     "description" : "allows to specify at-clauses which are ignored by the check."
   }, {
@@ -28679,9 +28466,6 @@
   "patternId" : "SummaryJavadoc",
   "title" : "SummaryJavadoc",
   "parameters" : [ {
-    "name" : "violateExecutionOnNonTightHtml",
-    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
-  }, {
     "name" : "forbiddenSummaryFragments",
     "description" : "forbidden summary fragments"
   }, {
