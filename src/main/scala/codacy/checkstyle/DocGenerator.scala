@@ -72,8 +72,15 @@ object DocGenerator extends JsonApi {
                   // Try to parse numbers and booleans
                   val jsDefaultValue = Try(Json.parse(defaultValue)).getOrElse(JsString(defaultValue))
 
+                  val descriptionText =
+                    if(description.text.length > 250) {
+                      name.text
+                    } else {
+                      description.text
+                    }
+
                   (Parameter.Specification(Parameter.Name(name.text), Parameter.Value(jsDefaultValue)),
-                    Parameter.Description(Parameter.Name(name.text), Parameter.DescriptionText(description.text)))
+                    Parameter.Description(Parameter.Name(name.text), Parameter.DescriptionText(descriptionText)))
               }
         }
 

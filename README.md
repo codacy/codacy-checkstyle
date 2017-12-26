@@ -21,6 +21,15 @@ The docker is ran with the following command:
 docker run -it -v $srcDir:/src  <DOCKER_NAME>:<DOCKER_VERSION>
 ```
 
+#### Generate Docs
+
+1. Update the version in `src/main/resources/docs/patterns.json`
+
+2. Run the DocGenerator
+```sh
+sbt "run-main codacy.checkstyle.DocGenerator"
+```
+
 ## Docs
 
 [Tool Developer Guide](https://support.codacy.com/hc/en-us/articles/207994725-Tool-Developer-Guide)
