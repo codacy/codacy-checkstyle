@@ -1,32 +1,33 @@
-[![Codacy Badge](https://api.codacy.com/project/badge/grade/edc090bb5ed64aa5a009ace701e41d63)](https://www.codacy.com/app/Codacy/codacy-checkstyle)
-[![Build Status](https://circleci.com/gh/codacy/codacy-checkstyle.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/codacy/codacy-checkstyle)
-
 # Codacy Checkstyle
 
 This is the docker engine we use at Codacy to have [Checkstyle](http://checkstyle.sourceforge.net/) support.
 You can also create a docker to integrate the tool and language of your choice!
 Check the **Docs** section for more information.
 
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/edc090bb5ed64aa5a009ace701e41d63)](https://www.codacy.com/app/Codacy/codacy-checkstyle)
+[![Build Status](https://circleci.com/gh/codacy/codacy-checkstyle.svg?style=shield&circle-token=:circle-token)](https://circleci.com/gh/codacy/codacy-checkstyle)
+
 ## Usage
 
 You can create the docker by doing:
 
-```
+```bash
 sbt docker:publishLocal
 ```
 
 The docker is ran with the following command:
 
-```
+```bash
 docker run -it -v $srcDir:/src  <DOCKER_NAME>:<DOCKER_VERSION>
 ```
 
-#### Generate Docs
+## Generate Docs
 
 1. Update the version in `src/main/resources/docs/patterns.json`
 
 2. Run the DocGenerator
-```sh
+
+```bash
 sbt "run-main codacy.checkstyle.DocGenerator"
 ```
 
@@ -41,17 +42,17 @@ sbt "run-main codacy.checkstyle.DocGenerator"
 We use the [codacy-plugins-test](https://github.com/codacy/codacy-plugins-test) to test our external tools integration.
 You can follow the instructions there to make sure your tool is working as expected.
 
-## What is Codacy?
+## What is Codacy
 
 [Codacy](https://www.codacy.com/) is an Automated Code Review Tool that monitors your technical debt, helps you improve your code quality, teaches best practices to your developers, and helps you save time in Code Reviews.
 
-### Among Codacy’s features:
+### Among Codacy’s features
 
- - Identify new Static Analysis issues
- - Commit and Pull Request Analysis with GitHub, BitBucket/Stash, GitLab (and also direct git repositories)
- - Auto-comments on Commits and Pull Requests
- - Integrations with Slack, HipChat, Jira, YouTrack
- - Track issues in Code Style, Security, Error Proneness, Performance, Unused Code and other categories
+- Identify new Static Analysis issues
+- Commit and Pull Request Analysis with GitHub, BitBucket/Stash, GitLab (and also direct git repositories)
+- Auto-comments on Commits and Pull Requests
+- Integrations with Slack, HipChat, Jira, YouTrack
+- Track issues in Code Style, Security, Error Proneness, Performance, Unused Code and other categories
 
 Codacy also helps keep track of Code Coverage, Code Duplication, and Code Complexity.
 
