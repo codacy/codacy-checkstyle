@@ -15,4 +15,4 @@ Quoting Code Complete for the justification:
  *  "Endline comments also tend to be cryptic. The right side of the line doesn't offer much room and the desire to keep the comment on one line means the comment must be short. Work then goes into making the line as short as possible instead of as clear as possible. The comment usually ends up as cryptic as possible...."
  *  "A systemic problem with endline comments is that it's hard to write a meaningful comment for one line of code. Most endline comments just repeat the line of code, which hurts more than it helps."
 
-McConnel's comments on being hard to maintain when the size of the line changes are even more important in the age of automated refactorings.
+McConnell's comments on being hard to maintain when the size of the line changes are even more important in the age of automated refactorings.

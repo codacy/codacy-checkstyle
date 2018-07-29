@@ -14,6 +14,6 @@ For example, in the following case the import `java.awt.Component` will not be f
 
     import java.awt.Component;
     class FooBar {
-        private Object Component; // a bad practice in my opinion
-        ...
+      private Object Component; // a bad practice in my opinion
+      ...
     }

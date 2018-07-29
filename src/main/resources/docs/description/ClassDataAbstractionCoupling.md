@@ -6,11 +6,11 @@ This check processes files in the following way:
 
 1.  Iterates over the list of tokens (defined below) and counts all mentioned classes.
     
-     *  PACKAGE\_DEF
-     *  IMPORT
-     *  CLASS\_DEF
-     *  INTERFACE\_DEF
-     *  ENUM\_DEF
-     *  LITERAL\_NEW
+     *   PACKAGE\_DEF
+     *   IMPORT
+     *   CLASS\_DEF
+     *   INTERFACE\_DEF
+     *   ENUM\_DEF
+     *   LITERAL\_NEW
 2.  If a class was imported with direct import (i.e. `import java.math.BigDecimal`), or the class was referenced with the package name (i.e. `java.math.BigDecimal value`) and the package was added to the `excludedPackages` parameter, the class does not increase complexity.
 3.  If a class name was added to the `excludedClasses` parameter, the class does not increase complexity.

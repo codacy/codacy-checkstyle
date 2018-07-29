@@ -1,32 +1,34 @@
 package codacy.checkstyle
 
-import java.nio.file.Path
+import java.nio.file.{Path, Paths}
 
 import better.files.File
-import codacy.docker.api
-import codacy.docker.api._
-import codacy.docker.api.utils.ToolHelper
-import codacy.dockerApi.utils.FileHelper
+import com.codacy.plugins.api.results.{Parameter, Pattern, Result, Tool}
+import com.codacy.plugins.api.{Options, Source}
+import com.codacy.tools.scala.seed.utils.FileHelper
+import com.codacy.tools.scala.seed.utils.ToolHelper._
 import com.puppycrawl.tools.checkstyle._
 import com.puppycrawl.tools.checkstyle.api.{AuditListener, Configuration}
 import play.api.libs.json.{JsString, JsValue}
 
 import scala.collection.JavaConversions._
-import scala.util.Try
+import scala.util.{Success, Try}
 import scala.xml.Elem
 
 object Checkstyle extends Tool {
 
-  override def apply(source: Source.Directory, configuration: Option[List[Pattern.Definition]], files: Option[Set[Source.File]],
-                     options: Map[api.Configuration.Key, api.Configuration.Value])
-                    (implicit specification: Tool.Specification): Try[List[Result]] = Try {
-    val fullConfig = ToolHelper.patternsToLint(configuration)
+  def apply(source: Source.Directory,
+            configuration: Option[List[Pattern.Definition]],
+            files: Option[Set[Source.File]],
+            options: Map[Options.Key, Options.Value])(implicit specification: Tool.Specification): Try[List[Result]] = {
+    val fullConfig = configuration.withDefaultParameters
+
     val filesToLint: List[String] = files.fold(List(source.path.toString)) {
       paths =>
         paths.map(_.toString).toList
     }
 
-    val configFile = generateConfig(source.path.toString, fullConfig)
+    val configFile = generateConfig(source, fullConfig)
       .map(_.toAbsolutePath.toString)
       .getOrElse {
         throw new Exception("Could not generate nor find configuration")
@@ -42,7 +44,7 @@ object Checkstyle extends Tool {
 
     run(filesToLint, config, listener)
 
-    (listener.issues ++ listener.failures).to[List]
+    Success((listener.issues ++ listener.failures).to[List])
   }
 
   private def run(files: List[String], config: Configuration, listener: AuditListener): Unit = {
@@ -66,17 +68,9 @@ object Checkstyle extends Tool {
     "http://www.puppycrawl.com/dtds/configuration_1_3.dtd" >"""
 
 
-  private def generateConfig(projectRoot: String, conf: Option[List[Pattern.Definition]]): Option[Path] = {
+  private def generateConfig(root: Source.Directory, conf: Option[List[Pattern.Definition]]): Option[Path] = {
     lazy val nativeConfig =
-      nativeConfigFileNames.flatMap { nativeConfigFileName =>
-        File(projectRoot)
-          .listRecursively
-          .filter(f => f.name == nativeConfigFileName)
-          .map(_.path)
-      }
-        .to[List]
-        .sortBy(_.toString.length)
-        .headOption
+      FileHelper.findConfigurationFile(Paths.get(root.path), nativeConfigFileNames)
 
     lazy val codacyConfig = conf.map { allPatterns =>
       val (globalPatterns, patterns) = allPatterns.partition(isGlobalPattern)

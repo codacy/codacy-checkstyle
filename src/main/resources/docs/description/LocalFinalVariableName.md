@@ -1,3 +1,1 @@
-Since Checkstyle 3.0
-
-Validates identifiers for local, `final` variables, including `catch` parameters and resources in `try` statements.
+Checks that local final variable names conform to a format specified by the format property. A catch parameter and resources in try statements are considered to be a local, final variables.

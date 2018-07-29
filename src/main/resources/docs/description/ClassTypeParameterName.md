@@ -1,3 +1,1 @@
-Since Checkstyle 5.0
-
-Validates identifiers for class type parameters.
+Checks that class type parameter names conform to a format specified by the format property.

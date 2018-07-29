@@ -8,7 +8,7 @@ ATTENTION: Only user can decide whether a class is designed for extension or not
 
 ATTENTION: If the method which can be overridden in a subclass has a javadoc comment (a good practice is to explain its self-use of overridable methods) the check will not rise a violation. The violation can also be skipped if the method which can be overridden in a subclass has one or more annotations that are specified in ignoredAnnotations option. Note, that by default @Override annotation is not included in the ignoredAnnotations set as in a subclass the method which has the annotation can also be overridden in its subclass.
 
-Problem is described at "Effective Java, 2nd Edition by Josh Bloch" book, chapter "Item 17: Design and document for inheritance or else prohibit it".
+Problem is described at "Effective Java, 2nd Edition by Joshua Bloch" book, chapter "Item 17: Design and document for inheritance or else prohibit it".
 
 Some quotes from book:
 
@@ -27,44 +27,44 @@ More specifically, it enforces a programming style where superclasses provide em
 Example of code that cause violation as it is designed for extension:
 
     public abstract class Plant {
-        private String roots;
-        private String trunk;
+      private String roots;
+      private String trunk;
     
-        protected void validate() {
-          if (roots == null) throw new IllegalArgumentException("No roots!");
-          if (trunk == null) throw new IllegalArgumentException("No trunk!");
-        }
+      protected void validate() {
+        if (roots == null) throw new IllegalArgumentException("No roots!");
+        if (trunk == null) throw new IllegalArgumentException("No trunk!");
+      }
     
-        public abstract void grow();
+      public abstract void grow();
     }
     
     public class Tree extends Plant {
-        private List leaves;
+      private List leaves;
     
-        @Overrides
-        protected void validate() {
-          super.validate();
-          if (leaves == null) throw new IllegalArgumentException("No leaves!");
-        }
+      @Overrides
+      protected void validate() {
+        super.validate();
+        if (leaves == null) throw new IllegalArgumentException("No leaves!");
+      }
     
-        public void grow() {
-          validate();
-        }
+      public void grow() {
+        validate();
+      }
     }
 
 Example of code without violation:
 
     public abstract class Plant {
-        private String roots;
-        private String trunk;
+      private String roots;
+      private String trunk;
     
-        private void validate() {
-            if (roots == null) throw new IllegalArgumentException("No roots!");
-            if (trunk == null) throw new IllegalArgumentException("No trunk!");
-            validateEx();
-        }
+      private void validate() {
+        if (roots == null) throw new IllegalArgumentException("No roots!");
+        if (trunk == null) throw new IllegalArgumentException("No trunk!");
+        validateEx();
+      }
     
-        protected void validateEx() { }
+      protected void validateEx() { }
     
-        public abstract void grow();
+      public abstract void grow();
     }

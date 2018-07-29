@@ -9,12 +9,12 @@ According to [ Code Conventions for the Java Programming Language][Code Conventi
 
 Purpose of **ignore\*** option is to ignore related violations, however it still impacts on other class members.
 
-ATTENTION: the check skips class fields which have [forward references][] from validation due to the fact that we have Checkstyle's limitations to clearly detect user intention of fields location and grouping. For example,
+ATTENTION: the check skips class fields which have [ forward references][forward references] from validation due to the fact that we have Checkstyle's limitations to clearly detect user intention of fields location and grouping. For example,
 
     public class A {
-        private double x = 1.0;
-        private double y = 2.0;
-        public double slope = x / y; // will be skipped from validation due to forward reference
+      private double x = 1.0;
+      private double y = 2.0;
+      public double slope = x / y; // will be skipped from validation due to forward reference
     }
 
 

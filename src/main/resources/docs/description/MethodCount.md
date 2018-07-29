@@ -15,7 +15,7 @@ Methods defined in anonymous classes are not counted towards any totals. Counts 
     
       public void example() { // counted towards ExampleClass
         Runnable r = (new Runnable() {
-            public void run() { ... } // NOT counted towards ExampleClass and won't produce any violations
+          public void run() { ... } // NOT counted towards ExampleClass and won't produce any violations
         });
       }
     

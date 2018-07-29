@@ -6,22 +6,22 @@ The check honors special comments to suppress the warning. By default the text "
 
     switch (i){
     case 0:
-        i++; // fall through
+      i++; // fall through
     
     case 1:
-        i++;
-        // falls through
+      i++;
+      // falls through
     case 2:
     case 3:
     case 4: {
-        i++;
+      i++;
     }
     // fallthrough
     case 5:
-        i++;
+      i++;
     /* fallthru */case 6:
-        i++
-        break;
+      i++
+      break;
     }
 
 Note: The check assumes that there is no unreachable code in the `case`.
