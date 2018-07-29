@@ -8,7 +8,7 @@ Note: Check allows usage of the popular assignment in `while` idiom:
 
     String line;
     while ((line = bufferedReader.readLine()) != null) {
-       // process the line
+      // process the line
     }
 
 Assignment inside a condition is not a problem here, as the assignment is surrounded by an extra pair of parentheses. The comparison is `!= null` and there is no chance that intention was to write `line == reader.readLine()`.

@@ -3,7 +3,7 @@ package codacy.checkstyle
 import java.nio.file.{Files, Path}
 
 import better.files.File
-import codacy.docker.api.{JsonApi, Parameter, ParameterExtensions, Pattern, Result, Tool}
+import com.codacy.plugins.api.results.{Parameter, Pattern, Result, Tool}
 import com.overzealous.remark.Options.FencedCodeBlocks
 import com.overzealous.remark.{Options, Remark}
 import org.jsoup.Jsoup
@@ -14,7 +14,7 @@ import scala.sys.process._
 import scala.util.Try
 import scala.xml._
 
-object DocGenerator extends JsonApi {
+object DocGenerator {
 
   private case class PatternExtendedDescription(patternId: Pattern.Id, extendedDescription: String)
 
@@ -98,9 +98,9 @@ object DocGenerator extends JsonApi {
 
       val (patternSpecifications, patternDescriptions, descriptions) = genPatterns.unzip3
 
-      val sortedPatternSpecifications = ListSet(patternSpecifications.toSeq.sortBy(_.patternId.value)(Ordering[String].reverse): _*)
+      val sortedPatternSpecifications = ListSet(patternSpecifications.sortBy(_.patternId.value)(Ordering[String]): _*)
         .map(p => p.copy(parameters = p.parameters.map(pp => ListSet(pp.toSeq.sortBy(_.name.value): _*))))
-      val sortedPatternDescriptions = ListSet(patternDescriptions.toSeq.sortBy(_.patternId.value)(Ordering[String].reverse): _*)
+      val sortedPatternDescriptions = ListSet(patternDescriptions.sortBy(_.patternId.value)(Ordering[String]): _*)
         .map(p => p.copy(parameters = p.parameters.map(pp => ListSet(pp.toSeq.sortBy(_.name.value): _*))))
 
       val spec = Tool.Specification(Tool.Name("Checkstyle"), Some(Tool.Version(version)), sortedPatternSpecifications)
@@ -139,7 +139,7 @@ object DocGenerator extends JsonApi {
 
   private def withRepository[T](version: String)(block: Path => T): T = {
     val directory = Files.createTempDirectory("checkstyle")
-    s"git clone git://github.com/checkstyle/checkstyle -b checkstyle-$version $directory".!!
+    s"git clone git://github.com/checkstyle/checkstyle --depth 1 -b checkstyle-$version $directory".!!
     val res = block(directory)
     File(directory).delete(true)
     res

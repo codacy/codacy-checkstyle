@@ -1,6 +1,6 @@
 Since Checkstyle 6.0
 
-Checks the order of [javadoc block-tags or javadoc tags][].
+Checks the order of [ javadoc block-tags or javadoc tags][javadoc block-tags or javadoc tags].
 Note: Google used term "at-clauses" for block tags in his guide till 2017-02-28.
 
 

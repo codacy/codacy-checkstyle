@@ -1,6 +1,7 @@
 package codacy.checkstyle
 
-import codacy.docker.api.{ErrorMessage, Pattern, Result, Source}
+import com.codacy.plugins.api.{ErrorMessage, Source}
+import com.codacy.plugins.api.results.{Pattern, Result}
 import com.puppycrawl.tools.checkstyle.api.{AuditEvent, AuditListener}
 
 import scala.collection.mutable

@@ -1,3 +1,1 @@
-Since Checkstyle 5.0
-
-Validates identifiers for method type parameters.
+Checks that method type parameter names conform to a format specified by the format property.

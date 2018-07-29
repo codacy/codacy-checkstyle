@@ -3,19 +3,19 @@
   "title" : "AbbreviationAsWordInName",
   "parameters" : [ {
     "name" : "allowedAbbreviationLength",
-    "description" : "indicates on the number of consecutive capital letters allowed in targeted identifiers\n             (abbreviations in the classes, interfaces, variables and methods names, ... )."
+    "description" : "Indicate the number of consecutive capital letters allowed in targeted\n             identifiers (abbreviations in the classes, interfaces, variables and methods\n             names, ... )."
   }, {
     "name" : "allowedAbbreviations",
-    "description" : "list of abbreviations that must be skipped for checking.\n            Abbreviations should be separated by comma, no spaces are allowed."
+    "description" : "Specify list of abbreviations that must be skipped for checking.\n            Abbreviations should be separated by comma."
   }, {
     "name" : "ignoreFinal",
-    "description" : "allow to skip variables with final modifier."
+    "description" : "Allow to skip variables with final modifier."
   }, {
     "name" : "ignoreOverriddenMethods",
-    "description" : "Allows to ignore methods tagged with @Override annotation\n            (that usually mean inherited name)."
+    "description" : "Allow to ignore methods tagged with @Override annotation\n            (that usually mean inherited name)."
   }, {
     "name" : "ignoreStatic",
-    "description" : "allow to skip variables with static modifier."
+    "description" : "Allow to skip variables with static modifier."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -25,13 +25,13 @@
   "title" : "AbstractClassName",
   "parameters" : [ {
     "name" : "format",
-    "description" : "Specifies valid identifiers."
+    "description" : "Specify valid identifiers."
   }, {
     "name" : "ignoreModifier",
-    "description" : "\n              Controls whether to ignore checking for the\n              abstract modifier on classes that match the\n              name.\n            "
+    "description" : "\n              Control whether to ignore checking for the\n              abstract modifier on classes that match the\n              name.\n            "
   }, {
     "name" : "ignoreName",
-    "description" : "\n              Controls whether to ignore checking the name. Realistically\n              only useful if using the check to identify that match name\n              and do not have the abstract modifier.  name.\n            "
+    "description" : "\n              Control whether to ignore checking the name. Realistically\n              only useful if using the check to identify that match name\n              and do not have the abstract modifier.\n            "
   } ]
 }, {
   "patternId" : "AnnotationLocation",
@@ -41,10 +41,10 @@
     "description" : "To allow annotation(s) to be located on the same line as target element."
   }, {
     "name" : "allowSamelineParameterizedAnnotation",
-    "description" : "To allow one and only parameterized annotation to be located on the same line as target element."
+    "description" : "To allow one and only parameterized annotation to be located on the same line as\n                target element."
   }, {
     "name" : "allowSamelineSingleParameterlessAnnotation",
-    "description" : "To allow single parameterless annotation to be located on the same line as target element."
+    "description" : "To allow single parameterless annotation to be located on the same line as\n                target element."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -95,6 +95,9 @@
   }, {
     "name" : "target",
     "description" : "allows to specify targets to check at-clauses."
+  }, {
+    "name" : "violateExecutionOnNonTightHtml",
+    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
   } ]
 }, {
   "patternId" : "AvoidEscapedUnicodeCharacters",
@@ -506,13 +509,13 @@
   "title" : "IllegalImport",
   "parameters" : [ {
     "name" : "illegalClasses",
-    "description" : "Class names to reject, if regexp variable is not set, checks if import equals class name. If regexp variable is set, then list of class name will be\n                interpreted as regular expressions. Note, all properties for match will be used."
+    "description" : "illegalClasses"
   }, {
     "name" : "illegalPkgs",
-    "description" : "Packages to reject, if regexp variable is not set, checks if import is the part of package. If regexp variable is set, then list of packages will be\n                interpreted as regular expressions. Note, all properties for match will be used."
+    "description" : "illegalPkgs"
   }, {
     "name" : "regexp",
-    "description" : "Whether the illegalPkgs and illegalClasses should be interpreted as regular expressions"
+    "description" : "Whether the illegalPkgs and illegalClasses should be interpreted as\n                regular expressions"
   } ]
 }, {
   "patternId" : "IllegalInstantiation",
@@ -612,7 +615,7 @@
     "description" : "whether imports within group should be sorted\n              (It doesn't affect sorting for static imports.)"
   }, {
     "name" : "separated",
-    "description" : "\n              whether imports groups should be separated by, at least, one\n              blank line or comment and aren't separated internally\n            "
+    "description" : "\n              whether imports groups should be separated by, at least, one\n              blank line or comment and aren't separated internally.\n              (It doesn't affect separations for static imports.)\n            "
   }, {
     "name" : "sortStaticImportsAlphabetically",
     "description" : "whether static imports grouped by top or bottom option\n                are sorted alphabetically or not.\n                Attention: It is applied to all static imports as one group."
@@ -640,7 +643,7 @@
     "description" : "how far a case label should be indented when on next line"
   }, {
     "name" : "forceStrictCondition",
-    "description" : "force strict indent level in line wrapping case. If value is true, line wrap indent\n                have to be same as lineWrappingIndentation parameter. If value is false, line wrap indent could be bigger on any value user would like."
+    "description" : "forceStrictCondition"
   }, {
     "name" : "lineWrappingIndentation",
     "description" : "how far continuation line should be indented when line-wrapping is present"
@@ -749,6 +752,9 @@
   "parameters" : [ {
     "name" : "allowNewlineParagraph",
     "description" : "whether the <p> tag should be placed immediately before the first word"
+  }, {
+    "name" : "violateExecutionOnNonTightHtml",
+    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
   } ]
 }, {
   "patternId" : "JavadocStyle",
@@ -781,6 +787,9 @@
   "parameters" : [ {
     "name" : "offset",
     "description" : "How many spaces to use for new indentation level."
+  }, {
+    "name" : "violateExecutionOnNonTightHtml",
+    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
   } ]
 }, {
   "patternId" : "JavadocType",
@@ -824,6 +833,13 @@
     "description" : "tokens to check"
   } ]
 }, {
+  "patternId" : "LambdaParameterName",
+  "title" : "LambdaParameterName",
+  "parameters" : [ {
+    "name" : "format",
+    "description" : "Specifies valid identifiers."
+  } ]
+}, {
   "patternId" : "LeftCurly",
   "title" : "LeftCurly",
   "parameters" : [ {
@@ -861,7 +877,7 @@
   "title" : "LocalVariableName",
   "parameters" : [ {
     "name" : "allowOneCharVarInForLoop",
-    "description" : "\n            Allow one character variable name in  initialization expressions in FOR loop. For example:\n              \nfor (int i = 1; i < 10; i++) {}\n              \n            "
+    "description" : "\n            Allow one character variable name in\n              \n                initialization expressions in FOR loop. For example:\n              \nfor (int i = 1; i < 10; i++) {}\n              \n            "
   }, {
     "name" : "format",
     "description" : "Specifies valid identifiers."
@@ -871,7 +887,7 @@
   "title" : "MagicNumber",
   "parameters" : [ {
     "name" : "constantWaiverParentToken",
-    "description" : "Token that are allowed in the AST path from the number literal to the enclosing constant definition."
+    "description" : "Token that are allowed in the AST path from the number literal to the\n                  enclosing constant definition."
   }, {
     "name" : "ignoreAnnotation",
     "description" : "ignore magic numbers in annotation declarations."
@@ -1009,7 +1025,7 @@
   "title" : "ModifiedControlVariable",
   "parameters" : [ {
     "name" : "skipEnhancedForLoopVariable",
-    "description" : "Controls whether to check enhanced for-loop variable."
+    "description" : "Controls whether to check\n                \n                    enhanced for-loop variable."
   } ]
 }, {
   "patternId" : "ModifierOrder",
@@ -1130,6 +1146,9 @@
   "parameters" : [ {
     "name" : "javadocTokens",
     "description" : "javadoc tokens to check"
+  }, {
+    "name" : "violateExecutionOnNonTightHtml",
+    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
   } ]
 }, {
   "patternId" : "OneStatementPerLine",
@@ -1376,7 +1395,7 @@
     "description" : "maximum allowed number of return statements in non-void methods/lambdas"
   }, {
     "name" : "maxForVoid",
-    "description" : "maximum allowed number of return statements in void methods/constructors/lambdas"
+    "description" : "maximum allowed number of return statements in void\n                methods/constructors/lambdas"
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -1419,13 +1438,16 @@
   }, {
     "name" : "ignoredTags",
     "description" : "allows to specify at-clauses which are ignored by the check."
+  }, {
+    "name" : "violateExecutionOnNonTightHtml",
+    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
   } ]
 }, {
   "patternId" : "SingleSpaceSeparator",
   "title" : "SingleSpaceSeparator",
   "parameters" : [ {
     "name" : "validateComments",
-    "description" : "If set to true, whitespaces surrounding comments will be ignored."
+    "description" : "If set to true, whitespaces surrounding comments will be validated."
   } ]
 }, {
   "patternId" : "StaticVariableName",
@@ -1458,6 +1480,9 @@
   }, {
     "name" : "period",
     "description" : "period symbol at the end of first javadoc sentence"
+  }, {
+    "name" : "violateExecutionOnNonTightHtml",
+    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
   } ]
 }, {
   "patternId" : "SuperClone",
@@ -1480,7 +1505,7 @@
   "title" : "SuppressWarningsHolder",
   "parameters" : [ {
     "name" : "aliasList",
-    "description" : "Aliases for check names that can be used in code within SuppressWarnings"
+    "description" : "Aliases for check names that can be used in code within\n                SuppressWarnings"
   } ]
 }, {
   "patternId" : "ThrowsCount",
@@ -1587,7 +1612,7 @@
   "title" : "VariableDeclarationUsageDistance",
   "parameters" : [ {
     "name" : "allowedDistance",
-    "description" : "A distance between declaration of variable and its first usage. Values should be greater than 0."
+    "description" : "A distance between declaration of variable and its first usage.\n                Values should be greater than 0."
   }, {
     "name" : "ignoreFinal",
     "description" : "Allows to ignore variables with a 'final' modifier."
@@ -1596,7 +1621,7 @@
     "description" : "pattern for ignoring the distance calculation"
   }, {
     "name" : "validateBetweenScopes",
-    "description" : "Allows to calculate the distance between declaration of variable and its first usage in the different scopes."
+    "description" : "Allows to calculate the distance between declaration of variable and its\n                first usage in the different scopes."
   } ]
 }, {
   "patternId" : "VisibilityModifier",

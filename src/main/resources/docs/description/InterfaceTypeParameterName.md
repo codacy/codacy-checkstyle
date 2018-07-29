@@ -1,3 +1,1 @@
-Since Checkstyle 5.8
-
-Validates identifiers for interface type parameters.
+Checks that interface type parameter names conform to a format specified by the format property.
