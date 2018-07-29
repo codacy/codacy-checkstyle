@@ -9,6 +9,7 @@ import com.overzealous.remark.{Options, Remark}
 import org.jsoup.Jsoup
 import play.api.libs.json.{JsObject, JsString, Json}
 
+import scala.collection.immutable.ListSet
 import scala.sys.process._
 import scala.util.Try
 import scala.xml._
@@ -97,9 +98,14 @@ object DocGenerator extends JsonApi {
 
       val (patternSpecifications, patternDescriptions, descriptions) = genPatterns.unzip3
 
-      val spec = Tool.Specification(Tool.Name("Checkstyle"), Some(Tool.Version(version)), patternSpecifications.to[Set])
+      val sortedPatternSpecifications = ListSet(patternSpecifications.toSeq.sortBy(_.patternId.value)(Ordering[String].reverse): _*)
+        .map(p => p.copy(parameters = p.parameters.map(pp => ListSet(pp.toSeq.sortBy(_.name.value): _*))))
+      val sortedPatternDescriptions = ListSet(patternDescriptions.toSeq.sortBy(_.patternId.value)(Ordering[String].reverse): _*)
+        .map(p => p.copy(parameters = p.parameters.map(pp => ListSet(pp.toSeq.sortBy(_.name.value): _*))))
+
+      val spec = Tool.Specification(Tool.Name("Checkstyle"), Some(Tool.Version(version)), sortedPatternSpecifications)
       val jsonSpecifications = Json.prettyPrint(Json.toJson(spec))
-      val jsonDescriptions = Json.prettyPrint(Json.toJson(patternDescriptions))
+      val jsonDescriptions = Json.prettyPrint(Json.toJson(sortedPatternDescriptions))
 
       val repoRoot = new java.io.File(".")
       val docsRoot = new java.io.File(repoRoot, "src/main/resources/docs")
