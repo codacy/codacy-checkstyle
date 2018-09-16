@@ -603,22 +603,28 @@
   "title" : "ImportOrder",
   "parameters" : [ {
     "name" : "caseSensitive",
-    "description" : "whether string comparison should be case sensitive or not.\n              Case sensitive sorting is in\n              ASCII sort order\n            "
+    "description" : "whether string comparison should be case sensitive or not.\n              Case sensitive sorting is in\n              ASCII sort order.\n              (It affects both type imports and static imports)\n            "
   }, {
     "name" : "groups",
-    "description" : "\n              list of imports groups (every group identified either by a\n              common prefix string, or by a regular expression enclosed\n              in forward slashes (e.g. /regexp/)\n            "
+    "description" : "groups"
   }, {
     "name" : "option",
-    "description" : "policy on the relative order between regular imports and static imports"
+    "description" : "policy on the relative order between type imports and static imports"
   }, {
     "name" : "ordered",
-    "description" : "whether imports within group should be sorted\n              (It doesn't affect sorting for static imports.)"
+    "description" : "whether type imports within each group should be sorted\n              (It doesn't affect sorting for static imports.)"
   }, {
     "name" : "separated",
-    "description" : "\n              whether imports groups should be separated by, at least, one\n              blank line or comment and aren't separated internally.\n              (It doesn't affect separations for static imports.)\n            "
+    "description" : "\n              whether type import groups should be separated by, at least, one\n              blank line or comment and aren't separated internally.\n              (It doesn't affect separations for static imports.)\n            "
+  }, {
+    "name" : "separatedStaticGroups",
+    "description" : "separatedStaticGroups"
   }, {
     "name" : "sortStaticImportsAlphabetically",
-    "description" : "whether static imports grouped by top or bottom option\n                are sorted alphabetically or not.\n                Attention: It is applied to all static imports as one group."
+    "description" : "whether static imports located at top or bottom are sorted\n                within the group."
+  }, {
+    "name" : "staticGroups",
+    "description" : "staticGroups"
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -663,6 +669,31 @@
   "parameters" : [ {
     "name" : "allowMarkerInterfaces",
     "description" : "\n              Controls whether marker interfaces like Serializable are\n              allowed.\n            "
+  } ]
+}, {
+  "patternId" : "InterfaceMemberImpliedModifier",
+  "title" : "InterfaceMemberImpliedModifier",
+  "parameters" : [ {
+    "name" : "violateImpliedAbstractMethod",
+    "description" : "\n              Control whether to enforce that abstract is explicitly coded\n              on interface methods."
+  }, {
+    "name" : "violateImpliedFinalField",
+    "description" : "\n              Control whether to enforce that final is explicitly coded\n              on interface fields."
+  }, {
+    "name" : "violateImpliedPublicField",
+    "description" : "\n              Control whether to enforce that public is explicitly coded\n              on interface fields."
+  }, {
+    "name" : "violateImpliedPublicMethod",
+    "description" : "\n              Control whether to enforce that public is explicitly coded\n              on interface methods."
+  }, {
+    "name" : "violateImpliedPublicNested",
+    "description" : "\n              Control whether to enforce that public is explicitly coded\n              on interface nested types."
+  }, {
+    "name" : "violateImpliedStaticField",
+    "description" : "\n              Control whether to enforce that static is explicitly coded\n              on interface fields."
+  }, {
+    "name" : "violateImpliedStaticNested",
+    "description" : "\n              Control whether to enforce that static is explicitly coded\n              on interface nested types."
   } ]
 }, {
   "patternId" : "InterfaceTypeParameterName",
