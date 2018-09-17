@@ -12,6 +12,9 @@ scalaVersion := languageVersion
 
 mainClass in Compile := Some("codacy.Engine")
 
+resolvers := Seq("Sonatype OSS Snapshots".at("https://oss.sonatype.org/content/repositories/releases")) ++
+  resolvers.value
+
 lazy val toolVersionKey = settingKey[String]("The version of the underlying tool retrieved from patterns.json")
 
 toolVersionKey := {
