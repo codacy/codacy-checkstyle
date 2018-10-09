@@ -91,10 +91,10 @@
   "title" : "AtclauseOrder",
   "parameters" : [ {
     "name" : "tagOrder",
-    "description" : "allows to specify the order by tags."
+    "description" : "Specify the order by tags."
   }, {
     "name" : "target",
-    "description" : "allows to specify targets to check at-clauses."
+    "description" : "Specify the list of targets to check at-clauses."
   }, {
     "name" : "violateExecutionOnNonTightHtml",
     "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."

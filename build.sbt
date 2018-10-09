@@ -37,15 +37,11 @@ libraryDependencies ++= Seq(
   "com.overzealous" % "remark" % "1.1.0"
 )
 
-enablePlugins(JavaAppPackaging)
+enablePlugins(AshScriptPlugin)
 
 enablePlugins(DockerPlugin)
 
 version in Docker := "1.0.0"
-
-val installAll =
-  s"""apk --no-cache add bash
-     |&& rm -rf /var/cache/apk/*""".stripMargin.replaceAll(System.lineSeparator(), " ")
 
 mappings in Universal ++= {
   (resourceDirectory in Compile) map { (resourceDir: File) =>
@@ -76,8 +72,7 @@ dockerCommands := dockerCommands.value.flatMap {
   case cmd@(Cmd("ADD", _)) => List(
     Cmd("RUN", s"adduser -u 2004 -D $dockerUser"),
     cmd,
-    Cmd("RUN", "mv /opt/docker/docs /docs"),
-    Cmd("RUN", installAll)
+    Cmd("RUN", "mv /opt/docker/docs /docs")
   )
   case other => List(other)
 }
