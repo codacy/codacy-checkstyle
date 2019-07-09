@@ -1,6 +1,7 @@
 import com.typesafe.sbt.packager.docker.Cmd
 import com.amazonaws.services.s3.model.Region
-import scala.io.Source
+import sjsonnew.shaded.scalajson.ast.unsafe._
+import sjsonnew.support.scalajson.unsafe._
 
 name := "codacy-checkstyle"
 
@@ -17,15 +18,10 @@ lazy val toolVersionKey = settingKey[String]("The version of the underlying tool
 
 toolVersionKey := {
   val jsonFile = (resourceDirectory in Compile).value / "docs" / "patterns.json"
-  val source = Source.fromFile(jsonFile)
-  try {
-    val jsonString = source.getLines().mkString
-    val json = ujson.read(jsonString)
-    json("version").str
-  } finally {
-    source.close()
-  }
+  val json = Parser.parseFromFile(jsonFile).get.asInstanceOf[JObject]
+  json.value.find(_.field == "version").get.value.asInstanceOf[JString].value
 }
+
 resolvers ++= Seq(
   "Typesafe Repo" at "http://repo.typesafe.com/typesafe/releases/",
   "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/releases",

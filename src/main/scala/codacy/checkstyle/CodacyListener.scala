@@ -12,7 +12,7 @@ class CodacyListener extends AuditListener {
   val issues: mutable.ListBuffer[Result.Issue] = mutable.ListBuffer()
   val failures: mutable.ListBuffer[Result.FileError] = mutable.ListBuffer()
 
-  override def addError(event: AuditEvent): Unit = try {
+  override def addError(event: AuditEvent): Unit = {
     event
       .getSourceName
       .split("\\.")
@@ -26,7 +26,7 @@ class CodacyListener extends AuditListener {
           Source.Line(event.getLine)
         )
       }
-  } catch { case NonFatal(e) => e.printStackTrace() }
+  }
 
   override def addException(event: AuditEvent, throwable: Throwable): Unit = {
     failures += Result.FileError(
