@@ -29,7 +29,9 @@ object DocGenerator {
     withRepository(version) { directory =>
       val genPatterns = for {
         xml <- XML.loadFile(s"$directory/src/xdocs/checks.xml").to[List]
-        a <- xml.\\("a").to[List]
+        tr <- xml \\ "tr"
+        firstTd <- tr.map(_ \ "td").map(_.head) // we only need the first one (not the links inside descriptions)
+        a <- firstTd.\("a").to[List]
         href <- a.attribute("href").flatMap(_.headOption.map(_.text)).to[List]
         categoryFilename = href.takeWhile(_ != '.') if !href.startsWith("https://") && !href.startsWith("http://")
         categoryXml <- XML.loadFile(s"$directory/src/xdocs/$categoryFilename.xml").to[List]
@@ -139,10 +141,13 @@ object DocGenerator {
 
   private def withRepository[T](version: String)(block: Path => T): T = {
     val directory = Files.createTempDirectory("checkstyle")
-    s"git clone git://github.com/checkstyle/checkstyle --depth 1 -b checkstyle-$version $directory".!!
-    val res = block(directory)
-    File(directory).delete(true)
-    res
+    try {
+      s"git clone git://github.com/checkstyle/checkstyle --depth 1 -b checkstyle-$version $directory".!!
+      val res = block(directory)
+      res
+    } finally {
+      File(directory).delete(true)
+    }
   }
 
 }

@@ -1,5 +1,3 @@
-Since Checkstyle 3.1
-
 Makes sure that utility classes (classes that contain only static methods or fields in their API) do not have a public constructor.
 
 Rationale: Instantiating utility classes does not make sense. Hence the constructors should either be private or (if you want to allow subclassing) protected. A common mistake is forgetting to hide the default constructor.

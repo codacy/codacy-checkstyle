@@ -1,5 +1,3 @@
-Since Checkstyle 5.0
-
 Checks that there are no tab characters (`'\t'`) in the source code.
 
 Rationale:

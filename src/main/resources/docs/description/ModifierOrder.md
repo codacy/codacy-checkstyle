@@ -20,4 +20,4 @@ ATTENTION: We skip [ type annotations][type annotations] from validation.
 
 [Java Language specification_ sections 8.1.1_ 8.3.1_ 8.4.3]: https://docs.oracle.com/javase/specs/jls/se8/html/jls-8.html
 [9.4]: https://docs.oracle.com/javase/specs/jls/se8/html/jls-9.html
-[type annotations]: http://www.oracle.com/technetwork/articles/java/ma14-architect-annotations-2177655.html
+[type annotations]: https://www.oracle.com/technetwork/articles/java/ma14-architect-annotations-2177655.html

@@ -18,7 +18,7 @@ sbt docker:publishLocal
 The docker is ran with the following command:
 
 ```bash
-docker run -it -v $srcDir:/src  <DOCKER_NAME>:<DOCKER_VERSION>
+docker run -it -v $srcDir:/src -v $configFile:/.codacyrc  <DOCKER_NAME>:<DOCKER_VERSION>
 ```
 
 ## Generate Docs
@@ -28,7 +28,7 @@ docker run -it -v $srcDir:/src  <DOCKER_NAME>:<DOCKER_VERSION>
 2. Run the DocGenerator
 
 ```bash
-sbt "run-main codacy.checkstyle.DocGenerator"
+sbt "runMain codacy.checkstyle.DocGenerator"
 ```
 
 ## Test

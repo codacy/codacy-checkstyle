@@ -1,7 +1,7 @@
-Since Checkstyle 3.2
-
 Checks that classes which define a covariant `equals()` method also override method `equals(Object)`.
+
 Covariant `equals()` \- method that is similar to `equals(Object)`, but with a covariant parameter type (any subtype of Object).
+
 **Notice**: the enums are also checked, even though they cannot override `equals(Object)`. The reason is to point out that implementing `equals()` in enums is considered an awful practice: it may cause having two different enum values that are equal using covariant enum method, and not equal when compared normally.
 
 Inspired by [ Finding Bugs is Easy, chapter '2.3.1 Bad Covariant Definition of Equals (Eq)'][Finding Bugs is Easy_ chapter _2.3.1 Bad Covariant Definition of Equals _Eq]:

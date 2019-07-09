@@ -5,14 +5,14 @@ import com.codacy.plugins.api.results.{Pattern, Result}
 import com.puppycrawl.tools.checkstyle.api.{AuditEvent, AuditListener}
 
 import scala.collection.mutable
-import scala.util.Try
+import scala.util.control.NonFatal
 
 class CodacyListener extends AuditListener {
 
   val issues: mutable.ListBuffer[Result.Issue] = mutable.ListBuffer()
   val failures: mutable.ListBuffer[Result.FileError] = mutable.ListBuffer()
 
-  override def addError(event: AuditEvent): Unit = Try {
+  override def addError(event: AuditEvent): Unit = try {
     event
       .getSourceName
       .split("\\.")
@@ -26,7 +26,7 @@ class CodacyListener extends AuditListener {
           Source.Line(event.getLine)
         )
       }
-  }
+  } catch { case NonFatal(e) => e.printStackTrace() }
 
   override def addException(event: AuditEvent, throwable: Throwable): Unit = {
     failures += Result.FileError(

@@ -1,0 +1,1 @@
+Checks if unnecessary semicolon is used in last resource declaration.

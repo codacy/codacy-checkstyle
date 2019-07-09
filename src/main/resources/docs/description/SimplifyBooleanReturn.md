@@ -1,5 +1,3 @@
-Since Checkstyle 3.0
-
 Checks for over-complicated boolean return statements. For example the following code
 
     if (valid())

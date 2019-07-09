@@ -1,5 +1,3 @@
-Since Checkstyle 3.1
-
 The check finds classes that are designed for extension (subclass creation).
 
 Nothing wrong could be with founded classes. This check makes sense only for library projects (not application projects) which care of ideal OOP-design to make sure that class works in all cases even misusage. Even in library projects this check most likely will find classes that are designed for extension by somebody. User needs to use suppressions extensively to got a benefit from this check, and keep in suppressions all confirmed/known classes that are deigned for inheritance intentionally to let the check catch only new classes, and bring this to team/user attention.

@@ -1,6 +1,6 @@
 {
   "name" : "Checkstyle",
-  "version" : "8.13",
+  "version" : "8.22",
   "patterns" : [ {
     "patternId" : "AbbreviationAsWordInName",
     "level" : "Info",
@@ -53,7 +53,7 @@
       "default" : true
     }, {
       "name" : "tokens",
-      "default" : "CLASS_DEF,INTERFACE_DEF,ENUM_DEF,METHOD_DEF,CTOR_DEF,VARIABLE_DEF"
+      "default" : "CLASS_DEF,INTERFACE_DEF,PACKAGE_DEF,ENUM_CONSTANT_DEF,ENUM_DEF,METHOD_DEF,CTOR_DEF,VARIABLE_DEF"
     } ]
   }, {
     "patternId" : "AnnotationOnSameLine",
@@ -216,6 +216,17 @@
       "default" : 20
     } ]
   }, {
+    "patternId" : "ClassMemberImpliedModifier",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "violateImpliedStaticOnNestedEnum",
+      "default" : true
+    }, {
+      "name" : "violateImpliedStaticOnNestedInterface",
+      "default" : true
+    } ]
+  }, {
     "patternId" : "ClassTypeParameterName",
     "level" : "Info",
     "category" : "CodeStyle",
@@ -368,7 +379,7 @@
       "default" : ".*"
     }, {
       "name" : "exceptionVariableName",
-      "default" : "^$"
+      "default" : "\"^$\" (empty)"
     } ]
   }, {
     "patternId" : "EmptyForInitializerPad",
@@ -625,11 +636,11 @@
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "format",
-      "default" : "^(.*[.])?Abstract.*$"
-    }, {
       "name" : "ignoredMethodNames",
       "default" : "getInitialContext, getEnvironment"
+    }, {
+      "name" : "illegalAbstractClassNameFormat",
+      "default" : "^(.*[.])?Abstract.*$"
     }, {
       "name" : "illegalClassNames",
       "default" : "LinkedHashSet, java.util.HashSet, java.util.LinkedHashMap,java.util.TreeMap, HashMap, TreeSet, java.util.HashMap, TreeMap,java.util.LinkedHashSet, java.util.TreeSet, HashSet, LinkedHashMap"
@@ -638,10 +649,10 @@
       "default" : { }
     }, {
       "name" : "memberModifiers",
-      "default" : ""
+      "default" : "no tokens"
     }, {
       "name" : "tokens",
-      "default" : "VARIABLE_DEF,PARAMETER_DEF,METHOD_DEF"
+      "default" : "ANNOTATION_FIELD_DEF,CLASS_DEF,INTERFACE_DEF,METHOD_CALL,METHOD_DEF,METHOD_REF,PARAMETER_DEF,VARIABLE_DEF"
     }, {
       "name" : "validateAbstractClassNames",
       "default" : false
@@ -905,6 +916,9 @@
       "name" : "allowUnknownTags",
       "default" : false
     }, {
+      "name" : "allowedAnnotations",
+      "default" : "Generated"
+    }, {
       "name" : "authorFormat",
       "default" : ""
     }, {
@@ -1130,6 +1144,53 @@
       "default" : false
     } ]
   }, {
+    "patternId" : "MissingJavadocMethod",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "allowMissingPropertyJavadoc",
+      "default" : false
+    }, {
+      "name" : "allowedAnnotations",
+      "default" : "Override"
+    }, {
+      "name" : "excludeScope",
+      "default" : ""
+    }, {
+      "name" : "ignoreMethodNamesRegex",
+      "default" : ""
+    }, {
+      "name" : "minLineCount",
+      "default" : -1
+    }, {
+      "name" : "scope",
+      "default" : "public"
+    }, {
+      "name" : "tokens",
+      "default" : "METHOD_DEF,CTOR_DEF,ANNOTATION_FIELD_DEF"
+    } ]
+  }, {
+    "patternId" : "MissingJavadocPackage",
+    "level" : "Info",
+    "category" : "CodeStyle"
+  }, {
+    "patternId" : "MissingJavadocType",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "excludeScope",
+      "default" : ""
+    }, {
+      "name" : "scope",
+      "default" : "public"
+    }, {
+      "name" : "skipAnnotations",
+      "default" : "Generated"
+    }, {
+      "name" : "tokens",
+      "default" : "INTERFACE_DEF,CLASS_DEF,ENUM_DEF,ANNOTATION_DEF"
+    } ]
+  }, {
     "patternId" : "MissingOverride",
     "level" : "Info",
     "category" : "CodeStyle",
@@ -1237,7 +1298,7 @@
       "default" : "all files"
     }, {
       "name" : "lineSeparator",
-      "default" : "system"
+      "default" : "lf_cr_crlf"
     } ]
   }, {
     "patternId" : "NoClone",
@@ -1306,6 +1367,14 @@
     }, {
       "name" : "tokens",
       "default" : "QUESTION,COLON,EQUAL,NOT_EQUAL,DIV,PLUS,MINUS,STAR,MOD,SR,BSR,GE,GT,SL,LE,LT,BXOR,BOR,LOR,BAND,LAND,TYPE_EXTENSION_AND,LITERAL_INSTANCEOF"
+    } ]
+  }, {
+    "patternId" : "OrderedProperties",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "fileExtensions",
+      "default" : ".properties"
     } ]
   }, {
     "patternId" : "OuterTypeFilename",
@@ -1569,9 +1638,6 @@
       "name" : "option",
       "default" : "same"
     }, {
-      "name" : "shouldStartLine",
-      "default" : true
-    }, {
       "name" : "tokens",
       "default" : "LITERAL_TRY,LITERAL_CATCH,LITERAL_FINALLY,LITERAL_IF,LITERAL_ELSE"
     } ]
@@ -1668,7 +1734,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "format",
-      "default" : "^$|^\\s+$"
+      "default" : "^\\s*+$"
     }, {
       "name" : "tokens",
       "default" : "CLASS_DEF,INTERFACE_DEF,ENUM_DEF,ANNOTATION_DEF,ANNOTATION_FIELD_DEF,ENUM_CONSTANT_DEF,PARAMETER_DEF,VARIABLE_DEF,METHOD_DEF,CTOR_DEF"
@@ -1779,6 +1845,18 @@
     "parameters" : [ {
       "name" : "tokens",
       "default" : "EXPR,IDENT,NUM_DOUBLE,NUM_FLOAT,NUM_INT,NUM_LONG,STRING_LITERAL,LITERAL_NULL,LITERAL_FALSE,LITERAL_TRUE,ASSIGN,BAND_ASSIGN,BOR_ASSIGN,BSR_ASSIGN,BXOR_ASSIGN,DIV_ASSIGN,MINUS_ASSIGN,MOD_ASSIGN,PLUS_ASSIGN,SL_ASSIGN,SR_ASSIGN,STAR_ASSIGN,LAMBDA"
+    } ]
+  }, {
+    "patternId" : "UnnecessarySemicolonInEnumeration",
+    "level" : "Info",
+    "category" : "CodeStyle"
+  }, {
+    "patternId" : "UnnecessarySemicolonInTryWithResources",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "allowWhenNoBraceAfterSemicolon",
+      "default" : true
     } ]
   }, {
     "patternId" : "UnusedImports",

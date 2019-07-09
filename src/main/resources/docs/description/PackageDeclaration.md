@@ -1,5 +1,3 @@
-Since Checkstyle 3.2
-
 Ensures that a class has a package declaration, and (optionally) whether the package name matches the directory name for the source file.
 
 Rationale: Classes that live in the null package cannot be imported. Many novice developers are not aware of this.

@@ -1,5 +1,3 @@
-Since Checkstyle 3.2
-
 Checks that array initialization contains a trailing comma.
 
     int[] a = new int[]
@@ -30,7 +28,7 @@ Rationale: Putting this comma in makes it easier to change the order of the elem
       300000000000000000000,  // Just this line added, no other changes
     }
 
-If closing brace is on the same line as training comma, this benefit is gone (as the Check does not demand a certain location of curly braces the following two cases will not produce a violation):
+If closing brace is on the same line as training comma, this benefit is gone (as the check does not demand a certain location of curly braces the following two cases will not produce a violation):
 
     {100000000000000000000,
      200000000000000000000,} // Trailing comma not needed, line needs to be modified anyway

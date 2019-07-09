@@ -11,7 +11,7 @@ import com.puppycrawl.tools.checkstyle._
 import com.puppycrawl.tools.checkstyle.api.{AuditListener, Configuration}
 import play.api.libs.json.{JsString, JsValue}
 
-import scala.collection.JavaConversions._
+import scala.collection.JavaConverters._
 import scala.util.{Success, Try}
 import scala.xml.Elem
 
@@ -28,11 +28,13 @@ object Checkstyle extends Tool {
         paths.map(_.toString).toList
     }
 
-    val configFile = generateConfig(source, fullConfig)
-      .map(_.toAbsolutePath.toString)
-      .getOrElse {
-        throw new Exception("Could not generate nor find configuration")
-      }
+    val configFile = {
+      generateConfig(source, fullConfig)
+        .map(_.toAbsolutePath.toString)
+        .getOrElse {
+          throw new Exception("Could not generate nor find configuration")
+        }
+    }
 
     val listener = new CodacyListener()
     val config = ConfigurationLoader.loadConfiguration(
@@ -53,7 +55,7 @@ object Checkstyle extends Tool {
       checker.setModuleClassLoader(classOf[Checker].getClassLoader)
       checker.configure(config)
       checker.addListener(listener)
-      checker.process(files.map(f => File(f).toJava))
+      checker.process(files.map(f => File(f).toJava).asJava)
     }
 
     checker.destroy()
@@ -73,13 +75,14 @@ object Checkstyle extends Tool {
       FileHelper.findConfigurationFile(Paths.get(root.path), nativeConfigFileNames)
 
     lazy val codacyConfig = conf.map { allPatterns =>
-      val (globalPatterns, patterns) = allPatterns.partition(isGlobalPattern)
+      val (globalPatterns, localPatterns) = allPatterns.partition(isGlobalPattern)
 
       val xmlConfig =
         <module name="Checker">
-          {globalPatterns.map(generatePatternConfig)}<module name="TreeWalker">
-          {patterns.map(generatePatternConfig)}
-        </module>
+          {globalPatterns.map(generatePatternConfig)}
+          <module name="TreeWalker">
+            {localPatterns.map(generatePatternConfig)}
+          </module>
         </module>
 
       FileHelper.createTmpFile(doctype + xmlConfig.toString)
@@ -105,7 +108,7 @@ object Checkstyle extends Tool {
       <property name={parameter.name.value} value={jsValueToString(parameter.value)}/>
   }
 
-  private def jsValueToString(value: JsValue) = {
+  private def jsValueToString(value: JsValue): String = {
     value match {
       case JsString(v) => v
       case v => v.toString
@@ -133,5 +136,4 @@ object Checkstyle extends Tool {
   private def isGlobalPattern(pattern: Pattern.Definition) = {
     globalPatterns.contains(pattern.patternId.value)
   }
-
 }

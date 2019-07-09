@@ -1,18 +1,16 @@
 package codacy.checkstyle
 
-import java.io.{File, InputStream}
-import java.net.{URL, URLDecoder}
+import java.io.InputStream
+import java.net.URL
 import java.nio.charset.{CodingErrorAction, StandardCharsets}
 import java.nio.file.{Files, Path, StandardOpenOption}
-import java.util.jar.JarFile
 
-import scala.collection.JavaConversions.enumerationAsScalaIterator
 import scala.io.{Codec, Source}
 import scala.util.{Failure, Properties, Try}
 
 object ResourceHelper {
 
-  implicit val codec: Codec = Codec("UTF-8")
+  implicit val codec: Codec = Codec.UTF8
   codec.onMalformedInput(CodingErrorAction.REPLACE)
   codec.onUnmappableCharacter(CodingErrorAction.REPLACE)
 
