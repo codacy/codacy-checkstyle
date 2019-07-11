@@ -66,7 +66,8 @@ object DocGenerator {
                     // Remove quotes around regular expressions
                     if (tpe.text.trim == "Regular Expression" && defVal != "null") {
                       // Leaves only what's inside outer quotes.
-                      defVal.dropWhileLeftRight(_ != '"').drop(1).dropRight(1)
+                      val f: Char => Boolean = _ != '"'
+                      defVal.dropWhile(f).reverse.dropWhile(f).reverse.drop(1).dropRight(1)
                     } else {
                       defVal
                     }
@@ -147,27 +148,6 @@ object DocGenerator {
       res
     } finally {
       File(directory).delete(true)
-    }
-  }
-
-
-  implicit class StringOps(val s: String) extends AnyVal {
-    /**
-      * Like Scala's dropWhile but it works on right side too.
-      *
-      * @param f a function to match chars to remove from start and end of the string
-      * @return a new string with removed leading and tailing matching f function
-      */
-    def dropWhileLeftRight(f: Char => Boolean): String = {
-      var newStart = 0
-      var newEnd = s.length
-      while(f(s(newStart)) && newStart < s.length) {
-        newStart += 1
-      }
-      while(f(s(newEnd - 1)) && newEnd >= 0) {
-        newEnd -= 1
-      }
-      s.substring(newStart, newEnd)
     }
   }
 }

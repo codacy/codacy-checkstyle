@@ -32,8 +32,7 @@ libraryDependencies ++= Seq(
   "org.scala-lang.modules" %% "scala-xml" % "1.2.0" withSources(),
   "com.codacy" %% "codacy-engine-scala-seed" % "3.0.296",
   "com.puppycrawl.tools" % "checkstyle" % toolVersionKey.value,
-  "com.overzealous" % "remark" % "1.1.0",
-  "org.scalatest" %% "scalatest" % "3.0.8" % Test
+  "com.overzealous" % "remark" % "1.1.0"
 )
 
 enablePlugins(AshScriptPlugin)
@@ -75,5 +74,3 @@ dockerCommands := dockerCommands.value.flatMap {
   )
   case other => List(other)
 }
-
-s3region := Region.EU_Ireland
