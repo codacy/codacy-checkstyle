@@ -281,7 +281,7 @@
       "default" : false
     }, {
       "name" : "specialImportsRegExp",
-      "default" : "\"^$\" (empty)"
+      "default" : "^$"
     }, {
       "name" : "standardPackageRegExp",
       "default" : "^(java|javax)\\."
@@ -379,7 +379,7 @@
       "default" : ".*"
     }, {
       "name" : "exceptionVariableName",
-      "default" : "\"^$\" (empty)"
+      "default" : "^$"
     } ]
   }, {
     "patternId" : "EmptyForInitializerPad",
@@ -620,7 +620,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "format",
-      "default" : "\"^$\" (empty)"
+      "default" : "^$"
     }, {
       "name" : "ignoreCase",
       "default" : false
@@ -979,7 +979,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "ignorePattern",
-      "default" : "\"^$\" (empty)"
+      "default" : "^$"
     }, {
       "name" : "max",
       "default" : 80
@@ -1479,7 +1479,7 @@
       "default" : 100
     }, {
       "name" : "format",
-      "default" : "\"^$\" (empty)"
+      "default" : "^$"
     }, {
       "name" : "ignoreComments",
       "default" : false
@@ -1712,7 +1712,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "forbiddenSummaryFragments",
-      "default" : "\"^$\" (empty)"
+      "default" : "^$"
     }, {
       "name" : "period",
       "default" : "."
@@ -1828,7 +1828,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "excludedClasses",
-      "default" : "\"^$\" (empty)"
+      "default" : "^$"
     } ]
   }, {
     "patternId" : "UniqueProperties",

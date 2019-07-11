@@ -5,7 +5,6 @@ import com.codacy.plugins.api.results.{Pattern, Result}
 import com.puppycrawl.tools.checkstyle.api.{AuditEvent, AuditListener}
 
 import scala.collection.mutable
-import scala.util.control.NonFatal
 
 class CodacyListener extends AuditListener {
 

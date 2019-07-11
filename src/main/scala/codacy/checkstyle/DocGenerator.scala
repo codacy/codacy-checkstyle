@@ -30,7 +30,7 @@ object DocGenerator {
       val genPatterns = for {
         xml <- XML.loadFile(s"$directory/src/xdocs/checks.xml").to[List]
         tr <- xml \\ "tr"
-        firstTd <- tr.map(_ \ "td").map(_.head) // we only need the first one (not the links inside descriptions)
+        firstTd <- tr.map(_ \ "td").flatMap(_.headOption) // we only need the first one (not the links inside descriptions)
         a <- firstTd.\("a").to[List]
         href <- a.attribute("href").flatMap(_.headOption.map(_.text)).to[List]
         categoryFilename = href.takeWhile(_ != '.') if !href.startsWith("https://") && !href.startsWith("http://")
@@ -59,13 +59,14 @@ object DocGenerator {
               .drop(1)
               .map(_.\\("td").to[List])
               .collect {
-                case name :: description :: _ :: default :: _ =>
+                case name :: description :: tpe :: default :: _ =>
                   val defaultValue = Option({
                     // Remove spaces and breaklines in default values
                     val defVal = default.text.replaceAll("""\n\s+""", "").trim.stripSuffix(".")
-                    // Remove quotes around default values
-                    if (defVal.startsWith("\"") && defVal.endsWith("\"")) {
-                      defVal.stripPrefix("\"").stripSuffix("\"")
+                    // Remove quotes around regular expressions
+                    if (tpe.text.trim == "Regular Expression" && defVal != "null") {
+                      // Leaves only what's inside outer quotes.
+                      defVal.dropWhileLeftRight(_ != '"').drop(1).dropRight(1)
                     } else {
                       defVal
                     }
@@ -74,7 +75,6 @@ object DocGenerator {
 
                   // Try to parse numbers and booleans
                   val jsDefaultValue = Try(Json.parse(defaultValue)).getOrElse(JsString(defaultValue))
-
                   val descriptionText =
                     if(description.text.length > 250) {
                       name.text
@@ -150,4 +150,24 @@ object DocGenerator {
     }
   }
 
+
+  implicit class StringOps(val s: String) extends AnyVal {
+    /**
+      * Like Scala's dropWhile but it works on right side too.
+      *
+      * @param f a function to match chars to remove from start and end of the string
+      * @return a new string with removed leading and tailing matching f function
+      */
+    def dropWhileLeftRight(f: Char => Boolean): String = {
+      var newStart = 0
+      var newEnd = s.length
+      while(f(s(newStart)) && newStart < s.length) {
+        newStart += 1
+      }
+      while(f(s(newEnd - 1)) && newEnd >= 0) {
+        newEnd -= 1
+      }
+      s.substring(newStart, newEnd)
+    }
+  }
 }
