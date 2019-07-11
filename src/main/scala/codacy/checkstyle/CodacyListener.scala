@@ -12,8 +12,7 @@ class CodacyListener extends AuditListener {
   val failures: mutable.ListBuffer[Result.FileError] = mutable.ListBuffer()
 
   override def addError(event: AuditEvent): Unit = {
-    event
-      .getSourceName
+    event.getSourceName
       .split("\\.")
       .lastOption
       .map(_.stripSuffix("Check"))
@@ -28,10 +27,7 @@ class CodacyListener extends AuditListener {
   }
 
   override def addException(event: AuditEvent, throwable: Throwable): Unit = {
-    failures += Result.FileError(
-      Source.File(event.getFileName),
-      Some(ErrorMessage(event.getMessage))
-    )
+    failures += Result.FileError(Source.File(event.getFileName), Some(ErrorMessage(event.getMessage)))
   }
 
   override def auditStarted(event: AuditEvent): Unit = ()

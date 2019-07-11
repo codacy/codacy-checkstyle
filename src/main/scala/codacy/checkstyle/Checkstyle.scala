@@ -17,15 +17,16 @@ import scala.xml.Elem
 
 object Checkstyle extends Tool {
 
-  def apply(source: Source.Directory,
-            configuration: Option[List[Pattern.Definition]],
-            files: Option[Set[Source.File]],
-            options: Map[Options.Key, Options.Value])(implicit specification: Tool.Specification): Try[List[Result]] = {
+  def apply(
+      source: Source.Directory,
+      configuration: Option[List[Pattern.Definition]],
+      files: Option[Set[Source.File]],
+      options: Map[Options.Key, Options.Value]
+  )(implicit specification: Tool.Specification): Try[List[Result]] = {
     val fullConfig = configuration.withDefaultParameters
 
-    val filesToLint: List[String] = files.fold(List(source.path.toString)) {
-      paths =>
-        paths.map(_.toString).toList
+    val filesToLint: List[String] = files.fold(List(source.path.toString)) { paths =>
+      paths.map(_.toString).toList
     }
 
     val configFile = {
@@ -69,7 +70,6 @@ object Checkstyle extends Tool {
     "-//Puppy Crawl//DTD Check Configuration 1.3//EN"
     "http://www.puppycrawl.com/dtds/configuration_1_3.dtd" >"""
 
-
   private def generateConfig(root: Source.Directory, conf: Option[List[Pattern.Definition]]): Option[Path] = {
     lazy val nativeConfig =
       FileHelper.findConfigurationFile(Paths.get(root.path), nativeConfigFileNames)
@@ -105,7 +105,7 @@ object Checkstyle extends Tool {
   }
 
   private def generateParameterConfig(parameter: Parameter.Definition): Elem = {
-      <property name={parameter.name.value} value={jsValueToString(parameter.value)}/>
+    <property name={parameter.name.value} value={jsValueToString(parameter.value)}/>
   }
 
   private def jsValueToString(value: JsValue): String = {
