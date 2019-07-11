@@ -6,8 +6,6 @@ import sjsonnew.support.scalajson.unsafe._
 
 name := "codacy-checkstyle"
 
-version := "1.0.0-SNAPSHOT"
-
 scalaVersion := "2.12.8"
 
 mainClass in Compile := Some("codacy.Engine")
@@ -81,5 +79,3 @@ dockerCommands := dockerCommands.value.flatMap {
   )
   case other => List(other)
 }
-
-s3region := Region.EU_Ireland
