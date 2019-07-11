@@ -1,6 +1,7 @@
 import com.typesafe.sbt.packager.docker.Cmd
 import com.amazonaws.services.s3.model.Region
-import sjsonnew.shaded.scalajson.ast.unsafe._
+import sjsonnew._
+import sjsonnew.BasicJsonProtocol._
 import sjsonnew.support.scalajson.unsafe._
 
 name := "codacy-checkstyle"
@@ -17,9 +18,15 @@ resolvers := Seq("Sonatype OSS Snapshots".at("https://oss.sonatype.org/content/r
 lazy val toolVersionKey = settingKey[String]("The version of the underlying tool retrieved from patterns.json")
 
 toolVersionKey := {
+  case class Patterns(version: String)
+  implicit val patternsIso: IsoLList[Patterns] = LList.iso(
+    (p: Patterns) => ("version", p.version) :*: LNil,
+    { case (_, v) :*: LNil => Patterns(v) })
+
   val jsonFile = (resourceDirectory in Compile).value / "docs" / "patterns.json"
-  val json = Parser.parseFromFile(jsonFile).get.asInstanceOf[JObject]
-  json.value.find(_.field == "version").get.value.asInstanceOf[JString].value
+  val json = Parser.parseFromFile(jsonFile)
+  val patterns = Converter.fromJson[Patterns](json.get)
+  patterns.get.version
 }
 
 resolvers ++= Seq(
