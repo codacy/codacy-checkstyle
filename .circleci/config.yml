@@ -69,7 +69,7 @@ workflows:
           cmd: |
             git clone --depth 1 git://github.com/codacy/codacy-plugins-test.git codacy-plugins-test
             sbt ";set scalafmtUseIvy in ThisBuild := false;update"
-            (cd codacy-plugins-test && sbt ";set scalafmtUseIvy in ThisBuild := false;update")
+            (cd codacy-plugins-test && sbt update)
           requires:
             - codacy/checkout_and_version
       - codacy/sbt:
