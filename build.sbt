@@ -16,9 +16,10 @@ lazy val toolVersionKey = settingKey[String]("The version of the underlying tool
 
 toolVersionKey := {
   case class Patterns(name: String, version: String)
-  implicit val patternsIso: IsoLList[Patterns] = LList.isoCurried(
-    (p: Patterns) => ("name", p.name) :*: ("version", p.version) :*: LNil)
-    { case (_, n) :*: (_, v) :*: LNil => Patterns(n, v) }
+  implicit val patternsIso: IsoLList[Patterns] =
+    LList.isoCurried((p: Patterns) => ("name", p.name) :*: ("version", p.version) :*: LNil) {
+      case (_, n) :*: (_, v) :*: LNil => Patterns(n, v)
+    }
 
   val jsonFile = (resourceDirectory in Compile).value / "docs" / "patterns.json"
   val json = Parser.parseFromFile(jsonFile)
@@ -33,7 +34,7 @@ resolvers ++= Seq(
 )
 
 libraryDependencies ++= Seq(
-  "org.scala-lang.modules" %% "scala-xml" % "1.2.0" withSources(),
+  "org.scala-lang.modules" %% "scala-xml" % "1.2.0" withSources (),
   "com.codacy" %% "codacy-engine-scala-seed" % "3.0.296",
   "com.puppycrawl.tools" % "checkstyle" % toolVersionKey.value,
   "com.overzealous" % "remark" % "1.1.0"
@@ -68,13 +69,8 @@ dockerBaseImage := "openjdk:8-jre-alpine"
 dockerEntrypoint := Seq(s"/opt/docker/bin/${name.value}")
 
 dockerCommands := dockerCommands.value.flatMap {
-  case cmd @ Cmd("WORKDIR", _) => Seq(
-    Cmd("WORKDIR", "/src")
-  )
-  case cmd @ Cmd("ADD", _) => Seq(
-    Cmd("RUN", s"adduser -u 2004 -D $dockerUser"),
-    cmd,
-    Cmd("RUN", "mv /opt/docker/docs /docs")
-  )
+  case cmd @ Cmd("WORKDIR", _) => Seq(Cmd("WORKDIR", "/src"))
+  case cmd @ Cmd("ADD", _) =>
+    Seq(Cmd("RUN", s"adduser -u 2004 -D $dockerUser"), cmd, Cmd("RUN", "mv /opt/docker/docs /docs"))
   case other => List(other)
 }
