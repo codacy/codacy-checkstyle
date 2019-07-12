@@ -1,0 +1,127 @@
+version: 2.1
+
+orbs:
+  codacy: codacy/base@0.1.0
+
+# Re-usable blocks to reduce boilerplate in job definitions.
+references:
+  set_version_env_variable: &set_version_env_variable
+    run:
+      name: Define Environment Variable VERSION_NUMBER and ENV at Runtime
+      cmd: |
+        echo export VERSION_NUMBER=$(cat .version) >> $BASH_ENV
+        source $BASH_ENV
+        echo $VERSION_NUMBER
+
+  host_environment_defaults: &host_environment_defaults
+    # Customize the JVM maximum heap limit
+    JAVA_OPTS: -Xmx3200m
+
+  default_java_job: &default_java_job
+    machine: true
+    environment:
+      <<: *host_environment_defaults
+    working_directory: ~/workdir
+
+jobs:
+  publish_local:
+    <<: *default_java_job
+    steps:
+      - attach_workspace:
+          at: ~/
+      - codacy/sbt_cached:
+          cmd:  |
+            sbt workerApiServer/docker:publishLocal &&\
+            docker save --output ~/docker-image.tar codacy/worker-api:$(cat .version)
+      - persist_to_workspace:
+          root: ~/
+          paths:
+            - docker-image.tar
+
+  publish_dockerhub:
+    <<: *default_java_job
+    steps:
+      - attach_workspace:
+          at: ~/
+      - *set_version_env_variable
+      - run:
+          name: Test patterns
+          working_directory: ~/codacy-plugins-test
+          cmd: sbt -Dcodacy.tests.noremove=true -Dcodacy.tests.threads=8 "runMain codacy.plugins.DockerTest pattern $CIRCLE_PROJECT_REPONAME:latest"
+      - deploy:
+          name: Push application Docker image
+          cmd: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              docker login -u $DOCKER_USER -p $DOCKER_PASS
+              docker tag $CIRCLE_PROJECT_REPONAME codacy/$CIRCLE_PROJECT_REPONAME
+              docker tag $CIRCLE_PROJECT_REPONAME codacy/$CIRCLE_PROJECT_REPONAME:1.0.$CIRCLE_BUILD_NUM
+              docker push codacy/$CIRCLE_PROJECT_REPONAME
+            fi
+
+workflows:
+  version: 2
+  compile_test_deploy:
+    jobs:
+      - codacy/checkout_and_version:
+          write_sbt_version: true
+      - codacy/sbt:
+          name: populate_cache
+          context: CodacyAWS
+          cmd: sbt ";set scalafmtUseIvy in ThisBuild := false;update"
+          requires:
+            - codacy/checkout_and_version
+      - codacy/sbt:
+          name: check_fmt
+          context: CodacyAWS
+          cmd: sbt ";scalafmt::test;test:scalafmt::test;sbt:scalafmt::test"
+          requires:
+            - populate_cache
+      - codacy/sbt:
+          name: compile
+          context: CodacyAWS
+          cmd: sbt ";compile;test:compile"
+          requires:
+            - check_fmt
+      - codacy/sbt:
+          name: test
+          context: CodacyAWS
+          cmd: |
+            sbt ";coverage;test;coverageReport;coverageAggregate;codacyCoverage"
+          requires:
+            - compile
+#      - publish_local:
+#          context: CodacyAWS
+#          requires:
+#            - compile
+#      - publish_approval:
+#          context: CodacyAWS
+#          type: approval
+#          requires:
+#            - test
+#            - publish_local
+#      - publish_dockerhub:
+#          context: CodacyDocker
+#          requires:
+#            - publish_approval
+#      - codacy/tag_version:
+#          name: tag_version
+#          context: CodacyAWS
+#          requires:
+#            - publish_dockerhub
+#      - codacy/aws_deploy:
+#          name: deploy
+#          cmd: sceptre --dir .aws --var APPLICATION_VERSION=${cat .version} launch small -y
+#          aws_profile: development
+#          region: eu-west-1
+#          context: CodacyAWS
+#          requires:
+#            - tag_version
+#            - publish_approval
+#      - codacy/sbt:
+#          name: publish_libraries
+#          cmd: |
+#            sbt ";set clientVersionBundleName in ThisBuild := "akka24Circe011";clientAkkaHttp/publish"
+#            sbt ";set clientVersionBundleName in ThisBuild := "akka25Circe011";clientAkkaHttp/publish"
+#          context: CodacyAWS
+#          requires:
+#            - deploy

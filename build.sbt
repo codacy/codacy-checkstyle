@@ -1,5 +1,4 @@
 import com.typesafe.sbt.packager.docker.Cmd
-import com.amazonaws.services.s3.model.Region
 import sjsonnew._
 import sjsonnew.BasicJsonProtocol._
 import sjsonnew.support.scalajson.unsafe._
