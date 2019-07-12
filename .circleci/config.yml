@@ -82,13 +82,6 @@ workflows:
           cmd: sbt ";compile;test:compile"
           requires:
             - check_fmt
-      - codacy/sbt:
-          name: test
-          context: CodacyAWS
-          cmd: |
-            sbt ";coverage;test;coverageReport;coverageAggregate;codacyCoverage"
-          requires:
-            - compile
 #      - publish_local:
 #          context: CodacyAWS
 #          requires:
