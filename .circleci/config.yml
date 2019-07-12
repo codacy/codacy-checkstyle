@@ -66,55 +66,47 @@ workflows:
           write_sbt_version: true
       - codacy/sbt:
           name: populate_cache
-          context: CodacyAWS
-          cmd: sbt ";set scalafmtUseIvy in ThisBuild := false;update"
+          cmd: |
+            git clone --depth 1 git://github.com/codacy/codacy-plugins-test.git codacy-plugins-test
+            sbt ";set scalafmtUseIvy in ThisBuild := false;update"
+            (cd codacy-plugins-test && sbt ";set scalafmtUseIvy in ThisBuild := false;update")
           requires:
             - codacy/checkout_and_version
       - codacy/sbt:
           name: check_fmt
-          context: CodacyAWS
           cmd: sbt ";scalafmt::test;test:scalafmt::test;sbt:scalafmt::test"
           requires:
             - populate_cache
       - codacy/sbt:
           name: compile
-          context: CodacyAWS
-          cmd: sbt ";compile;test:compile"
+          cmd: sbt compile
           requires:
             - check_fmt
-#      - publish_local:
-#          context: CodacyAWS
-#          requires:
-#            - compile
-#      - publish_approval:
-#          context: CodacyAWS
-#          type: approval
-#          requires:
-#            - test
-#            - publish_local
-#      - publish_dockerhub:
-#          context: CodacyDocker
-#          requires:
-#            - publish_approval
-#      - codacy/tag_version:
-#          name: tag_version
-#          context: CodacyAWS
-#          requires:
-#            - publish_dockerhub
-#      - codacy/aws_deploy:
-#          name: deploy
-#          cmd: sceptre --dir .aws --var APPLICATION_VERSION=${cat .version} launch small -y
-#          aws_profile: development
-#          region: eu-west-1
-#          context: CodacyAWS
-#          requires:
-#            - tag_version
-#            - publish_approval
-#      - codacy/sbt:
-#          name: publish_libraries
-#          cmd: |
-#            sbt ";set clientVersionBundleName in ThisBuild := "akka24Circe011";clientAkkaHttp/publish"
-#            sbt ";set clientVersionBundleName in ThisBuild := "akka25Circe011";clientAkkaHttp/publish"
-#          context: CodacyAWS
-#          requires:
-#            - deploy
+      - codacy/sbt:
+          name: test_patterns
+          cmd: |
+            sbt ";set name := \"$CIRCLE_PROJECT_REPONAME\";docker:publishLocal"
+            (cd codacy-plugins-test && sbt -Dcodacy.tests.ignore.descriptions=true "runMain codacy.plugins.DockerTest json $CIRCLE_PROJECT_REPONAME:$(cat .version)")
+          requires:
+            - compile
+      - codacy/sbt:
+          name: publish_dockerhub
+          context: CodacyDocker
+          cmd: |
+            sbt ";set name := \"$CIRCLE_PROJECT_REPONAME\";docker:publishLocal"
+            docker login -u $DOCKER_USER -p $DOCKER_PASS
+            docker tag $CIRCLE_PROJECT_REPONAME codacy/$CIRCLE_PROJECT_REPONAME:$(cat .version)
+            docker tag $CIRCLE_PROJECT_REPONAME codacy/$CIRCLE_PROJECT_REPONAME:latest
+            docker push codacy/$CIRCLE_PROJECT_REPONAME:$(cat .version)
+            docker push codacy/$CIRCLE_PROJECT_REPONAME:latest
+          requires:
+            - test_patterns
+          filters:
+            branches:
+              only:
+                - master
+      - codacy/tag_version:
+          name: tag_version
+          context: CodacyAWS
+          requires:
+            - publish_dockerhub
