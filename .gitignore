@@ -10,3 +10,4 @@
 project/.bloop/
 .bloop/
 .vscode
+.version
