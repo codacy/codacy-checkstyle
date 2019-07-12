@@ -31,16 +31,16 @@ workflows:
           name: test_patterns
           # codacy-plugins-test can be saved before and restored from cache
           cmd: |
-            sbt ";set name := \"$CIRCLE_PROJECT_REPONAME\";docker:publishLocal"
+            sbt ";set name := \"$CIRCLE_PROJECT_REPONAME\";set version in Docker := \"latest\";docker:publishLocal"
             git clone --depth 1 git://github.com/codacy/codacy-plugins-test.git codacy-plugins-test
-            (cd codacy-plugins-test && sbt -Dcodacy.tests.ignore.descriptions=true "runMain codacy.plugins.DockerTest json $CIRCLE_PROJECT_REPONAME:$(cat ../.version)")
+            (cd codacy-plugins-test && sbt -Dcodacy.tests.ignore.descriptions=true "runMain codacy.plugins.DockerTest json $CIRCLE_PROJECT_REPONAME:latest")
           requires:
             - compile
       - codacy/sbt:
           name: publish_dockerhub
           context: CodacyDocker
           cmd: |
-            sbt ";set name := \"$CIRCLE_PROJECT_REPONAME\";docker:publishLocal"
+            sbt ";set name := \"$CIRCLE_PROJECT_REPONAME\";set version in Docker := \"latest\";docker:publishLocal"
             docker login -u $DOCKER_USER -p $DOCKER_PASS
             docker tag $CIRCLE_PROJECT_REPONAME codacy/$CIRCLE_PROJECT_REPONAME:$(cat .version)
             docker tag $CIRCLE_PROJECT_REPONAME codacy/$CIRCLE_PROJECT_REPONAME:latest
