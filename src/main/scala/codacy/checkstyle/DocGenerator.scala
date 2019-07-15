@@ -79,7 +79,7 @@ object DocGenerator {
                     if (tpe.text.trim == "Regular Expression" && defVal != "null") {
                       // Leaves only what's inside outer quotes.
                       val f: Char => Boolean = _ != '"'
-                      defVal.dropWhile(f).reverse.dropWhile(f).reverse.drop(1).dropRight(1)
+                      defVal.dropWhile(f).reverse.dropWhile(f).reverse.stripPrefix("\"").stripSuffix("\"")
                     } else {
                       defVal
                     }
