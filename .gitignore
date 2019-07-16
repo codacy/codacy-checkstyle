@@ -6,5 +6,8 @@
 /target/
 .idea
 .DS_Store
-
+.metals/
+project/.bloop/
+.bloop/
 .vscode
+.version

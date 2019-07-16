@@ -38,13 +38,13 @@
   "title" : "AnnotationLocation",
   "parameters" : [ {
     "name" : "allowSamelineMultipleAnnotations",
-    "description" : "To allow annotation(s) to be located on the same line as target element."
+    "description" : "Allow annotation(s) to be located on the same line as target element."
   }, {
     "name" : "allowSamelineParameterizedAnnotation",
-    "description" : "To allow one and only parameterized annotation to be located on the same line as\n                target element."
+    "description" : "Allow one and only parameterized annotation to be located on the same line as\n                target element."
   }, {
     "name" : "allowSamelineSingleParameterlessAnnotation",
-    "description" : "To allow single parameterless annotation to be located on the same line as\n                target element."
+    "description" : "Allow single parameterless annotation to be located on the same line as\n                target element."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -61,13 +61,13 @@
   "title" : "AnnotationUseStyle",
   "parameters" : [ {
     "name" : "closingParens",
-    "description" : "\n              Defines the policy for ending parenthesis.\n            "
+    "description" : "\n              Define the policy for ending parenthesis.\n            "
   }, {
     "name" : "elementStyle",
-    "description" : "\n              \n                Defines the annotation element styles.\n              \n            "
+    "description" : "\n              Define the annotation element styles.\n            "
   }, {
     "name" : "trailingArrayComma",
-    "description" : "\n              Defines the policy for trailing comma in arrays.\n            "
+    "description" : "\n              Define the policy for trailing comma in arrays.\n            "
   } ]
 }, {
   "patternId" : "AnonInnerLength",
@@ -123,7 +123,7 @@
   "title" : "AvoidNestedBlocks",
   "parameters" : [ {
     "name" : "allowInSwitchCase",
-    "description" : "Allow nested blocks in case statements"
+    "description" : "Allow nested blocks if they are the only child of a switch case."
   } ]
 }, {
   "patternId" : "AvoidStarImport",
@@ -195,6 +195,16 @@
     "description" : "the maximum threshold allowed"
   } ]
 }, {
+  "patternId" : "ClassMemberImpliedModifier",
+  "title" : "ClassMemberImpliedModifier",
+  "parameters" : [ {
+    "name" : "violateImpliedStaticOnNestedEnum",
+    "description" : "\n              Control whether to enforce that static is explicitly coded\n              on nested enums in classes."
+  }, {
+    "name" : "violateImpliedStaticOnNestedInterface",
+    "description" : "\n              Control whether to enforce that static is explicitly coded\n              on nested interfaces in classes."
+  } ]
+}, {
   "patternId" : "ClassTypeParameterName",
   "title" : "ClassTypeParameterName",
   "parameters" : [ {
@@ -235,7 +245,7 @@
   "title" : "CustomImportOrder",
   "parameters" : [ {
     "name" : "customImportOrderRules",
-    "description" : "List of order declaration customizing by user."
+    "description" : "Specify list of order declaration customizing by user."
   }, {
     "name" : "separateLineBetweenGroups",
     "description" : "Force empty line separator between import groups."
@@ -244,13 +254,13 @@
     "description" : "Force grouping alphabetically, in\n                \n                   ASCII sort order."
   }, {
     "name" : "specialImportsRegExp",
-    "description" : "RegExp for SPECIAL_IMPORTS group imports."
+    "description" : "Specify RegExp for SPECIAL_IMPORTS group imports."
   }, {
     "name" : "standardPackageRegExp",
-    "description" : "RegExp for STANDARD_JAVA_PACKAGE group imports."
+    "description" : "Specify RegExp for STANDARD_JAVA_PACKAGE group imports."
   }, {
     "name" : "thirdPartyPackageRegExp",
-    "description" : "RegExp for THIRD_PARTY_PACKAGE group imports."
+    "description" : "Specify RegExp for THIRD_PARTY_PACKAGE group imports."
   } ]
 }, {
   "patternId" : "CyclomaticComplexity",
@@ -270,17 +280,17 @@
   "title" : "DeclarationOrder",
   "parameters" : [ {
     "name" : "ignoreConstructors",
-    "description" : "whether to ignore constructors"
+    "description" : "control whether to ignore constructors."
   }, {
     "name" : "ignoreModifiers",
-    "description" : "whether to ignore modifiers"
+    "description" : "control whether to ignore modifiers (fields, ...)."
   } ]
 }, {
   "patternId" : "DefaultComesLast",
   "title" : "DefaultComesLast",
   "parameters" : [ {
     "name" : "skipIfLastAndSharedWithCase",
-    "description" : "whether to allow default along with case if they are not last"
+    "description" : "\n              Control whether to allow default along with\n              case if they are not last.\n            "
   } ]
 }, {
   "patternId" : "DescendantToken",
@@ -315,14 +325,14 @@
   "title" : "DesignForExtension",
   "parameters" : [ {
     "name" : "ignoredAnnotations",
-    "description" : "\n                        Annotations which allow the check to skip the method from validation.\n                    "
+    "description" : "\n                      Specify annotations which allow the check to skip the method from validation.\n                    "
   } ]
 }, {
   "patternId" : "EmptyBlock",
   "title" : "EmptyBlock",
   "parameters" : [ {
     "name" : "option",
-    "description" : "policy on block contents"
+    "description" : "specify the policy on block contents."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -332,37 +342,37 @@
   "title" : "EmptyCatchBlock",
   "parameters" : [ {
     "name" : "commentFormat",
-    "description" : "The format of the first comment inside empty catch"
+    "description" : "commentFormat"
   }, {
     "name" : "exceptionVariableName",
-    "description" : "The name of variable associated with exception"
+    "description" : "\n              Specify the RegExp for the name of the variable associated with exception.\n              If check meets variable name matching specified value - empty block is suppressed.\n            "
   } ]
 }, {
   "patternId" : "EmptyForInitializerPad",
   "title" : "EmptyForInitializerPad",
   "parameters" : [ {
     "name" : "option",
-    "description" : "policy on how to pad an empty for iterator"
+    "description" : "Specify policy on how to pad an empty for iterator."
   } ]
 }, {
   "patternId" : "EmptyForIteratorPad",
   "title" : "EmptyForIteratorPad",
   "parameters" : [ {
     "name" : "option",
-    "description" : "policy on how to pad an empty for iterator"
+    "description" : "Specify policy on how to pad an empty for iterator."
   } ]
 }, {
   "patternId" : "EmptyLineSeparator",
   "title" : "EmptyLineSeparator",
   "parameters" : [ {
     "name" : "allowMultipleEmptyLines",
-    "description" : "Allow multiple empty lines between class members"
+    "description" : "Allow multiple empty lines between class members."
   }, {
     "name" : "allowMultipleEmptyLinesInsideClassMembers",
-    "description" : "Allow multiple empty lines inside class members"
+    "description" : "Allow multiple empty lines inside class members."
   }, {
     "name" : "allowNoEmptyLineBetweenFields",
-    "description" : "Allow no empty line between fields"
+    "description" : "Allow no empty line between fields."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -375,7 +385,7 @@
   "title" : "EqualsAvoidNull",
   "parameters" : [ {
     "name" : "ignoreEqualsIgnoreCase",
-    "description" : "whether to ignore String.equalsIgnoreCase() invocations"
+    "description" : "\n              Control whether to ignore String.equalsIgnoreCase(String) invocations.\n            "
   } ]
 }, {
   "patternId" : "EqualsHashCode",
@@ -395,17 +405,17 @@
   "title" : "ExplicitInitialization",
   "parameters" : [ {
     "name" : "onlyObjectReferences",
-    "description" : "whether only explicit initializations made to\n                null for objects should be checked"
+    "description" : "control whether only explicit initializations made to\n                null for objects should be checked."
   } ]
 }, {
   "patternId" : "FallThrough",
   "title" : "FallThrough",
   "parameters" : [ {
     "name" : "checkLastCaseGroup",
-    "description" : "\n              Whether the last case group must be checked.\n            "
+    "description" : "\n              Control whether the last case group must be checked.\n            "
   }, {
     "name" : "reliefPattern",
-    "description" : "\n              Regular expression to match the relief comment that suppresses\n              the warning about a fall through.\n            "
+    "description" : "\n              Define the RegExp to match the relief comment that suppresses\n              the warning about a fall through.\n            "
   } ]
 }, {
   "patternId" : "FileLength",
@@ -422,10 +432,10 @@
   "title" : "FileTabCharacter",
   "parameters" : [ {
     "name" : "eachLine",
-    "description" : "whether to report on each line containing a tab, or just the first instance"
+    "description" : "\n              Control whether to report on each line containing a tab, or just the first instance.\n            "
   }, {
     "name" : "fileExtensions",
-    "description" : "file type extension of files to process"
+    "description" : "Specify file type extension of files to process."
   } ]
 }, {
   "patternId" : "FinalClass",
@@ -438,7 +448,7 @@
     "description" : "tokens to check"
   }, {
     "name" : "validateEnhancedForLoopVariable",
-    "description" : "Controls whether to check enhanced for-loop variable."
+    "description" : "\n              Control whether to check\n              \n              enhanced for-loop variable."
   } ]
 }, {
   "patternId" : "FinalParameters",
@@ -477,19 +487,19 @@
   "title" : "HiddenField",
   "parameters" : [ {
     "name" : "ignoreAbstractMethods",
-    "description" : "Controls whether to ignore parameters of abstract methods."
+    "description" : "Control whether to ignore parameters of abstract methods."
   }, {
     "name" : "ignoreConstructorParameter",
-    "description" : "Controls whether to ignore constructor parameters."
+    "description" : "Control whether to ignore constructor parameters."
   }, {
     "name" : "ignoreFormat",
-    "description" : "pattern for names of variables and parameters to ignore"
+    "description" : "Define the RegExp for names of variables and parameters to ignore."
   }, {
     "name" : "ignoreSetter",
-    "description" : "ignoreSetter"
+    "description" : "\n              Allow to ignore the parameter of a property setter method.\n            "
   }, {
     "name" : "setterCanReturnItsClass",
-    "description" : "setterCanReturnItsClass"
+    "description" : "\n              Allow to expand the definition of a setter method\n              to include methods that return the class' instance.\n            "
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -502,7 +512,7 @@
   "title" : "IllegalCatch",
   "parameters" : [ {
     "name" : "illegalClassNames",
-    "description" : "exception class names to reject"
+    "description" : "Specify exception class names to reject."
   } ]
 }, {
   "patternId" : "IllegalImport",
@@ -522,7 +532,7 @@
   "title" : "IllegalInstantiation",
   "parameters" : [ {
     "name" : "classes",
-    "description" : "classes that should not be instantiated"
+    "description" : "Specify fully qualified class names that should not be instantiated."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -532,13 +542,13 @@
   "title" : "IllegalThrows",
   "parameters" : [ {
     "name" : "ignoreOverriddenMethods",
-    "description" : "ignore checking overridden methods (marked with Override or java.lang.Override\n             annotation)."
+    "description" : "\n              allow to ignore checking overridden methods (marked with Override\n              or java.lang.Override annotation).\n            "
   }, {
     "name" : "ignoredMethodNames",
-    "description" : "names of methods to ignore"
+    "description" : "Specify names of methods to ignore."
   }, {
     "name" : "illegalClassNames",
-    "description" : "throw class names to reject"
+    "description" : "Specify throw class names to reject."
   } ]
 }, {
   "patternId" : "IllegalToken",
@@ -552,13 +562,13 @@
   "title" : "IllegalTokenText",
   "parameters" : [ {
     "name" : "format",
-    "description" : "illegal pattern"
+    "description" : "Define the RegExp for illegal pattern."
   }, {
     "name" : "ignoreCase",
-    "description" : "Controls whether to ignore case when matching."
+    "description" : "Control whether to ignore case when matching."
   }, {
     "name" : "message",
-    "description" : "Message which is used to notify about violations;\n            if empty then the default message is used."
+    "description" : "Define the message which is used to notify about violations;\n            if empty then the default message is used."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -567,26 +577,26 @@
   "patternId" : "IllegalType",
   "title" : "IllegalType",
   "parameters" : [ {
-    "name" : "format",
-    "description" : "Pattern for illegal class names."
-  }, {
     "name" : "ignoredMethodNames",
-    "description" : "Methods that should not be checked."
+    "description" : "Specify methods that should not be checked."
+  }, {
+    "name" : "illegalAbstractClassNameFormat",
+    "description" : "Specify RegExp for illegal abstract class names."
   }, {
     "name" : "illegalClassNames",
-    "description" : "Classes that should not be used as types in variable\n            declarations, return values or parameters"
+    "description" : "Specify classes that should not be used as types in variable\n            declarations, return values or parameters."
   }, {
     "name" : "legalAbstractClassNames",
-    "description" : "Abstract classes that may be used as types. "
+    "description" : "Define abstract classes that may be used as types. "
   }, {
     "name" : "memberModifiers",
-    "description" : "Check methods and fields with only corresponding modifiers."
+    "description" : "\n              Control whether to check only methods and fields with any of the specified modifiers.\n              This property does not affect method calls nor method references.\n            "
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
   }, {
     "name" : "validateAbstractClassNames",
-    "description" : "Whether to validate abstract class names"
+    "description" : "Control whether to validate abstract class names."
   } ]
 }, {
   "patternId" : "ImportControl",
@@ -603,25 +613,25 @@
   "title" : "ImportOrder",
   "parameters" : [ {
     "name" : "caseSensitive",
-    "description" : "whether string comparison should be case sensitive or not.\n              Case sensitive sorting is in\n              ASCII sort order.\n              (It affects both type imports and static imports)\n            "
+    "description" : "control whether string comparison should be case sensitive or not.\n              Case sensitive sorting is in\n              ASCII sort order.\n              It affects both type imports and static imports.\n            "
   }, {
     "name" : "groups",
     "description" : "groups"
   }, {
     "name" : "option",
-    "description" : "policy on the relative order between type imports and static imports"
+    "description" : "specify policy on the relative order between type imports and static imports."
   }, {
     "name" : "ordered",
-    "description" : "whether type imports within each group should be sorted\n              (It doesn't affect sorting for static imports.)"
+    "description" : "control whether type imports within each group should be sorted.\n              It doesn't affect sorting for static imports."
   }, {
     "name" : "separated",
-    "description" : "\n              whether type import groups should be separated by, at least, one\n              blank line or comment and aren't separated internally.\n              (It doesn't affect separations for static imports.)\n            "
+    "description" : "\n              control whether type import groups should be separated by, at least, one\n              blank line or comment and aren't separated internally.\n              It doesn't affect separations for static imports.\n            "
   }, {
     "name" : "separatedStaticGroups",
     "description" : "separatedStaticGroups"
   }, {
     "name" : "sortStaticImportsAlphabetically",
-    "description" : "whether static imports located at top or bottom are sorted\n                within the group."
+    "description" : "\n                control whether static imports located at top or\n                bottom are sorted within the group.\n            "
   }, {
     "name" : "staticGroups",
     "description" : "staticGroups"
@@ -630,7 +640,7 @@
     "description" : "tokens to check"
   }, {
     "name" : "useContainerOrderingForStatic",
-    "description" : "whether to use container ordering (Eclipse IDE term) for static imports or not"
+    "description" : "\n                control whether to use container ordering (Eclipse IDE term) for static\n                imports or not."
   } ]
 }, {
   "patternId" : "Indentation",
@@ -668,7 +678,7 @@
   "title" : "InterfaceIsType",
   "parameters" : [ {
     "name" : "allowMarkerInterfaces",
-    "description" : "\n              Controls whether marker interfaces like Serializable are\n              allowed.\n            "
+    "description" : "\n              Control whether marker interfaces like Serializable are\n              allowed.\n            "
   } ]
 }, {
   "patternId" : "InterfaceMemberImpliedModifier",
@@ -741,7 +751,7 @@
     "description" : "whether to allow documented exceptions that\n            are not declared if they are a subclass of java.lang.RuntimeException"
   }, {
     "name" : "allowedAnnotations",
-    "description" : "List of annotations that could allow missed documentation."
+    "description" : "List of annotations that allow missed documentation."
   }, {
     "name" : "excludeScope",
     "description" : "visibility scope where Javadoc comments are not checked"
@@ -832,6 +842,9 @@
     "name" : "allowUnknownTags",
     "description" : "whether to ignore errors when a Javadoc tag is not recognised."
   }, {
+    "name" : "allowedAnnotations",
+    "description" : "\n              List of annotations that allow missed documentation. Only short names are allowed,\n              e.g. Generated.\n            "
+  }, {
     "name" : "authorFormat",
     "description" : "pattern for @author tag"
   }, {
@@ -875,10 +888,10 @@
   "title" : "LeftCurly",
   "parameters" : [ {
     "name" : "ignoreEnums",
-    "description" : "If true, Check will ignore enums when left curly brace policy is EOL"
+    "description" : "Allow to ignore enums when left curly brace policy is EOL."
   }, {
     "name" : "option",
-    "description" : "policy on placement of a left curly brace ('{')"
+    "description" : "Specify the policy on placement of a left curly brace ('{')."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -908,7 +921,7 @@
   "title" : "LocalVariableName",
   "parameters" : [ {
     "name" : "allowOneCharVarInForLoop",
-    "description" : "\n            Allow one character variable name in\n              \n                initialization expressions in FOR loop. For example:\n              \nfor (int i = 1; i < 10; i++) {}\n              \n            "
+    "description" : "allowOneCharVarInForLoop"
   }, {
     "name" : "format",
     "description" : "Specifies valid identifiers."
@@ -918,19 +931,19 @@
   "title" : "MagicNumber",
   "parameters" : [ {
     "name" : "constantWaiverParentToken",
-    "description" : "Token that are allowed in the AST path from the number literal to the\n                  enclosing constant definition."
+    "description" : "Specify tokens that are allowed in the AST path from the number literal to the\n                  enclosing constant definition."
   }, {
     "name" : "ignoreAnnotation",
-    "description" : "ignore magic numbers in annotation declarations."
+    "description" : "Ignore magic numbers in annotation declarations."
   }, {
     "name" : "ignoreFieldDeclaration",
-    "description" : "ignore magic numbers in field declarations."
+    "description" : "Ignore magic numbers in field declarations."
   }, {
     "name" : "ignoreHashCodeMethod",
-    "description" : "ignore magic numbers in hashCode methods"
+    "description" : "Ignore magic numbers in hashCode methods."
   }, {
     "name" : "ignoreNumbers",
-    "description" : "non-magic numbers"
+    "description" : "Specify non-magic numbers."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -1016,10 +1029,10 @@
   "title" : "MethodParamPad",
   "parameters" : [ {
     "name" : "allowLineBreaks",
-    "description" : "\n              whether a line break between the identifier and left parenthesis\n              is allowed\n            "
+    "description" : "\n              Allow a line break between the identifier and left parenthesis.\n            "
   }, {
     "name" : "option",
-    "description" : "policy on how to pad method parameter"
+    "description" : "Specify policy on how to pad method parameter."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -1039,14 +1052,58 @@
   "title" : "MissingDeprecated",
   "parameters" : [ {
     "name" : "skipNoJavadoc",
-    "description" : "skipNoJavadoc"
+    "description" : "Ignore cases when JavaDoc is missing, but still warns when JavaDoc is\n            present but either @deprecated is missing from JavaDoc or\n            @Deprecated is missing from the element.\n            "
+  } ]
+}, {
+  "patternId" : "MissingJavadocMethod",
+  "title" : "MissingJavadocMethod",
+  "parameters" : [ {
+    "name" : "allowMissingPropertyJavadoc",
+    "description" : "\n              Control whether to allow missing Javadoc on accessor methods for\n              properties (setters and getters).\n            "
+  }, {
+    "name" : "allowedAnnotations",
+    "description" : "Configure the list of annotations that allow missed documentation."
+  }, {
+    "name" : "excludeScope",
+    "description" : "Specify the visibility scope where Javadoc comments are not checked."
+  }, {
+    "name" : "ignoreMethodNamesRegex",
+    "description" : "ignore method whose names are matching specified regex."
+  }, {
+    "name" : "minLineCount",
+    "description" : "Control the minimal amount of lines in method to allow no documentation."
+  }, {
+    "name" : "scope",
+    "description" : "Specify the visibility scope where Javadoc comments are checked."
+  }, {
+    "name" : "tokens",
+    "description" : "tokens to check"
+  } ]
+}, {
+  "patternId" : "MissingJavadocPackage",
+  "title" : "MissingJavadocPackage"
+}, {
+  "patternId" : "MissingJavadocType",
+  "title" : "MissingJavadocType",
+  "parameters" : [ {
+    "name" : "excludeScope",
+    "description" : "specify the visibility scope where Javadoc comments are not checked."
+  }, {
+    "name" : "scope",
+    "description" : "specify the visibility scope where Javadoc comments are checked."
+  }, {
+    "name" : "skipAnnotations",
+    "description" : "\n              specify the list of annotations that allow missed documentation.\n              Only short names are allowed, e.g. Generated.\n            "
+  }, {
+    "name" : "tokens",
+    "description" : "tokens to check"
   } ]
 }, {
   "patternId" : "MissingOverride",
   "title" : "MissingOverride",
   "parameters" : [ {
     "name" : "javaFiveCompatibility",
-    "description" : "javaFiveCompatibility"
+    "description" : "\n              Enable java 5 compatibility mode.\n            "
   } ]
 }, {
   "patternId" : "MissingSwitchDefault",
@@ -1056,7 +1113,7 @@
   "title" : "ModifiedControlVariable",
   "parameters" : [ {
     "name" : "skipEnhancedForLoopVariable",
-    "description" : "Controls whether to check\n                \n                    enhanced for-loop variable."
+    "description" : "Control whether to check\n              \n              enhanced for-loop variable."
   } ]
 }, {
   "patternId" : "ModifierOrder",
@@ -1066,13 +1123,13 @@
   "title" : "MultipleStringLiterals",
   "parameters" : [ {
     "name" : "allowedDuplicates",
-    "description" : "\n              The maximum number of occurrences to allow without generating a\n              warning\n            "
+    "description" : "\n              Specify the maximum number of occurrences to allow without generating a\n              warning.\n            "
   }, {
     "name" : "ignoreOccurrenceContext",
     "description" : "ignoreOccurrenceContext"
   }, {
     "name" : "ignoreStringsRegexp",
-    "description" : "\n              Regular expression pattern for ignored strings (with quotation marks)\n            "
+    "description" : "\n              Specify RegExp for ignored strings (with quotation marks).\n            "
   } ]
 }, {
   "patternId" : "MultipleVariableDeclarations",
@@ -1082,10 +1139,10 @@
   "title" : "MutableException",
   "parameters" : [ {
     "name" : "extendedClassNameFormat",
-    "description" : "pattern for extended class names"
+    "description" : "Specify pattern for extended class names."
   }, {
     "name" : "format",
-    "description" : "pattern for exception class names"
+    "description" : "Specify pattern for exception class names."
   } ]
 }, {
   "patternId" : "NPathComplexity",
@@ -1099,10 +1156,10 @@
   "title" : "NeedBraces",
   "parameters" : [ {
     "name" : "allowEmptyLoopBody",
-    "description" : "allows loops with empty bodies"
+    "description" : "allow loops with empty bodies."
   }, {
     "name" : "allowSingleLineStatement",
-    "description" : "allows single-line statements without braces"
+    "description" : "allow single-line statements without braces."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -1112,21 +1169,21 @@
   "title" : "NestedForDepth",
   "parameters" : [ {
     "name" : "max",
-    "description" : "allowed nesting depth"
+    "description" : "Specify maximum allowed nesting depth."
   } ]
 }, {
   "patternId" : "NestedIfDepth",
   "title" : "NestedIfDepth",
   "parameters" : [ {
     "name" : "max",
-    "description" : "allowed nesting depth"
+    "description" : "Specify maximum allowed nesting depth."
   } ]
 }, {
   "patternId" : "NestedTryDepth",
   "title" : "NestedTryDepth",
   "parameters" : [ {
     "name" : "max",
-    "description" : "allowed nesting depth"
+    "description" : "Specify maximum allowed nesting depth."
   } ]
 }, {
   "patternId" : "NewlineAtEndOfFile",
@@ -1156,7 +1213,7 @@
   "title" : "NoWhitespaceAfter",
   "parameters" : [ {
     "name" : "allowLineBreaks",
-    "description" : "\n              whether whitespace is allowed if the token is at a linebreak\n            "
+    "description" : "\n              Control whether whitespace is allowed if the token is at a linebreak.\n            "
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -1166,7 +1223,7 @@
   "title" : "NoWhitespaceBefore",
   "parameters" : [ {
     "name" : "allowLineBreaks",
-    "description" : "\n              whether whitespace is allowed if the token is at a linebreak\n            "
+    "description" : "\n              Control whether whitespace is allowed if the token is at a linebreak.\n            "
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -1192,10 +1249,17 @@
   "title" : "OperatorWrap",
   "parameters" : [ {
     "name" : "option",
-    "description" : "policy on how to wrap lines"
+    "description" : "Specify policy on how to wrap lines."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
+  } ]
+}, {
+  "patternId" : "OrderedProperties",
+  "title" : "OrderedProperties",
+  "parameters" : [ {
+    "name" : "fileExtensions",
+    "description" : "file type extension of the files to check."
   } ]
 }, {
   "patternId" : "OuterTypeFilename",
@@ -1218,7 +1282,7 @@
   "title" : "PackageDeclaration",
   "parameters" : [ {
     "name" : "matchDirectoryStructure",
-    "description" : "Whether to check for directory and package name match."
+    "description" : "Control whether to check for directory and package name match."
   } ]
 }, {
   "patternId" : "PackageName",
@@ -1261,7 +1325,7 @@
   "title" : "ParenPad",
   "parameters" : [ {
     "name" : "option",
-    "description" : "policy on how to pad parentheses"
+    "description" : "Specify policy on how to pad parentheses."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -1407,26 +1471,26 @@
   "title" : "RequireThis",
   "parameters" : [ {
     "name" : "checkFields",
-    "description" : "Whether to check references to fields."
+    "description" : "Control whether to check references to fields."
   }, {
     "name" : "checkMethods",
-    "description" : "Whether to check references to methods."
+    "description" : "Control whether to check references to methods."
   }, {
     "name" : "validateOnlyOverlapping",
-    "description" : "Whether to check only overlapping by variables or arguments."
+    "description" : "Control whether to check only overlapping by variables or arguments."
   } ]
 }, {
   "patternId" : "ReturnCount",
   "title" : "ReturnCount",
   "parameters" : [ {
     "name" : "format",
-    "description" : "method names to ignore"
+    "description" : "Specify method names to ignore."
   }, {
     "name" : "max",
-    "description" : "maximum allowed number of return statements in non-void methods/lambdas"
+    "description" : "\n              Specify maximum allowed number of return statements in non-void methods/lambdas.\n            "
   }, {
     "name" : "maxForVoid",
-    "description" : "maximum allowed number of return statements in void\n                methods/constructors/lambdas"
+    "description" : "Specify maximum allowed number of return statements in void\n                methods/constructors/lambdas."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -1436,10 +1500,7 @@
   "title" : "RightCurly",
   "parameters" : [ {
     "name" : "option",
-    "description" : "policy on placement of a right curly brace ('}')"
-  }, {
-    "name" : "shouldStartLine",
-    "description" : "should we check if '}'\n            starts line."
+    "description" : "Specify the policy on placement of a right curly brace ('}')."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -1449,7 +1510,7 @@
   "title" : "SeparatorWrap",
   "parameters" : [ {
     "name" : "option",
-    "description" : "policy on how to wrap lines"
+    "description" : "Specify policy on how to wrap lines."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -1478,7 +1539,7 @@
   "title" : "SingleSpaceSeparator",
   "parameters" : [ {
     "name" : "validateComments",
-    "description" : "If set to true, whitespaces surrounding comments will be validated."
+    "description" : "Control whether to validate whitespaces surrounding comments."
   } ]
 }, {
   "patternId" : "StaticVariableName",
@@ -1526,7 +1587,7 @@
   "title" : "SuppressWarnings",
   "parameters" : [ {
     "name" : "format",
-    "description" : "\n               The warnings property is a regex pattern.  Any warning\n               being suppressed matching this pattern will be flagged.\n            "
+    "description" : "\n               Specify the RegExp to match against warnings. Any warning\n               being suppressed matching this pattern will be flagged.\n            "
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -1536,17 +1597,17 @@
   "title" : "SuppressWarningsHolder",
   "parameters" : [ {
     "name" : "aliasList",
-    "description" : "Aliases for check names that can be used in code within\n                SuppressWarnings"
+    "description" : "Specify aliases for check names that can be used in code within\n                SuppressWarnings."
   } ]
 }, {
   "patternId" : "ThrowsCount",
   "title" : "ThrowsCount",
   "parameters" : [ {
     "name" : "ignorePrivateMethods",
-    "description" : "whether private methods must be ignored"
+    "description" : "Allow private methods to be ignored."
   }, {
     "name" : "max",
-    "description" : "maximum allowed number of throws statements"
+    "description" : "Specify maximum allowed number of throws statements."
   } ]
 }, {
   "patternId" : "TodoComment",
@@ -1605,7 +1666,7 @@
   "title" : "TypecastParenPad",
   "parameters" : [ {
     "name" : "option",
-    "description" : "policy on how to pad parentheses"
+    "description" : "Specify policy on how to pad parentheses."
   } ]
 }, {
   "patternId" : "UncommentedMain",
@@ -1629,6 +1690,16 @@
     "description" : "tokens to check"
   } ]
 }, {
+  "patternId" : "UnnecessarySemicolonInEnumeration",
+  "title" : "UnnecessarySemicolonInEnumeration"
+}, {
+  "patternId" : "UnnecessarySemicolonInTryWithResources",
+  "title" : "UnnecessarySemicolonInTryWithResources",
+  "parameters" : [ {
+    "name" : "allowWhenNoBraceAfterSemicolon",
+    "description" : "Allow unnecessary semicolon if closing paren is not on the same line."
+  } ]
+}, {
   "patternId" : "UnusedImports",
   "title" : "UnusedImports",
   "parameters" : [ {
@@ -1643,41 +1714,41 @@
   "title" : "VariableDeclarationUsageDistance",
   "parameters" : [ {
     "name" : "allowedDistance",
-    "description" : "A distance between declaration of variable and its first usage.\n                Values should be greater than 0."
+    "description" : "Specify distance between declaration of variable and its first usage.\n                Values should be greater than 0."
   }, {
     "name" : "ignoreFinal",
-    "description" : "Allows to ignore variables with a 'final' modifier."
+    "description" : "Allow to ignore variables with a 'final' modifier."
   }, {
     "name" : "ignoreVariablePattern",
-    "description" : "pattern for ignoring the distance calculation"
+    "description" : "\n              Define RegExp to ignore distance calculation for variables listed in this pattern.\n            "
   }, {
     "name" : "validateBetweenScopes",
-    "description" : "Allows to calculate the distance between declaration of variable and its\n                first usage in the different scopes."
+    "description" : "Allow to calculate the distance between declaration of variable and its\n                first usage in the different scopes."
   } ]
 }, {
   "patternId" : "VisibilityModifier",
   "title" : "VisibilityModifier",
   "parameters" : [ {
     "name" : "allowPublicFinalFields",
-    "description" : "allows public final fields"
+    "description" : "Allow final fields to be declared as public."
   }, {
     "name" : "allowPublicImmutableFields",
-    "description" : "allows immutable fields to be declared as public if defined in final class"
+    "description" : "Allow immutable fields to be declared as public if defined in final class."
   }, {
     "name" : "ignoreAnnotationCanonicalNames",
-    "description" : "ignore annotations canonical names"
+    "description" : "\n              Specify the list of annotations canonical names which ignore variables in\n              consideration.\n            "
   }, {
     "name" : "immutableClassCanonicalNames",
-    "description" : "immutable classes canonical names"
+    "description" : "Specify immutable classes canonical names."
   }, {
     "name" : "packageAllowed",
-    "description" : "whether package visible members are allowed"
+    "description" : "Control whether package visible members are allowed."
   }, {
     "name" : "protectedAllowed",
-    "description" : "whether protected members are allowed"
+    "description" : "Control whether protected members are allowed."
   }, {
     "name" : "publicMemberPattern",
-    "description" : "pattern for public members that should be ignored"
+    "description" : "Specify pattern for public members that should be ignored."
   } ]
 }, {
   "patternId" : "WhitespaceAfter",
@@ -1691,25 +1762,25 @@
   "title" : "WhitespaceAround",
   "parameters" : [ {
     "name" : "allowEmptyCatches",
-    "description" : "allow empty catch bodies"
+    "description" : "Allow empty catch bodies."
   }, {
     "name" : "allowEmptyConstructors",
-    "description" : "allow empty constructor bodies"
+    "description" : "Allow empty constructor bodies."
   }, {
     "name" : "allowEmptyLambdas",
-    "description" : "allow empty lambda bodies"
+    "description" : "Allow empty lambda bodies."
   }, {
     "name" : "allowEmptyLoops",
-    "description" : "allow empty loop bodies"
+    "description" : "Allow empty loop bodies."
   }, {
     "name" : "allowEmptyMethods",
-    "description" : "allow empty method bodies"
+    "description" : "Allow empty method bodies."
   }, {
     "name" : "allowEmptyTypes",
-    "description" : "allow empty class, interface and enum bodies"
+    "description" : "Allow empty class, interface and enum bodies."
   }, {
     "name" : "ignoreEnhancedForColon",
-    "description" : "ignore whitespace around colon in for-each loops"
+    "description" : "Ignore whitespace around colon in\n              \n                enhanced for loop."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"

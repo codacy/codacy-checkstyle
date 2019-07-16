@@ -1,5 +1,3 @@
-Since Checkstyle 5.0
-
 Checks that the whitespace around the Generic tokens (angle brackets) "<" and ">" are correct to the *typical* convention. The convention is not configurable.
 
 Left angle bracket ("<"):
@@ -15,10 +13,17 @@ Right angle bracket (">"):
 
 Examples with correct spacing:
 
-    public void <K, V extends Number> boolean foo(K, V) {} // Generic methods definitions
-    class name<T1, T2, ..., Tn> {}                         // Generic type definition
-    OrderedPair<String, Box<Integer>> p;                   // Generic type reference
-    boolean same = Util.<Integer, String>compare(p1, p2);  // Generic preceded method name
-    Pair<Integer, String> p1 = new Pair<>(1, "apple");     // Diamond operator
-    List<T> list = ImmutableList.Builder<T>::new;          // Method reference
-    sort(list, Comparable::<String>compareTo);             // Method reference
+    // Generic methods definitions
+    public void <K, V extends Number> boolean foo(K, V) {}
+    // Generic type definition
+    class name<T1, T2, ..., Tn> {}
+    // Generic type reference
+    OrderedPair<String, Box<Integer>> p;
+    // Generic preceded method name
+    boolean same = Util.<Integer, String>compare(p1, p2);
+    // Diamond operator
+    Pair<Integer, String> p1 = new Pair<>(1, "apple");
+    // Method reference
+    List<T> list = ImmutableList.Builder<T>::new;
+    // Method reference
+    sort(list, Comparable::<String>compareTo);

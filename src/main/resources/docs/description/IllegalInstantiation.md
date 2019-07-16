@@ -1,5 +1,3 @@
-Since Checkstyle 3.0
-
 Checks for illegal instantiations where a factory method is preferred.
 
 Rationale: Depending on the project, for some classes it might be preferable to create instances through factory methods rather than calling the constructor.

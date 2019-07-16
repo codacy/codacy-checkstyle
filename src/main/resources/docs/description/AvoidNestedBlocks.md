@@ -1,5 +1,3 @@
-Since Checkstyle 3.1
-
 Finds nested blocks, i.e. blocks that are used freely in the code.
 
 Rationale: Nested blocks are often leftovers from the debugging process, they confuse the reader.
@@ -10,7 +8,7 @@ For example this Check finds the obsolete braces in
     {
       int whichIsWhich = 0;
       {
-          int whichIsWhich = 2;
+        int whichIsWhich = 2;
       }
       System.out.println("value = " + whichIsWhich);
     }
@@ -39,11 +37,11 @@ A case in a switch statement does not implicitly form a block. Thus to be able t
           x = 2;
           break;
         }
-      case 1:
+      case 2:
         // OK if allowInSwitchCase is true
         {
           System.out.println("Hello");
-          x = 2;
+          x = 3;
           break;
         }
     }

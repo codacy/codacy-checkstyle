@@ -1,5 +1,3 @@
-Since Checkstyle 3.1
-
 Detects inline conditionals. Here is one example of an inline conditional:
 
     String a = getParameter("a");

@@ -1,14 +1,11 @@
-import com.typesafe.sbt.packager.docker.{Cmd, ExecCmd}
-import scala.util.parsing.json.JSON
-import scala.io.Source
+import com.typesafe.sbt.packager.docker.Cmd
+import sjsonnew._
+import sjsonnew.BasicJsonProtocol._
+import sjsonnew.support.scalajson.unsafe._
 
-name := """codacy-checkstyle"""
+name := "codacy-checkstyle"
 
-version := "1.0.0-SNAPSHOT"
-
-val languageVersion = "2.12.6"
-
-scalaVersion := languageVersion
+scalaVersion := "2.12.8"
 
 mainClass in Compile := Some("codacy.Engine")
 
@@ -18,12 +15,18 @@ resolvers := Seq("Sonatype OSS Snapshots".at("https://oss.sonatype.org/content/r
 lazy val toolVersionKey = settingKey[String]("The version of the underlying tool retrieved from patterns.json")
 
 toolVersionKey := {
+  case class Patterns(name: String, version: String)
+  implicit val patternsIso: IsoLList[Patterns] =
+    LList.isoCurried((p: Patterns) => ("name", p.name) :*: ("version", p.version) :*: LNil) {
+      case (_, n) :*: (_, v) :*: LNil => Patterns(n, v)
+    }
+
   val jsonFile = (resourceDirectory in Compile).value / "docs" / "patterns.json"
-  val toolMap = JSON.parseFull(Source.fromFile(jsonFile).getLines().mkString)
-    .getOrElse(throw new Exception("patterns.json is not a valid json"))
-    .asInstanceOf[Map[String, String]]
-  toolMap.getOrElse[String]("version", throw new Exception("Failed to retrieve 'version' from patterns.json"))
+  val json = Parser.parseFromFile(jsonFile)
+  val patterns = json.flatMap(Converter.fromJson[Patterns])
+  patterns.get.version
 }
+
 resolvers ++= Seq(
   "Typesafe Repo" at "http://repo.typesafe.com/typesafe/releases/",
   "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/releases",
@@ -31,8 +34,8 @@ resolvers ++= Seq(
 )
 
 libraryDependencies ++= Seq(
-  "org.scala-lang.modules" %% "scala-xml" % "1.1.0" withSources(),
-  "com.codacy" %% "codacy-engine-scala-seed" % "3.0.183",
+  "org.scala-lang.modules" %% "scala-xml" % "1.2.0" withSources (),
+  "com.codacy" %% "codacy-engine-scala-seed" % "3.0.296",
   "com.puppycrawl.tools" % "checkstyle" % toolVersionKey.value,
   "com.overzealous" % "remark" % "1.1.0"
 )
@@ -44,7 +47,7 @@ enablePlugins(DockerPlugin)
 version in Docker := "1.0.0"
 
 mappings in Universal ++= {
-  (resourceDirectory in Compile) map { (resourceDir: File) =>
+  (resourceDirectory in Compile) map { resourceDir: File =>
     val src = resourceDir / "docs"
     val dest = "/docs"
 
@@ -66,13 +69,8 @@ dockerBaseImage := "openjdk:8-jre-alpine"
 dockerEntrypoint := Seq(s"/opt/docker/bin/${name.value}")
 
 dockerCommands := dockerCommands.value.flatMap {
-  case cmd@Cmd("WORKDIR", _) => List(
-    Cmd("WORKDIR", "/src")
-  )
-  case cmd@(Cmd("ADD", _)) => List(
-    Cmd("RUN", s"adduser -u 2004 -D $dockerUser"),
-    cmd,
-    Cmd("RUN", "mv /opt/docker/docs /docs")
-  )
+  case cmd @ Cmd("WORKDIR", _) => Seq(Cmd("WORKDIR", "/src"))
+  case cmd @ Cmd("ADD", _) =>
+    Seq(Cmd("RUN", s"adduser -u 2004 -D $dockerUser"), cmd, Cmd("RUN", "mv /opt/docker/docs /docs"))
   case other => List(other)
 }

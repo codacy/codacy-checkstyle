@@ -149,4 +149,4 @@ Example \#10: Comment within the block tries to describe the next code block.
     14  }
 
 
-[here]: http://checkstyle.sourceforge.net/reports/google-java-style-20170228.html#s4.8.6.1-block-comment-style
+[here]: https://checkstyle.org/styleguides/google-java-style-20180523/javaguide.html#s4.8.6.1-block-comment-style

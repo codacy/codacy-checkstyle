@@ -1,5 +1,3 @@
-Since Checkstyle 3.2
-
 Checks that string literals are not used with `==` or `!=`.
 
 Rationale: Novice Java programmers often use code like:

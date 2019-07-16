@@ -1,0 +1,59 @@
+version: 2.1
+
+orbs:
+  codacy: codacy/base@0.1.0
+
+workflows:
+  version: 2
+  compile_test_deploy:
+    jobs:
+      - codacy/checkout_and_version:
+          write_sbt_version: true
+      - codacy/sbt:
+          name: populate_cache
+          cmd: |
+            git clone --depth 1 git://github.com/codacy/codacy-plugins-test.git codacy-plugins-test
+            sbt ";set scalafmtUseIvy in ThisBuild := false;update"
+            (cd codacy-plugins-test && sbt update)
+          requires:
+            - codacy/checkout_and_version
+      - codacy/sbt:
+          name: check_fmt
+          cmd: sbt ";scalafmt::test;test:scalafmt::test;sbt:scalafmt::test"
+          requires:
+            - populate_cache
+      - codacy/sbt:
+          name: compile
+          cmd: sbt compile
+          requires:
+            - check_fmt
+      - codacy/sbt:
+          name: test_patterns
+          # codacy-plugins-test can be saved before and restored from cache
+          cmd: |
+            sbt ";set name := \"$CIRCLE_PROJECT_REPONAME\";set version in Docker := \"latest\";docker:publishLocal"
+            git clone --depth 1 git://github.com/codacy/codacy-plugins-test.git codacy-plugins-test
+            (cd codacy-plugins-test && sbt -Dcodacy.tests.ignore.descriptions=true "runMain codacy.plugins.DockerTest json $CIRCLE_PROJECT_REPONAME:latest")
+          requires:
+            - compile
+      - codacy/sbt:
+          name: publish_dockerhub
+          context: CodacyDocker
+          cmd: |
+            sbt ";set name := \"$CIRCLE_PROJECT_REPONAME\";set version in Docker := \"latest\";docker:publishLocal"
+            docker login -u $DOCKER_USER -p $DOCKER_PASS
+            docker tag $CIRCLE_PROJECT_REPONAME codacy/$CIRCLE_PROJECT_REPONAME:$(cat .version)
+            docker tag $CIRCLE_PROJECT_REPONAME codacy/$CIRCLE_PROJECT_REPONAME:latest
+            docker push codacy/$CIRCLE_PROJECT_REPONAME:$(cat .version)
+            docker push codacy/$CIRCLE_PROJECT_REPONAME:latest
+          requires:
+            - test_patterns
+          filters:
+            branches:
+              only:
+                - master
+      - codacy/tag_version:
+          name: tag_version
+          context: CodacyAWS
+          requires:
+            - publish_dockerhub

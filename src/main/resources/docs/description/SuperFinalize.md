@@ -1,8 +1,7 @@
-Since Checkstyle 3.2
-
 Checks that an overriding `finalize()` method invokes `super.finalize()`. Does not check native methods, as they have no possible java defined implementation.
 
-Reference: [ Use Finalization Only When You Must][Use Finalization Only When You Must].
+References: [ How to Handle Java Finalization's Memory-Retention Issues][How to Handle Java Finalization_s Memory-Retention Issues]; [ 10 points on finalize method in Java][10 points on finalize method in Java].
 
 
-[Use Finalization Only When You Must]: http://www.oracle.com/technetwork/java/javamail/finalization-137655.html
+[How to Handle Java Finalization_s Memory-Retention Issues]: https://www.oracle.com/technetwork/java/javamail/finalization-137655.html
+[10 points on finalize method in Java]: https://javarevisited.blogspot.com/2012/03/finalize-method-in-java-tutorial.html

@@ -1,5 +1,3 @@
-Since Checkstyle 3.0
-
 Checks for empty blocks. This check does not validate sequential blocks.
 
 Sequential blocks won't be checked. Also, no violations for fallthrough:

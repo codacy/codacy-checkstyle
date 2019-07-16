@@ -1,3 +1,5 @@
-Since Checkstyle 3.1
+Detects empty statements (standalone \{@code ";"\} semicolon). Empty statements often introduce bugs that are hard to spot, such as in
 
-Detects empty statements (standalone ";" semicolon).
+    if (someCondition);
+      doConditionalStuff();
+    doUnconditionalStuff();

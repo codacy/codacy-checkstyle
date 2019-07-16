@@ -19,21 +19,34 @@ object DocGenerator {
   private case class PatternExtendedDescription(patternId: Pattern.Id, extendedDescription: String)
 
   def main(args: Array[String]): Unit = {
-    val version: String = args.headOption.orElse {
-      ResourceHelper.getResourceContent("docs/patterns.json").toOption
-        .flatMap { lines => Json.parse(lines.mkString("\n")).as[JsObject].\("version").asOpt[String] }
-    }.getOrElse {
-      throw new Exception("No version provided")
-    }
+    val version: String = args.headOption
+      .orElse {
+        ResourceHelper
+          .getResourceContent("docs/patterns.json")
+          .toOption
+          .flatMap { lines =>
+            Json.parse(lines.mkString("\n")).as[JsObject].\("version").asOpt[String]
+          }
+      }
+      .getOrElse {
+        throw new Exception("No version provided")
+      }
 
     withRepository(version) { directory =>
       val genPatterns = for {
         xml <- XML.loadFile(s"$directory/src/xdocs/checks.xml").to[List]
-        a <- xml.\\("a").to[List]
+        tr <- xml \\ "tr"
+        firstTd <- tr
+          .map(_ \ "td")
+          .flatMap(_.headOption) // we only need the first one (not the links inside descriptions)
+        a <- firstTd.\("a").to[List]
         href <- a.attribute("href").flatMap(_.headOption.map(_.text)).to[List]
         categoryFilename = href.takeWhile(_ != '.') if !href.startsWith("https://") && !href.startsWith("http://")
         categoryXml <- XML.loadFile(s"$directory/src/xdocs/$categoryFilename.xml").to[List]
-        section <- categoryXml.\\("section").to[List].filterNot(e => Set("Content", "Overview").contains(e.attr("name")))
+        section <- categoryXml
+          .\\("section")
+          .to[List]
+          .filterNot(e => Set("Content", "Overview").contains(e.attr("name")))
       } yield {
         val extendedDescription = section.\\("subsection").to[List].collectFirst {
           case ss if ss.attr("name") == "Description" =>
@@ -53,35 +66,40 @@ object DocGenerator {
 
         val parameters = section.\\("subsection").to[List].collectFirst {
           case ss if ss.attr("name") == "Properties" =>
-            ss.\\("tr").to[List]
+            ss.\\("tr")
+              .to[List]
               .drop(1)
               .map(_.\\("td").to[List])
               .collect {
-                case name :: description :: _ :: default :: _ =>
+                case name :: description :: tpe :: default :: _ =>
                   val defaultValue = Option({
                     // Remove spaces and breaklines in default values
                     val defVal = default.text.replaceAll("""\n\s+""", "").trim.stripSuffix(".")
-                    // Remove quotes around default values
-                    if (defVal.startsWith("\"") && defVal.endsWith("\"")) {
-                      defVal.stripPrefix("\"").stripSuffix("\"")
+                    // Remove quotes around regular expressions
+                    if (tpe.text.trim == "Regular Expression" && defVal != "null") {
+                      // Leaves only what's inside outer quotes.
+                      val f: Char => Boolean = _ != '"'
+                      defVal.dropWhile(f).reverse.dropWhile(f).reverse.stripPrefix("\"").stripSuffix("\"")
                     } else {
                       defVal
                     }
                   }) // Filter out null values
-                    .filterNot(_.equalsIgnoreCase("null")).getOrElse("")
+                    .filterNot(_.equalsIgnoreCase("null"))
+                    .getOrElse("")
 
                   // Try to parse numbers and booleans
                   val jsDefaultValue = Try(Json.parse(defaultValue)).getOrElse(JsString(defaultValue))
-
                   val descriptionText =
-                    if(description.text.length > 250) {
+                    if (description.text.length > 250) {
                       name.text
                     } else {
                       description.text
                     }
 
-                  (Parameter.Specification(Parameter.Name(name.text), Parameter.Value(jsDefaultValue)),
-                    Parameter.Description(Parameter.Name(name.text), Parameter.DescriptionText(descriptionText)))
+                  (
+                    Parameter.Specification(Parameter.Name(name.text), Parameter.Value(jsDefaultValue)),
+                    Parameter.Description(Parameter.Name(name.text), Parameter.DescriptionText(descriptionText))
+                  )
               }
         }
 
@@ -91,9 +109,11 @@ object DocGenerator {
 
         val patternId = Pattern.Id(section.attr("name"))
 
-        (Pattern.Specification(patternId, Result.Level.Info, Pattern.Category.CodeStyle, parametersSet.map { case (specs, _) => specs }, None),
-          Pattern.Description(patternId, Pattern.Title(patternId.value), None, None, parametersSet.map { case (_, descs) => descs }),
-          extendedDescription.map(PatternExtendedDescription(patternId, _)))
+        (Pattern.Specification(patternId, Result.Level.Info, Pattern.Category.CodeStyle, parametersSet.map {
+          case (specs, _) => specs
+        }, None), Pattern.Description(patternId, Pattern.Title(patternId.value), None, None, parametersSet.map {
+          case (_, descs) => descs
+        }), extendedDescription.map(PatternExtendedDescription(patternId, _)))
       }
 
       val (patternSpecifications, patternDescriptions, descriptions) = genPatterns.unzip3
@@ -115,9 +135,10 @@ object DocGenerator {
 
       ResourceHelper.writeFile(patternsFile.toPath, jsonSpecifications)
       ResourceHelper.writeFile(descriptionsFile.toPath, jsonDescriptions)
-      descriptions.collect { case Some(extendedDescription) if extendedDescription.extendedDescription.trim.nonEmpty =>
-        val descriptionsFile = new java.io.File(descriptionsRoot, s"${extendedDescription.patternId}.md")
-        ResourceHelper.writeFile(descriptionsFile.toPath, extendedDescription.extendedDescription)
+      descriptions.collect {
+        case Some(extendedDescription) if extendedDescription.extendedDescription.trim.nonEmpty =>
+          val descriptionsFile = new java.io.File(descriptionsRoot, s"${extendedDescription.patternId}.md")
+          ResourceHelper.writeFile(descriptionsFile.toPath, extendedDescription.extendedDescription)
       }
     }
   }
@@ -132,6 +153,7 @@ object DocGenerator {
   }
 
   private implicit class NodeOps(e: Node) {
+
     def attr(k: String): String = {
       e.attribute(k).flatMap(_.headOption.map(_.text)).getOrElse("")
     }
@@ -139,10 +161,12 @@ object DocGenerator {
 
   private def withRepository[T](version: String)(block: Path => T): T = {
     val directory = Files.createTempDirectory("checkstyle")
-    s"git clone git://github.com/checkstyle/checkstyle --depth 1 -b checkstyle-$version $directory".!!
-    val res = block(directory)
-    File(directory).delete(true)
-    res
+    try {
+      s"git clone git://github.com/checkstyle/checkstyle --depth 1 -b checkstyle-$version $directory".!!
+      val res = block(directory)
+      res
+    } finally {
+      File(directory).delete(true)
+    }
   }
-
 }

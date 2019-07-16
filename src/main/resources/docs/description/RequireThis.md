@@ -1,5 +1,3 @@
-Since Checkstyle 3.4
-
 Checks that references to instance variables and methods of the present object are explicitly of the form "this.varName" or "this.methodName(args)" and that those references don't rely on the default behavior when "this." is absent.
 
 Warning: the Check is very controversial if 'validateOnlyOverlapping' option is set to 'false' and not that actual nowadays.

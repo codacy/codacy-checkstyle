@@ -1,5 +1,3 @@
-Since Checkstyle 3.0
-
 Checks that a token is surrounded by whitespace. Empty constructor, method, class, enum, interface, loop bodies (blocks), lambdas of the form
 
     public MyClass() {}      // empty constructor
@@ -14,7 +12,7 @@ Checks that a token is surrounded by whitespace. Empty constructor, method, clas
     Runnable noop = () -> {}; // empty lambda
     public @interface Beta {} // empty annotation type
 
-may optionally be exempted from the policy using the `allowEmptyMethods`, `allowEmptyConstructors`, `allowEmptyTypes`, `allowEmptyLoops` `allowEmptyLambdas` and `allowEmptyCatches` properties.
+may optionally be exempted from the policy using the `allowEmptyMethods`, `allowEmptyConstructors`, `allowEmptyTypes`, `allowEmptyLoops`, `allowEmptyLambdas` and `allowEmptyCatches` properties.
 
 This check does not flag as violation double brace initialization like:
 
