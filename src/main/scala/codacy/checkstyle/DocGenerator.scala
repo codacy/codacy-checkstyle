@@ -11,6 +11,8 @@ import scala.sys.process._
 import scala.util.Try
 import scala.xml._
 
+import com.vladsch.flexmark.html2md.converter._
+
 object DocGenerator {
 
   private case class PatternExtendedDescription(patternId: Pattern.Id, extendedDescription: String)
@@ -163,7 +165,6 @@ object DocGenerator {
   }
 
   private def toMarkdown(html: String): String = {
-    import com.vladsch.flexmark.html2md.converter._
     val converter = FlexmarkHtmlConverter
       .builder()
       .build()
