@@ -4,9 +4,6 @@ import java.nio.file.{Files, Path}
 
 import better.files.File
 import com.codacy.plugins.api.results.{Parameter, Pattern, Result, Tool}
-import com.overzealous.remark.Options.FencedCodeBlocks
-import com.overzealous.remark.{Options, Remark}
-import org.jsoup.Jsoup
 import play.api.libs.json.{JsObject, JsString, Json}
 
 import scala.collection.immutable.ListSet
@@ -56,12 +53,7 @@ object DocGenerator {
                 .replaceAllLiterally("<source>", "<pre><code>")
                 .replaceAllLiterally("</source>", "</code></pre>")
 
-            val document = Jsoup.parseBodyFragment(xmlString)
-
-            val opts = Options.github()
-            opts.fencedCodeBlocks = FencedCodeBlocks.DISABLED
-            opts.fencedCodeBlocksWidth = 3
-            new Remark(opts).convert(document)
+            toMarkdown(xmlString)
         }
 
         val parameters = section.\\("subsection").to[List].collectFirst {
@@ -168,5 +160,13 @@ object DocGenerator {
     } finally {
       File(directory).delete(true)
     }
+  }
+
+  private def toMarkdown(html: String): String = {
+    import com.vladsch.flexmark.html2md.converter._
+    val converter = FlexmarkHtmlConverter
+      .builder()
+      .build()
+    converter.convert(html)
   }
 }

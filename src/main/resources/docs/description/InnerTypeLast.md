@@ -1,1 +1,2 @@
-Check nested (inner) classes/interfaces are declared at the bottom of the class after all method and field declarations.
+Check nested (inner) classes/interfaces are declared at the
+bottom of the class after all method and field declarations.

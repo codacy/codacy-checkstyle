@@ -36,8 +36,8 @@ resolvers ++= Seq(
 libraryDependencies ++= Seq(
   "org.scala-lang.modules" %% "scala-xml" % "1.2.0" withSources (),
   "com.codacy" %% "codacy-engine-scala-seed" % "3.0.296",
-  "com.puppycrawl.tools" % "checkstyle" % toolVersionKey.value,
-  "com.overzealous" % "remark" % "1.1.0"
+  "com.vladsch.flexmark" % "flexmark-all" % "0.50.20",
+  "com.puppycrawl.tools" % "checkstyle" % toolVersionKey.value
 )
 
 enablePlugins(AshScriptPlugin)
