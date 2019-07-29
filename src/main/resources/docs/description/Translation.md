@@ -1,6 +1,6 @@
 Since Checkstyle 3.0
 
-A [FileSetCheck](config.html#Overview) that ensures
+A [FileSetCheck](https://checkstyle.org/config.html#Overview) that ensures
 the correct translation of code by checking property files for
 consistency regarding their keys. Two property files
 describing one and the same context are consistent if they
@@ -29,6 +29,6 @@ missing `cancel` key in the German resource file:
     messages.properties: Key 'ok' missing.
             
 Attention: this Check could produce false-positives if it
-is used with [Checker](config.html#Checker) that use cache (property
+is used with [Checker](https://checkstyle.org/config.html#Checker) that use cache (property
 "cacheFile") This is known design problem, will be addressed at
 [issue](https://github.com/checkstyle/checkstyle/issues/3539).

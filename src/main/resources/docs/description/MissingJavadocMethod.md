@@ -2,7 +2,7 @@ Checks for missing Javadoc comments for a method or constructor.
 The scope to verify is specified using the `Scope` class and
 defaults to `Scope.PUBLIC`. To verify another
 scope, set property scope to a different
-[scope](property_types.html#scope).
+[scope](https://checkstyle.org/property_types.html#scope).
 
 Javadoc is not required on a method that is tagged with the
 `@Override` annotation. However under

@@ -10,7 +10,7 @@ import scala.collection.immutable.ListSet
 import scala.sys.process._
 import scala.util.Try
 import scala.xml._
-
+import scala.xml.transform.{RewriteRule, RuleTransformer}
 import com.vladsch.flexmark.html2md.converter._
 
 object DocGenerator {
@@ -47,16 +47,17 @@ object DocGenerator {
           .to[List]
           .filterNot(e => Set("Content", "Overview").contains(e.attr("name")))
       } yield {
-        val extendedDescription = section.\\("subsection").to[List].collectFirst {
-          case ss if ss.attr("name") == "Description" =>
-            val xmlString =
-              stripNamespaces(ss)
-                .buildString(stripComments = true)
-                .replaceAllLiterally("<source>", "<pre><code>")
-                .replaceAllLiterally("</source>", "</code></pre>")
+        val extendedDescription =
+          section.\\("subsection").to[List].collectFirst {
+            case ss if ss.attr("name") == "Description" =>
+              val xmlString =
+                checkstyleLinks.transform(stripNamespaces(ss)).head
+                  .buildString(stripComments = true)
+                  .replaceAllLiterally("<source>", "<pre><code>")
+                  .replaceAllLiterally("</source>", "</code></pre>")
 
-            toMarkdown(xmlString)
-        }
+              toMarkdown(xmlString)
+          }
 
         val parameters = section.\\("subsection").to[List].collectFirst {
           case ss if ss.attr("name") == "Properties" =>
@@ -170,4 +171,18 @@ object DocGenerator {
       .build()
     converter.convert(html)
   }
+
+  private val checkstyleLinks = new RuleTransformer(
+    new RewriteRule {
+      override def transform(node: Node): Node = {
+        def href(elem: Elem) = elem \@ "href"
+        node match {
+          case elem: Elem if(href(elem)).split("/").headOption.exists(_.contains('.')) =>
+            val newLink = s"https://checkstyle.org/${href(elem)}"
+            <a href={newLink}>{elem.child}</a>
+          case n => n
+        }
+      }
+    }
+  )
 }

@@ -4,7 +4,7 @@ A check that makes sure that a specified pattern exists, exists less
 than a set number of times, or does not exist in the file.
 
 This check combines all the functionality provided by
-[RegexpHeader](config_header.html#RegexpHeader)
+[RegexpHeader](https://checkstyle.org/config_header.html#RegexpHeader)
 except supplying the regular expression from a file.
 
 It differs from them in that it works in multiline mode.

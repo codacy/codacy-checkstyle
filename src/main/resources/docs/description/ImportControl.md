@@ -9,7 +9,7 @@ name. When controlling packages, all files and sub-packages in the declared
 package will be controlled by this check. To specify differences between a main package
 and a sub-package, you must define the sub-package inside the main package. When
 controlling file, only the file name is considered and only files processed by
-[TreeWalker](config.html#TreeWalker). The file's extension is ignored.
+[TreeWalker](https://checkstyle.org/config.html#TreeWalker). The file's extension is ignored.
 
 Short description of the behaviour:
 

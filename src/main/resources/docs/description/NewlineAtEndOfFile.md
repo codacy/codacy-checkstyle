@@ -14,6 +14,6 @@ systems will even print a warning when it
 encounters a file that doesn't end with a line separator.
 
 Attention: property fileExtensions works with files that are passed by similar property
-for at [Checker](config.html#Checker).
+for at [Checker](https://checkstyle.org/config.html#Checker).
 Please make sure required file extensions are mentioned at Checker's fileExtensions
 property.
