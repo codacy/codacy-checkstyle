@@ -51,7 +51,8 @@ object DocGenerator {
           section.\\("subsection").to[List].collectFirst {
             case ss if ss.attr("name") == "Description" =>
               val xmlString =
-                checkstyleLinks.transform(stripNamespaces(ss))
+                checkstyleLinks
+                  .transform(stripNamespaces(ss))
                   .map(_.buildString(stripComments = true))
                   .headOption
                   .getOrElse("")
@@ -174,17 +175,15 @@ object DocGenerator {
     converter.convert(html)
   }
 
-  private val checkstyleLinks = new RuleTransformer(
-    new RewriteRule {
-      override def transform(node: Node): Node = {
-        def href(elem: Elem) = elem \@ "href"
-        node match {
-          case elem: Elem if(href(elem)).split("/").headOption.exists(_.contains('.')) =>
-            val newLink = s"https://checkstyle.org/${href(elem)}"
-            <a href={newLink}>{elem.child}</a>
-          case n => n
-        }
+  private val checkstyleLinks = new RuleTransformer(new RewriteRule {
+    override def transform(node: Node): Node = {
+      def href(elem: Elem) = elem \@ "href"
+      node match {
+        case elem: Elem if (href(elem)).split("/").headOption.exists(_.contains('.')) =>
+          val newLink = s"https://checkstyle.org/${href(elem)}"
+          <a href={newLink}>{elem.child}</a>
+        case n => n
       }
     }
-  )
+  })
 }
