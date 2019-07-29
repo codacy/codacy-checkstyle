@@ -51,8 +51,10 @@ object DocGenerator {
           section.\\("subsection").to[List].collectFirst {
             case ss if ss.attr("name") == "Description" =>
               val xmlString =
-                checkstyleLinks.transform(stripNamespaces(ss)).head
-                  .buildString(stripComments = true)
+                checkstyleLinks.transform(stripNamespaces(ss))
+                  .map(_.buildString(stripComments = true))
+                  .headOption
+                  .getOrElse("")
                   .replaceAllLiterally("<source>", "<pre><code>")
                   .replaceAllLiterally("</source>", "</code></pre>")
 
