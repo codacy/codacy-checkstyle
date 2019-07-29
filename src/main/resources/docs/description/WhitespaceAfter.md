@@ -1,4 +1,1 @@
-Checks that a token is followed by whitespace, with the exception that it does not check for whitespace after the semicolon of an empty for iterator. Use Check [ EmptyForIteratorPad][EmptyForIteratorPad] to validate empty for iterators.
-
-
-[EmptyForIteratorPad]: https://checkstyle.org/config_whitespace.html#EmptyForIteratorPad
+Checks that a token is followed by whitespace, with the exception that it does not check for whitespace after the semicolon of an empty for iterator. Use Check  EmptyForIteratorPad to validate empty for iterators.

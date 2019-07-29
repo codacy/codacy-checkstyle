@@ -1,6 +1,6 @@
 Since Checkstyle 6.10
 
-Controls the indentation between comments and surrounding code. Comments are indented at the same level as the surrounding code. Detailed info about such convention can be found [ here][here]
+Controls the indentation between comments and surrounding code. Comments are indented at the same level as the surrounding code. Detailed info about such convention can be found  here
 
 Please take a look at the following examples to understand how the check works:
 
@@ -147,6 +147,3 @@ Example \#10: Comment within the block tries to describe the next code block.
     12     // Why do we catch exception here? - violation (should have the same indentation as line 11)
     13     } catch (Exception e) { ... }
     14  }
-
-
-[here]: https://checkstyle.org/styleguides/google-java-style-20180523/javaguide.html#s4.8.6.1-block-comment-style
