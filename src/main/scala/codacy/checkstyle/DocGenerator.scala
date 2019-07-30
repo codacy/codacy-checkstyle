@@ -175,13 +175,24 @@ object DocGenerator {
     converter.convert(html)
   }
 
+  /**
+   * Xml RuleTranformer to add checkstyle page base on
+   * internal website links
+   */
   private val checkstyleLinks = new RuleTransformer(new RewriteRule {
     override def transform(node: Node): Node = {
-      def href(elem: Elem) = elem \@ "href"
       node match {
-        case elem: Elem if (href(elem)).split("/").headOption.exists(_.contains('.')) =>
-          val newLink = s"https://checkstyle.org/${href(elem)}"
-          <a href={newLink}>{elem.child}</a>
+        case elem: Elem =>
+          val href = elem \@ "href"
+          if (href.nonEmpty && !href.startsWith("http://") && !href
+            .startsWith("https://") && (href.split("/").length <= 1)) {
+            if(!href.contains(".html")) <span>{elem.child}</span>
+            else {
+              val newLink = s"https://checkstyle.org/$href"
+              <a href={newLink}>{elem.child}</a>
+            }
+
+          } else elem
         case n => n
       }
     }

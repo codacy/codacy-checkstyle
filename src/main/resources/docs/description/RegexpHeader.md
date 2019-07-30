@@ -4,8 +4,7 @@ Checks the header of a source file against a header that contains a
 [regular
 expression](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html) for each line of the source header.
 
-Rationale: In some projects [checking against a
-fixed header](#Header) is not sufficient, e.g. the header might require a
+Rationale: In some projects checking against a fixed header is not sufficient, e.g. the header might require a
 copyright line where the year information is not static.
 
 For example, consider the following header:
