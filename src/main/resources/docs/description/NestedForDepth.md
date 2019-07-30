@@ -1,2 +1,1 @@
-Restricts nested `for` blocks to a specified depth
-(default = 1).
+Restricts nested `for` blocks to a specified depth (default = 1).

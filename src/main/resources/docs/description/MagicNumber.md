@@ -1,11 +1,12 @@
-Checks that there are no
-["magic numbers"](https://en.wikipedia.org/wiki/Magic_number_%28programming%29) where a magic
-number is a numeric literal that is not defined as a constant.
-By default, -1, 0, 1, and 2 are not considered to be magic numbers.
+Checks that there are no [\"magic
+numbers\"](https://en.wikipedia.org/wiki/Magic_number_%28programming%29)
+where a magic number is a numeric literal that is not defined as a
+constant. By default, -1, 0, 1, and 2 are not considered to be magic
+numbers.
 
-Constant definition is any variable/field that has 'final' modifier.
-It is fine to have one constant defining multiple numeric literals within one expression:
-
+Constant definition is any variable/field that has \'final\' modifier.
+It is fine to have one constant defining multiple numeric literals
+within one expression:
 
     static final int SECONDS_PER_DAY = 24 * 60 * 60;
     static final double SPECIAL_RATIO = 4.0 / 3.0;
