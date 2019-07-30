@@ -183,7 +183,7 @@ object DocGenerator {
   private def toMarkdown(html: String): String = {
     val directory = Files.createTempDirectory("checkstyleDoc")
     try {
-      val file = Files.createTempFile(directory,"checkstyle-doc",".xml")
+      val file = Files.createTempFile(directory, "checkstyle-doc", ".xml")
       Files.write(file, html.getBytes())
       Seq("pandoc", "-f", "html", "-t", "markdown", file.toString).!!
     } finally {
