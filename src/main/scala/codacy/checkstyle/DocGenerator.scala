@@ -202,8 +202,9 @@ object DocGenerator {
           val href = elem \@ "href"
           if (href.nonEmpty && !href.startsWith("http://") && !href
               .startsWith("https://") && (href.split("/").length <= 1)) {
-            if (!href.contains(".html")) <span>{elem.child}</span>
-            else {
+            if (!href.contains(".html")) {
+              <span>{elem.child}</span>
+            } else {
               val newLink = s"https://checkstyle.org/$href"
               <a href={newLink}>{elem.child}</a>
             }
