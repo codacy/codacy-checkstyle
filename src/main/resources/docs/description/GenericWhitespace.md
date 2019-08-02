@@ -1,15 +1,20 @@
-Checks that the whitespace around the Generic tokens (angle brackets) "<" and ">" are correct to the *typical* convention. The convention is not configurable.
+Checks that the whitespace around the Generic tokens (angle brackets)
+\"\<\" and \"\>\" are correct to the *typical* convention. The
+convention is not configurable.
 
-Left angle bracket ("<"):
+Left angle bracket (\"\<\"):
 
- *  should be preceded with whitespace only in generic methods definitions.
- *  should not be preceded with whitespace when it is precede method name or following type name.
- *  should not be followed with whitespace in all cases.
+-   should be preceded with whitespace only in generic methods
+    definitions.
+-   should not be preceded with whitespace when it is precede method
+    name or following type name.
+-   should not be followed with whitespace in all cases.
 
-Right angle bracket (">"):
+Right angle bracket (\"\>\"):
 
- *  should not be preceded with whitespace in all cases.
- *  should be followed with whitespace in almost all cases, except diamond operators and when preceding method name.
+-   should not be preceded with whitespace in all cases.
+-   should be followed with whitespace in almost all cases, except
+    diamond operators and when preceding method name.
 
 Examples with correct spacing:
 
@@ -27,3 +32,4 @@ Examples with correct spacing:
     List<T> list = ImmutableList.Builder<T>::new;
     // Method reference
     sort(list, Comparable::<String>compareTo);
+            

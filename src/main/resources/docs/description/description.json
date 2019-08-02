@@ -713,6 +713,9 @@
     "description" : "Specifies valid identifiers."
   } ]
 }, {
+  "patternId" : "InvalidJavadocPosition",
+  "title" : "InvalidJavadocPosition"
+}, {
   "patternId" : "JavaNCSS",
   "title" : "JavaNCSS",
   "parameters" : [ {
@@ -935,6 +938,9 @@
   }, {
     "name" : "ignoreAnnotation",
     "description" : "Ignore magic numbers in annotation declarations."
+  }, {
+    "name" : "ignoreAnnotationElementDefaults",
+    "description" : "Ignore magic numbers in annotation elements defaults."
   }, {
     "name" : "ignoreFieldDeclaration",
     "description" : "Ignore magic numbers in field declarations."
@@ -1240,7 +1246,11 @@
   } ]
 }, {
   "patternId" : "OneStatementPerLine",
-  "title" : "OneStatementPerLine"
+  "title" : "OneStatementPerLine",
+  "parameters" : [ {
+    "name" : "treatTryResourcesAsStatement",
+    "description" : "Enable resources processing."
+  } ]
 }, {
   "patternId" : "OneTopLevelClass",
   "title" : "OneTopLevelClass"

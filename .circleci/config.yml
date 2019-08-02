@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  codacy: codacy/base@0.1.0
+  codacy: codacy/base@0.3.0
 
 workflows:
   version: 2
@@ -33,7 +33,9 @@ workflows:
           cmd: |
             sbt ";set name := \"$CIRCLE_PROJECT_REPONAME\";set version in Docker := \"latest\";docker:publishLocal"
             git clone --depth 1 git://github.com/codacy/codacy-plugins-test.git codacy-plugins-test
-            (cd codacy-plugins-test && sbt -Dcodacy.tests.ignore.descriptions=true "runMain codacy.plugins.DockerTest json $CIRCLE_PROJECT_REPONAME:latest")
+            (cd codacy-plugins-test &&
+              sbt -Dcodacy.tests.ignore.descriptions=true "runMain codacy.plugins.DockerTest json $CIRCLE_PROJECT_REPONAME:latest"
+              sbt -Dcodacy.tests.ignore.descriptions=true "runMain codacy.plugins.DockerTest pattern $CIRCLE_PROJECT_REPONAME:latest")
           requires:
             - compile
       - codacy/sbt:

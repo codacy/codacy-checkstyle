@@ -1,5 +1,7 @@
 Since Checkstyle 5.0
 
-Checks for the number of types declared at the *outer* (or *root*) level in a file.
+Checks for the number of types declared at the *outer* (or *root*) level
+in a file.
 
-Rationale: It is considered good practice to only define one outer type per file.
+Rationale: It is considered good practice to only define one outer type
+per file.

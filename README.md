@@ -23,6 +23,10 @@ docker run -it -v $srcDir:/src -v $configFile:/.codacyrc  <DOCKER_NAME>:<DOCKER_
 
 ## Generate Docs
 
+The documentation generator is using the [pandoc](https://pandoc.org/) tool to convert html sections to markdown.
+The pandoc version used currently is 2.7.3 which can be downloaded [here](https://github.com/jgm/pandoc/releases/tag/2.7.3).
+Having pandoc in `PATH` you can follow these steps:
+
 1. Update the version in `src/main/resources/docs/patterns.json`
 
 2. Run the DocGenerator

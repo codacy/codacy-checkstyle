@@ -1,6 +1,6 @@
 {
   "name" : "Checkstyle",
-  "version" : "8.22",
+  "version" : "8.23",
   "patterns" : [ {
     "patternId" : "AbbreviationAsWordInName",
     "level" : "Info",
@@ -30,7 +30,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "format",
-      "default" : ""
+      "default" : "^Abstract.+$"
     }, {
       "name" : "ignoreModifier",
       "default" : false
@@ -179,7 +179,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "format",
-      "default" : ""
+      "default" : "^(e|t|ex|[a-z][a-z][a-zA-Z]+)$"
     } ]
   }, {
     "patternId" : "ClassDataAbstractionCoupling",
@@ -232,7 +232,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "format",
-      "default" : ""
+      "default" : "^[A-Z]$"
     } ]
   }, {
     "patternId" : "CommentsIndentation",
@@ -260,7 +260,7 @@
       "default" : true
     }, {
       "name" : "format",
-      "default" : ""
+      "default" : "^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$"
     } ]
   }, {
     "patternId" : "CovariantEquals",
@@ -281,13 +281,13 @@
       "default" : false
     }, {
       "name" : "specialImportsRegExp",
-      "default" : ""
+      "default" : "^$"
     }, {
       "name" : "standardPackageRegExp",
-      "default" : ""
+      "default" : "^(java|javax)\\."
     }, {
       "name" : "thirdPartyPackageRegExp",
-      "default" : ""
+      "default" : ".*"
     } ]
   }, {
     "patternId" : "CyclomaticComplexity",
@@ -376,10 +376,10 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "commentFormat",
-      "default" : ""
+      "default" : ".*"
     }, {
       "name" : "exceptionVariableName",
-      "default" : ""
+      "default" : "^$"
     } ]
   }, {
     "patternId" : "EmptyForInitializerPad",
@@ -458,7 +458,7 @@
       "default" : false
     }, {
       "name" : "reliefPattern",
-      "default" : ""
+      "default" : "fallthru|falls? ?through"
     } ]
   }, {
     "patternId" : "FileLength",
@@ -620,7 +620,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "format",
-      "default" : ""
+      "default" : "^$"
     }, {
       "name" : "ignoreCase",
       "default" : false
@@ -640,7 +640,7 @@
       "default" : "getInitialContext, getEnvironment"
     }, {
       "name" : "illegalAbstractClassNameFormat",
-      "default" : ""
+      "default" : "^(.*[.])?Abstract.*$"
     }, {
       "name" : "illegalClassNames",
       "default" : "LinkedHashSet, java.util.HashSet, java.util.LinkedHashMap,java.util.TreeMap, HashMap, TreeSet, java.util.HashMap, TreeMap,java.util.LinkedHashSet, java.util.TreeSet, HashSet, LinkedHashMap"
@@ -666,7 +666,7 @@
       "default" : ""
     }, {
       "name" : "path",
-      "default" : ""
+      "default" : ".*"
     } ]
   }, {
     "patternId" : "ImportOrder",
@@ -777,8 +777,12 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "format",
-      "default" : ""
+      "default" : "^[A-Z]$"
     } ]
+  }, {
+    "patternId" : "InvalidJavadocPosition",
+    "level" : "Info",
+    "category" : "CodeStyle"
   }, {
     "patternId" : "JavaNCSS",
     "level" : "Info",
@@ -883,7 +887,7 @@
       "default" : true
     }, {
       "name" : "endOfSentenceFormat",
-      "default" : ""
+      "default" : "([.?!][ \\t\\n\\r\\f<])|([.?!]$)"
     }, {
       "name" : "excludeScope",
       "default" : ""
@@ -957,7 +961,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "format",
-      "default" : ""
+      "default" : "^[a-z][a-zA-Z0-9]*$"
     } ]
   }, {
     "patternId" : "LeftCurly",
@@ -979,7 +983,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "ignorePattern",
-      "default" : ""
+      "default" : "^$"
     }, {
       "name" : "max",
       "default" : 80
@@ -990,7 +994,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "format",
-      "default" : ""
+      "default" : "^[a-z][a-zA-Z0-9]*$"
     }, {
       "name" : "tokens",
       "default" : "VARIABLE_DEF,PARAMETER_DEF,RESOURCE"
@@ -1004,7 +1008,7 @@
       "default" : false
     }, {
       "name" : "format",
-      "default" : ""
+      "default" : "^[a-z][a-zA-Z0-9]*$"
     } ]
   }, {
     "patternId" : "MagicNumber",
@@ -1016,6 +1020,9 @@
     }, {
       "name" : "ignoreAnnotation",
       "default" : false
+    }, {
+      "name" : "ignoreAnnotationElementDefaults",
+      "default" : true
     }, {
       "name" : "ignoreFieldDeclaration",
       "default" : false
@@ -1047,7 +1054,7 @@
       "default" : true
     }, {
       "name" : "format",
-      "default" : ""
+      "default" : "^[a-z][a-zA-Z0-9]*$"
     } ]
   }, {
     "patternId" : "MethodCount",
@@ -1107,7 +1114,7 @@
       "default" : true
     }, {
       "name" : "format",
-      "default" : ""
+      "default" : "^[a-z][a-zA-Z0-9]*$"
     } ]
   }, {
     "patternId" : "MethodParamPad",
@@ -1129,7 +1136,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "format",
-      "default" : ""
+      "default" : "^[A-Z]$"
     } ]
   }, {
     "patternId" : "MissingCtor",
@@ -1226,7 +1233,7 @@
       "default" : "ANNOTATION"
     }, {
       "name" : "ignoreStringsRegexp",
-      "default" : "\"\"$"
+      "default" : "^\"\"$"
     } ]
   }, {
     "patternId" : "MultipleVariableDeclarations",
@@ -1238,10 +1245,10 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "extendedClassNameFormat",
-      "default" : ""
+      "default" : "^.*Exception$|^.*Error$|^.*Throwable$"
     }, {
       "name" : "format",
-      "default" : ""
+      "default" : "^.*Exception$|^.*Error$|^.*Throwable$"
     } ]
   }, {
     "patternId" : "NPathComplexity",
@@ -1352,7 +1359,11 @@
   }, {
     "patternId" : "OneStatementPerLine",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "treatTryResourcesAsStatement",
+      "default" : false
+    } ]
   }, {
     "patternId" : "OneTopLevelClass",
     "level" : "Info",
@@ -1410,7 +1421,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "format",
-      "default" : ""
+      "default" : "^[a-z]+(\\.[a-zA-Z_][a-zA-Z0-9_]*)*$"
     } ]
   }, {
     "patternId" : "ParameterAssignment",
@@ -1425,7 +1436,7 @@
       "default" : "public, protected, package, private"
     }, {
       "name" : "format",
-      "default" : ""
+      "default" : "^[a-z][a-zA-Z0-9]*$"
     }, {
       "name" : "ignoreOverridden",
       "default" : false
@@ -1479,7 +1490,7 @@
       "default" : 100
     }, {
       "name" : "format",
-      "default" : ""
+      "default" : "^$"
     }, {
       "name" : "ignoreComments",
       "default" : false
@@ -1519,7 +1530,7 @@
       "default" : "all files"
     }, {
       "name" : "format",
-      "default" : ""
+      "default" : "$."
     }, {
       "name" : "ignoreCase",
       "default" : false
@@ -1562,7 +1573,7 @@
       "default" : "all files"
     }, {
       "name" : "format",
-      "default" : ""
+      "default" : "$."
     }, {
       "name" : "ignoreCase",
       "default" : false
@@ -1582,7 +1593,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "format",
-      "default" : ""
+      "default" : "$."
     }, {
       "name" : "ignoreCase",
       "default" : false
@@ -1619,7 +1630,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "format",
-      "default" : ""
+      "default" : "^equals$"
     }, {
       "name" : "max",
       "default" : 2
@@ -1700,7 +1711,7 @@
       "default" : true
     }, {
       "name" : "format",
-      "default" : ""
+      "default" : "^[a-z][a-zA-Z0-9]*$"
     } ]
   }, {
     "patternId" : "StringLiteralEquality",
@@ -1712,7 +1723,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "forbiddenSummaryFragments",
-      "default" : ""
+      "default" : "^$"
     }, {
       "name" : "period",
       "default" : "."
@@ -1734,7 +1745,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "format",
-      "default" : ""
+      "default" : "^\\s*+$"
     }, {
       "name" : "tokens",
       "default" : "CLASS_DEF,INTERFACE_DEF,ENUM_DEF,ANNOTATION_DEF,ANNOTATION_FIELD_DEF,ENUM_CONSTANT_DEF,PARAMETER_DEF,VARIABLE_DEF,METHOD_DEF,CTOR_DEF"
@@ -1764,7 +1775,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "format",
-      "default" : ""
+      "default" : "TODO:"
     } ]
   }, {
     "patternId" : "TrailingComment",
@@ -1772,7 +1783,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "format",
-      "default" : ""
+      "default" : "^[\\s});]*$"
     }, {
       "name" : "legalComment",
       "default" : ""
@@ -1783,7 +1794,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "baseName",
-      "default" : ""
+      "default" : "^messages.*$"
     }, {
       "name" : "fileExtensions",
       "default" : ".properties"
@@ -1809,7 +1820,7 @@
       "default" : true
     }, {
       "name" : "format",
-      "default" : ""
+      "default" : "^[A-Z][a-zA-Z0-9]*$"
     }, {
       "name" : "tokens",
       "default" : "CLASS_DEF,INTERFACE_DEF,ENUM_DEF,ANNOTATION_DEF"
@@ -1828,7 +1839,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "excludedClasses",
-      "default" : ""
+      "default" : "^$"
     } ]
   }, {
     "patternId" : "UniqueProperties",
@@ -1911,7 +1922,7 @@
       "default" : false
     }, {
       "name" : "publicMemberPattern",
-      "default" : ""
+      "default" : "^serialVersionUID$"
     } ]
   }, {
     "patternId" : "WhitespaceAfter",

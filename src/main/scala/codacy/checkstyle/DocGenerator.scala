@@ -1,18 +1,17 @@
 package codacy.checkstyle
 
-import java.nio.file.{Files, Path}
+import java.io.IOException
+import java.nio.file.attribute.BasicFileAttributes
+import java.nio.file.{FileVisitResult, Files, Path, SimpleFileVisitor}
 
-import better.files.File
 import com.codacy.plugins.api.results.{Parameter, Pattern, Result, Tool}
-import com.overzealous.remark.Options.FencedCodeBlocks
-import com.overzealous.remark.{Options, Remark}
-import org.jsoup.Jsoup
 import play.api.libs.json.{JsObject, JsString, Json}
 
 import scala.collection.immutable.ListSet
-import scala.sys.process._
 import scala.util.Try
 import scala.xml._
+import scala.xml.transform.{RewriteRule, RuleTransformer}
+import scala.sys.process._
 
 object DocGenerator {
 
@@ -48,21 +47,20 @@ object DocGenerator {
           .to[List]
           .filterNot(e => Set("Content", "Overview").contains(e.attr("name")))
       } yield {
-        val extendedDescription = section.\\("subsection").to[List].collectFirst {
-          case ss if ss.attr("name") == "Description" =>
-            val xmlString =
-              stripNamespaces(ss)
-                .buildString(stripComments = true)
-                .replaceAllLiterally("<source>", "<pre><code>")
-                .replaceAllLiterally("</source>", "</code></pre>")
+        val extendedDescription =
+          section.\\("subsection").to[List].collectFirst {
+            case ss if ss.attr("name") == "Description" =>
+              val xmlString =
+                checkstyleLinks
+                  .transform(stripNamespaces(ss))
+                  .map(_.buildString(stripComments = true))
+                  .headOption
+                  .getOrElse("")
+                  .replaceAllLiterally("<source>", "<pre><code>")
+                  .replaceAllLiterally("</source>", "</code></pre>")
 
-            val document = Jsoup.parseBodyFragment(xmlString)
-
-            val opts = Options.github()
-            opts.fencedCodeBlocks = FencedCodeBlocks.DISABLED
-            opts.fencedCodeBlocksWidth = 3
-            new Remark(opts).convert(document)
-        }
+              toMarkdown(xmlString)
+          }
 
         val parameters = section.\\("subsection").to[List].collectFirst {
           case ss if ss.attr("name") == "Properties" =>
@@ -166,7 +164,53 @@ object DocGenerator {
       val res = block(directory)
       res
     } finally {
-      File(directory).delete(true)
+      Files.walkFileTree(directory, deleteRecursivelyVisitor)
     }
   }
+
+  private val deleteRecursivelyVisitor = new SimpleFileVisitor[Path] {
+    override def visitFile(file: Path, attrs: BasicFileAttributes): FileVisitResult = {
+      Files.delete(file)
+      FileVisitResult.CONTINUE
+    }
+
+    override def postVisitDirectory(dir: Path, exc: IOException): FileVisitResult = {
+      Files.delete(dir)
+      FileVisitResult.CONTINUE
+    }
+  }
+
+  private def toMarkdown(html: String): String = {
+    val directory = Files.createTempDirectory("checkstyleDoc")
+    try {
+      val file = Files.createTempFile(directory, "checkstyle-doc", ".xml")
+      Files.write(file, html.getBytes())
+      Seq("pandoc", "-f", "html", "-t", "markdown", file.toString).!!
+    } finally {
+      Files.walkFileTree(directory, deleteRecursivelyVisitor)
+    }
+  }
+
+  /**
+    * Xml RuleTranformer to add checkstyle page base on
+    * internal website links
+    */
+  private val checkstyleLinks = new RuleTransformer(new RewriteRule {
+    override def transform(node: Node): Node = {
+      node match {
+        case elem: Elem =>
+          val href = elem \@ "href"
+          if (href.nonEmpty && !href.startsWith("http://") && !href
+              .startsWith("https://") && (href.split("/").length <= 1)) {
+            if (!href.contains(".html")) {
+              <span>{elem.child}</span>
+            } else {
+              val newLink = s"https://checkstyle.org/$href"
+              <a href={newLink}>{elem.child}</a>
+            }
+          } else elem
+        case n => n
+      }
+    }
+  })
 }
