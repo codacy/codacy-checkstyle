@@ -38,24 +38,19 @@ workflows:
       - codacy/checkout_and_version:
           write_sbt_version: true
       - codacy/sbt:
-          name: populate_cache
-          cmd: |
-            sbt ";set scalafmtUseIvy in ThisBuild := false;update"
-          requires:
-            - codacy/checkout_and_version
-      - codacy/sbt:
-          name: check_fmt
-          cmd: sbt ";scalafmt::test;test:scalafmt::test;sbt:scalafmt::test"
-          requires:
-            - populate_cache
-      - codacy/sbt:
           name: publish_docker_local
           cmd: |
-            sbt ";set name := \"$CIRCLE_PROJECT_REPONAME\";set version in Docker := \"latest\";docker:publishLocal"
+            sbt "set scalafmtUseIvy in ThisBuild := false;
+                 scalafmt::test;
+                 test:scalafmt::test;
+                 sbt:scalafmt::test;
+                 set name := \"$CIRCLE_PROJECT_REPONAME\";
+                 set version in Docker := \"latest\";
+                 docker:publishLocal"
             docker save --output ~/workdir/docker-image.tar $CIRCLE_PROJECT_REPONAME:latest
           persist_to_workspace: true
           requires:
-            - populate_cache
+            - codacy/checkout_and_version
       - run-codacy-plugins-test:
           requires:
             - publish_docker_local
