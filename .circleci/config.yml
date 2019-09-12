@@ -1,7 +1,35 @@
 version: 2.1
 
 orbs:
-  codacy: codacy/base@0.3.0
+  codacy: codacy/base@0.3.7
+
+jobs:
+  run-codacy-plugins-test:
+    machine: true
+    steps:
+      - checkout
+      - restore_cache:
+          key: codacy-plugins-test-cache-$CODACY_PLUGINS_TEST_VERSION
+      - attach_workspace:
+          at: ~/
+      - run:
+          command: |
+            mkdir -p codacy-plugins-test
+            cd codacy-plugins-test
+            FILENAME=codacy-plugins-test-$CODACY_PLUGINS_TEST_VERSION
+            if [ ! -f "$FILENAME" ]; then
+              wget https://bintray.com/codacy/Binaries/download_file?file_path=$CODACY_PLUGINS_TEST_VERSION%2Fcodacy-plugins-test-linux -O $FILENAME
+              chmod +x $FILENAME
+            fi
+            docker load --input ~/workdir/docker-image.tar
+            ./$FILENAME json $CIRCLE_PROJECT_REPONAME:latest
+            ./$FILENAME pattern $CIRCLE_PROJECT_REPONAME:latest
+      - save_cache:
+          key: codacy-plugins-test-cache-$CODACY_PLUGINS_TEST_VERSION
+          paths:
+            - ~/codacy-plugins-test
+    environment:
+      CODACY_PLUGINS_TEST_VERSION: 0.0.1
 
 workflows:
   version: 2
@@ -12,9 +40,7 @@ workflows:
       - codacy/sbt:
           name: populate_cache
           cmd: |
-            git clone --depth 1 git://github.com/codacy/codacy-plugins-test.git codacy-plugins-test
             sbt ";set scalafmtUseIvy in ThisBuild := false;update"
-            (cd codacy-plugins-test && sbt update)
           requires:
             - codacy/checkout_and_version
       - codacy/sbt:
@@ -23,33 +49,28 @@ workflows:
           requires:
             - populate_cache
       - codacy/sbt:
-          name: compile
-          cmd: sbt compile
-          requires:
-            - check_fmt
-      - codacy/sbt:
-          name: test_patterns
-          # codacy-plugins-test can be saved before and restored from cache
+          name: publish_docker_local
           cmd: |
             sbt ";set name := \"$CIRCLE_PROJECT_REPONAME\";set version in Docker := \"latest\";docker:publishLocal"
-            git clone --depth 1 git://github.com/codacy/codacy-plugins-test.git codacy-plugins-test
-            (cd codacy-plugins-test &&
-              sbt -Dcodacy.tests.ignore.descriptions=true "runMain codacy.plugins.DockerTest json $CIRCLE_PROJECT_REPONAME:latest"
-              sbt -Dcodacy.tests.ignore.descriptions=true "runMain codacy.plugins.DockerTest pattern $CIRCLE_PROJECT_REPONAME:latest")
+            docker save --output ~/workdir/docker-image.tar $CIRCLE_PROJECT_REPONAME:latest
+          persist_to_workspace: true
           requires:
-            - compile
+            - populate_cache
+      - run-codacy-plugins-test:
+          requires:
+            - publish_docker_local
       - codacy/sbt:
           name: publish_dockerhub
           context: CodacyDocker
           cmd: |
-            sbt ";set name := \"$CIRCLE_PROJECT_REPONAME\";set version in Docker := \"latest\";docker:publishLocal"
+            docker load --input ~/docker-image.tar
             docker login -u $DOCKER_USER -p $DOCKER_PASS
             docker tag $CIRCLE_PROJECT_REPONAME codacy/$CIRCLE_PROJECT_REPONAME:$(cat .version)
             docker tag $CIRCLE_PROJECT_REPONAME codacy/$CIRCLE_PROJECT_REPONAME:latest
             docker push codacy/$CIRCLE_PROJECT_REPONAME:$(cat .version)
             docker push codacy/$CIRCLE_PROJECT_REPONAME:latest
           requires:
-            - test_patterns
+            - run-codacy-plugins-test
           filters:
             branches:
               only:
