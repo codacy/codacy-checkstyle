@@ -1,5 +1,3 @@
-Since Checkstyle 6.10
-
 Controls the indentation between comments and surrounding code. Comments
 are indented at the same level as the surrounding code. Detailed info
 about such convention can be found
@@ -44,7 +42,7 @@ of methods.
     4     int a = 0;
     5   }
     6
-    7     /////////////////////////////// violation (should have the same indentation level as line 9)
+    7     ///////////////////////////// violation (should have the same indentation level as line 9)
     8
     9   public void foo8() {}
             
@@ -172,7 +170,7 @@ block.
     9   public void foo43() {
     10    try {
     11      int a;
-    12     // Why do we catch exception here? - violation (should have the same indentation as line 11)
+    12     // Why do we catch exception here? - violation (not the same indentation as line 11)
     13     } catch (Exception e) { ... }
     14  }
             

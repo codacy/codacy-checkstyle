@@ -1,5 +1,3 @@
-Since Checkstyle 3.1
-
 Checks correct indentation of Java code.
 
 The idea behind this is that while pretty printers are sometimes

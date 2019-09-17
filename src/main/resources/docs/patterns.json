@@ -1,6 +1,6 @@
 {
   "name" : "Checkstyle",
-  "version" : "8.23",
+  "version" : "8.24",
   "patterns" : [ {
     "patternId" : "AbbreviationAsWordInName",
     "level" : "Info",
@@ -103,7 +103,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "tagOrder",
-      "default" : "@author, @version, @param,@return, @throws, @exception, @see, @since, @serial,@serialField, @serialData, @deprecated"
+      "default" : "@author, @deprecated, @exception, @param,@return, @see, @serial, @serialData, @serialField,@since, @throws, @version"
     }, {
       "name" : "target",
       "default" : "CLASS_DEF,INTERFACE_DEF,ENUM_DEF,METHOD_DEF,CTOR_DEF,VARIABLE_DEF"
@@ -190,7 +190,7 @@
       "default" : "^$"
     }, {
       "name" : "excludedClasses",
-      "default" : "HashMap, ArrayList, String, float, TreeSet, List, Boolean, Void, Override, Short,IllegalArgumentException, UnsupportedOperationException, HashSet, void, Character,IndexOutOfBoundsException, byte, double, Double, LinkedList, Float, Byte,SortedMap, Long, Throwable, Object, Class, Map, IllegalStateException, Set,StringBuilder, SuppressWarnings, SortedSet, long, RuntimeException, Deprecated,NullPointerException, Queue, SecurityException, FunctionalInterface, TreeMap,Deque, int, Exception, Integer, SafeVarargs, StringBuffer, boolean, char, short,ArrayIndexOutOfBoundsException"
+      "default" : "ArrayIndexOutOfBoundsException, ArrayList, Boolean, Byte, Character,Class, Deprecated, Deque, Double, Exception, Float, FunctionalInterface,HashMap, HashSet, IllegalArgumentException, IllegalStateException,IndexOutOfBoundsException, Integer, LinkedList, List, Long, Map,NullPointerException, Object, Override, Queue, RuntimeException,SafeVarargs, SecurityException, Set, Short, SortedMap, SortedSet,String, StringBuffer, StringBuilder, SuppressWarnings, Throwable,TreeMap, TreeSet, UnsupportedOperationException, Void, boolean,byte, char, double, float, int, long, short, void"
     }, {
       "name" : "excludedPackages",
       "default" : { }
@@ -207,7 +207,7 @@
       "default" : "^$"
     }, {
       "name" : "excludedClasses",
-      "default" : "HashMap, ArrayList, String, float, TreeSet, List, Boolean, Void, Override, Short,IllegalArgumentException, UnsupportedOperationException, HashSet, void, Character,IndexOutOfBoundsException, byte, double, Double, LinkedList, Float, Byte,SortedMap, Long, Throwable, Object, Class, Map, IllegalStateException, Set,StringBuilder, SuppressWarnings, SortedSet, long, RuntimeException, Deprecated,NullPointerException, Queue, SecurityException, FunctionalInterface, TreeMap,Deque, int, Exception, Integer, SafeVarargs, StringBuffer, boolean, char, short,ArrayIndexOutOfBoundsException"
+      "default" : "ArrayIndexOutOfBoundsException, ArrayList, Boolean, Byte, Character,Class, Deprecated, Deque, Double, Exception, Float, FunctionalInterface,HashMap, HashSet, IllegalArgumentException, IllegalStateException,IndexOutOfBoundsException, Integer, LinkedList, List, Long, Map,NullPointerException, Object, Override, Queue, RuntimeException,SafeVarargs, SecurityException, Set, Short, SortedMap, SortedSet,String, StringBuffer, StringBuilder, SuppressWarnings, Throwable,TreeMap, TreeSet, UnsupportedOperationException, Void, boolean,byte, char, double, float, int, long, short, void"
     }, {
       "name" : "excludedPackages",
       "default" : { }
@@ -328,7 +328,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "limitedTokens",
-      "default" : ""
+      "default" : { }
     }, {
       "name" : "maximumDepth",
       "default" : "java.lang.Integer.MAX_VALUE"
@@ -357,7 +357,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "ignoredAnnotations",
-      "default" : "Before, BeforeClass, Test, After, AfterClass"
+      "default" : "After, AfterClass, Before, BeforeClass, Test"
     } ]
   }, {
     "patternId" : "EmptyBlock",
@@ -565,7 +565,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "illegalClassNames",
-      "default" : "java.lang.Throwable, RuntimeException, Error, Throwable, java.lang.Error,java.lang.RuntimeException, Exception, java.lang.Exception"
+      "default" : "Error, Exception, RuntimeException, Throwable, java.lang.Error,java.lang.Exception, java.lang.RuntimeException, java.lang.Throwable"
     } ]
   }, {
     "patternId" : "IllegalImport",
@@ -604,7 +604,7 @@
       "default" : "finalize"
     }, {
       "name" : "illegalClassNames",
-      "default" : "java.lang.Throwable, RuntimeException, Error, Throwable, java.lang.Error,java.lang.RuntimeException"
+      "default" : "Error, RuntimeException, Throwable, java.lang.Error,java.lang.RuntimeException, java.lang.Throwable"
     } ]
   }, {
     "patternId" : "IllegalToken",
@@ -637,13 +637,13 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "ignoredMethodNames",
-      "default" : "getInitialContext, getEnvironment"
+      "default" : "getEnvironment, getInitialContext"
     }, {
       "name" : "illegalAbstractClassNameFormat",
       "default" : "^(.*[.])?Abstract.*$"
     }, {
       "name" : "illegalClassNames",
-      "default" : "LinkedHashSet, java.util.HashSet, java.util.LinkedHashMap,java.util.TreeMap, HashMap, TreeSet, java.util.HashMap, TreeMap,java.util.LinkedHashSet, java.util.TreeSet, HashSet, LinkedHashMap"
+      "default" : "HashMap, HashSet, LinkedHashMap, LinkedHashSet, TreeMap, TreeSet,java.util.HashMap, java.util.HashSet, java.util.LinkedHashMap,java.util.LinkedHashSet, java.util.TreeMap, java.util.TreeSet"
     }, {
       "name" : "legalAbstractClassNames",
       "default" : { }
@@ -796,6 +796,17 @@
     }, {
       "name" : "methodMaximum",
       "default" : 50
+    } ]
+  }, {
+    "patternId" : "JavadocBlockTagLocation",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "tags",
+      "default" : "author, deprecated, exception, hidden, param, provides, return,see, serial, serialData, serialField, since, throws, uses, version"
+    }, {
+      "name" : "violateExecutionOnNonTightHtml",
+      "default" : false
     } ]
   }, {
     "patternId" : "JavadocMethod",
@@ -982,6 +993,9 @@
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
+      "name" : "fileExtensions",
+      "default" : "all files"
+    }, {
       "name" : "ignorePattern",
       "default" : "^$"
     }, {
@@ -1147,7 +1161,7 @@
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "skipNoJavadoc",
+      "name" : "violateExecutionOnNonTightHtml",
       "default" : false
     } ]
   }, {
@@ -1858,6 +1872,14 @@
       "default" : "EXPR,IDENT,NUM_DOUBLE,NUM_FLOAT,NUM_INT,NUM_LONG,STRING_LITERAL,LITERAL_NULL,LITERAL_FALSE,LITERAL_TRUE,ASSIGN,BAND_ASSIGN,BOR_ASSIGN,BSR_ASSIGN,BXOR_ASSIGN,DIV_ASSIGN,MINUS_ASSIGN,MOD_ASSIGN,PLUS_ASSIGN,SL_ASSIGN,SR_ASSIGN,STAR_ASSIGN,LAMBDA"
     } ]
   }, {
+    "patternId" : "UnnecessarySemicolonAfterTypeMemberDeclaration",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "tokens",
+      "default" : "CLASS_DEF,INTERFACE_DEF,ENUM_DEF,ANNOTATION_DEF,VARIABLE_DEF,ANNOTATION_FIELD_DEF,STATIC_INIT,INSTANCE_INIT,CTOR_DEF,METHOD_DEF,ENUM_CONSTANT_DEF"
+    } ]
+  }, {
     "patternId" : "UnnecessarySemicolonInEnumeration",
     "level" : "Info",
     "category" : "CodeStyle"
@@ -1910,10 +1932,10 @@
       "default" : false
     }, {
       "name" : "ignoreAnnotationCanonicalNames",
-      "default" : "org.junit.Rule, org.junit.ClassRule,com.google.common.annotations.VisibleForTesting"
+      "default" : "com.google.common.annotations.VisibleForTesting,org.junit.ClassRule, org.junit.Rule"
     }, {
       "name" : "immutableClassCanonicalNames",
-      "default" : "java.lang.String, java.lang.Integer, java.lang.Byte, java.lang.Character,java.lang.Short, java.lang.Boolean, java.lang.Long, java.lang.Double, java.lang.Float,java.lang.StackTraceElement, java.math.BigInteger, java.math.BigDecimal, java.io.File,java.util.Locale, java.util.UUID, java.net.URL, java.net.URI,java.net.Inet4Address, java.net.Inet6Address, java.net.InetSocketAddress"
+      "default" : "java.io.File, java.lang.Boolean, java.lang.Byte, java.lang.Character,java.lang.Double, java.lang.Float, java.lang.Integer, java.lang.Long,java.lang.Short, java.lang.StackTraceElement, java.lang.String,java.math.BigDecimal, java.math.BigInteger, java.net.Inet4Address,java.net.Inet6Address, java.net.InetSocketAddress, java.net.URI,java.net.URL, java.util.Locale, java.util.UUID"
     }, {
       "name" : "packageAllowed",
       "default" : false

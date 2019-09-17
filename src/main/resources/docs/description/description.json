@@ -84,7 +84,7 @@
   "title" : "ArrayTypeStyle",
   "parameters" : [ {
     "name" : "javaStyle",
-    "description" : "\n              Controls whether to enforce Java style (true) or C style (false).\n            "
+    "description" : "\n              Control whether to enforce Java style (true) or C style (false).\n            "
   } ]
 }, {
   "patternId" : "AtclauseOrder",
@@ -107,13 +107,13 @@
     "description" : "Allow use escapes if trail comment is present."
   }, {
     "name" : "allowEscapesForControlCharacters",
-    "description" : "Allow use escapes for non-printable(control) characters."
+    "description" : "Allow use escapes for non-printable, control characters."
   }, {
     "name" : "allowIfAllCharactersEscaped",
     "description" : "Allow if all characters in literal are escaped."
   }, {
     "name" : "allowNonPrintableEscapes",
-    "description" : "Allow non-printable escapes."
+    "description" : "Allow use escapes for non-printable, whitespace characters."
   } ]
 }, {
   "patternId" : "AvoidInlineConditionals",
@@ -297,28 +297,28 @@
   "title" : "DescendantToken",
   "parameters" : [ {
     "name" : "limitedTokens",
-    "description" : "set of tokens with limited occurrences as descendants"
+    "description" : "Specify set of tokens with limited occurrences as descendants."
   }, {
     "name" : "maximumDepth",
-    "description" : "the maximum depth for descendant counts"
+    "description" : "Specify the maximum depth for descendant counts."
   }, {
     "name" : "maximumMessage",
-    "description" : "error message when the maximum count is exceeded"
+    "description" : "Define the violation message when the maximum count is exceeded."
   }, {
     "name" : "maximumNumber",
-    "description" : "a maximum count for descendants"
+    "description" : "Specify a maximum count for descendants."
   }, {
     "name" : "minimumDepth",
-    "description" : "the minimum depth for descendant counts"
+    "description" : "Specify the minimum depth for descendant counts."
   }, {
     "name" : "minimumMessage",
-    "description" : "error message when the minimum count is not reached"
+    "description" : "Define the violation message when the minimum count is not reached."
   }, {
     "name" : "minimumNumber",
-    "description" : "a minimum count for descendants"
+    "description" : "Specify a minimum count for descendants."
   }, {
     "name" : "sumTokenCounts",
-    "description" : "\n              whether the number of tokens found should be calculated\n              from the sum of the individual token counts\n            "
+    "description" : "\n              Control whether the number of tokens found should be calculated\n              from the sum of the individual token counts.\n            "
   } ]
 }, {
   "patternId" : "DesignForExtension",
@@ -455,7 +455,7 @@
   "title" : "FinalParameters",
   "parameters" : [ {
     "name" : "ignorePrimitiveTypes",
-    "description" : "ignore primitive types as parameters"
+    "description" : "Ignore primitive types as parameters."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -647,25 +647,25 @@
   "title" : "Indentation",
   "parameters" : [ {
     "name" : "arrayInitIndent",
-    "description" : "how far an array initialisation should be indented when on next line"
+    "description" : "Specify how far an array initialisation should be indented when on next line."
   }, {
     "name" : "basicOffset",
-    "description" : "how far new indentation level should be indented when on the next line"
+    "description" : "\n              Specify how far new indentation level should be indented when on the next line.\n            "
   }, {
     "name" : "braceAdjustment",
-    "description" : "how far a braces should be indented when on the next line"
+    "description" : "Specify how far a braces should be indented when on the next line."
   }, {
     "name" : "caseIndent",
-    "description" : "how far a case label should be indented when on next line"
+    "description" : "Specify how far a case label should be indented when on next line."
   }, {
     "name" : "forceStrictCondition",
     "description" : "forceStrictCondition"
   }, {
     "name" : "lineWrappingIndentation",
-    "description" : "how far continuation line should be indented when line-wrapping is present"
+    "description" : "\n              Specify how far continuation line should be indented when line-wrapping is present.\n            "
   }, {
     "name" : "throwsIndent",
-    "description" : "how far a throws clause should be indented when on next line"
+    "description" : "Specify how far a throws clause should be indented when on next line."
   } ]
 }, {
   "patternId" : "InnerAssignment",
@@ -729,23 +729,33 @@
     "description" : "\n              the maximum allowed number of non commenting lines in a\n              method.\n            "
   } ]
 }, {
+  "patternId" : "JavadocBlockTagLocation",
+  "title" : "JavadocBlockTagLocation",
+  "parameters" : [ {
+    "name" : "tags",
+    "description" : "Specify the javadoc tags to process."
+  }, {
+    "name" : "violateExecutionOnNonTightHtml",
+    "description" : "\n              Control when to print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
+  } ]
+}, {
   "patternId" : "JavadocMethod",
   "title" : "JavadocMethod",
   "parameters" : [ {
     "name" : "allowMissingJavadoc",
-    "description" : "whether to ignore errors when a method javadoc is missed."
+    "description" : "whether to ignore violations when a method javadoc is missed."
   }, {
     "name" : "allowMissingParamTags",
-    "description" : "whether to ignore errors when a method has parameters\n            but does not have matching param tags in the javadoc."
+    "description" : "whether to ignore violations when a method has parameters\n            but does not have matching param tags in the javadoc."
   }, {
     "name" : "allowMissingPropertyJavadoc",
     "description" : "allowMissingPropertyJavadoc"
   }, {
     "name" : "allowMissingReturnTag",
-    "description" : "whether to ignore errors when a method returns\n            non-void type and does not have a return tag in the javadoc."
+    "description" : "whether to ignore violations when a method returns\n            non-void type and does not have a return tag in the javadoc."
   }, {
     "name" : "allowMissingThrowsTags",
-    "description" : "whether to ignore errors when a method declares\n            that it throws exceptions but does not have matching throws tags\n            in the javadoc."
+    "description" : "whether to ignore violations when a method declares\n            that it throws exceptions but does not have matching throws tags\n            in the javadoc."
   }, {
     "name" : "allowThrowsTagsForSubclasses",
     "description" : "whether to allow documented exceptions that\n            are subclass of one of declared exception."
@@ -840,10 +850,10 @@
   "title" : "JavadocType",
   "parameters" : [ {
     "name" : "allowMissingParamTags",
-    "description" : "whether to ignore errors when a class has type parameters\n                but does not have matching param tags in the javadoc."
+    "description" : "whether to ignore violations when a class has type parameters\n                but does not have matching param tags in the javadoc."
   }, {
     "name" : "allowUnknownTags",
-    "description" : "whether to ignore errors when a Javadoc tag is not recognised."
+    "description" : "whether to ignore violations when a Javadoc tag is not recognised."
   }, {
     "name" : "allowedAnnotations",
     "description" : "\n              List of annotations that allow missed documentation. Only short names are allowed,\n              e.g. Generated.\n            "
@@ -903,6 +913,9 @@
   "patternId" : "LineLength",
   "title" : "LineLength",
   "parameters" : [ {
+    "name" : "fileExtensions",
+    "description" : "file extensions that are accepted"
+  }, {
     "name" : "ignorePattern",
     "description" : "pattern for lines to ignore"
   }, {
@@ -1057,8 +1070,8 @@
   "patternId" : "MissingDeprecated",
   "title" : "MissingDeprecated",
   "parameters" : [ {
-    "name" : "skipNoJavadoc",
-    "description" : "Ignore cases when JavaDoc is missing, but still warns when JavaDoc is\n            present but either @deprecated is missing from JavaDoc or\n            @Deprecated is missing from the element.\n            "
+    "name" : "violateExecutionOnNonTightHtml",
+    "description" : "\n              If turned on, will print violations if the Javadoc being examined by this check\n              violates the tight html rules defined at\n              Tight-HTML Rules."
   } ]
 }, {
   "patternId" : "MissingJavadocMethod",
@@ -1196,10 +1209,10 @@
   "title" : "NewlineAtEndOfFile",
   "parameters" : [ {
     "name" : "fileExtensions",
-    "description" : "file type extension of the files to check."
+    "description" : "Specify the file type extension of the files to check."
   }, {
     "name" : "lineSeparator",
-    "description" : "type of line separator"
+    "description" : "Specify the type of line separator."
   } ]
 }, {
   "patternId" : "NoClone",
@@ -1269,7 +1282,7 @@
   "title" : "OrderedProperties",
   "parameters" : [ {
     "name" : "fileExtensions",
-    "description" : "file type extension of the files to check."
+    "description" : "Specify file type extension of the files to check."
   } ]
 }, {
   "patternId" : "OuterTypeFilename",
@@ -1358,7 +1371,7 @@
     "description" : "duplicateLimit"
   }, {
     "name" : "errorLimit",
-    "description" : "Controls the maximum number of errors before the check will abort."
+    "description" : "Controls the maximum number of violations before the check will abort."
   }, {
     "name" : "format",
     "description" : "pattern"
@@ -1624,30 +1637,30 @@
   "title" : "TodoComment",
   "parameters" : [ {
     "name" : "format",
-    "description" : "Pattern to match comments against"
+    "description" : "Specify pattern to match comments against."
   } ]
 }, {
   "patternId" : "TrailingComment",
   "title" : "TrailingComment",
   "parameters" : [ {
     "name" : "format",
-    "description" : "pattern for strings allowed before the comment"
+    "description" : "Specify pattern for strings allowed before the comment."
   }, {
     "name" : "legalComment",
-    "description" : "pattern for text allowed in trailing comments. (This\n                pattern will not be applied to multiline comments and the text of the\n                comment will be trimmed before matching.)"
+    "description" : "Define pattern for text allowed in trailing comments. (This\n                pattern will not be applied to multiline comments and the text of the\n                comment will be trimmed before matching.)"
   } ]
 }, {
   "patternId" : "Translation",
   "title" : "Translation",
   "parameters" : [ {
     "name" : "baseName",
-    "description" : "\n              Base name of resource bundles which contain message resources. It helps\n              the check to distinguish config and localization resources."
+    "description" : "Specify\n              \n              Base name of resource bundles which contain message resources. It helps\n              the check to distinguish config and localization resources."
   }, {
     "name" : "fileExtensions",
     "description" : "fileExtensions"
   }, {
     "name" : "requiredTranslations",
-    "description" : "requiredTranslations"
+    "description" : "\n              Specify language codes of required translations which must exist in project.\n            "
   } ]
 }, {
   "patternId" : "TypeName",
@@ -1683,18 +1696,25 @@
   "title" : "UncommentedMain",
   "parameters" : [ {
     "name" : "excludedClasses",
-    "description" : "Pattern for qualified names of classes which are allowed\n            to have a main method."
+    "description" : "Specify pattern for qualified names of classes which are allowed\n            to have a main method."
   } ]
 }, {
   "patternId" : "UniqueProperties",
   "title" : "UniqueProperties",
   "parameters" : [ {
     "name" : "fileExtensions",
-    "description" : "file type extension of the files to check."
+    "description" : "Specify file type extension of the files to check."
   } ]
 }, {
   "patternId" : "UnnecessaryParentheses",
   "title" : "UnnecessaryParentheses",
+  "parameters" : [ {
+    "name" : "tokens",
+    "description" : "tokens to check"
+  } ]
+}, {
+  "patternId" : "UnnecessarySemicolonAfterTypeMemberDeclaration",
+  "title" : "UnnecessarySemicolonAfterTypeMemberDeclaration",
   "parameters" : [ {
     "name" : "tokens",
     "description" : "tokens to check"
