@@ -51,4 +51,3 @@ declaration in your XML document:
     <!DOCTYPE import-control PUBLIC
         "-//Checkstyle//DTD ImportControl Configuration 1.4//EN"
         "https://checkstyle.org/dtds/import_control_1_4.dtd">
-            

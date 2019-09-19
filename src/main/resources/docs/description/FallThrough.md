@@ -42,4 +42,3 @@ the comment \"fallthru\" and absence of any Java code in case 5.
     case 5:
     case 6:
         break;
-            

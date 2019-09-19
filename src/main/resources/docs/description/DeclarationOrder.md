@@ -29,4 +29,3 @@ example:
       private double y = 2.0;
       public double slope = x / y; // will be skipped from validation due to forward reference
     }
-            

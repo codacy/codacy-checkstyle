@@ -18,4 +18,3 @@ violations.
 
     public long toNanos(long d)  { return d;             } // 2 violations
     public long toMicros(long d) { return d / (C1 / C0); }
-            

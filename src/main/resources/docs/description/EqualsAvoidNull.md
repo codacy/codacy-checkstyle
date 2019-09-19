@@ -17,4 +17,3 @@ should be refactored to:
 
     String nullString = null;
     "My_Sweet_String".equals(nullString);
-            

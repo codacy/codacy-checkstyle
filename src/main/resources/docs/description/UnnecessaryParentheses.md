@@ -6,4 +6,3 @@ The check will flag the following with warnings:
         int x = (y / 2 + 1); // parens around assignment rhs
         for (int i = (0); i < 10; i++) {  // parens around literal
         t -= (z + 1);        // parens around assignment rhs
-            

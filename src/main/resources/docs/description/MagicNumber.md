@@ -14,4 +14,3 @@ within one expression:
     static final double SPECIAL_DIFFERENCE = 4 - Math.PI;
     static final Border STANDARD_BORDER = BorderFactory.createEmptyBorder(3, 3, 3, 3);
     static final Integer ANSWER_TO_THE_ULTIMATE_QUESTION_OF_LIFE = new Integer(42);
-            

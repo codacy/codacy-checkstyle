@@ -24,4 +24,3 @@ key in the German resource file:
     messages_de.properties: Key 'cancel' missing.
     messages.properties: Key 'hell' missing.
     messages.properties: Key 'ok' missing.
-            

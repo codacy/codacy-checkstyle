@@ -23,4 +23,3 @@ Example:
     @Override
     @Nullable
     public String getNameIfPresent() { ... }
-            

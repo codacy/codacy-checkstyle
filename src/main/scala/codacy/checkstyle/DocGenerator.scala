@@ -59,7 +59,7 @@ object DocGenerator {
                   .replaceAllLiterally("<source>", "<pre><code>")
                   .replaceAllLiterally("</source>", "</code></pre>")
 
-              toMarkdown(xmlString)
+              toMarkdown(xmlString).trim
           }
 
         val parameters = section.\\("subsection").to[List].collectFirst {

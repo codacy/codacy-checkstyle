@@ -26,4 +26,3 @@ using SuppressionSingleFilter is:
         <property name="checks" value="MissingDeprecatedCheck"/>
         <property name="files" value="package-info\.java"/>
     </module>
-            

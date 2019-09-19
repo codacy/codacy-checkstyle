@@ -32,4 +32,3 @@ not be flagged as unused:
       private Object Component; // a bad practice in my opinion
       ...
     }
-            

@@ -8,4 +8,3 @@ Rationale: Novice Java programmers often use code like:
 when they mean
 
     if ("something".equals(x))
-            

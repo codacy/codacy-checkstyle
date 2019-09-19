@@ -173,4 +173,3 @@ block.
     12     // Why do we catch exception here? - violation (not the same indentation as line 11)
     13     } catch (Exception e) { ... }
     14  }
-            
