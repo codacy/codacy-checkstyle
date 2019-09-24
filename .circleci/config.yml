@@ -2,34 +2,7 @@ version: 2.1
 
 orbs:
   codacy: codacy/base@0.3.8
-
-jobs:
-  run-codacy-plugins-test:
-    machine: true
-    steps:
-      - checkout
-      - restore_cache:
-          key: codacy-plugins-test-cache-$CODACY_PLUGINS_TEST_VERSION
-      - attach_workspace:
-          at: ~/
-      - run:
-          command: |
-            mkdir -p codacy-plugins-test
-            cd codacy-plugins-test
-            FILENAME=codacy-plugins-test-$CODACY_PLUGINS_TEST_VERSION
-            if [ ! -f "$FILENAME" ]; then
-              wget https://bintray.com/codacy/Binaries/download_file?file_path=$CODACY_PLUGINS_TEST_VERSION%2Fcodacy-plugins-test-linux -O $FILENAME
-              chmod +x $FILENAME
-            fi
-            docker load --input ~/workdir/docker-image.tar
-            ./$FILENAME json $CIRCLE_PROJECT_REPONAME:latest
-            ./$FILENAME pattern $CIRCLE_PROJECT_REPONAME:latest
-      - save_cache:
-          key: codacy-plugins-test-cache-$CODACY_PLUGINS_TEST_VERSION
-          paths:
-            - ~/codacy-plugins-test
-    environment:
-      CODACY_PLUGINS_TEST_VERSION: 0.0.1
+  codacy_plugins_test: codacy/plugins-test@0.1.0
 
 workflows:
   version: 2
@@ -51,7 +24,7 @@ workflows:
           persist_to_workspace: true
           requires:
             - codacy/checkout_and_version
-      - run-codacy-plugins-test:
+      - codacy_plugins_test/run_codacy_plugins_test:
           requires:
             - publish_docker_local
       - codacy/sbt:
@@ -65,7 +38,7 @@ workflows:
             docker push codacy/$CIRCLE_PROJECT_REPONAME:$(cat .version)
             docker push codacy/$CIRCLE_PROJECT_REPONAME:latest
           requires:
-            - run-codacy-plugins-test
+            - codacy_plugins_test/run_codacy_plugins_test
           filters:
             branches:
               only:
