@@ -115,7 +115,7 @@ object Checkstyle extends Tool {
     }
   }
 
-  private lazy val globalPatterns: Set[String] = Set(
+  private val globalPatterns: Set[String] = Set(
     "SeverityMatchFilter",
     "SuppressionCommentFilter",
     "SuppressionFilter",
@@ -130,7 +130,8 @@ object Checkstyle extends Tool {
     "FileLength",
     "FileTabCharacter",
     "NewlineAtEndOfFile",
-    "UniqueProperties"
+    "UniqueProperties",
+    "LineLength"
   )
 
   private def isGlobalPattern(pattern: Pattern.Definition) = {

@@ -466,7 +466,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "fileExtensions",
-      "default" : "all files"
+      "default" : ""
     }, {
       "name" : "max",
       "default" : 2000
@@ -480,7 +480,7 @@
       "default" : false
     }, {
       "name" : "fileExtensions",
-      "default" : "all files"
+      "default" : ""
     } ]
   }, {
     "patternId" : "FinalClass",
@@ -521,7 +521,7 @@
       "default" : "the charset property of the parentChecker module"
     }, {
       "name" : "fileExtensions",
-      "default" : "all files"
+      "default" : ""
     }, {
       "name" : "header",
       "default" : ""
@@ -994,7 +994,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "fileExtensions",
-      "default" : "all files"
+      "default" : ""
     }, {
       "name" : "ignorePattern",
       "default" : "^$"
@@ -1316,7 +1316,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "fileExtensions",
-      "default" : "all files"
+      "default" : ""
     }, {
       "name" : "lineSeparator",
       "default" : "lf_cr_crlf"
@@ -1524,7 +1524,7 @@
       "default" : "the charset property of the parentChecker module"
     }, {
       "name" : "fileExtensions",
-      "default" : "all files"
+      "default" : ""
     }, {
       "name" : "header",
       "default" : ""
@@ -1541,7 +1541,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "fileExtensions",
-      "default" : "all files"
+      "default" : ""
     }, {
       "name" : "format",
       "default" : "$."
@@ -1564,7 +1564,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "fileExtensions",
-      "default" : "all files"
+      "default" : ""
     }, {
       "name" : "fileNamePattern",
       "default" : ""
@@ -1584,7 +1584,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "fileExtensions",
-      "default" : "all files"
+      "default" : ""
     }, {
       "name" : "format",
       "default" : "$."

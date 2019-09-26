@@ -86,7 +86,13 @@ object DocGenerator {
                     .getOrElse("")
 
                   // Try to parse numbers and booleans
-                  val jsDefaultValue = Try(Json.parse(defaultValue)).getOrElse(JsString(defaultValue))
+                  val jsDefaultValue = {
+                    val res = Try(Json.parse(defaultValue)).getOrElse(JsString(defaultValue))
+                    res match {
+                      case JsString("all files") => JsString("")
+                      case any => any
+                    }
+                  }
                   val descriptionText =
                     if (description.text.length > 250) {
                       name.text

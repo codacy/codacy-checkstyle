@@ -1,12 +1,8 @@
 version: 2.1
 
 orbs:
-<<<<<<< HEAD
   codacy: codacy/base@0.3.9
   codacy_plugins_test: codacy/plugins-test@0.2.0
-=======
-  codacy: codacy/base@0.3.8
->>>>>>> Bump Checkstyle to 8.24
 
 workflows:
   version: 2
