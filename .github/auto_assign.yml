@@ -1,0 +1,12 @@
+# Set to true to add reviewers to pull requests
+addReviewers: true
+
+# A list of reviewers to be added to pull requests (GitHub user name)
+reviewers:
+  - lolgab
+  - ljmf00
+  - andreaTP
+  - rtfpessoa
+  - bmbferreira
+  - DReigada
+  - pedrocodacy
