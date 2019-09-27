@@ -5,4 +5,3 @@ as in
 
     for (
           ; i < j; i++, j--)
-            

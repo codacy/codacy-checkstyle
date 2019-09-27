@@ -1,5 +1,3 @@
-Since Checkstyle 3.2
-
 Checks for uncommented main() methods.
 
 Rationale: A main() method is often used for debugging purposes. When

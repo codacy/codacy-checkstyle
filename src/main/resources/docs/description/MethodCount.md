@@ -36,4 +36,3 @@ separate from it\'s children\'s inner types.
                                        // but counted towards InnerExampleClass
       }
     }
-              

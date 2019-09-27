@@ -8,13 +8,13 @@ allowUndeclaredRTE to true. The scope to verify is specified using the
 set property scope to a different
 [scope](https://checkstyle.org/property_types.html#scope).
 
-Error messages about parameters and type parameters for which no param
-tags are present can be suppressed by defining property
-`allowMissingParamTags`. Error messages about exceptions which are
-declared to be thrown, but for which no throws tag is present can be
-suppressed by defining property `allowMissingThrowsTags`. Error messages
-about methods which return non-void but for which no return tag is
-present can be suppressed by defining property `allowMissingReturnTag`.
+Violates parameters and type parameters for which no param tags are
+present can be suppressed by defining property `allowMissingParamTags`.
+Violates exceptions which are declared to be thrown, but for which no
+throws tag is present can be suppressed by defining property
+`allowMissingThrowsTags`. Violates methods which return non-void but for
+which no return tag is present can be suppressed by defining property
+`allowMissingReturnTag`.
 
 Javadoc is not required on a method that is tagged with the `@Override`
 annotation. However under Java 5 it is not possible to mark a method

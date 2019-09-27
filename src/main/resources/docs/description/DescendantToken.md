@@ -1,5 +1,3 @@
-Since Checkstyle 3.2
-
 Checks for restricted tokens beneath other tokens.
 
 WARNING: This is a very powerful and flexible check, but, at the same

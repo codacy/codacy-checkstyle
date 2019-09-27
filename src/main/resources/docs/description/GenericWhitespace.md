@@ -32,4 +32,3 @@ Examples with correct spacing:
     List<T> list = ImmutableList.Builder<T>::new;
     // Method reference
     sort(list, Comparable::<String>compareTo);
-            

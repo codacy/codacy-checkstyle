@@ -108,4 +108,3 @@ Example of code without violation:
 
       public abstract void grow();
     }
-            

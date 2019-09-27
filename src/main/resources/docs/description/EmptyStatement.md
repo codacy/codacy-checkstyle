@@ -4,4 +4,3 @@ statements often introduce bugs that are hard to spot, such as in
     if (someCondition);
       doConditionalStuff();
     doUnconditionalStuff();
-            

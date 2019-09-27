@@ -9,7 +9,7 @@ For example this Check finds the obsolete braces in
     {
       int whichIsWhich = 0;
       {
-        int whichIsWhich = 2;
+        whichIsWhich = 2;
       }
       System.out.println("value = " + whichIsWhich);
     }
@@ -52,4 +52,3 @@ case in the block.
           break;
         }
     }
-            

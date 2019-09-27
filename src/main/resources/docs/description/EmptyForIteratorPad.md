@@ -6,4 +6,3 @@ in
     for (Iterator foo = very.long.line.iterator();
           foo.hasNext();
          )
-            

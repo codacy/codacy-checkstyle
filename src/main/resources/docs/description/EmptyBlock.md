@@ -28,4 +28,3 @@ Result:
       default:        // no violation for "default:" as empty block belong to "case 1:"
       case 1: { }
     }
-            

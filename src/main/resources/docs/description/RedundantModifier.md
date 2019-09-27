@@ -85,4 +85,3 @@ compiling:
     public class ClassExtending extends ClassExample {
       ProtectedInnerClass pc = new ProtectedInnerClass();
     }
-            

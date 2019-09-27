@@ -56,4 +56,3 @@ If opening brace is on the same line as training comma there\'s also
     {100000000000000000000,
      100000000000000000001, // More work needed to duplicate
     }
-            

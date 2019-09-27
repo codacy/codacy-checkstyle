@@ -27,9 +27,9 @@ at least one pattern property is supplied, the entire check is under the
 user\'s control to allow them to fully customize the behavior.
 
 It is recommended that if you create your own pattern, to also specify a
-custom error message. This allows the error message printed to be clear
-what the violation is, especially if multiple RegexpOnFilename checks
-are used. Argument 0 for the message populates the check\'s
+custom violation message. This allows the violation message printed to
+be clear what the violation is, especially if multiple RegexpOnFilename
+checks are used. Argument 0 for the message populates the check\'s
 folderPattern. Argument 1 for the message populates the check\'s
 fileNamePattern. The file name is not passed as an argument since it is
-part of CheckStyle\'s default error messages.
+part of CheckStyle\'s default violation messages.
