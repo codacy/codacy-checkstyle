@@ -9,9 +9,6 @@ scalaVersion := "2.12.8"
 
 mainClass in Compile := Some("codacy.Engine")
 
-resolvers := Seq("Sonatype OSS Snapshots".at("https://oss.sonatype.org/content/repositories/releases")) ++
-  resolvers.value
-
 lazy val toolVersionKey = settingKey[String]("The version of the underlying tool retrieved from patterns.json")
 
 toolVersionKey := {
@@ -26,12 +23,6 @@ toolVersionKey := {
   val patterns = json.flatMap(Converter.fromJson[Patterns])
   patterns.get.version
 }
-
-resolvers ++= Seq(
-  "Typesafe Repo" at "http://repo.typesafe.com/typesafe/releases/",
-  "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/releases",
-  Resolver.jcenterRepo
-)
 
 libraryDependencies ++= Seq(
   "org.scala-lang.modules" %% "scala-xml" % "1.2.0" withSources (),
