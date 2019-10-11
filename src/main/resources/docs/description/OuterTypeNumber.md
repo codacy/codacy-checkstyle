@@ -1,5 +1,3 @@
-Since Checkstyle 5.0
-
 Checks for the number of types declared at the *outer* (or *root*) level
 in a file.
 

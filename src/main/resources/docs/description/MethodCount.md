@@ -1,5 +1,3 @@
-Since Checkstyle 5.3
-
 Checks the number of methods declared in each type declaration by access
 modifier or total count.
 
@@ -27,7 +25,7 @@ separate from it\'s children\'s inner types.
 
       public void example() { // counted towards ExampleClass
         Runnable r = (new Runnable() {
-          public void run() { ... } // NOT counted towards ExampleClass and won't produce any violations
+          public void run() { ... } // NOT counted towards ExampleClass, won't produce any violations
         });
       }
 
