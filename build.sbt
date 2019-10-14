@@ -30,6 +30,8 @@ libraryDependencies ++= Seq(
   "com.puppycrawl.tools" % "checkstyle" % toolVersionKey.value
 )
 
+Universal / javaOptions ++= Seq("-XX:MinRAMPercentage=60.0", "-XX:MaxRAMPercentage=90.0")
+
 enablePlugins(AshScriptPlugin)
 
 enablePlugins(DockerPlugin)
