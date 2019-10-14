@@ -1,5 +1,3 @@
-Since Checkstyle 3.0
-
 Checks for long lines.
 
 Rationale: Long lines are hard to read in printouts or if developers

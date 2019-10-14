@@ -1,5 +1,3 @@
-Since Checkstyle 3.2
-
 Checks for long anonymous inner classes.
 
 Rationale: If an anonymous inner class becomes very long it is hard to

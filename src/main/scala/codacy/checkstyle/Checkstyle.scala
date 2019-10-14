@@ -12,7 +12,7 @@ import com.puppycrawl.tools.checkstyle.api.{AuditListener, Configuration}
 import play.api.libs.json.{JsString, JsValue}
 
 import scala.collection.JavaConverters._
-import scala.util.{Success, Try}
+import scala.util.Try
 import scala.xml.Elem
 
 object Checkstyle extends Tool {
@@ -22,7 +22,7 @@ object Checkstyle extends Tool {
       configuration: Option[List[Pattern.Definition]],
       files: Option[Set[Source.File]],
       options: Map[Options.Key, Options.Value]
-  )(implicit specification: Tool.Specification): Try[List[Result]] = {
+  )(implicit specification: Tool.Specification): Try[List[Result]] = Try {
     val fullConfig = configuration.withDefaultParameters
 
     val filesToLint: List[String] = files.fold(List(source.path.toString)) { paths =>
@@ -47,19 +47,19 @@ object Checkstyle extends Tool {
 
     run(filesToLint, config, listener)
 
-    Success((listener.issues ++ listener.failures).to[List])
+    (listener.issues ++ listener.failures).to[List]
   }
 
   private def run(files: List[String], config: Configuration, listener: AuditListener): Unit = {
     val checker = new Checker()
-    Try {
+    try {
       checker.setModuleClassLoader(classOf[Checker].getClassLoader)
       checker.configure(config)
       checker.addListener(listener)
       checker.process(files.map(f => File(f).toJava).asJava)
+    } finally {
+      checker.destroy()
     }
-
-    checker.destroy()
   }
 
   private lazy val nativeConfigFileNames = Set("checkstyle.xml")

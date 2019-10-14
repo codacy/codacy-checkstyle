@@ -1,6 +1,6 @@
 {
   "name" : "Checkstyle",
-  "version" : "8.24",
+  "version" : "8.25",
   "patterns" : [ {
     "patternId" : "AbbreviationAsWordInName",
     "level" : "Info",
@@ -813,13 +813,7 @@
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "allowMissingJavadoc",
-      "default" : false
-    }, {
       "name" : "allowMissingParamTags",
-      "default" : false
-    }, {
-      "name" : "allowMissingPropertyJavadoc",
       "default" : false
     }, {
       "name" : "allowMissingReturnTag",
@@ -840,14 +834,8 @@
       "name" : "excludeScope",
       "default" : ""
     }, {
-      "name" : "ignoreMethodNamesRegex",
-      "default" : ""
-    }, {
       "name" : "logLoadErrors",
       "default" : true
-    }, {
-      "name" : "minLineCount",
-      "default" : -1
     }, {
       "name" : "scope",
       "default" : "private"
@@ -1547,6 +1535,9 @@
       "default" : "$."
     }, {
       "name" : "ignoreCase",
+      "default" : false
+    }, {
+      "name" : "matchAcrossLines",
       "default" : false
     }, {
       "name" : "maximum",

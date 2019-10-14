@@ -74,7 +74,7 @@
   "title" : "AnonInnerLength",
   "parameters" : [ {
     "name" : "max",
-    "description" : "maximum allowable number of lines"
+    "description" : "Specify the maximum number of lines allowed."
   } ]
 }, {
   "patternId" : "ArrayTrailingComma",
@@ -395,7 +395,7 @@
   "title" : "ExecutableStatementCount",
   "parameters" : [ {
     "name" : "max",
-    "description" : "the maximum threshold allowed"
+    "description" : "Specify the maximum threshold allowed."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -422,10 +422,10 @@
   "title" : "FileLength",
   "parameters" : [ {
     "name" : "fileExtensions",
-    "description" : "file type extension of files to process"
+    "description" : "Specify the file type extension of files to process."
   }, {
     "name" : "max",
-    "description" : "maximum allowable number of lines"
+    "description" : "Specify the maximum number of lines allowed."
   } ]
 }, {
   "patternId" : "FileTabCharacter",
@@ -742,14 +742,8 @@
   "patternId" : "JavadocMethod",
   "title" : "JavadocMethod",
   "parameters" : [ {
-    "name" : "allowMissingJavadoc",
-    "description" : "whether to ignore violations when a method javadoc is missed."
-  }, {
     "name" : "allowMissingParamTags",
     "description" : "whether to ignore violations when a method has parameters\n            but does not have matching param tags in the javadoc."
-  }, {
-    "name" : "allowMissingPropertyJavadoc",
-    "description" : "allowMissingPropertyJavadoc"
   }, {
     "name" : "allowMissingReturnTag",
     "description" : "whether to ignore violations when a method returns\n            non-void type and does not have a return tag in the javadoc."
@@ -769,14 +763,8 @@
     "name" : "excludeScope",
     "description" : "visibility scope where Javadoc comments are not checked"
   }, {
-    "name" : "ignoreMethodNamesRegex",
-    "description" : "ignore method whose names are matching specified regex"
-  }, {
     "name" : "logLoadErrors",
     "description" : "logLoadErrors"
-  }, {
-    "name" : "minLineCount",
-    "description" : "Minimal amount of lines in method to allow no documentation."
   }, {
     "name" : "scope",
     "description" : "visibility scope where Javadoc comments are checked"
@@ -914,13 +902,13 @@
   "title" : "LineLength",
   "parameters" : [ {
     "name" : "fileExtensions",
-    "description" : "file extensions that are accepted"
+    "description" : "Specify file extensions that are accepted."
   }, {
     "name" : "ignorePattern",
-    "description" : "pattern for lines to ignore"
+    "description" : "Specify pattern for lines to ignore."
   }, {
     "name" : "max",
-    "description" : "maximum allowable line length"
+    "description" : "Specify the maximum line length allowed."
   } ]
 }, {
   "patternId" : "LocalFinalVariableName",
@@ -991,19 +979,19 @@
   "title" : "MethodCount",
   "parameters" : [ {
     "name" : "maxPackage",
-    "description" : "maximum allowable number of package methods"
+    "description" : "Specify the maximum number of package methods allowed."
   }, {
     "name" : "maxPrivate",
-    "description" : "maximum allowable number of private methods"
+    "description" : "Specify the maximum number of private methods allowed."
   }, {
     "name" : "maxProtected",
-    "description" : "maximum allowable number of protected methods"
+    "description" : "Specify the maximum number of protected methods allowed."
   }, {
     "name" : "maxPublic",
-    "description" : "maximum allowable number of public methods"
+    "description" : "Specify the maximum number of public methods allowed."
   }, {
     "name" : "maxTotal",
-    "description" : "maximum allowable number of methods at all scope levels"
+    "description" : "Specify the maximum number of methods allowed at all scope levels."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -1013,10 +1001,10 @@
   "title" : "MethodLength",
   "parameters" : [ {
     "name" : "countEmpty",
-    "description" : "\n              whether to count empty lines and single line comments of the\n              form //\n            "
+    "description" : "\n              Control whether to count empty lines and single line comments of the\n              form //.\n            "
   }, {
     "name" : "max",
-    "description" : "maximum allowable number of lines"
+    "description" : "Specify the maximum number of lines allowed."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -1292,7 +1280,7 @@
   "title" : "OuterTypeNumber",
   "parameters" : [ {
     "name" : "max",
-    "description" : "maximum allowable number of outer types"
+    "description" : "Specify the maximum number of outer types allowed."
   } ]
 }, {
   "patternId" : "OverloadMethodsDeclarationOrder",
@@ -1335,10 +1323,10 @@
   "title" : "ParameterNumber",
   "parameters" : [ {
     "name" : "ignoreOverriddenMethods",
-    "description" : "Ignore number of parameters for methods with @Override annotation"
+    "description" : "\n              Ignore number of parameters for methods with @Override annotation.\n            "
   }, {
     "name" : "max",
-    "description" : "maximum allowable number of parameters"
+    "description" : "Specify the maximum number of parameters allowed."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -1416,6 +1404,9 @@
   }, {
     "name" : "ignoreCase",
     "description" : "Controls whether to ignore case when searching."
+  }, {
+    "name" : "matchAcrossLines",
+    "description" : "Controls whether to match expressions across multiple lines."
   }, {
     "name" : "maximum",
     "description" : "The maximum number of matches required in each file."
