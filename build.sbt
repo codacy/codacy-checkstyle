@@ -5,7 +5,7 @@ import sjsonnew.support.scalajson.unsafe._
 
 name := "codacy-checkstyle"
 
-scalaVersion := "2.12.8"
+scalaVersion := "2.13.1"
 
 mainClass in Compile := Some("codacy.Engine")
 
@@ -26,7 +26,7 @@ toolVersionKey := {
 
 libraryDependencies ++= Seq(
   "org.scala-lang.modules" %% "scala-xml" % "1.2.0" withSources (),
-  "com.codacy" %% "codacy-engine-scala-seed" % "3.0.296",
+  "com.codacy" %% "codacy-engine-scala-seed" % "3.1.0",
   "com.puppycrawl.tools" % "checkstyle" % toolVersionKey.value
 )
 
@@ -48,6 +48,8 @@ mappings in Universal ++= {
     } yield path -> path.toString.replaceFirst(src.toString, dest)
   }
 }.value
+
+scalacOptions := Seq("-deprecation")
 
 val dockerUser = "docker"
 val dockerGroup = "docker"
