@@ -49,8 +49,6 @@ mappings in Universal ++= {
   }
 }.value
 
-scalacOptions := Seq("-deprecation")
-
 val dockerUser = "docker"
 val dockerGroup = "docker"
 
