@@ -33,22 +33,22 @@ object DocGenerator {
 
     withRepository(version) { directory =>
       val genPatterns = for {
-        xml <- XML.loadFile(s"$directory/src/xdocs/checks.xml").to[List]
+        xml <- XML.loadFile(s"$directory/src/xdocs/checks.xml").to(List)
         tr <- xml \\ "tr"
         firstTd <- tr
           .map(_ \ "td")
           .flatMap(_.headOption) // we only need the first one (not the links inside descriptions)
-        a <- firstTd.\("a").to[List]
-        href <- a.attribute("href").flatMap(_.headOption.map(_.text)).to[List]
+        a <- firstTd.\("a").to(List)
+        href <- a.attribute("href").flatMap(_.headOption.map(_.text)).to(List)
         categoryFilename = href.takeWhile(_ != '.') if !href.startsWith("https://") && !href.startsWith("http://")
-        categoryXml <- XML.loadFile(s"$directory/src/xdocs/$categoryFilename.xml").to[List]
+        categoryXml <- XML.loadFile(s"$directory/src/xdocs/$categoryFilename.xml").to(List)
         section <- categoryXml
           .\\("section")
-          .to[List]
+          .to(List)
           .filterNot(e => Set("Content", "Overview").contains(e.attr("name")))
       } yield {
         val extendedDescription =
-          section.\\("subsection").to[List].collectFirst {
+          section.\\("subsection").to(List).collectFirst {
             case ss if ss.attr("name") == "Description" =>
               val xmlString =
                 checkstyleLinks
@@ -62,12 +62,12 @@ object DocGenerator {
               toMarkdown(xmlString).trim
           }
 
-        val parameters = section.\\("subsection").to[List].collectFirst {
+        val parameters = section.\\("subsection").to(List).collectFirst {
           case ss if ss.attr("name") == "Properties" =>
             ss.\\("tr")
-              .to[List]
+              .to(List)
               .drop(1)
-              .map(_.\\("td").to[List])
+              .map(_.\\("td").to(List))
               .collect {
                 case name :: description :: tpe :: default :: _ =>
                   val defaultValue = Option({
@@ -109,7 +109,7 @@ object DocGenerator {
 
         val parametersSet = parameters
           .map(_.unzip)
-          .map { case (specs, descs) => (specs.to[Set], descs.to[Set]) }
+          .map { case (specs, descs) => (specs.to(Set), descs.to(Set)) }
 
         val patternId = Pattern.Id(section.attr("name"))
 

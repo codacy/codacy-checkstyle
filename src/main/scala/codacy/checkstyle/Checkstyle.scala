@@ -11,7 +11,7 @@ import com.puppycrawl.tools.checkstyle._
 import com.puppycrawl.tools.checkstyle.api.{AuditListener, Configuration}
 import play.api.libs.json.{JsString, JsValue}
 
-import scala.collection.JavaConverters._
+import scala.jdk.CollectionConverters._
 import scala.util.Try
 import scala.xml.Elem
 
@@ -47,7 +47,7 @@ object Checkstyle extends Tool {
 
     run(filesToLint, config, listener)
 
-    (listener.issues ++ listener.failures).to[List]
+    (listener.issues ++ listener.failures).to(List)
   }
 
   private def run(files: List[String], config: Configuration, listener: AuditListener): Unit = {
