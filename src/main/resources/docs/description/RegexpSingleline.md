@@ -1,5 +1,3 @@
-Since Checkstyle 5.0
-
 A check for detecting single lines that match a supplied regular
 expression. Works with any file type.
 

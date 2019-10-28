@@ -1,5 +1,3 @@
-Since Checkstyle 5.0
-
 Checks that there are no static import statements.
 
 Rationale: Importing static members can lead to naming conflicts between
