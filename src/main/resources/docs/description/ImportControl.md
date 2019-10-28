@@ -1,5 +1,3 @@
-Since Checkstyle 4.0
-
 Controls what can be imported in each package and file. Useful for
 ensuring that application layering rules are not violated, especially on
 large projects.

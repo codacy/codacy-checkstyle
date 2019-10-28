@@ -1,5 +1,3 @@
-Since Checkstyle 3.0
-
 Checks for unused import statements. Checkstyle uses a simple but very
 reliable algorithm to report on unused import statements. An import
 statement is considered unused if:
@@ -16,10 +14,10 @@ statement is considered unused if:
 -   **Optionally:** it is referenced in Javadoc comments. This check is
     on by default, but it is considered bad practice to introduce a
     compile time dependency for documentation purposes only. As an
-    example, the import `java.util.Date` would be considered referenced
-    with the Javadoc comment `{@link Date}`. The alternative to avoid
+    example, the import `java.util.List` would be considered referenced
+    with the Javadoc comment `{@link List}`. The alternative to avoid
     introducing a compile time dependency would be to write the Javadoc
-    comment as `{@link java.util.Date}`.
+    comment as `{@link java.util.List}`.
 
 The main limitation of this check is handling the case where an imported
 type has the same name as a declaration, such as a member variable.

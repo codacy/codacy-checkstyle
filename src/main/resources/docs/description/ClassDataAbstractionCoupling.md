@@ -1,5 +1,3 @@
-Since Checkstyle 3.4
-
 This metric measures the number of instantiations of other classes
 within the given class. This type of coupling is not caused by
 inheritance or the object oriented paradigm. Generally speaking, any

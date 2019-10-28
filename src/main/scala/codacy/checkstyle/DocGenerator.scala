@@ -102,7 +102,11 @@ object DocGenerator {
 
                   (
                     Parameter.Specification(Parameter.Name(name.text), Parameter.Value(jsDefaultValue)),
-                    Parameter.Description(Parameter.Name(name.text), Parameter.DescriptionText(descriptionText))
+                    Parameter.Description(
+                      Parameter.Name(name.text),
+                      Parameter
+                        .DescriptionText(descriptionText.trim.split(System.lineSeparator).map(_.trim).mkString(" "))
+                    )
                   )
               }
         }
