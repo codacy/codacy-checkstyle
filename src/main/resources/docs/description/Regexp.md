@@ -1,5 +1,3 @@
-Since Checkstyle 4.0
-
 A check that makes sure that a specified pattern exists, exists less
 than a set number of times, or does not exist in the file.
 
@@ -28,7 +26,7 @@ In multiline mode\...
 **Note:** Not all regular expression engines are created equal. Some
 provide extra functions that others do not and some elements of the
 syntax may vary. This check makes use of the [java.util.regex
-package](https://docs.oracle.com/javase/7/docs/api/java/util/regex/package-summary.html);
+package](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/package-summary.html);
 please check its documentation for details of how to construct a regular
 expression to achieve a particular goal.
 

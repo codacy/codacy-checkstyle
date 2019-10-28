@@ -1,5 +1,3 @@
-Since Checkstyle 6.15
-
 Implementation of a check that looks for a file name and/or path match
 (or mis-match) against specified patterns. It can also be used to verify
 files match specific naming patterns not covered by other checks (Ex:

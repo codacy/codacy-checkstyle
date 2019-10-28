@@ -1,5 +1,3 @@
-Since Checkstyle 3.0
-
 Checks for redundant import statements. An import statement is
 considered redundant if:
 

@@ -102,7 +102,7 @@ object DocGenerator {
 
                   (
                     Parameter.Specification(Parameter.Name(name.text), Parameter.Value(jsDefaultValue)),
-                    Parameter.Description(Parameter.Name(name.text), Parameter.DescriptionText(descriptionText))
+                    Parameter.Description(Parameter.Name(name.text), Parameter.DescriptionText(descriptionText.trim))
                   )
               }
         }
@@ -116,7 +116,7 @@ object DocGenerator {
         (Pattern.Specification(patternId, Result.Level.Info, Pattern.Category.CodeStyle, parametersSet.map {
           case (specs, _) => specs
         }, None), Pattern.Description(patternId, Pattern.Title(patternId.value), None, None, parametersSet.map {
-          case (_, descs) => descs
+          case (_, descs) => descs.map(d => d.copy(description = d.description.copy(d.description.value.trim())))
         }), extendedDescription.map(PatternExtendedDescription(patternId, _)))
       }
 

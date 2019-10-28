@@ -1,16 +1,16 @@
-Since Checkstyle 3.0
+Checks for redundant modifiers.
 
-Checks for redundant modifiers in:
+Rationale: The Java Language Specification strongly discourages the
+usage of `public` and `abstract` for method declarations in interface
+definitions as a matter of style.
+
+The check validates:
 
 1.  Interface and annotation definitions.
 2.  Final modifier on methods of final and anonymous classes.
 3.  Inner `interface` declarations that are declared as `static`.
 4.  Class constructors.
 5.  Nested `enum` definitions that are declared as `static`.
-
-Rationale: The Java Language Specification strongly discourages the
-usage of `public` and `abstract` for method declarations in interface
-definitions as a matter of style.
 
 Interfaces by definition are abstract so the `abstract` modifier on the
 interface is redundant.

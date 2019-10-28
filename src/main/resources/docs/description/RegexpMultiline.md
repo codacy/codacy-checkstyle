@@ -1,5 +1,3 @@
-Since Checkstyle 5.0
-
 A check for detecting that matches across multiple lines. Works with any
 file type.
 

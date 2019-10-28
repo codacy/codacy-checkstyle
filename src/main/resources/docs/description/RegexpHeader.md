@@ -1,11 +1,10 @@
-Since Checkstyle 6.9
-
 Checks the header of a source file against a header that contains a
 [regular
-expression](https://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html)
+expression](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/Pattern.html)
 for each line of the source header.
 
-Rationale: In some projects checking against a fixed header is not
+Rationale: In some projects [checking against a fixed
+header](https://checkstyle.org/config_header.html#Header) is not
 sufficient, e.g. the header might require a copyright line where the
 year information is not static.
 
@@ -57,3 +56,6 @@ files. Set the multiline property to \"1, 2\" so these lines can be
 ignored for file types where they do no apply. Lines 3 through 6 define
 the actual header content. Note how lines 2, 4 and 5 use escapes for
 characters that have special regexp semantics.
+
+In default configuration, if header is not specified, the default value
+of header is set to null and the check does not rise any violations.

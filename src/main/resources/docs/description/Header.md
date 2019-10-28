@@ -1,7 +1,5 @@
-Since Checkstyle 6.9
-
 Checks that a source file begins with a specified header. Property
-` headerFile` specifies a file that contains the required header.
+`headerFile` specifies a file that contains the required header.
 Alternatively, the header specification can be set directly in the
 `header` property without the need for an external file.
 
@@ -18,4 +16,4 @@ the following header:
             
 
 Since the year information will change over time, you can tell
-Checkstyle to ignore line 4 by setting property `ignoreLines` to ` 4`.
+Checkstyle to ignore line 4 by setting property `ignoreLines` to `4`.

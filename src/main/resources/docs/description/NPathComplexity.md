@@ -1,9 +1,10 @@
-Since Checkstyle 3.4
+Checks the NPATH complexity against a specified limit.
 
 The NPATH metric computes the number of possible execution paths through
 a function(method). It takes into account the nesting of conditional
 statements and multi-part boolean expressions (A && B, C \|\| D, E ? F
-:G and their combinations).\
+:G and their combinations).
+
 The NPATH metric was designed base on Cyclomatic complexity to avoid
 problem of Cyclomatic complexity metric like nesting level within a
 function(method).
@@ -20,11 +21,12 @@ Here is some quotes:
 > \[1988 year\].
 
 > Some of the most effective methods of reducing the NPATH value
-> include\
-> - distributing functionality,\
-> - implementing multiple if statements as a switch statement\
-> - creating a separate function for logical expressions with a high
-> count of and (&&) and or (\|\|) operators.
+> include:
+>
+> -   distributing functionality;
+> -   implementing multiple if statements as a switch statement;
+> -   creating a separate function for logical expressions with a high
+>     count of variables and (&&) and or (\|\|) operators.
 
 > Although strategies to reduce the NPATH complexity of functions are
 > important, care must be taken not to distort the logical clarity of
@@ -51,6 +53,8 @@ Here is some quotes:
   Empty block {}                                                           1
   Function call                                                            1
   Function(Method) declaration or Block                                    P(i=1:i=N)NP(Statement\[i\])
+
+  : Examples
 
 **Rationale:** Nejmeh says that his group had an informal NPATH limit of
 200 on individual routines; functions(methods) that exceeded this value
