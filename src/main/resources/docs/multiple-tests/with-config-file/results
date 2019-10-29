@@ -1,0 +1,20 @@
+DesignForExtension,LineLength.java,18,"Class 'Something' looks like designed for extension (can be subclassed), but the method 'doSomething' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'Something' final or making the method 'doSomething' static/final/abstract/empty, or adding allowed annotation for the method.",Info
+DesignForExtension,LineLength.java,12,"Class 'Something' looks like designed for extension (can be subclassed), but the method 'doSomething' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'Something' final or making the method 'doSomething' static/final/abstract/empty, or adding allowed annotation for the method.",Info
+MethodName,LineLength.java,8,Name '____bar' must match pattern '^[a-z][a-zA-Z0-9]*$'.,Info
+MethodName,LineLength.java,4,Name 'AAAfoo' must match pattern '^[a-z][a-zA-Z0-9]*$'.,Info
+NewlineAtEndOfFile,LineLength.java,1,File does not end with a newline.,Info
+MagicNumber,OperatorWrap.java,24,'4' is a magic number.,Info
+OperatorWrap,OperatorWrap.java,23,'*' should be on a new line.,Info
+MagicNumber,OperatorWrap.java,23,'13' is a magic number.,Info
+MagicNumber,OperatorWrap.java,23,'25' is a magic number.,Info
+MagicNumber,OperatorWrap.java,23,'7.14' is a magic number.,Info
+OperatorWrap,OperatorWrap.java,21,'*' should be on a new line.,Info
+MagicNumber,OperatorWrap.java,21,'5.42' is a magic number.,Info
+OperatorWrap,OperatorWrap.java,18,'+' should be on a new line.,Info
+DesignForExtension,OperatorWrap.java,16,"Class 'Something' looks like designed for extension (can be subclassed), but the method 'doSomething' does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class 'Something' final or making the method 'doSomething' static/final/abstract/empty, or adding allowed annotation for the method.",Info
+MagicNumber,OperatorWrap.java,13,'3' is a magic number.,Info
+MagicNumber,OperatorWrap.java,12,'42' is a magic number.,Info
+MethodName,OperatorWrap.java,9,Name '____bar' must match pattern '^[a-z][a-zA-Z0-9]*$'.,Info
+MethodName,OperatorWrap.java,4,Name 'AAAfoo' must match pattern '^[a-z][a-zA-Z0-9]*$'.,Info
+JavadocPackage,LineLength.java,1,Missing package-info.java file.,Info
+NewlineAtEndOfFile,OperatorWrap.java,1,File does not end with a newline.,Info
