@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<module name="root">
+    <property name="arg1" value="value1"/>
+    <module name="OperatorWrap">
+        <!-- <property name="parameterName" value="parameterValue" /> -->
+    </module>
+</module>
