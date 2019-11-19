@@ -11,7 +11,6 @@ public class Something {
 
            public void doSomething() {
                bar();
-                //#Info: OperatorWrap
                 //#Info: LineLength
                println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
     }
