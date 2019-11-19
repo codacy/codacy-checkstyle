@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<checkstyle version="4.3">
+    <file name="LineLength.java">
+        <error source="DesignForExtension" line="18" message="Class &apos;Something&apos; looks like designed for extension (can be subclassed), but the method &apos;doSomething&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;Something&apos; final or making the method &apos;doSomething&apos; static/final/abstract/empty, or adding allowed annotation for the method." severity="info" />
+        <error source="DesignForExtension" line="12" message="Class &apos;Something&apos; looks like designed for extension (can be subclassed), but the method &apos;doSomething&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;Something&apos; final or making the method &apos;doSomething&apos; static/final/abstract/empty, or adding allowed annotation for the method." severity="info" />
+        <error source="MethodName" line="8" message="Name &apos;____bar&apos; must match pattern &apos;^[a-z][a-zA-Z0-9]*$&apos;." severity="info" />
+        <error source="MethodName" line="4" message="Name &apos;AAAfoo&apos; must match pattern &apos;^[a-z][a-zA-Z0-9]*$&apos;." severity="info" />
+    </file>
+    <file name="OperatorWrap.java">
+        <error source="JavadocPackage" line="1" message="Missing package-info.java file." severity="info" />
+        <error source="MagicNumber" line="24" message="&apos;4&apos; is a magic number." severity="info" />
+        <error source="OperatorWrap" line="23" message="&apos;*&apos; should be on a new line." severity="info" />
+        <error source="MagicNumber" line="23" message="&apos;13&apos; is a magic number." severity="info" />
+        <error source="MagicNumber" line="23" message="&apos;25&apos; is a magic number." severity="info" />
+        <error source="MagicNumber" line="23" message="&apos;7.14&apos; is a magic number." severity="info" />
+        <error source="OperatorWrap" line="21" message="&apos;*&apos; should be on a new line." severity="info" />
+        <error source="MagicNumber" line="21" message="&apos;5.42&apos; is a magic number." severity="info" />
+        <error source="OperatorWrap" line="18" message="&apos;+&apos; should be on a new line." severity="info" />
+        <error source="DesignForExtension" line="16" message="Class &apos;Something&apos; looks like designed for extension (can be subclassed), but the method &apos;doSomething&apos; does not have javadoc that explains how to do that safely. If class is not designed for extension consider making the class &apos;Something&apos; final or making the method &apos;doSomething&apos; static/final/abstract/empty, or adding allowed annotation for the method." severity="info" />
+        <error source="MagicNumber" line="13" message="&apos;3&apos; is a magic number." severity="info" />
+        <error source="MagicNumber" line="12" message="&apos;42&apos; is a magic number." severity="info" />
+        <error source="MethodName" line="9" message="Name &apos;____bar&apos; must match pattern &apos;^[a-z][a-zA-Z0-9]*$&apos;." severity="info" />
+        <error source="MethodName" line="4" message="Name &apos;AAAfoo&apos; must match pattern &apos;^[a-z][a-zA-Z0-9]*$&apos;." severity="info" />
+    </file>
+</checkstyle>
