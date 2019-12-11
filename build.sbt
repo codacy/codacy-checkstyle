@@ -36,8 +36,6 @@ enablePlugins(AshScriptPlugin)
 
 enablePlugins(DockerPlugin)
 
-version in Docker := "1.0.0"
-
 mappings in Universal ++= {
   (resourceDirectory in Compile) map { resourceDir: File =>
     val src = resourceDir / "docs"
@@ -50,11 +48,9 @@ mappings in Universal ++= {
 }.value
 
 val dockerUser = "docker"
-val dockerGroup = "docker"
 
 daemonUser in Docker := dockerUser
-
-daemonGroup in Docker := dockerGroup
+daemonGroup in Docker := dockerUser
 
 dockerBaseImage := "openjdk:8-jre-alpine"
 
