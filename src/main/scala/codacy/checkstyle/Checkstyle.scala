@@ -1,21 +1,17 @@
 package codacy.checkstyle
 
 import java.nio.file.{Path, Paths}
-
 import better.files.File
 import com.codacy.plugins.api.results.{Parameter, Pattern, Result, Tool}
-import com.codacy.plugins.api.{Options, Source}
+import com.codacy.plugins.api.{ErrorMessage, Options, Source}
 import com.codacy.tools.scala.seed.utils.FileHelper
 import com.codacy.tools.scala.seed.utils.ToolHelper._
 import com.puppycrawl.tools.checkstyle._
 import com.puppycrawl.tools.checkstyle.api.Configuration
 import play.api.libs.json.{JsString, JsValue}
 import scala.jdk.CollectionConverters._
-import scala.util.Try
+import scala.util.{Failure, Success, Try, Using}
 import scala.xml.Elem
-import scala.util.Failure
-import scala.util.Success
-import com.codacy.plugins.api.ErrorMessage
 
 object Checkstyle extends Tool {
 
@@ -50,15 +46,15 @@ object Checkstyle extends Tool {
     val res = for {
       file <- files.view
       listener = new CodacyListener()
-      checker = new Checker()
-      _ = checker.setModuleClassLoader(classOf[Checker].getClassLoader)
-      _ = checker.configure(config)
-      _ = checker.addListener(listener)
-      result = Try(checker.process(List(File(file.path).toJava).asJava)) match {
-        case Success(_) => None
-        case Failure(e) => Some(Result.FileError(file, Some(ErrorMessage(e.getMessage))))
+      result = Using.resource(new Checker()) { checker =>
+        checker.setModuleClassLoader(classOf[Checker].getClassLoader)
+        checker.configure(config)
+        checker.addListener(listener)
+        Try(checker.process(List(File(file.path).toJava).asJava)) match {
+          case Success(_) => None
+          case Failure(e) => Some(Result.FileError(file, Some(ErrorMessage(e.getMessage))))
+        }
       }
-      _ = checker.destroy()
     } yield listener.issues ++ listener.failures ++ result
     res.flatten.to(List)
   }
