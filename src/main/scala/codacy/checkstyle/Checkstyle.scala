@@ -1,18 +1,16 @@
 package codacy.checkstyle
 
 import java.nio.file.{Path, Paths}
-
 import better.files.File
 import com.codacy.plugins.api.results.{Parameter, Pattern, Result, Tool}
-import com.codacy.plugins.api.{Options, Source}
+import com.codacy.plugins.api.{ErrorMessage, Options, Source}
 import com.codacy.tools.scala.seed.utils.FileHelper
 import com.codacy.tools.scala.seed.utils.ToolHelper._
 import com.puppycrawl.tools.checkstyle._
-import com.puppycrawl.tools.checkstyle.api.{AuditListener, Configuration}
+import com.puppycrawl.tools.checkstyle.api.Configuration
 import play.api.libs.json.{JsString, JsValue}
-
 import scala.jdk.CollectionConverters._
-import scala.util.Try
+import scala.util.{Failure, Success, Try, Using}
 import scala.xml.Elem
 
 object Checkstyle extends Tool {
@@ -25,9 +23,7 @@ object Checkstyle extends Tool {
   )(implicit specification: Tool.Specification): Try[List[Result]] = Try {
     val fullConfig = configuration.withDefaultParameters
 
-    val filesToLint: List[String] = files.fold(List(source.path.toString)) { paths =>
-      paths.map(_.toString).toList
-    }
+    val filesToLint: Set[Source.File] = files.getOrElse(Set(Source.File(source.path)))
 
     val configFile = {
       generateConfig(source, fullConfig)
@@ -37,29 +33,30 @@ object Checkstyle extends Tool {
         }
     }
 
-    val listener = new CodacyListener()
     val config = ConfigurationLoader.loadConfiguration(
       configFile,
       new PropertiesExpander(System.getProperties),
       ConfigurationLoader.IgnoredModulesOptions.EXECUTE,
       ThreadModeSettings.SINGLE_THREAD_MODE_INSTANCE
     )
-
-    run(filesToLint, config, listener)
-
-    (listener.issues ++ listener.failures).to(List)
+    run(filesToLint, config)
   }
 
-  private def run(files: List[String], config: Configuration, listener: AuditListener): Unit = {
-    val checker = new Checker()
-    try {
-      checker.setModuleClassLoader(classOf[Checker].getClassLoader)
-      checker.configure(config)
-      checker.addListener(listener)
-      checker.process(files.map(f => File(f).toJava).asJava)
-    } finally {
-      checker.destroy()
-    }
+  private def run(files: Set[Source.File], config: Configuration): List[Result] = {
+    val res = for {
+      file <- files.view
+      listener = new CodacyListener()
+      result = Using.resource(new Checker()) { checker =>
+        checker.setModuleClassLoader(classOf[Checker].getClassLoader)
+        checker.configure(config)
+        checker.addListener(listener)
+        Try(checker.process(List(File(file.path).toJava).asJava)) match {
+          case Success(_) => None
+          case Failure(e) => Some(Result.FileError(file, Some(ErrorMessage(e.getMessage))))
+        }
+      }
+    } yield listener.issues ++ listener.failures ++ result
+    res.flatten.to(List)
   }
 
   private lazy val nativeConfigFileNames = Set("checkstyle.xml")
