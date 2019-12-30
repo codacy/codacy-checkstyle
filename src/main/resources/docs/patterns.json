@@ -1,6 +1,6 @@
 {
   "name" : "Checkstyle",
-  "version" : "8.26",
+  "version" : "8.28",
   "patterns" : [ {
     "patternId" : "AbbreviationAsWordInName",
     "level" : "Info",
@@ -809,6 +809,14 @@
       "default" : false
     } ]
   }, {
+    "patternId" : "JavadocContentLocation",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "location",
+      "default" : "second_line"
+    } ]
+  }, {
     "patternId" : "JavadocMethod",
     "level" : "Info",
     "category" : "CodeStyle",
@@ -819,29 +827,14 @@
       "name" : "allowMissingReturnTag",
       "default" : false
     }, {
-      "name" : "allowMissingThrowsTags",
-      "default" : false
-    }, {
-      "name" : "allowThrowsTagsForSubclasses",
-      "default" : false
-    }, {
-      "name" : "allowUndeclaredRTE",
-      "default" : false
-    }, {
       "name" : "allowedAnnotations",
       "default" : "Override"
     }, {
       "name" : "excludeScope",
       "default" : ""
     }, {
-      "name" : "logLoadErrors",
-      "default" : true
-    }, {
       "name" : "scope",
       "default" : "private"
-    }, {
-      "name" : "suppressLoadErrors",
-      "default" : false
     }, {
       "name" : "tokens",
       "default" : "METHOD_DEF,CTOR_DEF,ANNOTATION_FIELD_DEF"
@@ -1309,6 +1302,10 @@
       "name" : "lineSeparator",
       "default" : "lf_cr_crlf"
     } ]
+  }, {
+    "patternId" : "NoArrayTrailingComma",
+    "level" : "Info",
+    "category" : "CodeStyle"
   }, {
     "patternId" : "NoClone",
     "level" : "Info",

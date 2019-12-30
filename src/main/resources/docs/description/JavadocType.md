@@ -1,5 +1,3 @@
-Since Checkstyle 3.0
-
 Checks Javadoc comments for class and interface definitions. By default,
 does not check for author or version tags. The scope to verify is
 specified using the `Scope` class and defaults to `Scope.PRIVATE`. To

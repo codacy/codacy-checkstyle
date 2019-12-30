@@ -24,5 +24,5 @@ declared before all other modifiers.
 Rationale: Code is easier to read if everybody follows a standard.
 
 ATTENTION: We skip [type
-annotations](https://www.oracle.com/technetwork/articles/java/ma14-architect-annotations-2177655.html)
+annotations](https://www.oracle.com/technical-resources/articles/java/ma14-architect-annotations.html)
 from validation.

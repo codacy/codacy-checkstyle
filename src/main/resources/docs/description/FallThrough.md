@@ -35,6 +35,7 @@ Note: The check assumes that there is no unreachable code in the `case`.
 The following fragment of code will NOT trigger the check, because of
 the comment \"fallthru\" and absence of any Java code in case 5.
 
+::: {.wrapper}
     case 3:
         x = 2;
         // fallthru
@@ -42,3 +43,5 @@ the comment \"fallthru\" and absence of any Java code in case 5.
     case 5:
     case 6:
         break;
+              
+:::
