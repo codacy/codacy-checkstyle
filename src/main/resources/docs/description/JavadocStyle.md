@@ -1,7 +1,6 @@
-Since Checkstyle 3.2
+Validates Javadoc comments to help ensure they are well formed.
 
-Validates Javadoc comments to help ensure they are well formed. The
-following checks are performed:
+The following checks are performed:
 
 -   Ensures the first sentence ends with proper punctuation (That is a
     period, question mark, or exclamation mark, by default). Javadoc
@@ -11,7 +10,7 @@ following checks are performed:
     requirement.
 -   Check text for Javadoc statements that do not have any description.
     This includes both completely empty Javadoc, and Javadoc with only
-    tags such as \@param and \@return.
+    tags such as `@param` and `@return`.
 -   Check text for incomplete HTML tags. Verifies that HTML tags have
     corresponding end tags and issues an \"Unclosed HTML tag found:\"
     error if not. An \"Extra HTML tag found:\" error is issued if an end

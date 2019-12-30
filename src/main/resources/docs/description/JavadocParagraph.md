@@ -1,4 +1,4 @@
-Since Checkstyle 6.0
+Checks the Javadoc paragraph.
 
 Checks that:
 

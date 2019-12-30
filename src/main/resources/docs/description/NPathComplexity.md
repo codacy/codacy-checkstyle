@@ -35,6 +35,7 @@ Here is some quotes:
 > which a further attempt at reduction of complexity distorts the
 > logical clarity of the system structure.
 
+::: {.wrapper}
   Structure                                                                Complexity expression
   ------------------------------------------------------------------------ -----------------------------------------------------------------
   if (\[expr\]) { \[if-range\] }                                           NP(if-range) + 1 + NP(expr)
@@ -55,6 +56,7 @@ Here is some quotes:
   Function(Method) declaration or Block                                    P(i=1:i=N)NP(Statement\[i\])
 
   : Examples
+:::
 
 **Rationale:** Nejmeh says that his group had an informal NPATH limit of
 200 on individual routines; functions(methods) that exceeded this value

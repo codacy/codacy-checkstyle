@@ -1,20 +1,14 @@
-Since Checkstyle 3.0
-
-Checks the Javadoc of a method or constructor. By default, does not
-check for unused throws. To allow documented
-`java.lang.RuntimeException`s that are not declared, set property
-allowUndeclaredRTE to true. The scope to verify is specified using the
-`Scope` class and defaults to `Scope.PRIVATE`. To verify another scope,
-set property scope to a different
+Checks the Javadoc of a method or constructor. The scope to verify is
+specified using the `Scope` class and defaults to `Scope.PRIVATE`. To
+verify another scope, set property scope to a different
 [scope](https://checkstyle.org/property_types.html#scope).
 
 Violates parameters and type parameters for which no param tags are
 present can be suppressed by defining property `allowMissingParamTags`.
+Violates methods which return non-void but for which no return tag is
+present can be suppressed by defining property `allowMissingReturnTag`.
 Violates exceptions which are declared to be thrown, but for which no
-throws tag is present can be suppressed by defining property
-`allowMissingThrowsTags`. Violates methods which return non-void but for
-which no return tag is present can be suppressed by defining property
-`allowMissingReturnTag`.
+throws tag is present by activation of property `validateThrows`.
 
 Javadoc is not required on a method that is tagged with the `@Override`
 annotation. However under Java 5 it is not possible to mark a method
@@ -33,7 +27,3 @@ by an interface, then the Javadoc could be done as:
     public int checkReturnTag(final int aTagIndex,
                               JavadocTag[] aTags,
                               int aLineNo)
-
-The classpath may need to be configured to locate the class information.
-The classpath configuration is dependent on the mechanism used to invoke
-Checkstyle.

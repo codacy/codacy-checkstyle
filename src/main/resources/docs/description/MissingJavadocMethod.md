@@ -12,6 +12,7 @@ Checkstyle supports using the convention of using a single
 For getters and setters for the property `allowMissingPropertyJavadoc`,
 the methods must match exactly the structures below.
 
+::: {.wrapper}
     public void setNumber(final int number)
     {
         mNumber = number;
@@ -26,3 +27,5 @@ the methods must match exactly the structures below.
     {
         return false;
     }
+              
+:::

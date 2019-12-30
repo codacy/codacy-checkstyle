@@ -3,6 +3,6 @@ Checks that an overriding `finalize()` method invokes
 possible java defined implementation.
 
 References: [How to Handle Java Finalization\'s Memory-Retention
-Issues](https://www.oracle.com/technetwork/java/javamail/finalization-137655.html);
+Issues](https://www.oracle.com/technical-resources/articles/javase/finalization.html);
 [10 points on finalize method in
 Java](https://javarevisited.blogspot.com/2012/03/finalize-method-in-java-tutorial.html).

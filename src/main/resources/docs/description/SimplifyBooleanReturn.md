@@ -13,4 +13,4 @@ could be written as
             
 
 The idea for this Check has been shamelessly stolen from the equivalent
-[PMD](http://pmd.sourceforge.net) rule.
+[PMD](https://pmd.github.io/) rule.

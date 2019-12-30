@@ -22,19 +22,23 @@ may optionally be exempted from the policy using the
 
 This check does not flag as violation double brace initialization like:
 
+::: {.wrapper}
     new Properties() {{
         setProperty("key", "value");
     }};
-            
+              
+:::
 
 Parameter allowEmptyCatches allows to suppress violations when token
 list contains SLIST to check if beginning of block is surrounded by
 whitespace and catch block is empty, for example:
 
+::: {.wrapper}
     try {
         k = 5 / i;
     } catch (ArithmeticException ex) {}
-            
+              
+:::
 
 With this property turned off, this raises violation because the
 beginning of the catch block (left curly bracket) is not separated from
