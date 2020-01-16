@@ -38,7 +38,7 @@ object DocGenerator {
         firstTd <- tr
           .map(_ \ "td")
           .flatMap(_.headOption) // we only need the first one (not the links inside descriptions)
-        a <- firstTd.\("a").to(List)
+        a <- (firstTd \ "a").to(List)
         href <- a.attribute("href").flatMap(_.headOption.map(_.text)).to(List)
         categoryFilename = href.takeWhile(_ != '.') if !href.startsWith("https://") && !href.startsWith("http://")
         categoryXml <- XML.loadFile(s"$directory/src/xdocs/$categoryFilename.xml").to(List)
@@ -117,7 +117,7 @@ object DocGenerator {
 
         val patternId = Pattern.Id(section.attr("name"))
 
-        (Pattern.Specification(patternId, Result.Level.Info, Pattern.Category.CodeStyle, parametersSet.map {
+        (Pattern.Specification(patternId, Result.Level.Info, Pattern.Category.CodeStyle, None, parametersSet.map {
           case (specs, _) => specs
         }, None), Pattern.Description(patternId, Pattern.Title(patternId.value), None, None, parametersSet.map {
           case (_, descs) => descs
