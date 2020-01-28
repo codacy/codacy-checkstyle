@@ -90,6 +90,7 @@ object DocGenerator {
                     val res = Try(Json.parse(defaultValue)).getOrElse(JsString(defaultValue))
                     res match {
                       case JsString("all files") => JsString("")
+                      case o: JsObject if o.values.isEmpty => JsString("")
                       case any => any
                     }
                   }

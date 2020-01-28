@@ -10,7 +10,7 @@
       "default" : 3
     }, {
       "name" : "allowedAbbreviations",
-      "default" : { }
+      "default" : ""
     }, {
       "name" : "ignoreFinal",
       "default" : true
@@ -152,7 +152,7 @@
       "default" : false
     }, {
       "name" : "excludes",
-      "default" : { }
+      "default" : ""
     } ]
   }, {
     "patternId" : "AvoidStaticImport",
@@ -160,7 +160,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "excludes",
-      "default" : { }
+      "default" : ""
     } ]
   }, {
     "patternId" : "BooleanExpressionComplexity",
@@ -193,7 +193,7 @@
       "default" : "ArrayIndexOutOfBoundsException, ArrayList, Boolean, Byte, Character,Class, Deprecated, Deque, Double, Exception, Float, FunctionalInterface,HashMap, HashSet, IllegalArgumentException, IllegalStateException,IndexOutOfBoundsException, Integer, LinkedList, List, Long, Map,NullPointerException, Object, Override, Queue, RuntimeException,SafeVarargs, SecurityException, Set, Short, SortedMap, SortedSet,String, StringBuffer, StringBuilder, SuppressWarnings, Throwable,TreeMap, TreeSet, UnsupportedOperationException, Void, boolean,byte, char, double, float, int, long, short, void"
     }, {
       "name" : "excludedPackages",
-      "default" : { }
+      "default" : ""
     }, {
       "name" : "max",
       "default" : 7
@@ -210,7 +210,7 @@
       "default" : "ArrayIndexOutOfBoundsException, ArrayList, Boolean, Byte, Character,Class, Deprecated, Deque, Double, Exception, Float, FunctionalInterface,HashMap, HashSet, IllegalArgumentException, IllegalStateException,IndexOutOfBoundsException, Integer, LinkedList, List, Long, Map,NullPointerException, Object, Override, Queue, RuntimeException,SafeVarargs, SecurityException, Set, Short, SortedMap, SortedSet,String, StringBuffer, StringBuilder, SuppressWarnings, Throwable,TreeMap, TreeSet, UnsupportedOperationException, Void, boolean,byte, char, double, float, int, long, short, void"
     }, {
       "name" : "excludedPackages",
-      "default" : { }
+      "default" : ""
     }, {
       "name" : "max",
       "default" : 20
@@ -272,7 +272,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "customImportOrderRules",
-      "default" : { }
+      "default" : ""
     }, {
       "name" : "separateLineBetweenGroups",
       "default" : true
@@ -328,7 +328,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "limitedTokens",
-      "default" : { }
+      "default" : ""
     }, {
       "name" : "maximumDepth",
       "default" : "java.lang.Integer.MAX_VALUE"
@@ -530,7 +530,7 @@
       "default" : ""
     }, {
       "name" : "ignoreLines",
-      "default" : { }
+      "default" : ""
     } ]
   }, {
     "patternId" : "HiddenField",
@@ -573,7 +573,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "illegalClasses",
-      "default" : { }
+      "default" : ""
     }, {
       "name" : "illegalPkgs",
       "default" : "sun"
@@ -587,7 +587,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "classes",
-      "default" : { }
+      "default" : ""
     }, {
       "name" : "tokens",
       "default" : "CLASS_DEF"
@@ -646,7 +646,7 @@
       "default" : "HashMap, HashSet, LinkedHashMap, LinkedHashSet, TreeMap, TreeSet,java.util.HashMap, java.util.HashSet, java.util.LinkedHashMap,java.util.LinkedHashSet, java.util.TreeMap, java.util.TreeSet"
     }, {
       "name" : "legalAbstractClassNames",
-      "default" : { }
+      "default" : ""
     }, {
       "name" : "memberModifiers",
       "default" : "no tokens"
@@ -677,7 +677,7 @@
       "default" : true
     }, {
       "name" : "groups",
-      "default" : { }
+      "default" : ""
     }, {
       "name" : "option",
       "default" : "under"
@@ -695,7 +695,7 @@
       "default" : false
     }, {
       "name" : "staticGroups",
-      "default" : { }
+      "default" : ""
     }, {
       "name" : "tokens",
       "default" : "STATIC_IMPORT"
@@ -1518,7 +1518,7 @@
       "default" : ""
     }, {
       "name" : "multiLines",
-      "default" : { }
+      "default" : ""
     } ]
   }, {
     "patternId" : "RegexpMultiline",
@@ -1682,7 +1682,7 @@
       "default" : true
     }, {
       "name" : "ignoredTags",
-      "default" : { }
+      "default" : ""
     }, {
       "name" : "violateExecutionOnNonTightHtml",
       "default" : false
@@ -1802,7 +1802,7 @@
       "default" : ".properties"
     }, {
       "name" : "requiredTranslations",
-      "default" : { }
+      "default" : ""
     } ]
   }, {
     "patternId" : "TypeName",
