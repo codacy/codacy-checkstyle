@@ -1,4 +1,4 @@
-Finds nested blocks, i.e. blocks that are used freely in the code.
+Finds nested blocks (blocks that are used freely in the code).
 
 Rationale: Nested blocks are often leftovers from the debugging process,
 they confuse the reader.

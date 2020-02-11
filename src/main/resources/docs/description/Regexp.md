@@ -1,5 +1,5 @@
-A check that makes sure that a specified pattern exists, exists less
-than a set number of times, or does not exist in the file.
+Checks that a specified pattern exists, exists less than a set number of
+times, or does not exist in the file.
 
 This check combines all the functionality provided by
 [RegexpHeader](https://checkstyle.org/config_header.html#RegexpHeader)

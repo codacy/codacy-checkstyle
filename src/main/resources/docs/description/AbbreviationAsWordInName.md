@@ -1,4 +1,4 @@
-The Check validate abbreviations(consecutive capital letters) length in
+Validates abbreviations (consecutive capital letters) length in
 identifier name, it also allows to enforce camel case naming. Please
 read more at [Google Style
 Guide](https://checkstyle.org/styleguides/google-java-style-20180523/javaguide.html#s5.3-camel-case)

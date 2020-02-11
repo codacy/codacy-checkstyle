@@ -1,5 +1,5 @@
-Verifies that both the \@Deprecated annotation is present and the
-\@deprecated javadoc tag are present when either one is present.
+Verifies that the annotation `@Deprecated` and the Javadoc tag
+`@deprecated` are both present when either of them is present.
 
 Both ways of flagging deprecation serve their own purpose. The
 \@Deprecated annotation is used for compilers and development tools. The

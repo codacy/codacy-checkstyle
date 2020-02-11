@@ -1,5 +1,4 @@
-A check for detecting single lines that match a supplied regular
-expression. Works with any file type.
+Checks that a specified pattern matches a single line in any file type.
 
 Rationale: This check can be used to prototype checks and to find common
 bad practice such as calling `ex.printStacktrace()`,

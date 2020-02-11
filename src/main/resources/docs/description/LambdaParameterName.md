@@ -1,1 +1,1 @@
-Check to verify lambda parameter names.
+Checks lambda parameter names.

@@ -1,9 +1,9 @@
-This metric measures the number of instantiations of other classes
-within the given class. This type of coupling is not caused by
-inheritance or the object oriented paradigm. Generally speaking, any
-data type with other data types as members or local variable that is an
-instantiation (object) of another class has data abstraction coupling
-(DAC). The higher the DAC, the more complex the structure of the class.
+Measures the number of instantiations of other classes within the given
+class. This type of coupling is not caused by inheritance or the object
+oriented paradigm. Generally speaking, any data type with other data
+types as members or local variable that is an instantiation (object) of
+another class has data abstraction coupling (DAC). The higher the DAC,
+the more complex the structure of the class.
 
 This check processes files in the following way:
 

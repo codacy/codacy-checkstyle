@@ -1,4 +1,4 @@
-This check controls the style with the usage of annotations.
+Checks the style of elements in annotations.
 
 Annotations have three element styles starting with the least verbose.
 

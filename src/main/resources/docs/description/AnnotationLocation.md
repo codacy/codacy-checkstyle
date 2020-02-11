@@ -1,4 +1,4 @@
-Check location of annotation on language elements. By default, Check
+Checks location of annotation on language elements. By default, Check
 enforce to locate annotations immediately after documentation block and
 before target element, annotation should be located on separate line
 from target element. This check also verifies that the annotations are

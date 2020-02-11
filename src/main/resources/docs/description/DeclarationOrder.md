@@ -1,5 +1,6 @@
-Checks the order in which parts of the class or interface declaration
-are defined.
+Checks that the parts of a class or interface declaration appear in the
+order suggested by the [Code Conventions for the Java Programming
+Language](https://checkstyle.org/styleguides/sun-code-conventions-19990420/CodeConventions.doc2.html#a1852).
 
 According to [Code Conventions for the Java Programming
 Language](styleguides/sun-code-conventions-19990420/CodeConventions.doc2.html#a1852)

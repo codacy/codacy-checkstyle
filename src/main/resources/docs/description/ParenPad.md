@@ -1,5 +1,5 @@
-Checks the policy on the padding of parentheses; i.e. whether a space is
-required after a left parenthesis and before a right parenthesis, or
+Checks the policy on the padding of parentheses; that is whether a space
+is required after a left parenthesis and before a right parenthesis, or
 such spaces are forbidden. No check occurs at the right parenthesis
 after an empty for iterator, at the left parenthesis before an empty for
 initialization, or at the right parenthesis of a try-with-resources

@@ -1,5 +1,4 @@
-A [FileSetCheck](https://checkstyle.org/config.html#Overview) that
-ensures the correct translation of code by checking property files for
+Ensures the correct translation of code by checking property files for
 consistency regarding their keys. Two property files describing one and
 the same context are consistent if they contain the same keys.
 TranslationCheck also can check an existence of required translations

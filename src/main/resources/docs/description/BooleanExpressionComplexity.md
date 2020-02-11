@@ -1,4 +1,5 @@
-Restrict the number of `&&`, `||`, `&`, `|` and `^` in an expression.
+Restricts the number of boolean operators (`&&`, `||`, `&`, `|` and `^`)
+in an expression.
 
 Rationale: Too many conditions leads to code that is difficult to read
 and hence debug and maintain.
