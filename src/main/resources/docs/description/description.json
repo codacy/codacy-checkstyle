@@ -126,6 +126,9 @@
     "description" : "Allow nested blocks if they are the only child of a switch case."
   } ]
 }, {
+  "patternId" : "AvoidNoArgumentSuperConstructorCall",
+  "title" : "AvoidNoArgumentSuperConstructorCall"
+}, {
   "patternId" : "AvoidStarImport",
   "title" : "AvoidStarImport",
   "parameters" : [ {
@@ -1200,6 +1203,9 @@
 }, {
   "patternId" : "NoClone",
   "title" : "NoClone"
+}, {
+  "patternId" : "NoEnumTrailingComma",
+  "title" : "NoEnumTrailingComma"
 }, {
   "patternId" : "NoFinalizer",
   "title" : "NoFinalizer"

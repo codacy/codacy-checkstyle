@@ -1,6 +1,6 @@
 {
   "name" : "Checkstyle",
-  "version" : "8.28",
+  "version" : "8.29",
   "patterns" : [ {
     "patternId" : "AbbreviationAsWordInName",
     "level" : "Info",
@@ -140,6 +140,10 @@
       "name" : "allowInSwitchCase",
       "default" : false
     } ]
+  }, {
+    "patternId" : "AvoidNoArgumentSuperConstructorCall",
+    "level" : "Info",
+    "category" : "CodeStyle"
   }, {
     "patternId" : "AvoidStarImport",
     "level" : "Info",
@@ -458,7 +462,7 @@
       "default" : false
     }, {
       "name" : "reliefPattern",
-      "default" : "fallthru|falls? ?through"
+      "default" : "falls?[ -]?thr(u|ough)"
     } ]
   }, {
     "patternId" : "FileLength",
@@ -1308,6 +1312,10 @@
     "category" : "CodeStyle"
   }, {
     "patternId" : "NoClone",
+    "level" : "Info",
+    "category" : "CodeStyle"
+  }, {
+    "patternId" : "NoEnumTrailingComma",
     "level" : "Info",
     "category" : "CodeStyle"
   }, {

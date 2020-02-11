@@ -1,7 +1,6 @@
-Implementation of a check that looks for a file name and/or path match
-(or mis-match) against specified patterns. It can also be used to verify
-files match specific naming patterns not covered by other checks (Ex:
-properties, xml, etc.).
+Checks that a specified pattern matches based on file and/or folder
+path. It can also be used to verify files match specific naming patterns
+not covered by other checks (Ex: properties, xml, etc.).
 
 When customizing the check, the properties are applied in a specific
 order. The fileExtensions property first picks only files that match any

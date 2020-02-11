@@ -1,5 +1,4 @@
-Checks that `catch` parameter names conform to a format specified by the
-format property.
+Checks that `catch` parameter names conform to a specified pattern.
 
 Default pattern has the following characteristic:
 

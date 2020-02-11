@@ -1,6 +1,5 @@
 Restricts the number of return statements in methods, constructors and
-lambda expressions (2 by default). Ignores specified methods (`equals()`
-by default).
+lambda expressions. Ignores specified methods (`equals` by default).
 
 **max** property will only check returns in methods and lambdas that
 return a specific value (Ex: \'return 1;\').

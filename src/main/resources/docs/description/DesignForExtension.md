@@ -1,5 +1,4 @@
-The check finds classes that are designed for extension (subclass
-creation).
+Checks that classes are designed for extension (subclass creation).
 
 Nothing wrong could be with founded classes. This check makes sense only
 for library projects (not application projects) which care of ideal

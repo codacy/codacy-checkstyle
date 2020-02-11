@@ -1,4 +1,4 @@
-Restrict using [Unicode
+Restricts using [Unicode
 escapes](https://docs.oracle.com/javase/specs/jls/se11/html/jls-3.html#jls-3.3)
 (such as \\u221e). It is possible to allow using escapes for
 [non-printable, control

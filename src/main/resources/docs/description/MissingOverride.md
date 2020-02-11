@@ -1,5 +1,5 @@
-Verifies that the \@Override annotation is present when the \@inheritDoc
-javadoc tag is present.
+Verifies that the `@Override` annotation is present when the
+`@inheritDoc` javadoc tag is present.
 
 Rationale: The \@Override annotation helps compiler tools ensure that an
 override is actually occurring. It is quite easy to accidentally

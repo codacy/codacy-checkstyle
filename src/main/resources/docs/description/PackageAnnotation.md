@@ -1,5 +1,4 @@
-This check makes sure that all package annotations are in the
-package-info.java file.
+Checks that all package annotations are in the package-info.java file.
 
 According to the Java Language Specification.
 
