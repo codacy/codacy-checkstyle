@@ -1,8 +1,7 @@
 Checks that there is no whitespace after a token. More specifically, it
 checks that it is not followed by whitespace, or (if linebreaks are
 allowed) all characters on the line after are whitespace. To forbid
-linebreaks after a token, set property `allowLineBreaks` to
-`           false`.
+linebreaks after a token, set property `allowLineBreaks` to `  false `.
 
 The check processes
 [ARRAY\_DECLARATOR](apidocs/com/puppycrawl/tools/checkstyle/api/TokenTypes.html#ARRAY_DECLARATOR)

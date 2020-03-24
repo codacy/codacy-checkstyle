@@ -4,9 +4,9 @@ conforming to other regular expression) are immutable, that is, that
 they have only final fields.
 
 The current algorithm is very simple: it checks that all members of
-exception are final. The user can still mutate an exception\'s instance
+exception are final. The user can still mutate an exception's instance
 (e.g. Throwable has a method called `setStackTrace` which changes the
-exception\'s stack trace). But, at least, all information provided by
+exception's stack trace). But, at least, all information provided by
 this exception type is unchangeable.
 
 Rationale: Exception instances should represent an error condition.

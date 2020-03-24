@@ -10,9 +10,8 @@ with a covariant parameter type (any subtype of Object).
 two different enum values that are equal using covariant enum method,
 and not equal when compared normally.
 
-Inspired by [Finding Bugs is Easy, chapter \'4.5 Bad Covariant
-Definition of Equals
-(Eq)\'](https://www.cs.jhu.edu/~daveho/pubs/oopsla2004.pdf):
+Inspired by [Finding Bugs is Easy, chapter '4.5 Bad Covariant Definition
+of Equals (Eq)'](https://www.cs.jhu.edu/~daveho/pubs/oopsla2004.pdf):
 
 Java classes may override the `equals(Object)` method to define a
 predicate for object equality. This method is used by many of the Java
@@ -21,8 +20,10 @@ runtime library classes; for example, to implement generic containers.
 Programmers sometimes mistakenly use the type of their class `Foo` as
 the type of the parameter to `equals()`:
 
-    public boolean equals(Foo obj) {...}
-            
+``` 
+public boolean equals(Foo obj) {...}
+        
+```
 
 This covariant version of `equals()` does not override the version in
 the `Object` class, and it may lead to unexpected behavior at runtime,

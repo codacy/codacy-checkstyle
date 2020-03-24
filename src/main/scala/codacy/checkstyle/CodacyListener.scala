@@ -2,7 +2,7 @@ package codacy.checkstyle
 
 import com.codacy.plugins.api.{ErrorMessage, Source}
 import com.codacy.plugins.api.results.{Pattern, Result}
-import com.puppycrawl.tools.checkstyle.api.{AuditEvent, AuditListener}
+import com.puppycrawl.tools.checkstyle.api.{AuditEvent, AuditListener, SeverityLevel}
 
 import scala.collection.mutable
 
@@ -12,18 +12,20 @@ class CodacyListener extends AuditListener {
   val failures: mutable.ListBuffer[Result.FileError] = mutable.ListBuffer()
 
   override def addError(event: AuditEvent): Unit = {
-    event.getSourceName
-      .split("\\.")
-      .lastOption
-      .map(_.stripSuffix("Check"))
-      .foreach { patternId =>
-        issues += Result.Issue(
-          Source.File(event.getFileName),
-          Result.Message(event.getMessage),
-          Pattern.Id(patternId),
-          Source.Line(event.getLine)
-        )
-      }
+    if (event.getSeverityLevel != SeverityLevel.IGNORE) {
+      event.getSourceName
+        .split("\\.")
+        .lastOption
+        .map(_.stripSuffix("Check"))
+        .foreach { patternId =>
+          issues += Result.Issue(
+            Source.File(event.getFileName),
+            Result.Message(event.getMessage),
+            Pattern.Id(patternId),
+            Source.Line(event.getLine)
+          )
+        }
+    }
   }
 
   override def addException(event: AuditEvent, throwable: Throwable): Unit = {

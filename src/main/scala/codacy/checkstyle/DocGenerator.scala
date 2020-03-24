@@ -142,12 +142,12 @@ object DocGenerator {
       val descriptionsRoot = new java.io.File(docsRoot, "description")
       val descriptionsFile = new java.io.File(descriptionsRoot, "description.json")
 
-      ResourceHelper.writeFile(patternsFile.toPath, jsonSpecifications)
-      ResourceHelper.writeFile(descriptionsFile.toPath, jsonDescriptions)
+      ResourceHelper.writeFile(patternsFile.toPath, jsonSpecifications + System.lineSeparator)
+      ResourceHelper.writeFile(descriptionsFile.toPath, jsonDescriptions + System.lineSeparator)
       descriptions.collect {
         case Some(extendedDescription) if extendedDescription.extendedDescription.trim.nonEmpty =>
-          val descriptionsFile = new java.io.File(descriptionsRoot, s"${extendedDescription.patternId}.md")
-          ResourceHelper.writeFile(descriptionsFile.toPath, extendedDescription.extendedDescription)
+          val mdFile = new java.io.File(descriptionsRoot, s"${extendedDescription.patternId}.md")
+          ResourceHelper.writeFile(mdFile.toPath, extendedDescription.extendedDescription + System.lineSeparator)
       }
     }
   }
@@ -196,7 +196,7 @@ object DocGenerator {
     try {
       val file = Files.createTempFile(directory, "checkstyle-doc", ".xml")
       Files.write(file, html.getBytes())
-      Seq("pandoc", "-f", "html", "-t", "markdown", file.toString).!!
+      Seq("pandoc", "-f", "html", "-t", "commonmark", file.toString).!!
     } finally {
       Files.walkFileTree(directory, deleteRecursivelyVisitor)
     }
