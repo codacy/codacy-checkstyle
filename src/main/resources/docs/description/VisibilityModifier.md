@@ -28,8 +28,8 @@ declared as public if defined in final class.
 
 Field is known to be immutable if:
 
--   It\'s declared as final
--   Has either a primitive type or instance of class user defined to be
+  - It's declared as final
+  - Has either a primitive type or instance of class user defined to be
     immutable (such as String, ImmutableCollection from Guava and etc)
 
 Classes known to be immutable are listed in
@@ -39,7 +39,7 @@ Rationale: Forcing all fields of class to have private modifier by
 default is good in most cases, but in some cases it drawbacks in too
 much boilerplate get/set code. One of such cases are immutable classes.
 
-**Restriction**: Check doesn\'t check if class is immutable, there\'s no
+**Restriction**: Check doesn't check if class is immutable, there's no
 checking if accessory methods are missing and all fields are immutable,
 we only check **if current field is immutable or final**. Under the flag
 **allowPublicImmutableFields**, the enclosing class must also be final,
@@ -48,4 +48,4 @@ the final modifier on the enclosing class is optional.
 
 Star imports are out of scope of this Check. So if one of type imported
 via **star import** collides with user specified one by its short name -
-there won\'t be Check\'s violation.
+there won't be Check's violation.

@@ -1,8 +1,8 @@
 Restricts throws statements to a specified count. Methods with
-\"Override\" or \"java.lang.Override\" annotation are skipped from
+"Override" or "java.lang.Override" annotation are skipped from
 validation as current class cannot change signature of these methods.
 
-Rationale: Exceptions form part of a method\'s interface. Declaring a
+Rationale: Exceptions form part of a method's interface. Declaring a
 method to throw too many differently rooted exceptions makes exception
 handling onerous and leads to poor programming practices such as writing
 code like `catch(Exception ex)`. 4 is the empirical value which is based

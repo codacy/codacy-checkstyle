@@ -36,20 +36,22 @@ Enums can also contain abstract methods and methods which can be
 overridden by the declared enumeration fields. See the following
 example:
 
-    public enum EnumClass {
-      FIELD_1,
-      FIELD_2 {
-        @Override
-        public final void method1() {} // violation expected
-      };
+``` 
+public enum EnumClass {
+  FIELD_1,
+  FIELD_2 {
+    @Override
+    public final void method1() {} // violation expected
+  };
 
-      public void method1() {}
-      public final void method2() {} // no violation expected
-    }
-            
+  public void method1() {}
+  public final void method2() {} // no violation expected
+}
+        
+```
 
 Since these methods can be overridden in these situations, the final
-methods are not marked as redundant even though they can\'t be extended
+methods are not marked as redundant even though they can't be extended
 by other classes/enums.
 
 Nested `enum` types are always static by default.
@@ -60,28 +62,33 @@ on the method of a final class is redundant.
 Public modifier for constructors in non-public non-protected classes is
 always obsolete:
 
-    public class PublicClass {
-      public PublicClass() {} // OK
-    }
+``` 
+public class PublicClass {
+  public PublicClass() {} // OK
+}
 
-    class PackagePrivateClass {
-      public PackagePrivateClass() {} // violation expected
-    }
-            
+class PackagePrivateClass {
+  public PackagePrivateClass() {} // violation expected
+}
+        
+```
 
 There is no violation in the following example, because removing public
 modifier from ProtectedInnerClass constructor will make this code not
 compiling:
 
-    package a;
-    public class ClassExample {
-      protected class ProtectedInnerClass {
-        public ProtectedInnerClass () {}
-      }
-    }
+``` 
+package a;
+public class ClassExample {
+  protected class ProtectedInnerClass {
+    public ProtectedInnerClass () {}
+  }
+}
 
-    package b;
-    import a.ClassExample;
-    public class ClassExtending extends ClassExample {
-      ProtectedInnerClass pc = new ProtectedInnerClass();
-    }
+package b;
+import a.ClassExample;
+public class ClassExtending extends ClassExample {
+  ProtectedInnerClass pc = new ProtectedInnerClass();
+}
+        
+```

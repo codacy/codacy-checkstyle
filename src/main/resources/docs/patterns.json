@@ -1,6 +1,6 @@
 {
   "name" : "Checkstyle",
-  "version" : "8.29",
+  "version" : "8.30",
   "patterns" : [ {
     "patternId" : "AbbreviationAsWordInName",
     "level" : "Info",
@@ -111,6 +111,10 @@
       "name" : "violateExecutionOnNonTightHtml",
       "default" : false
     } ]
+  }, {
+    "patternId" : "AvoidDoubleBraceInitialization",
+    "level" : "Info",
+    "category" : "CodeStyle"
   }, {
     "patternId" : "AvoidEscapedUnicodeCharacters",
     "level" : "Info",

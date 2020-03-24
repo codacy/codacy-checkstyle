@@ -8,29 +8,32 @@ customized to prevent too many total methods in a type definition
 modifier (`private`, `package`, `protected` or `public`). Each count is
 completely separated to customize how many methods of each you want to
 allow. For example, specifying a `maxTotal` of 10, still means you can
-prevent more than 0 `maxPackage` methods. A violation won\'t appear for
-8 public methods, but one will appear if there is also 3 private methods
+prevent more than 0 `maxPackage` methods. A violation won't appear for 8
+public methods, but one will appear if there is also 3 private methods
 or any package-private methods.
 
 Methods defined in anonymous classes are not counted towards any totals.
 Counts only go towards the main type declaration parent, and are kept
-separate from it\'s children\'s inner types.
+separate from it's children's inner types.
 
-    public class ExampleClass {
-      public enum Colors {
-        RED, GREEN, YELLOW;
+``` 
+public class ExampleClass {
+  public enum Colors {
+    RED, GREEN, YELLOW;
 
-        public String getRGB() { ... } // NOT counted towards ExampleClass
-      }
+    public String getRGB() { ... } // NOT counted towards ExampleClass
+  }
 
-      public void example() { // counted towards ExampleClass
-        Runnable r = (new Runnable() {
-          public void run() { ... } // NOT counted towards ExampleClass, won't produce any violations
-        });
-      }
+  public void example() { // counted towards ExampleClass
+    Runnable r = (new Runnable() {
+      public void run() { ... } // NOT counted towards ExampleClass, won't produce any violations
+    });
+  }
 
-      public static class InnerExampleClass {
-        protected void example2() { ... } // NOT counted towards ExampleClass,
-                                       // but counted towards InnerExampleClass
-      }
-    }
+  public static class InnerExampleClass {
+    protected void example2() { ... } // NOT counted towards ExampleClass,
+                                   // but counted towards InnerExampleClass
+  }
+}
+        
+```

@@ -100,6 +100,9 @@
     "description" : "Control when to print violations if the Javadoc being examined by this check violates the tight html rules defined at Tight-HTML Rules."
   } ]
 }, {
+  "patternId" : "AvoidDoubleBraceInitialization",
+  "title" : "AvoidDoubleBraceInitialization"
+}, {
   "patternId" : "AvoidEscapedUnicodeCharacters",
   "title" : "AvoidEscapedUnicodeCharacters",
   "parameters" : [ {

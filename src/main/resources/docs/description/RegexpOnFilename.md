@@ -15,18 +15,18 @@ reported on violations. If no folderPattern is supplied, then all
 folders that checkstyle finds are examined for violations. The
 ignoreFileNameExtensions property drops the file extension and applies
 the fileNamePattern only to the rest of file name. For example, if the
-file is named \'test.java\' and this property is turned on, the pattern
-is only applied to \'test\'.
+file is named 'test.java' and this property is turned on, the pattern is
+only applied to 'test'.
 
 If this check is configured with no properties, then the default
 behavior of this check is to report file names with spaces in them. When
 at least one pattern property is supplied, the entire check is under the
-user\'s control to allow them to fully customize the behavior.
+user's control to allow them to fully customize the behavior.
 
 It is recommended that if you create your own pattern, to also specify a
 custom violation message. This allows the violation message printed to
 be clear what the violation is, especially if multiple RegexpOnFilename
-checks are used. Argument 0 for the message populates the check\'s
-folderPattern. Argument 1 for the message populates the check\'s
+checks are used. Argument 0 for the message populates the check's
+folderPattern. Argument 1 for the message populates the check's
 fileNamePattern. The file name is not passed as an argument since it is
-part of CheckStyle\'s default violation messages.
+part of CheckStyle's default violation messages.

@@ -9,11 +9,16 @@ example below.
 
 For example, this code:
 
-    String nullString = null;
-    nullString.equals("My_Sweet_String");
-            
+``` 
+String nullString = null;
+nullString.equals("My_Sweet_String");
+        
+```
 
 should be refactored to:
 
-    String nullString = null;
-    "My_Sweet_String".equals(nullString);
+``` 
+String nullString = null;
+"My_Sweet_String".equals(nullString);
+        
+```
