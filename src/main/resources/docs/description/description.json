@@ -1708,6 +1708,13 @@
     "description" : "tokens to check"
   } ]
 }, {
+  "patternId" : "UnnecessarySemicolonAfterOuterTypeDeclaration",
+  "title" : "UnnecessarySemicolonAfterOuterTypeDeclaration",
+  "parameters" : [ {
+    "name" : "tokens",
+    "description" : "tokens to check"
+  } ]
+}, {
   "patternId" : "UnnecessarySemicolonAfterTypeMemberDeclaration",
   "title" : "UnnecessarySemicolonAfterTypeMemberDeclaration",
   "parameters" : [ {
