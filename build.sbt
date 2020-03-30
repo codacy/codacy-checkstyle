@@ -7,7 +7,7 @@ name := "codacy-checkstyle"
 
 scalaVersion := "2.13.1"
 
-mainClass in Compile := Some("codacy.Engine")
+Compile / mainClass := Some("codacy.Engine")
 
 lazy val toolVersionKey = settingKey[String]("The version of the underlying tool retrieved from patterns.json")
 
@@ -18,7 +18,7 @@ toolVersionKey := {
       case (_, n) :*: (_, v) :*: LNil => Patterns(n, v)
     }
 
-  val jsonFile = (resourceDirectory in Compile).value / "docs" / "patterns.json"
+  val jsonFile = (Compile / resourceDirectory).value / "docs" / "patterns.json"
   val json = Parser.parseFromFile(jsonFile)
   val patterns = json.flatMap(Converter.fromJson[Patterns])
   patterns.get.version
@@ -36,8 +36,8 @@ enablePlugins(AshScriptPlugin)
 
 enablePlugins(DockerPlugin)
 
-mappings in Universal ++= {
-  (resourceDirectory in Compile) map { resourceDir: File =>
+Universal / mappings ++= {
+  (Compile / resourceDirectory) map { resourceDir: File =>
     val src = resourceDir / "docs"
     val dest = "/docs"
 
@@ -49,8 +49,8 @@ mappings in Universal ++= {
 
 val dockerUser = "docker"
 
-daemonUser in Docker := dockerUser
-daemonGroup in Docker := dockerUser
+Docker / daemonUser := dockerUser
+Docker / daemonGroup := dockerUser
 
 dockerBaseImage := "openjdk:8-jre-alpine"
 
