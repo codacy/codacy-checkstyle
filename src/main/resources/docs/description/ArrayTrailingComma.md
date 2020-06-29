@@ -10,8 +10,9 @@ int[] a = new int[]
         
 ```
 
-The check demands a comma at the end if neither left nor right curly
-braces are on the same line as the last element of the array.
+By default, the check demands a comma at the end if neither left nor
+right curly braces are on the same line as the last element of the
+array.
 
 ``` 
 return new int[] { 0 };
