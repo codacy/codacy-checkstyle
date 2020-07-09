@@ -1,9 +1,14 @@
 Checks that all package annotations are in the package-info.java file.
 
-According to the Java Language Specification.
+For Java SE8 and above, placement of package annotations in the
+package-info.java file is enforced by the compiler and this check is not
+necessary.
 
-The JLS does not enforce the placement of package annotations. This
-placement may vary based on implementation. The JLS does highly
-recommend that all package annotations are placed in the
-package-info.java file. See [Java Language Specification,
-§7.4.1](https://docs.oracle.com/javase/specs/jls/se11/html/jls-7.html#jls-7.4.1).
+For Java SE7 and below, the Java Language Specification highly
+recommends but doesn't require that annotations are placed in the
+package-info.java file, and this check can help to enforce that
+placement.
+
+See [Java Language Specification,
+§7.4.1](https://docs.oracle.com/javase/specs/jls/se11/html/jls-7.html#jls-7.4.1)
+for more info.

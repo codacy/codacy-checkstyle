@@ -12,3 +12,11 @@ but 'MyTESTS' would not be. A value of *0* indicates that only 1
 consecutive capital letter is allowed. This is what should be used to
 enforce strict camel casing. The identifier 'MyTest' would be allowed,
 but 'MyTEst' would not be.
+
+`ignoreFinal`, `ignoreStatic`, and `ignoreStaticFinal` control whether
+variables with the respective modifiers are to be ignored. Note that a
+variable that is both static and final will always be considered under
+`ignoreStaticFinal` only, regardless of the values of `ignoreFinal` and
+`ignoreStatic`. So for example if `ignoreStatic` is true but
+`ignoreStaticFinal` is false, then static final variables will not be
+ignored.
