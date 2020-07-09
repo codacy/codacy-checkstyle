@@ -33,19 +33,19 @@ Field is known to be immutable if:
     immutable (such as String, ImmutableCollection from Guava and etc)
 
 Classes known to be immutable are listed in
-**immutableClassCanonicalNames** by their **canonical** names.
+**immutableClassCanonicalNames** by their canonical names.
 
-Rationale: Forcing all fields of class to have private modifier by
-default is good in most cases, but in some cases it drawbacks in too
+Property Rationale: Forcing all fields of class to have private modifier
+by default is good in most cases, but in some cases it drawbacks in too
 much boilerplate get/set code. One of such cases are immutable classes.
 
-**Restriction**: Check doesn't check if class is immutable, there's no
+Restriction: Check doesn't check if class is immutable, there's no
 checking if accessory methods are missing and all fields are immutable,
-we only check **if current field is immutable or final**. Under the flag
+we only check if current field is immutable or final. Under the flag
 **allowPublicImmutableFields**, the enclosing class must also be final,
 to encourage immutability. Under the flag **allowPublicFinalFields**,
 the final modifier on the enclosing class is optional.
 
 Star imports are out of scope of this Check. So if one of type imported
-via **star import** collides with user specified one by its short name -
+via star import collides with user specified one by its short name -
 there won't be Check's violation.

@@ -17,6 +17,9 @@
     "name" : "ignoreStatic",
     "description" : "Allow to skip variables with static modifier."
   }, {
+    "name" : "ignoreStaticFinal",
+    "description" : "Allow to skip variables with both static and final modifiers."
+  }, {
     "name" : "tokens",
     "description" : "tokens to check"
   } ]
@@ -78,7 +81,11 @@
   } ]
 }, {
   "patternId" : "ArrayTrailingComma",
-  "title" : "ArrayTrailingComma"
+  "title" : "ArrayTrailingComma",
+  "parameters" : [ {
+    "name" : "alwaysDemandTrailingComma",
+    "description" : "Control whether to always check for a trailing comma, even when an array is inline."
+  } ]
 }, {
   "patternId" : "ArrayTypeStyle",
   "title" : "ArrayTypeStyle",
@@ -251,7 +258,7 @@
   "title" : "CustomImportOrder",
   "parameters" : [ {
     "name" : "customImportOrderRules",
-    "description" : "Specify list of order declaration customizing by user."
+    "description" : "Specify format of order declaration customizing by user."
   }, {
     "name" : "separateLineBetweenGroups",
     "description" : "Force empty line separator between import groups."
@@ -777,6 +784,13 @@
     "description" : "Control whether to validate throws tags."
   } ]
 }, {
+  "patternId" : "JavadocMissingWhitespaceAfterAsterisk",
+  "title" : "JavadocMissingWhitespaceAfterAsterisk",
+  "parameters" : [ {
+    "name" : "violateExecutionOnNonTightHtml",
+    "description" : "Control when to print violations if the Javadoc being examined by this check violates the tight html rules defined at Tight-HTML Rules."
+  } ]
+}, {
   "patternId" : "JavadocPackage",
   "title" : "JavadocPackage",
   "parameters" : [ {
@@ -1206,6 +1220,9 @@
 }, {
   "patternId" : "NoClone",
   "title" : "NoClone"
+}, {
+  "patternId" : "NoCodeInFile",
+  "title" : "NoCodeInFile"
 }, {
   "patternId" : "NoEnumTrailingComma",
   "title" : "NoEnumTrailingComma"
