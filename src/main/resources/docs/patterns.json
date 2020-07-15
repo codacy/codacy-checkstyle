@@ -1,5 +1,5 @@
 {
-  "name" : "Checkstyle",
+  "name" : "checkstyle",
   "version" : "8.34",
   "patterns" : [ {
     "patternId" : "AbbreviationAsWordInName",
