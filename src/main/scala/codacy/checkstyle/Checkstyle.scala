@@ -33,6 +33,8 @@ object Checkstyle extends Tool {
         }
     }
 
+    setCheckstyleConfigLocationProperty(configFile)
+
     val config = ConfigurationLoader.loadConfiguration(
       configFile,
       new PropertiesExpander(System.getProperties),
@@ -40,6 +42,11 @@ object Checkstyle extends Tool {
       ThreadModeSettings.SINGLE_THREAD_MODE_INSTANCE
     )
     run(filesToLint, config)
+  }
+
+  private def setCheckstyleConfigLocationProperty(configFilePath: String) = {
+    val parentPath = File(configFilePath).path.getParent.toAbsolutePath.toString
+    System.setProperty("config_loc", parentPath)
   }
 
   private def run(files: Set[Source.File], config: Configuration): List[Result] = {
