@@ -33,6 +33,8 @@ object Checkstyle extends Tool {
         }
     }
 
+    setCheckstyleConfigLocationProperty(configFile)
+
     val config = ConfigurationLoader.loadConfiguration(
       configFile,
       new PropertiesExpander(System.getProperties),
@@ -40,6 +42,20 @@ object Checkstyle extends Tool {
       ThreadModeSettings.SINGLE_THREAD_MODE_INSTANCE
     )
     run(filesToLint, config)
+  }
+
+  /**
+    * Checkstyle plugin defines a config_loc property that can be used in Checkstyle configuration
+    * files to define paths to other config files like suppressions.xml.
+    * We should define it for users to be able to use this property on the configuration file.
+    *
+    * @see <a href="https://docs.gradle.org/6.5.1/userguide/checkstyle_plugin.html#sec:checkstyle_built_in_variables">Checkstyle built in vars</a>
+    *
+    * @param configFilePath the path to checkstyle configuration file§
+    */
+  private def setCheckstyleConfigLocationProperty(configFilePath: String): Unit = {
+    val parentPath = File(configFilePath).parent.pathAsString
+    System.setProperty("config_loc", parentPath)
   }
 
   private def run(files: Set[Source.File], config: Configuration): List[Result] = {
