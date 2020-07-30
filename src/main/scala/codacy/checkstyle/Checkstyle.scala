@@ -1,6 +1,7 @@
 package codacy.checkstyle
 
 import java.nio.file.{Path, Paths}
+
 import better.files.File
 import com.codacy.plugins.api.results.{Parameter, Pattern, Result, Tool}
 import com.codacy.plugins.api.{ErrorMessage, Options, Source}
@@ -8,7 +9,8 @@ import com.codacy.tools.scala.seed.utils.FileHelper
 import com.codacy.tools.scala.seed.utils.ToolHelper._
 import com.puppycrawl.tools.checkstyle._
 import com.puppycrawl.tools.checkstyle.api.Configuration
-import play.api.libs.json.{JsString, JsValue}
+import play.api.libs.json.{JsNull, JsString, JsValue}
+
 import scala.jdk.CollectionConverters._
 import scala.util.{Failure, Success, Try, Using}
 import scala.xml.Elem
@@ -111,9 +113,17 @@ object Checkstyle extends Tool {
       case parameters if parameters.isEmpty =>
         parameterlessPattern
       case parameters =>
+        val parametersWithDefinedValues = parameters.filter(p => isParameterValueDefined(p.value))
         <module name={pattern.patternId.value}>
-          {parameters.map(generateParameterConfig)}
+          {parametersWithDefinedValues.map(generateParameterConfig)}
         </module>
+    }
+  }
+
+  private def isParameterValueDefined(parameterValue: JsValue): Boolean = {
+    parameterValue match {
+      case JsNull => false
+      case _ => true
     }
   }
 
