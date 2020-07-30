@@ -346,19 +346,19 @@
       "default" : ""
     }, {
       "name" : "maximumDepth",
-      "default" : "java.lang.Integer.MAX_VALUE"
+      "default" : 2147483647
     }, {
       "name" : "maximumMessage",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "maximumNumber",
-      "default" : "java.lang.Integer.MAX_VALUE"
+      "default" : 2147483647
     }, {
       "name" : "minimumDepth",
       "default" : 0
     }, {
       "name" : "minimumMessage",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "minimumNumber",
       "default" : 0
@@ -532,17 +532,14 @@
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "charset",
-      "default" : "the charset property of the parentChecker module"
-    }, {
       "name" : "fileExtensions",
       "default" : ""
     }, {
       "name" : "header",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "headerFile",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "ignoreLines",
       "default" : ""
@@ -559,7 +556,7 @@
       "default" : false
     }, {
       "name" : "ignoreFormat",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "ignoreSetter",
       "default" : false
@@ -678,7 +675,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "file",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "path",
       "default" : ".*"
@@ -846,7 +843,7 @@
       "default" : "Override"
     }, {
       "name" : "excludeScope",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "scope",
       "default" : "private"
@@ -905,7 +902,7 @@
       "default" : "([.?!][ \\t\\n\\r\\f<])|([.?!]$)"
     }, {
       "name" : "excludeScope",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "scope",
       "default" : "private"
@@ -939,10 +936,10 @@
       "default" : "Generated"
     }, {
       "name" : "authorFormat",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "excludeScope",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "scope",
       "default" : "private"
@@ -951,7 +948,7 @@
       "default" : "INTERFACE_DEF, CLASS_DEF, ENUM_DEF, ANNOTATION_DEF"
     }, {
       "name" : "versionFormat",
-      "default" : ""
+      "default" : null
     } ]
   }, {
     "patternId" : "JavadocVariable",
@@ -959,10 +956,10 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "excludeScope",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "ignoreNamePattern",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "scope",
       "default" : "private"
@@ -1180,10 +1177,10 @@
       "default" : "Override"
     }, {
       "name" : "excludeScope",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "ignoreMethodNamesRegex",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "minLineCount",
       "default" : -1
@@ -1204,7 +1201,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "excludeScope",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "scope",
       "default" : "public"
@@ -1529,24 +1526,21 @@
       "default" : false
     }, {
       "name" : "message",
-      "default" : ""
+      "default" : null
     } ]
   }, {
     "patternId" : "RegexpHeader",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "charset",
-      "default" : "the charset property of the parentChecker module"
-    }, {
       "name" : "fileExtensions",
       "default" : ""
     }, {
       "name" : "header",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "headerFile",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "multiLines",
       "default" : ""
@@ -1572,7 +1566,7 @@
       "default" : 0
     }, {
       "name" : "message",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "minimum",
       "default" : 0
@@ -1586,10 +1580,10 @@
       "default" : ""
     }, {
       "name" : "fileNamePattern",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "folderPattern",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "ignoreFileNameExtensions",
       "default" : false
@@ -1615,7 +1609,7 @@
       "default" : 0
     }, {
       "name" : "message",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "minimum",
       "default" : 0
@@ -1638,7 +1632,7 @@
       "default" : 0
     }, {
       "name" : "message",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "minimum",
       "default" : 0
@@ -1789,7 +1783,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "aliasList",
-      "default" : ""
+      "default" : null
     } ]
   }, {
     "patternId" : "ThrowsCount",
@@ -1819,7 +1813,7 @@
       "default" : "^[\\s});]*$"
     }, {
       "name" : "legalComment",
-      "default" : ""
+      "default" : null
     } ]
   }, {
     "patternId" : "Translation",
@@ -2016,10 +2010,10 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "tag",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "tagFormat",
-      "default" : ""
+      "default" : null
     }, {
       "name" : "tagSeverity",
       "default" : "info"

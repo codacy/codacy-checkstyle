@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<checkstyle version="4.3">
+    <file name="OperatorWrap.java">
+        <error source="OperatorWrap" line="23" message="&apos;*&apos; should be on a new line." severity="info" />
+        <error source="OperatorWrap" line="21" message="&apos;*&apos; should be on a new line." severity="info" />
+        <error source="OperatorWrap" line="18" message="&apos;+&apos; should be on a new line." severity="info" />
+    </file>
+    <file name="LineLength.java">
+         <error source="ImportOrder" line="3" message="Wrong order for &apos;java.lang.Integer&apos; import." severity="info" />
+    </file>
+</checkstyle>

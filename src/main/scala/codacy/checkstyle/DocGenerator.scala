@@ -5,7 +5,7 @@ import java.nio.file.attribute.BasicFileAttributes
 import java.nio.file.{FileVisitResult, Files, Path, SimpleFileVisitor}
 
 import com.codacy.plugins.api.results.{Parameter, Pattern, Result, Tool}
-import play.api.libs.json.{JsObject, JsString, Json}
+import play.api.libs.json.{JsNumber, JsObject, JsString, Json}
 
 import scala.collection.immutable.ListSet
 import scala.util.Try
@@ -69,7 +69,9 @@ object DocGenerator {
               .drop(1)
               .map(_.\\("td").to(List))
               .collect {
-                case name :: description :: tpe :: default :: _ =>
+                // charset parameter has a default value that comes from another pattern
+                // and can only be supported with a configuration file.
+                case name :: description :: tpe :: default :: _ if name.text != "charset" =>
                   val defaultValue = Option({
                     // Remove spaces and breaklines in default values
                     val defVal = default.text.replaceAll("""\n\s+""", "").trim.stripSuffix(".")
@@ -83,13 +85,14 @@ object DocGenerator {
                     }
                   }) // Filter out null values
                     .filterNot(_.equalsIgnoreCase("null"))
-                    .getOrElse("")
+                    .orNull
 
                   // Try to parse numbers and booleans
                   val jsDefaultValue = {
                     val res = Try(Json.parse(defaultValue)).getOrElse(JsString(defaultValue))
                     res match {
                       case JsString("all files") => JsString("")
+                      case JsString("java.lang.Integer.MAX_VALUE") => JsNumber(Integer.MAX_VALUE)
                       case o: JsObject if o.values.isEmpty => JsString("")
                       case any => any
                     }

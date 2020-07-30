@@ -480,9 +480,6 @@
   "patternId" : "Header",
   "title" : "Header",
   "parameters" : [ {
-    "name" : "charset",
-    "description" : "Specify the character encoding to use when reading the headerFile."
-  }, {
     "name" : "fileExtensions",
     "description" : "Specify the file type extension of files to process."
   }, {
@@ -1398,9 +1395,6 @@
   "patternId" : "RegexpHeader",
   "title" : "RegexpHeader",
   "parameters" : [ {
-    "name" : "charset",
-    "description" : "Specify the character encoding to use when reading the headerFile."
-  }, {
     "name" : "fileExtensions",
     "description" : "Specify the file type extension of files to process."
   }, {

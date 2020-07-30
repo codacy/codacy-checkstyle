@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<module name="root">
+    <module name="OperatorWrap" />
+    <module name="Header" />
+    <module name="DescendantToken" >
+        <property name="maximumMessage" value="null" />
+    </module>
+    <module name="AtclauseOrder" />
+    <module name="AvoidInlineConditionals" />
+    <module name="AvoidStarImport" />
+    <module name="HiddenField" />
+    <module name="ImportControl" />
+    <module name="ImportOrder" />
+    <module name="RegexpHeader" />
+</module>
