@@ -641,7 +641,7 @@
       "default" : ""
     }, {
       "name" : "tokens",
-      "default" : "empty"
+      "default" : null
     } ]
   }, {
     "patternId" : "IllegalType",

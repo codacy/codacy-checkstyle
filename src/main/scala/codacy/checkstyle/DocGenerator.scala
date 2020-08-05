@@ -84,7 +84,7 @@ object DocGenerator {
                       defVal
                     }
                   }) // Filter out null values
-                    .filterNot(_.equalsIgnoreCase("null"))
+                    .filterNot(value => value.equalsIgnoreCase("null") || value.equalsIgnoreCase("empty"))
                     .orNull
 
                   // Try to parse numbers and booleans
