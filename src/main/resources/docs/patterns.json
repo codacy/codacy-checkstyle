@@ -26,7 +26,9 @@
     }, {
       "name" : "tokens",
       "default" : "CLASS_DEF, INTERFACE_DEF, ENUM_DEF, ANNOTATION_DEF, ANNOTATION_FIELD_DEF, PARAMETER_DEF, VARIABLE_DEF, METHOD_DEF"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "AbstractClassName",
     "level" : "Info",
@@ -40,7 +42,9 @@
     }, {
       "name" : "ignoreName",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "AnnotationLocation",
     "level" : "Info",
@@ -57,7 +61,9 @@
     }, {
       "name" : "tokens",
       "default" : "CLASS_DEF, INTERFACE_DEF, PACKAGE_DEF, ENUM_CONSTANT_DEF, ENUM_DEF, METHOD_DEF, CTOR_DEF, VARIABLE_DEF"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "AnnotationOnSameLine",
     "level" : "Info",
@@ -65,7 +71,9 @@
     "parameters" : [ {
       "name" : "tokens",
       "default" : "CLASS_DEF, INTERFACE_DEF, ENUM_DEF, METHOD_DEF, CTOR_DEF, VARIABLE_DEF"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "AnnotationUseStyle",
     "level" : "Info",
@@ -79,7 +87,9 @@
     }, {
       "name" : "trailingArrayComma",
       "default" : "never"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "AnonInnerLength",
     "level" : "Info",
@@ -87,7 +97,9 @@
     "parameters" : [ {
       "name" : "max",
       "default" : 20
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ArrayTrailingComma",
     "level" : "Info",
@@ -95,7 +107,9 @@
     "parameters" : [ {
       "name" : "alwaysDemandTrailingComma",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ArrayTypeStyle",
     "level" : "Info",
@@ -103,7 +117,9 @@
     "parameters" : [ {
       "name" : "javaStyle",
       "default" : true
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "AtclauseOrder",
     "level" : "Info",
@@ -117,11 +133,16 @@
     }, {
       "name" : "violateExecutionOnNonTightHtml",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "AvoidDoubleBraceInitialization",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "AvoidEscapedUnicodeCharacters",
     "level" : "Info",
@@ -138,11 +159,16 @@
     }, {
       "name" : "allowNonPrintableEscapes",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "AvoidInlineConditionals",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "AvoidNestedBlocks",
     "level" : "Info",
@@ -150,11 +176,16 @@
     "parameters" : [ {
       "name" : "allowInSwitchCase",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "AvoidNoArgumentSuperConstructorCall",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "AvoidStarImport",
     "level" : "Info",
@@ -168,7 +199,9 @@
     }, {
       "name" : "excludes",
       "default" : ""
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "AvoidStaticImport",
     "level" : "Info",
@@ -176,7 +209,9 @@
     "parameters" : [ {
       "name" : "excludes",
       "default" : ""
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "BooleanExpressionComplexity",
     "level" : "Info",
@@ -187,7 +222,9 @@
     }, {
       "name" : "tokens",
       "default" : "LAND, BAND, LOR, BOR, BXOR"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "CatchParameterName",
     "level" : "Info",
@@ -195,7 +232,9 @@
     "parameters" : [ {
       "name" : "format",
       "default" : "^(e|t|ex|[a-z][a-z][a-zA-Z]+)$"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ClassDataAbstractionCoupling",
     "level" : "Info",
@@ -212,7 +251,9 @@
     }, {
       "name" : "max",
       "default" : 7
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ClassFanOutComplexity",
     "level" : "Info",
@@ -229,7 +270,9 @@
     }, {
       "name" : "max",
       "default" : 20
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ClassMemberImpliedModifier",
     "level" : "Info",
@@ -240,7 +283,9 @@
     }, {
       "name" : "violateImpliedStaticOnNestedInterface",
       "default" : true
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ClassTypeParameterName",
     "level" : "Info",
@@ -248,7 +293,9 @@
     "parameters" : [ {
       "name" : "format",
       "default" : "^[A-Z]$"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "CommentsIndentation",
     "level" : "Info",
@@ -256,7 +303,9 @@
     "parameters" : [ {
       "name" : "tokens",
       "default" : "SINGLE_LINE_COMMENT, BLOCK_COMMENT_BEGIN"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "ConstantName",
     "level" : "Info",
@@ -276,11 +325,16 @@
     }, {
       "name" : "format",
       "default" : "^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "CovariantEquals",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "CustomImportOrder",
     "level" : "Info",
@@ -303,7 +357,9 @@
     }, {
       "name" : "thirdPartyPackageRegExp",
       "default" : ".*"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "CyclomaticComplexity",
     "level" : "Info",
@@ -317,7 +373,9 @@
     }, {
       "name" : "tokens",
       "default" : "LITERAL_WHILE, LITERAL_DO, LITERAL_FOR, LITERAL_IF, LITERAL_SWITCH, LITERAL_CASE, LITERAL_CATCH, QUESTION, LAND, LOR"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "DeclarationOrder",
     "level" : "Info",
@@ -328,7 +386,9 @@
     }, {
       "name" : "ignoreModifiers",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "DefaultComesLast",
     "level" : "Info",
@@ -336,7 +396,9 @@
     "parameters" : [ {
       "name" : "skipIfLastAndSharedWithCase",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "DescendantToken",
     "level" : "Info",
@@ -365,7 +427,9 @@
     }, {
       "name" : "sumTokenCounts",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "DesignForExtension",
     "level" : "Info",
@@ -373,7 +437,9 @@
     "parameters" : [ {
       "name" : "ignoredAnnotations",
       "default" : "After, AfterClass, Before, BeforeClass, Test"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "EmptyBlock",
     "level" : "Info",
@@ -384,7 +450,9 @@
     }, {
       "name" : "tokens",
       "default" : "LITERAL_WHILE, LITERAL_TRY, LITERAL_FINALLY, LITERAL_DO, LITERAL_IF, LITERAL_ELSE, LITERAL_FOR, INSTANCE_INIT, STATIC_INIT, LITERAL_SWITCH, LITERAL_SYNCHRONIZED"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "EmptyCatchBlock",
     "level" : "Info",
@@ -395,7 +463,9 @@
     }, {
       "name" : "exceptionVariableName",
       "default" : "^$"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "EmptyForInitializerPad",
     "level" : "Info",
@@ -403,7 +473,9 @@
     "parameters" : [ {
       "name" : "option",
       "default" : "nospace"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "EmptyForIteratorPad",
     "level" : "Info",
@@ -411,7 +483,9 @@
     "parameters" : [ {
       "name" : "option",
       "default" : "nospace"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "EmptyLineSeparator",
     "level" : "Info",
@@ -428,11 +502,16 @@
     }, {
       "name" : "tokens",
       "default" : "PACKAGE_DEF, IMPORT, STATIC_IMPORT, CLASS_DEF, INTERFACE_DEF, ENUM_DEF, STATIC_INIT, INSTANCE_INIT, METHOD_DEF, CTOR_DEF, VARIABLE_DEF"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "EmptyStatement",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "EqualsAvoidNull",
     "level" : "Info",
@@ -440,11 +519,16 @@
     "parameters" : [ {
       "name" : "ignoreEqualsIgnoreCase",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "EqualsHashCode",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ExecutableStatementCount",
     "level" : "Info",
@@ -455,7 +539,9 @@
     }, {
       "name" : "tokens",
       "default" : "CTOR_DEF, METHOD_DEF, INSTANCE_INIT, STATIC_INIT"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ExplicitInitialization",
     "level" : "Info",
@@ -463,7 +549,9 @@
     "parameters" : [ {
       "name" : "onlyObjectReferences",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "FallThrough",
     "level" : "Info",
@@ -474,7 +562,9 @@
     }, {
       "name" : "reliefPattern",
       "default" : "falls?[ -]?thr(u|ough)"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "FileLength",
     "level" : "Info",
@@ -485,7 +575,9 @@
     }, {
       "name" : "max",
       "default" : 2000
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "FileTabCharacter",
     "level" : "Info",
@@ -496,11 +588,16 @@
     }, {
       "name" : "fileExtensions",
       "default" : ""
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "FinalClass",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "FinalLocalVariable",
     "level" : "Info",
@@ -511,7 +608,9 @@
     }, {
       "name" : "validateEnhancedForLoopVariable",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "FinalParameters",
     "level" : "Info",
@@ -522,11 +621,16 @@
     }, {
       "name" : "tokens",
       "default" : "METHOD_DEF, CTOR_DEF"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "GenericWhitespace",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "Header",
     "level" : "Info",
@@ -543,7 +647,9 @@
     }, {
       "name" : "ignoreLines",
       "default" : ""
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "HiddenField",
     "level" : "Info",
@@ -566,11 +672,16 @@
     }, {
       "name" : "tokens",
       "default" : "VARIABLE_DEF, PARAMETER_DEF, LAMBDA"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "HideUtilityClassConstructor",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "IllegalCatch",
     "level" : "Info",
@@ -578,7 +689,9 @@
     "parameters" : [ {
       "name" : "illegalClassNames",
       "default" : "Error, Exception, RuntimeException, Throwable, java.lang.Error,java.lang.Exception, java.lang.RuntimeException, java.lang.Throwable"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "IllegalImport",
     "level" : "Info",
@@ -592,7 +705,9 @@
     }, {
       "name" : "regexp",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "IllegalInstantiation",
     "level" : "Info",
@@ -603,7 +718,9 @@
     }, {
       "name" : "tokens",
       "default" : "CLASS_DEF"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "IllegalThrows",
     "level" : "Info",
@@ -617,7 +734,9 @@
     }, {
       "name" : "illegalClassNames",
       "default" : "Error, RuntimeException, Throwable, java.lang.Error,java.lang.RuntimeException, java.lang.Throwable"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "IllegalToken",
     "level" : "Info",
@@ -625,7 +744,9 @@
     "parameters" : [ {
       "name" : "tokens",
       "default" : "LABELED_STAT"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "IllegalTokenText",
     "level" : "Info",
@@ -642,7 +763,9 @@
     }, {
       "name" : "tokens",
       "default" : null
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "IllegalType",
     "level" : "Info",
@@ -668,7 +791,9 @@
     }, {
       "name" : "validateAbstractClassNames",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ImportControl",
     "level" : "Info",
@@ -679,7 +804,9 @@
     }, {
       "name" : "path",
       "default" : ".*"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ImportOrder",
     "level" : "Info",
@@ -714,7 +841,9 @@
     }, {
       "name" : "useContainerOrderingForStatic",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "Indentation",
     "level" : "Info",
@@ -740,15 +869,23 @@
     }, {
       "name" : "throwsIndent",
       "default" : 4
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "InnerAssignment",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "InnerTypeLast",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "InterfaceIsType",
     "level" : "Info",
@@ -756,7 +893,9 @@
     "parameters" : [ {
       "name" : "allowMarkerInterfaces",
       "default" : true
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "InterfaceMemberImpliedModifier",
     "level" : "Info",
@@ -782,7 +921,9 @@
     }, {
       "name" : "violateImpliedStaticNested",
       "default" : true
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "InterfaceTypeParameterName",
     "level" : "Info",
@@ -790,11 +931,16 @@
     "parameters" : [ {
       "name" : "format",
       "default" : "^[A-Z]$"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "InvalidJavadocPosition",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "JavaNCSS",
     "level" : "Info",
@@ -808,7 +954,9 @@
     }, {
       "name" : "methodMaximum",
       "default" : 50
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "JavadocBlockTagLocation",
     "level" : "Info",
@@ -819,7 +967,9 @@
     }, {
       "name" : "violateExecutionOnNonTightHtml",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "JavadocContentLocation",
     "level" : "Info",
@@ -827,7 +977,9 @@
     "parameters" : [ {
       "name" : "location",
       "default" : "second_line"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "JavadocMethod",
     "level" : "Info",
@@ -853,7 +1005,9 @@
     }, {
       "name" : "validateThrows",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "JavadocMissingWhitespaceAfterAsterisk",
     "level" : "Info",
@@ -861,7 +1015,9 @@
     "parameters" : [ {
       "name" : "violateExecutionOnNonTightHtml",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "JavadocPackage",
     "level" : "Info",
@@ -872,7 +1028,9 @@
     }, {
       "name" : "fileExtensions",
       "default" : ".java"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "JavadocParagraph",
     "level" : "Info",
@@ -883,7 +1041,9 @@
     }, {
       "name" : "violateExecutionOnNonTightHtml",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "JavadocStyle",
     "level" : "Info",
@@ -909,7 +1069,9 @@
     }, {
       "name" : "tokens",
       "default" : "ANNOTATION_DEF, ANNOTATION_FIELD_DEF, CLASS_DEF, CTOR_DEF, ENUM_CONSTANT_DEF, ENUM_DEF, INTERFACE_DEF, METHOD_DEF, PACKAGE_DEF, VARIABLE_DEF"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "JavadocTagContinuationIndentation",
     "level" : "Info",
@@ -920,7 +1082,9 @@
     }, {
       "name" : "violateExecutionOnNonTightHtml",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "JavadocType",
     "level" : "Info",
@@ -949,7 +1113,9 @@
     }, {
       "name" : "versionFormat",
       "default" : null
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "JavadocVariable",
     "level" : "Info",
@@ -966,7 +1132,9 @@
     }, {
       "name" : "tokens",
       "default" : "ENUM_CONSTANT_DEF"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "LambdaParameterName",
     "level" : "Info",
@@ -974,7 +1142,9 @@
     "parameters" : [ {
       "name" : "format",
       "default" : "^[a-z][a-zA-Z0-9]*$"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "LeftCurly",
     "level" : "Info",
@@ -988,7 +1158,9 @@
     }, {
       "name" : "tokens",
       "default" : "ANNOTATION_DEF, CLASS_DEF, CTOR_DEF, ENUM_CONSTANT_DEF, ENUM_DEF, INTERFACE_DEF, LAMBDA, LITERAL_CASE, LITERAL_CATCH, LITERAL_DEFAULT, LITERAL_DO, LITERAL_ELSE, LITERAL_FINALLY, LITERAL_FOR, LITERAL_IF, LITERAL_SWITCH, LITERAL_SYNCHRONIZED, LITERAL_TRY, LITERAL_WHILE, METHOD_DEF, OBJBLOCK, STATIC_INIT"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "LineLength",
     "level" : "Info",
@@ -1002,7 +1174,9 @@
     }, {
       "name" : "max",
       "default" : 80
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "LocalFinalVariableName",
     "level" : "Info",
@@ -1013,7 +1187,9 @@
     }, {
       "name" : "tokens",
       "default" : "VARIABLE_DEF, PARAMETER_DEF, RESOURCE"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "LocalVariableName",
     "level" : "Info",
@@ -1024,7 +1200,9 @@
     }, {
       "name" : "format",
       "default" : "^[a-z][a-zA-Z0-9]*$"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "MagicNumber",
     "level" : "Info",
@@ -1050,7 +1228,9 @@
     }, {
       "name" : "tokens",
       "default" : "NUM_DOUBLE, NUM_FLOAT, NUM_INT, NUM_LONG"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "MemberName",
     "level" : "Info",
@@ -1070,7 +1250,9 @@
     }, {
       "name" : "format",
       "default" : "^[a-z][a-zA-Z0-9]*$"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "MethodCount",
     "level" : "Info",
@@ -1093,7 +1275,9 @@
     }, {
       "name" : "tokens",
       "default" : "CLASS_DEF, ENUM_CONSTANT_DEF, ENUM_DEF, INTERFACE_DEF, ANNOTATION_DEF"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "MethodLength",
     "level" : "Info",
@@ -1107,7 +1291,9 @@
     }, {
       "name" : "tokens",
       "default" : "METHOD_DEF, CTOR_DEF"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "MethodName",
     "level" : "Info",
@@ -1130,7 +1316,9 @@
     }, {
       "name" : "format",
       "default" : "^[a-z][a-zA-Z0-9]*$"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "MethodParamPad",
     "level" : "Info",
@@ -1144,7 +1332,9 @@
     }, {
       "name" : "tokens",
       "default" : "CTOR_DEF, LITERAL_NEW, METHOD_CALL, METHOD_DEF, SUPER_CTOR_CALL, ENUM_CONSTANT_DEF"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "MethodTypeParameterName",
     "level" : "Info",
@@ -1152,11 +1342,16 @@
     "parameters" : [ {
       "name" : "format",
       "default" : "^[A-Z]$"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "MissingCtor",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "MissingDeprecated",
     "level" : "Info",
@@ -1164,7 +1359,9 @@
     "parameters" : [ {
       "name" : "violateExecutionOnNonTightHtml",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "MissingJavadocMethod",
     "level" : "Info",
@@ -1190,11 +1387,16 @@
     }, {
       "name" : "tokens",
       "default" : "METHOD_DEF, CTOR_DEF, ANNOTATION_FIELD_DEF"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "MissingJavadocPackage",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "MissingJavadocType",
     "level" : "Info",
@@ -1211,7 +1413,9 @@
     }, {
       "name" : "tokens",
       "default" : "INTERFACE_DEF, CLASS_DEF, ENUM_DEF, ANNOTATION_DEF"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "MissingOverride",
     "level" : "Info",
@@ -1219,11 +1423,16 @@
     "parameters" : [ {
       "name" : "javaFiveCompatibility",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "MissingSwitchDefault",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ModifiedControlVariable",
     "level" : "Info",
@@ -1231,11 +1440,16 @@
     "parameters" : [ {
       "name" : "skipEnhancedForLoopVariable",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ModifierOrder",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "MultipleStringLiterals",
     "level" : "Info",
@@ -1249,11 +1463,16 @@
     }, {
       "name" : "ignoreStringsRegexp",
       "default" : "^\"\"$"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "MultipleVariableDeclarations",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "MutableException",
     "level" : "Info",
@@ -1264,7 +1483,9 @@
     }, {
       "name" : "format",
       "default" : "^.*Exception$|^.*Error$|^.*Throwable$"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "NPathComplexity",
     "level" : "Info",
@@ -1272,7 +1493,9 @@
     "parameters" : [ {
       "name" : "max",
       "default" : 200
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "NeedBraces",
     "level" : "Info",
@@ -1286,7 +1509,9 @@
     }, {
       "name" : "tokens",
       "default" : "LITERAL_DO, LITERAL_ELSE, LITERAL_FOR, LITERAL_IF, LITERAL_WHILE"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "NestedForDepth",
     "level" : "Info",
@@ -1294,7 +1519,9 @@
     "parameters" : [ {
       "name" : "max",
       "default" : 1
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "NestedIfDepth",
     "level" : "Info",
@@ -1302,7 +1529,9 @@
     "parameters" : [ {
       "name" : "max",
       "default" : 1
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "NestedTryDepth",
     "level" : "Info",
@@ -1310,7 +1539,9 @@
     "parameters" : [ {
       "name" : "max",
       "default" : 1
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "NewlineAtEndOfFile",
     "level" : "Info",
@@ -1321,27 +1552,44 @@
     }, {
       "name" : "lineSeparator",
       "default" : "lf_cr_crlf"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "NoArrayTrailingComma",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "NoClone",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "NoCodeInFile",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "NoEnumTrailingComma",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "NoFinalizer",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "NoLineWrap",
     "level" : "Info",
@@ -1349,7 +1597,9 @@
     "parameters" : [ {
       "name" : "tokens",
       "default" : "PACKAGE_DEF, IMPORT, STATIC_IMPORT"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "NoWhitespaceAfter",
     "level" : "Info",
@@ -1360,7 +1610,9 @@
     }, {
       "name" : "tokens",
       "default" : "ARRAY_INIT, AT, INC, DEC, UNARY_MINUS, UNARY_PLUS, BNOT, LNOT, DOT, ARRAY_DECLARATOR, INDEX_OP"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "NoWhitespaceBefore",
     "level" : "Info",
@@ -1371,7 +1623,9 @@
     }, {
       "name" : "tokens",
       "default" : "COMMA, SEMI, POST_INC, POST_DEC, ELLIPSIS, LABELED_STAT"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "NonEmptyAtclauseDescription",
     "level" : "Info",
@@ -1382,7 +1636,9 @@
     }, {
       "name" : "violateExecutionOnNonTightHtml",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "OneStatementPerLine",
     "level" : "Info",
@@ -1390,11 +1646,16 @@
     "parameters" : [ {
       "name" : "treatTryResourcesAsStatement",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "OneTopLevelClass",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "OperatorWrap",
     "level" : "Info",
@@ -1405,7 +1666,9 @@
     }, {
       "name" : "tokens",
       "default" : "QUESTION, COLON, EQUAL, NOT_EQUAL, DIV, PLUS, MINUS, STAR, MOD, SR, BSR, GE, GT, SL, LE, LT, BXOR, BOR, LOR, BAND, LAND, TYPE_EXTENSION_AND, LITERAL_INSTANCEOF"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "OrderedProperties",
     "level" : "Info",
@@ -1413,11 +1676,16 @@
     "parameters" : [ {
       "name" : "fileExtensions",
       "default" : ".properties"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "OuterTypeFilename",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "OuterTypeNumber",
     "level" : "Info",
@@ -1425,15 +1693,23 @@
     "parameters" : [ {
       "name" : "max",
       "default" : 1
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "OverloadMethodsDeclarationOrder",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "PackageAnnotation",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "PackageDeclaration",
     "level" : "Info",
@@ -1441,7 +1717,9 @@
     "parameters" : [ {
       "name" : "matchDirectoryStructure",
       "default" : true
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "PackageName",
     "level" : "Info",
@@ -1449,11 +1727,16 @@
     "parameters" : [ {
       "name" : "format",
       "default" : "^[a-z]+(\\.[a-zA-Z_][a-zA-Z0-9_]*)*$"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ParameterAssignment",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ParameterName",
     "level" : "Info",
@@ -1467,7 +1750,9 @@
     }, {
       "name" : "ignoreOverridden",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ParameterNumber",
     "level" : "Info",
@@ -1481,7 +1766,9 @@
     }, {
       "name" : "tokens",
       "default" : "METHOD_DEF, CTOR_DEF"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ParenPad",
     "level" : "Info",
@@ -1492,11 +1779,16 @@
     }, {
       "name" : "tokens",
       "default" : "ANNOTATION, ANNOTATION_FIELD_DEF, CTOR_CALL, CTOR_DEF, DOT, ENUM_CONSTANT_DEF, EXPR, LITERAL_CATCH, LITERAL_DO, LITERAL_FOR, LITERAL_IF, LITERAL_NEW, LITERAL_SWITCH, LITERAL_SYNCHRONIZED, LITERAL_WHILE, METHOD_CALL, METHOD_DEF, QUESTION, RESOURCE_SPECIFICATION, SUPER_CTOR_CALL, LAMBDA"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "RedundantImport",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "RedundantModifier",
     "level" : "Info",
@@ -1504,7 +1796,9 @@
     "parameters" : [ {
       "name" : "tokens",
       "default" : "METHOD_DEF, VARIABLE_DEF, ANNOTATION_FIELD_DEF, INTERFACE_DEF, CTOR_DEF, CLASS_DEF, ENUM_DEF, RESOURCE"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "Regexp",
     "level" : "Info",
@@ -1527,7 +1821,9 @@
     }, {
       "name" : "message",
       "default" : null
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "RegexpHeader",
     "level" : "Info",
@@ -1544,7 +1840,9 @@
     }, {
       "name" : "multiLines",
       "default" : ""
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "RegexpMultiline",
     "level" : "Info",
@@ -1570,7 +1868,9 @@
     }, {
       "name" : "minimum",
       "default" : 0
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "RegexpOnFilename",
     "level" : "Info",
@@ -1590,7 +1890,9 @@
     }, {
       "name" : "match",
       "default" : true
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "RegexpSingleline",
     "level" : "Info",
@@ -1613,7 +1915,9 @@
     }, {
       "name" : "minimum",
       "default" : 0
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "RegexpSinglelineJava",
     "level" : "Info",
@@ -1636,7 +1940,9 @@
     }, {
       "name" : "minimum",
       "default" : 0
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "RequireThis",
     "level" : "Info",
@@ -1650,7 +1956,9 @@
     }, {
       "name" : "validateOnlyOverlapping",
       "default" : true
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ReturnCount",
     "level" : "Info",
@@ -1667,7 +1975,9 @@
     }, {
       "name" : "tokens",
       "default" : "CTOR_DEF, METHOD_DEF, LAMBDA"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "RightCurly",
     "level" : "Info",
@@ -1678,7 +1988,9 @@
     }, {
       "name" : "tokens",
       "default" : "LITERAL_TRY, LITERAL_CATCH, LITERAL_FINALLY, LITERAL_IF, LITERAL_ELSE"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "SeparatorWrap",
     "level" : "Info",
@@ -1689,15 +2001,23 @@
     }, {
       "name" : "tokens",
       "default" : "DOT, COMMA"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "SimplifyBooleanExpression",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "SimplifyBooleanReturn",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "SingleLineJavadoc",
     "level" : "Info",
@@ -1711,7 +2031,9 @@
     }, {
       "name" : "violateExecutionOnNonTightHtml",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "SingleSpaceSeparator",
     "level" : "Info",
@@ -1719,7 +2041,9 @@
     "parameters" : [ {
       "name" : "validateComments",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "StaticVariableName",
     "level" : "Info",
@@ -1739,11 +2063,16 @@
     }, {
       "name" : "format",
       "default" : "^[a-z][a-zA-Z0-9]*$"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "StringLiteralEquality",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "SummaryJavadoc",
     "level" : "Info",
@@ -1757,15 +2086,23 @@
     }, {
       "name" : "violateExecutionOnNonTightHtml",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "SuperClone",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "SuperFinalize",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "SuppressWarnings",
     "level" : "Info",
@@ -1776,7 +2113,9 @@
     }, {
       "name" : "tokens",
       "default" : "CLASS_DEF, INTERFACE_DEF, ENUM_DEF, ANNOTATION_DEF, ANNOTATION_FIELD_DEF, ENUM_CONSTANT_DEF, PARAMETER_DEF, VARIABLE_DEF, METHOD_DEF, CTOR_DEF"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "SuppressWarningsHolder",
     "level" : "Info",
@@ -1784,7 +2123,9 @@
     "parameters" : [ {
       "name" : "aliasList",
       "default" : null
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "ThrowsCount",
     "level" : "Info",
@@ -1795,7 +2136,9 @@
     }, {
       "name" : "max",
       "default" : 4
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "TodoComment",
     "level" : "Info",
@@ -1803,7 +2146,9 @@
     "parameters" : [ {
       "name" : "format",
       "default" : "TODO:"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "TrailingComment",
     "level" : "Info",
@@ -1814,7 +2159,9 @@
     }, {
       "name" : "legalComment",
       "default" : null
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "Translation",
     "level" : "Info",
@@ -1828,7 +2175,9 @@
     }, {
       "name" : "requiredTranslations",
       "default" : ""
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "TypeName",
     "level" : "Info",
@@ -1851,7 +2200,9 @@
     }, {
       "name" : "tokens",
       "default" : "CLASS_DEF, INTERFACE_DEF, ENUM_DEF, ANNOTATION_DEF"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "TypecastParenPad",
     "level" : "Info",
@@ -1859,7 +2210,9 @@
     "parameters" : [ {
       "name" : "option",
       "default" : "nospace"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "UncommentedMain",
     "level" : "Info",
@@ -1867,7 +2220,9 @@
     "parameters" : [ {
       "name" : "excludedClasses",
       "default" : "^$"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "UniqueProperties",
     "level" : "Info",
@@ -1875,7 +2230,9 @@
     "parameters" : [ {
       "name" : "fileExtensions",
       "default" : ".properties"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "UnnecessaryParentheses",
     "level" : "Info",
@@ -1883,7 +2240,9 @@
     "parameters" : [ {
       "name" : "tokens",
       "default" : "EXPR, IDENT, NUM_DOUBLE, NUM_FLOAT, NUM_INT, NUM_LONG, STRING_LITERAL, LITERAL_NULL, LITERAL_FALSE, LITERAL_TRUE, ASSIGN, BAND_ASSIGN, BOR_ASSIGN, BSR_ASSIGN, BXOR_ASSIGN, DIV_ASSIGN, MINUS_ASSIGN, MOD_ASSIGN, PLUS_ASSIGN, SL_ASSIGN, SR_ASSIGN, STAR_ASSIGN, LAMBDA"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "UnnecessarySemicolonAfterOuterTypeDeclaration",
     "level" : "Info",
@@ -1891,7 +2250,9 @@
     "parameters" : [ {
       "name" : "tokens",
       "default" : "CLASS_DEF, INTERFACE_DEF, ENUM_DEF, ANNOTATION_DEF"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "UnnecessarySemicolonAfterTypeMemberDeclaration",
     "level" : "Info",
@@ -1899,11 +2260,16 @@
     "parameters" : [ {
       "name" : "tokens",
       "default" : "CLASS_DEF, INTERFACE_DEF, ENUM_DEF, ANNOTATION_DEF, VARIABLE_DEF, ANNOTATION_FIELD_DEF, STATIC_INIT, INSTANCE_INIT, CTOR_DEF, METHOD_DEF, ENUM_CONSTANT_DEF"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "UnnecessarySemicolonInEnumeration",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "UnnecessarySemicolonInTryWithResources",
     "level" : "Info",
@@ -1911,7 +2277,9 @@
     "parameters" : [ {
       "name" : "allowWhenNoBraceAfterSemicolon",
       "default" : true
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "UnusedImports",
     "level" : "Info",
@@ -1919,11 +2287,16 @@
     "parameters" : [ {
       "name" : "processJavadoc",
       "default" : true
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : true
   }, {
     "patternId" : "UpperEll",
     "level" : "Info",
-    "category" : "CodeStyle"
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "VariableDeclarationUsageDistance",
     "level" : "Info",
@@ -1940,7 +2313,9 @@
     }, {
       "name" : "validateBetweenScopes",
       "default" : false
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "VisibilityModifier",
     "level" : "Info",
@@ -1966,7 +2341,9 @@
     }, {
       "name" : "publicMemberPattern",
       "default" : "^serialVersionUID$"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "WhitespaceAfter",
     "level" : "Info",
@@ -1974,7 +2351,9 @@
     "parameters" : [ {
       "name" : "tokens",
       "default" : "COMMA, SEMI, TYPECAST, LITERAL_IF, LITERAL_ELSE, LITERAL_WHILE, LITERAL_DO, LITERAL_FOR, DO_WHILE"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "WhitespaceAround",
     "level" : "Info",
@@ -2003,7 +2382,9 @@
     }, {
       "name" : "tokens",
       "default" : "ASSIGN, BAND, BAND_ASSIGN, BOR, BOR_ASSIGN, BSR, BSR_ASSIGN, BXOR, BXOR_ASSIGN, COLON, DIV, DIV_ASSIGN, DO_WHILE, EQUAL, GE, GT, LAMBDA, LAND, LCURLY, LE, LITERAL_CATCH, LITERAL_DO, LITERAL_ELSE, LITERAL_FINALLY, LITERAL_FOR, LITERAL_IF, LITERAL_RETURN, LITERAL_SWITCH, LITERAL_SYNCHRONIZED, LITERAL_TRY, LITERAL_WHILE, LOR, LT, MINUS, MINUS_ASSIGN, MOD, MOD_ASSIGN, NOT_EQUAL, PLUS, PLUS_ASSIGN, QUESTION, RCURLY, SL, SLIST, SL_ASSIGN, SR, SR_ASSIGN, STAR, STAR_ASSIGN, LITERAL_ASSERT, TYPE_EXTENSION_AND"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "WriteTag",
     "level" : "Info",
@@ -2020,6 +2401,8 @@
     }, {
       "name" : "tokens",
       "default" : "INTERFACE_DEF, CLASS_DEF, ENUM_DEF, ANNOTATION_DEF"
-    } ]
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   } ]
 }

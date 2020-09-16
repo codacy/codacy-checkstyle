@@ -109,7 +109,7 @@ object Checkstyle extends Tool {
   private def generatePatternConfig(pattern: Pattern.Definition): Elem = {
     lazy val parameterlessPattern = <module name={pattern.patternId.value}/>
 
-    pattern.parameters.fold(parameterlessPattern) {
+    pattern.parameters match {
       case parameters if parameters.isEmpty =>
         parameterlessPattern
       case parameters =>

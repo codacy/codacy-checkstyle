@@ -108,7 +108,8 @@
   } ]
 }, {
   "patternId" : "AvoidDoubleBraceInitialization",
-  "title" : "AvoidDoubleBraceInitialization"
+  "title" : "AvoidDoubleBraceInitialization",
+  "parameters" : [ ]
 }, {
   "patternId" : "AvoidEscapedUnicodeCharacters",
   "title" : "AvoidEscapedUnicodeCharacters",
@@ -127,7 +128,8 @@
   } ]
 }, {
   "patternId" : "AvoidInlineConditionals",
-  "title" : "AvoidInlineConditionals"
+  "title" : "AvoidInlineConditionals",
+  "parameters" : [ ]
 }, {
   "patternId" : "AvoidNestedBlocks",
   "title" : "AvoidNestedBlocks",
@@ -137,7 +139,8 @@
   } ]
 }, {
   "patternId" : "AvoidNoArgumentSuperConstructorCall",
-  "title" : "AvoidNoArgumentSuperConstructorCall"
+  "title" : "AvoidNoArgumentSuperConstructorCall",
+  "parameters" : [ ]
 }, {
   "patternId" : "AvoidStarImport",
   "title" : "AvoidStarImport",
@@ -252,7 +255,8 @@
   } ]
 }, {
   "patternId" : "CovariantEquals",
-  "title" : "CovariantEquals"
+  "title" : "CovariantEquals",
+  "parameters" : [ ]
 }, {
   "patternId" : "CustomImportOrder",
   "title" : "CustomImportOrder",
@@ -392,7 +396,8 @@
   } ]
 }, {
   "patternId" : "EmptyStatement",
-  "title" : "EmptyStatement"
+  "title" : "EmptyStatement",
+  "parameters" : [ ]
 }, {
   "patternId" : "EqualsAvoidNull",
   "title" : "EqualsAvoidNull",
@@ -402,7 +407,8 @@
   } ]
 }, {
   "patternId" : "EqualsHashCode",
-  "title" : "EqualsHashCode"
+  "title" : "EqualsHashCode",
+  "parameters" : [ ]
 }, {
   "patternId" : "ExecutableStatementCount",
   "title" : "ExecutableStatementCount",
@@ -452,7 +458,8 @@
   } ]
 }, {
   "patternId" : "FinalClass",
-  "title" : "FinalClass"
+  "title" : "FinalClass",
+  "parameters" : [ ]
 }, {
   "patternId" : "FinalLocalVariable",
   "title" : "FinalLocalVariable",
@@ -475,7 +482,8 @@
   } ]
 }, {
   "patternId" : "GenericWhitespace",
-  "title" : "GenericWhitespace"
+  "title" : "GenericWhitespace",
+  "parameters" : [ ]
 }, {
   "patternId" : "Header",
   "title" : "Header",
@@ -516,7 +524,8 @@
   } ]
 }, {
   "patternId" : "HideUtilityClassConstructor",
-  "title" : "HideUtilityClassConstructor"
+  "title" : "HideUtilityClassConstructor",
+  "parameters" : [ ]
 }, {
   "patternId" : "IllegalCatch",
   "title" : "IllegalCatch",
@@ -679,10 +688,12 @@
   } ]
 }, {
   "patternId" : "InnerAssignment",
-  "title" : "InnerAssignment"
+  "title" : "InnerAssignment",
+  "parameters" : [ ]
 }, {
   "patternId" : "InnerTypeLast",
-  "title" : "InnerTypeLast"
+  "title" : "InnerTypeLast",
+  "parameters" : [ ]
 }, {
   "patternId" : "InterfaceIsType",
   "title" : "InterfaceIsType",
@@ -724,7 +735,8 @@
   } ]
 }, {
   "patternId" : "InvalidJavadocPosition",
-  "title" : "InvalidJavadocPosition"
+  "title" : "InvalidJavadocPosition",
+  "parameters" : [ ]
 }, {
   "patternId" : "JavaNCSS",
   "title" : "JavaNCSS",
@@ -1062,7 +1074,8 @@
   } ]
 }, {
   "patternId" : "MissingCtor",
-  "title" : "MissingCtor"
+  "title" : "MissingCtor",
+  "parameters" : [ ]
 }, {
   "patternId" : "MissingDeprecated",
   "title" : "MissingDeprecated",
@@ -1097,7 +1110,8 @@
   } ]
 }, {
   "patternId" : "MissingJavadocPackage",
-  "title" : "MissingJavadocPackage"
+  "title" : "MissingJavadocPackage",
+  "parameters" : [ ]
 }, {
   "patternId" : "MissingJavadocType",
   "title" : "MissingJavadocType",
@@ -1123,7 +1137,8 @@
   } ]
 }, {
   "patternId" : "MissingSwitchDefault",
-  "title" : "MissingSwitchDefault"
+  "title" : "MissingSwitchDefault",
+  "parameters" : [ ]
 }, {
   "patternId" : "ModifiedControlVariable",
   "title" : "ModifiedControlVariable",
@@ -1133,7 +1148,8 @@
   } ]
 }, {
   "patternId" : "ModifierOrder",
-  "title" : "ModifierOrder"
+  "title" : "ModifierOrder",
+  "parameters" : [ ]
 }, {
   "patternId" : "MultipleStringLiterals",
   "title" : "MultipleStringLiterals",
@@ -1149,7 +1165,8 @@
   } ]
 }, {
   "patternId" : "MultipleVariableDeclarations",
-  "title" : "MultipleVariableDeclarations"
+  "title" : "MultipleVariableDeclarations",
+  "parameters" : [ ]
 }, {
   "patternId" : "MutableException",
   "title" : "MutableException",
@@ -1213,19 +1230,24 @@
   } ]
 }, {
   "patternId" : "NoArrayTrailingComma",
-  "title" : "NoArrayTrailingComma"
+  "title" : "NoArrayTrailingComma",
+  "parameters" : [ ]
 }, {
   "patternId" : "NoClone",
-  "title" : "NoClone"
+  "title" : "NoClone",
+  "parameters" : [ ]
 }, {
   "patternId" : "NoCodeInFile",
-  "title" : "NoCodeInFile"
+  "title" : "NoCodeInFile",
+  "parameters" : [ ]
 }, {
   "patternId" : "NoEnumTrailingComma",
-  "title" : "NoEnumTrailingComma"
+  "title" : "NoEnumTrailingComma",
+  "parameters" : [ ]
 }, {
   "patternId" : "NoFinalizer",
-  "title" : "NoFinalizer"
+  "title" : "NoFinalizer",
+  "parameters" : [ ]
 }, {
   "patternId" : "NoLineWrap",
   "title" : "NoLineWrap",
@@ -1272,7 +1294,8 @@
   } ]
 }, {
   "patternId" : "OneTopLevelClass",
-  "title" : "OneTopLevelClass"
+  "title" : "OneTopLevelClass",
+  "parameters" : [ ]
 }, {
   "patternId" : "OperatorWrap",
   "title" : "OperatorWrap",
@@ -1292,7 +1315,8 @@
   } ]
 }, {
   "patternId" : "OuterTypeFilename",
-  "title" : "OuterTypeFilename"
+  "title" : "OuterTypeFilename",
+  "parameters" : [ ]
 }, {
   "patternId" : "OuterTypeNumber",
   "title" : "OuterTypeNumber",
@@ -1302,10 +1326,12 @@
   } ]
 }, {
   "patternId" : "OverloadMethodsDeclarationOrder",
-  "title" : "OverloadMethodsDeclarationOrder"
+  "title" : "OverloadMethodsDeclarationOrder",
+  "parameters" : [ ]
 }, {
   "patternId" : "PackageAnnotation",
-  "title" : "PackageAnnotation"
+  "title" : "PackageAnnotation",
+  "parameters" : [ ]
 }, {
   "patternId" : "PackageDeclaration",
   "title" : "PackageDeclaration",
@@ -1322,7 +1348,8 @@
   } ]
 }, {
   "patternId" : "ParameterAssignment",
-  "title" : "ParameterAssignment"
+  "title" : "ParameterAssignment",
+  "parameters" : [ ]
 }, {
   "patternId" : "ParameterName",
   "title" : "ParameterName",
@@ -1361,7 +1388,8 @@
   } ]
 }, {
   "patternId" : "RedundantImport",
-  "title" : "RedundantImport"
+  "title" : "RedundantImport",
+  "parameters" : [ ]
 }, {
   "patternId" : "RedundantModifier",
   "title" : "RedundantModifier",
@@ -1546,10 +1574,12 @@
   } ]
 }, {
   "patternId" : "SimplifyBooleanExpression",
-  "title" : "SimplifyBooleanExpression"
+  "title" : "SimplifyBooleanExpression",
+  "parameters" : [ ]
 }, {
   "patternId" : "SimplifyBooleanReturn",
-  "title" : "SimplifyBooleanReturn"
+  "title" : "SimplifyBooleanReturn",
+  "parameters" : [ ]
 }, {
   "patternId" : "SingleLineJavadoc",
   "title" : "SingleLineJavadoc",
@@ -1591,7 +1621,8 @@
   } ]
 }, {
   "patternId" : "StringLiteralEquality",
-  "title" : "StringLiteralEquality"
+  "title" : "StringLiteralEquality",
+  "parameters" : [ ]
 }, {
   "patternId" : "SummaryJavadoc",
   "title" : "SummaryJavadoc",
@@ -1607,10 +1638,12 @@
   } ]
 }, {
   "patternId" : "SuperClone",
-  "title" : "SuperClone"
+  "title" : "SuperClone",
+  "parameters" : [ ]
 }, {
   "patternId" : "SuperFinalize",
-  "title" : "SuperFinalize"
+  "title" : "SuperFinalize",
+  "parameters" : [ ]
 }, {
   "patternId" : "SuppressWarnings",
   "title" : "SuppressWarnings",
@@ -1734,7 +1767,8 @@
   } ]
 }, {
   "patternId" : "UnnecessarySemicolonInEnumeration",
-  "title" : "UnnecessarySemicolonInEnumeration"
+  "title" : "UnnecessarySemicolonInEnumeration",
+  "parameters" : [ ]
 }, {
   "patternId" : "UnnecessarySemicolonInTryWithResources",
   "title" : "UnnecessarySemicolonInTryWithResources",
@@ -1751,7 +1785,8 @@
   } ]
 }, {
   "patternId" : "UpperEll",
-  "title" : "UpperEll"
+  "title" : "UpperEll",
+  "parameters" : [ ]
 }, {
   "patternId" : "VariableDeclarationUsageDistance",
   "title" : "VariableDeclarationUsageDistance",

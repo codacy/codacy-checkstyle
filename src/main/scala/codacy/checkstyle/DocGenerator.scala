@@ -15,6 +15,20 @@ import scala.sys.process._
 
 object DocGenerator {
 
+  val defaultPatterns = List(
+    "UnusedImports",
+    "FileTabCharacter",
+    "LineLength",
+    "AvoidStarImport",
+    "OneTopLevelClass",
+    "NoLineWrap",
+    "EmptyBlock",
+    "EmptyCatchBlock",
+    "FileTabCharacter",
+    "CommentsIndentation",
+    "EmptyLineSeparator"
+  )
+
   private case class PatternExtendedDescription(patternId: Pattern.Id, extendedDescription: String)
 
   def main(args: Array[String]): Unit = {
@@ -115,25 +129,35 @@ object DocGenerator {
               }
         }
 
-        val parametersSet = parameters
+        val (parametersSpecs, parametersDesc) = parameters
           .map(_.unzip)
-          .map { case (specs, descs) => (specs.to(Set), descs.to(Set)) }
+          .map { case (specs, descs) => (specs, descs) }
+          .getOrElse((List(), List()))
 
         val patternId = Pattern.Id(section.attr("name"))
+        val enabledByDefault = defaultPatterns.contains(patternId.value)
 
-        (Pattern.Specification(patternId, Result.Level.Info, Pattern.Category.CodeStyle, None, parametersSet.map {
-          case (specs, _) => specs
-        }, None), Pattern.Description(patternId, Pattern.Title(patternId.value), None, None, parametersSet.map {
-          case (_, descs) => descs
-        }), extendedDescription.map(PatternExtendedDescription(patternId, _)))
+        (
+          Pattern.Specification(
+            patternId,
+            Result.Level.Info,
+            Pattern.Category.CodeStyle,
+            None,
+            parametersSpecs.toSet,
+            Set.empty,
+            enabled = enabledByDefault
+          ),
+          Pattern.Description(patternId, Pattern.Title(patternId.value), None, None, parametersDesc.toSet),
+          extendedDescription.map(PatternExtendedDescription(patternId, _))
+        )
       }
 
       val (patternSpecifications, patternDescriptions, descriptions) = genPatterns.unzip3
 
       val sortedPatternSpecifications = ListSet(patternSpecifications.sortBy(_.patternId.value)(Ordering[String]): _*)
-        .map(p => p.copy(parameters = p.parameters.map(pp => ListSet(pp.toSeq.sortBy(_.name.value): _*))))
+        .map(p => p.copy(parameters = ListSet(p.parameters.toSeq.sortBy(_.name.value): _*)))
       val sortedPatternDescriptions = ListSet(patternDescriptions.sortBy(_.patternId.value)(Ordering[String]): _*)
-        .map(p => p.copy(parameters = p.parameters.map(pp => ListSet(pp.toSeq.sortBy(_.name.value): _*))))
+        .map(p => p.copy(parameters = ListSet(p.parameters.toSeq.sortBy(_.name.value): _*)))
 
       val spec = Tool.Specification(Tool.Name("checkstyle"), Some(Tool.Version(version)), sortedPatternSpecifications)
       val jsonSpecifications = Json.prettyPrint(Json.toJson(spec))
