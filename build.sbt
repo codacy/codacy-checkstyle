@@ -26,7 +26,7 @@ toolVersionKey := {
 
 libraryDependencies ++= Seq(
   "org.scala-lang.modules" %% "scala-xml" % "1.2.0" withSources (),
-  "com.codacy" %% "codacy-engine-scala-seed" % "5.0.0",
+  "com.codacy" %% "codacy-engine-scala-seed" % "5.0.1",
   "com.puppycrawl.tools" % "checkstyle" % toolVersionKey.value
 )
 
