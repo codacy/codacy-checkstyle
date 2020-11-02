@@ -5,60 +5,28 @@ import sjsonnew.support.scalajson.unsafe._
 
 name := "codacy-checkstyle"
 
-scalaVersion := "2.13.1"
+scalaVersion := "2.13.3"
+
+lazy val checkstyleVersion = "8.37"
+
+Compile / sourceGenerators += Def.task {
+  val file = (Compile / sourceManaged).value / "codacy" / "checkstyle" / "Versions.scala"
+  IO.write(file, s"""package codacy.checkstyle
+                    |object Versions {
+                    |  val checkstyleVersion: String = "$checkstyleVersion"
+                    |}
+                    |""".stripMargin)
+  Seq(file)
+}.taskValue
 
 Compile / mainClass := Some("codacy.Engine")
 
-lazy val toolVersionKey = settingKey[String]("The version of the underlying tool retrieved from patterns.json")
-
-toolVersionKey := {
-  case class Patterns(name: String, version: String)
-  implicit val patternsIso: IsoLList[Patterns] =
-    LList.isoCurried((p: Patterns) => ("name", p.name) :*: ("version", p.version) :*: LNil) {
-      case (_, n) :*: (_, v) :*: LNil => Patterns(n, v)
-    }
-
-  val jsonFile = (Compile / resourceDirectory).value / "docs" / "patterns.json"
-  val json = Parser.parseFromFile(jsonFile)
-  val patterns = json.flatMap(Converter.fromJson[Patterns])
-  patterns.get.version
-}
-
 libraryDependencies ++= Seq(
-  "org.scala-lang.modules" %% "scala-xml" % "1.2.0" withSources (),
+  "org.scala-lang.modules" %% "scala-xml" % "1.2.0",
   "com.codacy" %% "codacy-engine-scala-seed" % "5.0.1",
-  "com.puppycrawl.tools" % "checkstyle" % toolVersionKey.value
+  "com.puppycrawl.tools" % "checkstyle" % checkstyleVersion
 )
 
 Universal / javaOptions ++= Seq("-XX:MinRAMPercentage=60.0", "-XX:MaxRAMPercentage=90.0")
 
-enablePlugins(AshScriptPlugin)
-
-enablePlugins(DockerPlugin)
-
-Universal / mappings ++= {
-  (Compile / resourceDirectory) map { resourceDir: File =>
-    val src = resourceDir / "docs"
-    val dest = "/docs"
-
-    for {
-      path <- src.allPaths.get if !path.isDirectory
-    } yield path -> path.toString.replaceFirst(src.toString, dest)
-  }
-}.value
-
-val dockerUser = "docker"
-
-Docker / daemonUser := dockerUser
-Docker / daemonGroup := dockerUser
-
-dockerBaseImage := "openjdk:8-jre-alpine"
-
-dockerEntrypoint := Seq(s"/opt/docker/bin/${name.value}")
-
-dockerCommands := dockerCommands.value.flatMap {
-  case cmd @ Cmd("WORKDIR", _) => Seq(Cmd("WORKDIR", "/src"))
-  case cmd @ Cmd("ADD", _) =>
-    Seq(Cmd("RUN", s"adduser -u 2004 -D $dockerUser"), cmd, Cmd("RUN", "mv /opt/docker/docs /docs"))
-  case other => List(other)
-}
+enablePlugins(JavaAppPackaging)

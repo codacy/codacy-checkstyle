@@ -4,6 +4,7 @@ import java.io.IOException
 import java.nio.file.attribute.BasicFileAttributes
 import java.nio.file.{FileVisitResult, Files, Path, SimpleFileVisitor}
 
+import better.files._
 import com.codacy.plugins.api.results.{Parameter, Pattern, Result, Tool}
 import play.api.libs.json.{JsNumber, JsObject, JsString, Json}
 
@@ -32,22 +33,10 @@ object DocGenerator {
   private case class PatternExtendedDescription(patternId: Pattern.Id, extendedDescription: String)
 
   def main(args: Array[String]): Unit = {
-    val version: String = args.headOption
-      .orElse {
-        ResourceHelper
-          .getResourceContent("docs/patterns.json")
-          .toOption
-          .flatMap { lines =>
-            Json.parse(lines.mkString("\n")).as[JsObject].\("version").asOpt[String]
-          }
-      }
-      .getOrElse {
-        throw new Exception("No version provided")
-      }
-
-    withRepository(version) { directory =>
+    withRepository { directory =>
+      val xdocs = directory / "src" / "xdocs"
       val genPatterns = for {
-        xml <- XML.loadFile(s"$directory/src/xdocs/checks.xml").to(List)
+        xml <- XML.loadFile((xdocs / "checks.xml").toJava).to(List)
         tr <- xml \\ "tr"
         firstTd <- tr
           .map(_ \ "td")
@@ -55,7 +44,7 @@ object DocGenerator {
         a <- (firstTd \ "a").to(List)
         href <- a.attribute("href").flatMap(_.headOption.map(_.text)).to(List)
         categoryFilename = href.takeWhile(_ != '.') if !href.startsWith("https://") && !href.startsWith("http://")
-        categoryXml <- XML.loadFile(s"$directory/src/xdocs/$categoryFilename.xml").to(List)
+        categoryXml <- XML.loadFile((xdocs / s"$categoryFilename.xml").toJava).to(List)
         section <- categoryXml
           .\\("section")
           .to(List)
@@ -159,22 +148,23 @@ object DocGenerator {
       val sortedPatternDescriptions = ListSet(patternDescriptions.sortBy(_.patternId.value)(Ordering[String]): _*)
         .map(p => p.copy(parameters = ListSet(p.parameters.toSeq.sortBy(_.name.value): _*)))
 
-      val spec = Tool.Specification(Tool.Name("checkstyle"), Some(Tool.Version(version)), sortedPatternSpecifications)
+      val spec = Tool.Specification(
+        Tool.Name("checkstyle"),
+        Some(Tool.Version(Versions.checkstyleVersion)),
+        sortedPatternSpecifications
+      )
       val jsonSpecifications = Json.prettyPrint(Json.toJson(spec))
       val jsonDescriptions = Json.prettyPrint(Json.toJson(sortedPatternDescriptions))
 
-      val repoRoot = new java.io.File(".")
-      val docsRoot = new java.io.File(repoRoot, "src/main/resources/docs")
-      val patternsFile = new java.io.File(docsRoot, "patterns.json")
-      val descriptionsRoot = new java.io.File(docsRoot, "description")
-      val descriptionsFile = new java.io.File(descriptionsRoot, "description.json")
+      val docsRoot = file"docs"
+      val descriptionsRoot = docsRoot / "description"
 
-      ResourceHelper.writeFile(patternsFile.toPath, jsonSpecifications + System.lineSeparator)
-      ResourceHelper.writeFile(descriptionsFile.toPath, jsonDescriptions + System.lineSeparator)
+      (docsRoot / "patterns.json").writeText(jsonSpecifications + System.lineSeparator)
+      (descriptionsRoot / "description.json").writeText(jsonDescriptions + System.lineSeparator)
       descriptions.collect {
         case Some(extendedDescription) if extendedDescription.extendedDescription.trim.nonEmpty =>
-          val mdFile = new java.io.File(descriptionsRoot, s"${extendedDescription.patternId}.md")
-          ResourceHelper.writeFile(mdFile.toPath, extendedDescription.extendedDescription + System.lineSeparator)
+          val mdFile = descriptionsRoot / s"${extendedDescription.patternId}.md"
+          mdFile.writeText(extendedDescription.extendedDescription + System.lineSeparator)
       }
     }
   }
@@ -195,14 +185,10 @@ object DocGenerator {
     }
   }
 
-  private def withRepository[T](version: String)(block: Path => T): T = {
-    val directory = Files.createTempDirectory("checkstyle")
-    try {
-      s"git clone git://github.com/checkstyle/checkstyle --depth 1 -b checkstyle-$version $directory".!!
-      val res = block(directory)
-      res
-    } finally {
-      Files.walkFileTree(directory, deleteRecursivelyVisitor)
+  private def withRepository[T](block: File => T): T = {
+    File.temporaryDirectory("checkstyle") { directory =>
+      s"git clone git://github.com/checkstyle/checkstyle --depth 1 -b checkstyle-${Versions.checkstyleVersion} $directory".!!
+      block(directory)
     }
   }
 

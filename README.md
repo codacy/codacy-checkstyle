@@ -12,7 +12,8 @@ See the [codacy-engine-scala-seed](https://github.com/codacy/codacy-engine-scala
 You can create the docker by doing:
 
 ```bash
-sbt docker:publishLocal
+sbt docker:stage
+docker build -t codacy-checkstyle .
 ```
 
 The docker is ran with the following command:
@@ -27,7 +28,7 @@ The documentation generator is using the [pandoc](https://pandoc.org/) tool to c
 The pandoc version used currently is 2.7.3 which can be downloaded [here](https://github.com/jgm/pandoc/releases/tag/2.7.3).
 Having pandoc in `PATH` you can follow these steps:
 
-1. Update the version in `src/main/resources/docs/patterns.json`
+1. Update the `checkstyleVersion` value in `build.sbt`
 
 2. Run the DocGenerator
 
