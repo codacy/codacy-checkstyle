@@ -1,8 +1,8 @@
 version: 2.1
 
 orbs:
-  codacy: codacy/base@2.9.3
-  codacy_plugins_test: codacy/plugins-test@0.14.5
+  codacy: codacy/base@5.0.5
+  codacy_plugins_test: codacy/plugins-test@0.14.6
 
 workflows:
   version: 2
@@ -17,8 +17,8 @@ workflows:
                  scalafmt::test;
                  test:scalafmt::test;
                  sbt:scalafmt::test;
-                 set Docker / version := \"latest\";
-                 docker:publishLocal"
+                 universal:stage"
+            docker build -t codacy-checkstyle .
             docker save --output docker-image.tar $CIRCLE_PROJECT_REPONAME:latest
           persist_to_workspace: true
           requires:
