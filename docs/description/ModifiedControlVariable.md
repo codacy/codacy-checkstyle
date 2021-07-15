@@ -2,7 +2,7 @@ Checks that for loop control variables are not modified inside the for
 block. An example is:
 
     for (int i = 0; i < 1; i++) {
-      i++; //violation
+      i++; // violation
     }
             
 
@@ -15,4 +15,12 @@ Such loop would be suppressed:
 
     for (int i = 0; i < 10;) {
       i++;
+    }
+            
+
+NOTE:The check works with only primitive type variables. The check will
+not work for arrays used as control variable.An example is
+
+    for (int a[]={0};a[0] < 10;a[0]++) {
+     a[0]++;   // it will skip this violation
     }

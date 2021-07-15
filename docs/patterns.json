@@ -1,6 +1,6 @@
 {
   "name" : "checkstyle",
-  "version" : "8.37",
+  "version" : "8.44",
   "patterns" : [ {
     "patternId" : "AbbreviationAsWordInName",
     "level" : "Info",
@@ -244,7 +244,7 @@
       "default" : "^$"
     }, {
       "name" : "excludedClasses",
-      "default" : "ArrayIndexOutOfBoundsException, ArrayList, Boolean, Byte, Character,Class, Deprecated, Deque, Double, Exception, Float, FunctionalInterface,HashMap, HashSet, IllegalArgumentException, IllegalStateException,IndexOutOfBoundsException, Integer, LinkedList, List, Long, Map,NullPointerException, Object, Override, Queue, RuntimeException,SafeVarargs, SecurityException, Set, Short, SortedMap, SortedSet,String, StringBuffer, StringBuilder, SuppressWarnings, Throwable,TreeMap, TreeSet, UnsupportedOperationException, Void, boolean,byte, char, double, float, int, long, short, var, void"
+      "default" : "ArrayIndexOutOfBoundsException, ArrayList, Boolean, Byte,Character, Class, Collection, Deprecated, Deque, Double, DoubleStream, EnumSet,Exception, Float, FunctionalInterface, HashMap, HashSet, IllegalArgumentException,IllegalStateException, IndexOutOfBoundsException, IntStream, Integer,LinkedHashMap, LinkedHashSet, LinkedList, List, Long, LongStream, Map,NullPointerException, Object, Optional, OptionalDouble, OptionalInt, OptionalLong,Override, Queue, RuntimeException, SafeVarargs, SecurityException, Set, Short,SortedMap, SortedSet, Stream, String, StringBuffer, StringBuilder,SuppressWarnings, Throwable, TreeMap, TreeSet, UnsupportedOperationException, Void,boolean, byte, char, double, float, int, long, short, var, void"
     }, {
       "name" : "excludedPackages",
       "default" : ""
@@ -263,7 +263,7 @@
       "default" : "^$"
     }, {
       "name" : "excludedClasses",
-      "default" : "ArrayIndexOutOfBoundsException, ArrayList, Boolean, Byte, Character,Class, Deprecated, Deque, Double, Exception, Float, FunctionalInterface,HashMap, HashSet, IllegalArgumentException, IllegalStateException,IndexOutOfBoundsException, Integer, LinkedList, List, Long, Map,NullPointerException, Object, Override, Queue, RuntimeException,SafeVarargs, SecurityException, Set, Short, SortedMap, SortedSet,String, StringBuffer, StringBuilder, SuppressWarnings, Throwable,TreeMap, TreeSet, UnsupportedOperationException, Void, boolean,byte, char, double, float, int, long, short, var, void"
+      "default" : "ArrayIndexOutOfBoundsException, ArrayList, Boolean, Byte,Character, Class, Collection, Deprecated, Deque, Double, DoubleStream, EnumSet,Exception, Float, FunctionalInterface, HashMap, HashSet, IllegalArgumentException,IllegalStateException, IndexOutOfBoundsException, IntStream, Integer,LinkedHashMap, LinkedHashSet, LinkedList, List, Long, LongStream, Map,NullPointerException, Object, Optional, OptionalDouble, OptionalInt, OptionalLong,Override, Queue, RuntimeException, SafeVarargs, SecurityException, Set, Short,SortedMap, SortedSet, Stream, String, StringBuffer, StringBuilder,SuppressWarnings, Throwable, TreeMap, TreeSet, UnsupportedOperationException, Void,boolean, byte, char, double, float, int, long, short, var, void"
     }, {
       "name" : "excludedPackages",
       "default" : ""
@@ -443,6 +443,9 @@
     "parameters" : [ {
       "name" : "ignoredAnnotations",
       "default" : "After, AfterClass, Before, BeforeClass, Test"
+    }, {
+      "name" : "requiredJavadocPhrase",
+      "default" : ".*"
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -544,7 +547,7 @@
       "default" : 30
     }, {
       "name" : "tokens",
-      "default" : "CTOR_DEF, METHOD_DEF, INSTANCE_INIT, STATIC_INIT, COMPACT_CTOR_DEF"
+      "default" : "CTOR_DEF, METHOD_DEF, INSTANCE_INIT, STATIC_INIT, COMPACT_CTOR_DEF, LAMBDA"
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -707,7 +710,7 @@
       "default" : "(?i)^(?!(record|yield|var|permits|sealed|_)$).+$"
     }, {
       "name" : "tokens",
-      "default" : "CLASS_DEF,INTERFACE_DEF,ENUM_DEF,ANNOTATION_DEF,ANNOTATION_FIELD_DEF,PARAMETER_DEF,VARIABLE_DEF,METHOD_DEF,ENUM_CONSTANT_DEF,PATTERN_VARIABLE_DEF,RECORD_DEF,RECORD_COMPONENT_DEF"
+      "default" : "CLASS_DEF,INTERFACE_DEF,ENUM_DEF,ANNOTATION_DEF,ANNOTATION_FIELD_DEF,PARAMETER_DEF,VARIABLE_DEF,METHOD_DEF,ENUM_CONSTANT_DEF,PATTERN_VARIABLE_DEF,RECORD_DEF,RECORD_COMPONENT_DEF,LAMBDA"
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -803,7 +806,7 @@
       "default" : ""
     }, {
       "name" : "memberModifiers",
-      "default" : "no tokens"
+      "default" : ""
     }, {
       "name" : "tokens",
       "default" : "ANNOTATION_FIELD_DEF, CLASS_DEF, INTERFACE_DEF, METHOD_CALL, METHOD_DEF, METHOD_REF, PARAMETER_DEF, VARIABLE_DEF, PATTERN_VARIABLE_DEF, RECORD_DEF, RECORD_COMPONENT_DEF"
@@ -1007,6 +1010,9 @@
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
+      "name" : "accessModifiers",
+      "default" : "public, protected, package, private"
+    }, {
       "name" : "allowMissingParamTags",
       "default" : false
     }, {
@@ -1016,16 +1022,20 @@
       "name" : "allowedAnnotations",
       "default" : "Override"
     }, {
-      "name" : "excludeScope",
-      "default" : null
-    }, {
-      "name" : "scope",
-      "default" : "private"
-    }, {
       "name" : "tokens",
       "default" : "METHOD_DEF, CTOR_DEF, ANNOTATION_FIELD_DEF,COMPACT_CTOR_DEF"
     }, {
       "name" : "validateThrows",
+      "default" : false
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "JavadocMissingLeadingAsterisk",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "violateExecutionOnNonTightHtml",
       "default" : false
     } ],
     "languages" : [ ],
@@ -1260,6 +1270,16 @@
     }, {
       "name" : "tokens",
       "default" : "NUM_DOUBLE, NUM_FLOAT, NUM_INT, NUM_LONG"
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "MatchXpath",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "query",
+      "default" : ""
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -1825,6 +1845,16 @@
     "languages" : [ ],
     "enabled" : false
   }, {
+    "patternId" : "RecordComponentName",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "format",
+      "default" : "^[a-z][a-zA-Z0-9]*$"
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
     "patternId" : "RecordComponentNumber",
     "level" : "Info",
     "category" : "CodeStyle",
@@ -2314,7 +2344,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "tokens",
-      "default" : "EXPR, IDENT, NUM_DOUBLE, NUM_FLOAT, NUM_INT, NUM_LONG, STRING_LITERAL, LITERAL_NULL, LITERAL_FALSE, LITERAL_TRUE, ASSIGN, BAND_ASSIGN, BOR_ASSIGN, BSR_ASSIGN, BXOR_ASSIGN, DIV_ASSIGN, MINUS_ASSIGN, MOD_ASSIGN, PLUS_ASSIGN, SL_ASSIGN, SR_ASSIGN, STAR_ASSIGN, LAMBDA,TEXT_BLOCK_LITERAL_BEGIN"
+      "default" : "EXPR, IDENT, NUM_DOUBLE, NUM_FLOAT, NUM_INT, NUM_LONG, STRING_LITERAL, LITERAL_NULL, LITERAL_FALSE, LITERAL_TRUE, ASSIGN, BAND_ASSIGN, BOR_ASSIGN, BSR_ASSIGN, BXOR_ASSIGN, DIV_ASSIGN, MINUS_ASSIGN, MOD_ASSIGN, PLUS_ASSIGN, SL_ASSIGN, SR_ASSIGN, STAR_ASSIGN, LAMBDA,TEXT_BLOCK_LITERAL_BEGIN,LAND,LITERAL_INSTANCEOF,GT,LT,GE,LE,EQUAL,NOT_EQUAL,UNARY_MINUS,UNARY_PLUS,INC,DEC,LNOT,BNOT,POST_INC,POST_DEC"
     } ],
     "languages" : [ ],
     "enabled" : false

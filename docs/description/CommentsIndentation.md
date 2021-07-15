@@ -6,7 +6,7 @@ about such convention can be found
 Please take a look at the following examples to understand how the check
 works:
 
-Example \#1: Block comments.
+Example #1: Block comments.
 
     1   /*
     2    * it is Ok
@@ -19,7 +19,7 @@ Example \#1: Block comments.
     9   double d = 3.14;
             
 
-Example \#2: Comment is placed at the end of the block and has previous
+Example #2: Comment is placed at the end of the block and has previous
 statement.
 
     1   public void foo1() {
@@ -33,7 +33,7 @@ statement.
     9   }
             
 
-Example \#3: Comment is used as a single line border to separate groups
+Example #3: Comment is used as a single line border to separate groups
 of methods.
 
     1   /////////////////////////////// it is OK
@@ -47,7 +47,7 @@ of methods.
     9   public void foo8() {}
             
 
-Example \#4: Comment has distributed previous statement.
+Example #4: Comment has distributed previous statement.
 
     1   public void foo11() {
     2     CheckUtil
@@ -66,7 +66,7 @@ Example \#4: Comment has distributed previous statement.
     15  }
             
 
-Example \#5: Single line block comment is placed within an empty code
+Example #5: Single line block comment is placed within an empty code
 block. Note, if comment is placed at the end of the empty code block, we
 have Checkstyle's limitations to clearly detect user intention of
 explanation target - above or below. The only case we can assume as a
@@ -87,7 +87,7 @@ closing right curly brace.
     11  }
             
 
-Example \#6: 'fallthrough' comments and similar.
+Example #6: 'fallthrough' comments and similar.
 
     0   switch(a) {
     1     case "1":
@@ -112,7 +112,7 @@ Example \#6: 'fallthrough' comments and similar.
     20  }
             
 
-Example \#7: Comment is placed within a distributed statement.
+Example #7: Comment is placed within a distributed statement.
 
     1   String breaks = "J"
     2   // violation (comment should have the same indentation level as line 3)
@@ -124,7 +124,7 @@ Example \#7: Comment is placed within a distributed statement.
     8   ;
             
 
-Example \#8: Comment is placed within an empty case block. Note, if
+Example #8: Comment is placed within an empty case block. Note, if
 comment is placed at the end of the empty case block, we have
 Checkstyle's limitations to clearly detect user intention of explanation
 target - above or below. The only case we can assume as a violation is
@@ -138,7 +138,7 @@ level that is lower than the indentation level of the next case token.
     5   case 6:
             
 
-Example \#9: Single line block comment has previous and next statement.
+Example #9: Single line block comment has previous and next statement.
 
     1   String s1 = "Clean code!";
     2      s.toString().toString().toString();
@@ -155,7 +155,7 @@ Example \#9: Single line block comment has previous and next statement.
     13  int b = 18;
             
 
-Example \#10: Comment within the block tries to describe the next code
+Example #10: Comment within the block tries to describe the next code
 block.
 
     1   public void foo42() {

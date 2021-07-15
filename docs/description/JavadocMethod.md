@@ -1,7 +1,4 @@
-Checks the Javadoc of a method or constructor. The scope to verify is
-specified using the `Scope` class and defaults to `Scope.PRIVATE`. To
-verify another scope, set property scope to a different
-[scope](https://checkstyle.org/property_types.html#Scope).
+Checks the Javadoc of a method or constructor.
 
 Violates parameters and type parameters for which no param tags are
 present can be suppressed by defining property `allowMissingParamTags`.
