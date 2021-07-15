@@ -50,7 +50,7 @@ header):
             
 
 Lines 1 and 2 leave room for technical header lines, e.g. the
-"\#!/bin/sh" line in Unix shell scripts, or the XML file header of XML
+"#!/bin/sh" line in Unix shell scripts, or the XML file header of XML
 files. Set the multiline property to "1, 2" so these lines can be
 ignored for file types where they do no apply. Lines 3 through 6 define
 the actual header content. Note how lines 2, 4 and 5 use escapes for

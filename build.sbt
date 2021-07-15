@@ -7,7 +7,7 @@ name := "codacy-checkstyle"
 
 scalaVersion := "2.13.3"
 
-lazy val checkstyleVersion = "8.37"
+lazy val checkstyleVersion = "8.44"
 
 Compile / sourceGenerators += Def.task {
   val file = (Compile / sourceManaged).value / "codacy" / "checkstyle" / "Versions.scala"
@@ -23,7 +23,7 @@ Compile / mainClass := Some("codacy.Engine")
 
 libraryDependencies ++= Seq(
   "org.scala-lang.modules" %% "scala-xml" % "1.2.0",
-  "com.codacy" %% "codacy-engine-scala-seed" % "5.0.1",
+  "com.codacy" %% "codacy-engine-scala-seed" % "5.0.3",
   "com.puppycrawl.tools" % "checkstyle" % checkstyleVersion
 )
 

@@ -5,14 +5,14 @@ linebreaks after a token, set property `allowLineBreaks` to
 `           false`.
 
 The check processes
-[ARRAY\_DECLARATOR](apidocs/com/puppycrawl/tools/checkstyle/api/TokenTypes.html#ARRAY_DECLARATOR)
+[ARRAY_DECLARATOR](apidocs/com/puppycrawl/tools/checkstyle/api/TokenTypes.html#ARRAY_DECLARATOR)
 and
-[INDEX\_OP](apidocs/com/puppycrawl/tools/checkstyle/api/TokenTypes.html#INDEX_OP)
+[INDEX_OP](apidocs/com/puppycrawl/tools/checkstyle/api/TokenTypes.html#INDEX_OP)
 tokens specially from other tokens. Actually it is checked that there is
 no whitespace before this tokens, not after them. Space after the
 [ANNOTATIONS](apidocs/com/puppycrawl/tools/checkstyle/api/TokenTypes.html#ANNOTATIONS)
 before
-[ARRAY\_DECLARATOR](apidocs/com/puppycrawl/tools/checkstyle/api/TokenTypes.html#ARRAY_DECLARATOR)
+[ARRAY_DECLARATOR](apidocs/com/puppycrawl/tools/checkstyle/api/TokenTypes.html#ARRAY_DECLARATOR)
 and
-[INDEX\_OP](apidocs/com/puppycrawl/tools/checkstyle/api/TokenTypes.html#INDEX_OP)
+[INDEX_OP](apidocs/com/puppycrawl/tools/checkstyle/api/TokenTypes.html#INDEX_OP)
 will be ignored.

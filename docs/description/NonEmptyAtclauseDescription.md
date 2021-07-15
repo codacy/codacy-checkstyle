@@ -1,1 +1,1 @@
-Checks that the at-clause tag is followed by description.
+Checks that the block tag is followed by description.

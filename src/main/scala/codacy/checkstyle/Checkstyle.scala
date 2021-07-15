@@ -154,7 +154,8 @@ object Checkstyle extends Tool {
     "FileTabCharacter",
     "NewlineAtEndOfFile",
     "UniqueProperties",
-    "LineLength"
+    "LineLength",
+    "OrderedProperties"
   )
 
   private def isGlobalPattern(pattern: Pattern.Definition) = {

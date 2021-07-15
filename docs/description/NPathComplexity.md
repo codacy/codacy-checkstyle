@@ -35,6 +35,8 @@ Here is some quotes:
 > which a further attempt at reduction of complexity distorts the
 > logical clarity of the system structure.
 
+<div class="wrapper">
+
 <table>
 <caption>Examples</caption>
 <thead>
@@ -112,6 +114,8 @@ Here is some quotes:
 </table>
 
 Examples
+
+</div>
 
 **Rationale:** Nejmeh says that his group had an informal NPATH limit of
 200 on individual routines; functions(methods) that exceeded this value

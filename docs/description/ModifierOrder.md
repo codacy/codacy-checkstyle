@@ -1,6 +1,6 @@
 Checks that the order of modifiers conforms to the suggestions in the
 [Java Language specification, § 8.1.1, 8.3.1,
-8.4.3](https://docs.oracle.com/javase/specs/jls/se11/html/jls-8.html)
+8.4.3](https://docs.oracle.com/javase/specs/jls/se16/preview/specs/sealed-classes-jls.html)
 and
 [9.4](https://docs.oracle.com/javase/specs/jls/se11/html/jls-9.html).
 The correct order is:
@@ -11,12 +11,14 @@ The correct order is:
 4.  `abstract`
 5.  `default`
 6.  `static`
-7.  `final`
-8.  `transient`
-9.  `volatile`
-10. `synchronized`
-11. `native`
-12. `strictfp`
+7.  `sealed`
+8.  `non-sealed`
+9.  `final`
+10. `transient`
+11. `volatile`
+12. `synchronized`
+13. `native`
+14. `strictfp`
 
 In additional, modifiers are checked to ensure all annotations are
 declared before all other modifiers.

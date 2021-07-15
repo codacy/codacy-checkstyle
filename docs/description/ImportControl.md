@@ -39,13 +39,18 @@ Short description of the behaviour:
     the import is disallowed by default.
 
 The DTD for a import control XML document is at
-[https://checkstyle.org/dtds/import\_control\_1\_4.dtd](/dtds/import_control_1_4.dtd).
+[https://checkstyle.org/dtds/import_control_1\_4.dtd](/dtds/import_control_1_4.dtd).
 It contains documentation on each of the elements and attributes.
 
 The check validates a XML document when it loads the document. To
 validate against the above DTD, include the following document type
 declaration in your XML document:
 
+<div class="wrapper">
+
     <!DOCTYPE import-control PUBLIC
         "-//Checkstyle//DTD ImportControl Configuration 1.4//EN"
         "https://checkstyle.org/dtds/import_control_1_4.dtd">
+              
+
+</div>

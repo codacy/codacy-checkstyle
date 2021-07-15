@@ -32,5 +32,5 @@ expression to achieve a particular goal.
 
 **Note:** When entering a regular expression as a parameter in the XML
 config file you must also take into account the XML rules. e.g. if you
-want to match a &lt; symbol you need to enter &lt;. The regular
-expression should be entered on one line.
+want to match a \< symbol you need to enter &lt;. The regular expression
+should be entered on one line.
