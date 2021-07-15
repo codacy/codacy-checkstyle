@@ -12,7 +12,7 @@ See the [codacy-engine-scala-seed](https://github.com/codacy/codacy-engine-scala
 You can create the docker by doing:
 
 ```bash
-sbt docker:stage
+sbt universal:stage
 docker build -t codacy-checkstyle .
 ```
 
