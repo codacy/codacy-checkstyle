@@ -1,4 +1,4 @@
-FROM openjdk:8-jre-alpine
+FROM amazoncorretto:8-alpine3.14-jre
 RUN apk add bash
 COPY docs /docs
 COPY target/universal/stage/ /opt/docker/
