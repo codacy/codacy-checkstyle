@@ -9,5 +9,6 @@
 .metals/
 project/.bloop/
 .bloop/
+.bsp/
 .vscode
 .version

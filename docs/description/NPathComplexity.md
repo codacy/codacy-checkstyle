@@ -17,15 +17,15 @@ well written and have number of examples and details.
 Here is some quotes:
 
 > An NPATH threshold value of 200 has been established for a function.
-> The value 200 is based on studies done at AT&T Bell Laboratories
+> The value 200 is based on studies done at AT\&T Bell Laboratories
 > \[1988 year\].
 
 > Some of the most effective methods of reducing the NPATH value
 > include:
->
-> -   distributing functionality;
-> -   implementing multiple if statements as a switch statement;
-> -   creating a separate function for logical expressions with a high
+> 
+>   - distributing functionality;
+>   - implementing multiple if statements as a switch statement;
+>   - creating a separate function for logical expressions with a high
 >     count of variables and (&&) and or (||) operators.
 
 > Although strategies to reduce the NPATH complexity of functions are
@@ -113,8 +113,6 @@ Here is some quotes:
 </tbody>
 </table>
 
-Examples
-
 </div>
 
 **Rationale:** Nejmeh says that his group had an informal NPATH limit of
@@ -122,4 +120,4 @@ Examples
 were candidates for further decomposition - or at least a closer look.
 **Please do not be fanatic with limit 200** - choose number that suites
 your project style. Limit 200 is empirical number base on some sources
-of at AT&T Bell Laboratories of 1988 year.
+of at AT\&T Bell Laboratories of 1988 year.

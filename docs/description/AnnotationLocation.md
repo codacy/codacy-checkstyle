@@ -20,6 +20,9 @@ Checkstyle can not examine the target of an annotation.
 
 Example:
 
-    @Override
-    @Nullable
-    public String getNameIfPresent() { ... }
+``` 
+@Override
+@Nullable
+public String getNameIfPresent() { ... }
+        
+```

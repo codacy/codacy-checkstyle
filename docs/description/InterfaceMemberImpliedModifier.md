@@ -27,30 +27,32 @@ the compiler does not require the `public static` modifiers. This check
 provides the ability to enforce that the `public` and `static` modifiers
 are explicitly coded and not implicitly added by the compiler.
 
-    public interface AddressFactory {
-      // check enforces code contains "public static final"
-      public static final String UNKNOWN = "Unknown";
+``` 
+public interface AddressFactory {
+  // check enforces code contains "public static final"
+  public static final String UNKNOWN = "Unknown";
 
-      String OTHER = "Other";  // violation
+  String OTHER = "Other";  // violation
 
-      // check enforces code contains "public" or "private"
-      public static AddressFactory instance();
+  // check enforces code contains "public" or "private"
+  public static AddressFactory instance();
 
-      // check enforces code contains "public abstract"
-      public abstract Address createAddress(String addressLine, String city);
+  // check enforces code contains "public abstract"
+  public abstract Address createAddress(String addressLine, String city);
 
-      List<Address> findAddresses(String city);  // violation
+  List<Address> findAddresses(String city);  // violation
 
-      // check enforces default methods are explicitly declared "public"
-      public default Address createAddress(String city) {
-        return createAddress(UNKNOWN, city);
-      }
+  // check enforces default methods are explicitly declared "public"
+  public default Address createAddress(String city) {
+    return createAddress(UNKNOWN, city);
+  }
 
-      default Address createOtherAddress() {  // violation
-        return createAddress(OTHER, OTHER);
-      }
-    }
-            
+  default Address createOtherAddress() {  // violation
+    return createAddress(OTHER, OTHER);
+  }
+}
+        
+```
 
 Rationale for this check: Methods, fields and nested types are treated
 differently depending on whether they are part of an interface or part

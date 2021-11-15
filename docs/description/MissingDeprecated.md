@@ -21,8 +21,11 @@ don't want to print violations on package-info, you can use a
 files until the javadoc tool faithfully supports it. An example config
 using SuppressionSingleFilter is:
 
-    <!-- required till https://bugs.openjdk.java.net/browse/JDK-8160601 -->
-    <module name="SuppressionSingleFilter">
-        <property name="checks" value="MissingDeprecatedCheck"/>
-        <property name="files" value="package-info\.java"/>
-    </module>
+``` 
+<!-- required till https://bugs.openjdk.java.net/browse/JDK-8160601 -->
+<module name="SuppressionSingleFilter">
+    <property name="checks" value="MissingDeprecatedCheck"/>
+    <property name="files" value="package-info\.java"/>
+</module>
+        
+```

@@ -28,8 +28,8 @@ declared as public if defined in final class.
 
 Field is known to be immutable if:
 
--   It's declared as final
--   Has either a primitive type or instance of class user defined to be
+  - It's declared as final
+  - Has either a primitive type or instance of class user defined to be
     immutable (such as String, ImmutableCollection from Guava and etc)
 
 Classes known to be immutable are listed in

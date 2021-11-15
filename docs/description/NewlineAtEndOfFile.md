@@ -6,15 +6,17 @@ and "diff" command does not show previous lines as changed.
 
 Example (line 36 should not be in diff):
 
-    @@ -32,4 +32,5 @@ ForbidWildcardAsReturnTypeCheck.returnTypeClassNamesIgnoreRegex
-    PublicReferenceToPrivateTypeCheck.name = Public Reference To Private Type
+``` 
+@@ -32,4 +32,5 @@ ForbidWildcardAsReturnTypeCheck.returnTypeClassNamesIgnoreRegex
+PublicReferenceToPrivateTypeCheck.name = Public Reference To Private Type
 
-    StaticMethodCandidateCheck.name = Static Method Candidate
-    -StaticMethodCandidateCheck.desc = Checks whether private methods should be declared as static.
-    \ No newline at end of file
-    +StaticMethodCandidateCheck.desc = Checks whether private methods should be declared as static.
-    +StaticMethodCandidateCheck.skippedMethods = Method names to skip during the check.
-            
+StaticMethodCandidateCheck.name = Static Method Candidate
+-StaticMethodCandidateCheck.desc = Checks whether private methods should be declared as static.
+\ No newline at end of file
++StaticMethodCandidateCheck.desc = Checks whether private methods should be declared as static.
++StaticMethodCandidateCheck.skippedMethods = Method names to skip during the check.
+        
+```
 
 It can also trick the VCS to report the wrong owner for such lines. An
 engineer who has added nothing but a newline character becomes the last

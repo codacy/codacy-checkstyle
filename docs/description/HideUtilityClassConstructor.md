@@ -10,14 +10,17 @@ If you make the constructor protected you may want to consider the
 following constructor implementation technique to disallow instantiating
 subclasses:
 
-    public class StringUtils // not final to allow subclassing
-    {
-      protected StringUtils() {
-        // prevents calls from subclass
-        throw new UnsupportedOperationException();
-      }
+``` 
+public class StringUtils // not final to allow subclassing
+{
+  protected StringUtils() {
+    // prevents calls from subclass
+    throw new UnsupportedOperationException();
+  }
 
-      public static int count(char c, String s) {
-        // ...
-      }
-    }
+  public static int count(char c, String s) {
+    // ...
+  }
+}
+        
+```
