@@ -1,10 +1,10 @@
 Checks cyclomatic complexity against a specified limit. It is a measure
 of the minimum number of possible paths through the source and therefore
-the number of required tests, it is not a about quality of code! It is
+the number of required tests, it is not a about quality of code\! It is
 only applied to methods, c-tors, [static initializers and instance
 initializers](https://docs.oracle.com/javase/tutorial/java/javaOO/initial.html).
 
-The complexity is equal to the number of decision points ` + 1`.
+The complexity is equal to the number of decision points `  + 1 `.
 Decision points: `if`, `while` , `do`, `for`, `?:`, `catch` , `switch`,
 `case` statements and operators `&&` and `||` in the body of target.
 

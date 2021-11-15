@@ -356,7 +356,7 @@
       "default" : "^$"
     }, {
       "name" : "standardPackageRegExp",
-      "default" : "\"^(java|javax)\\.\""
+      "default" : "^(java|javax)\\."
     }, {
       "name" : "thirdPartyPackageRegExp",
       "default" : ".*"
@@ -1091,7 +1091,7 @@
       "default" : true
     }, {
       "name" : "endOfSentenceFormat",
-      "default" : "([.?!][ \t\n\r\f<])|([.?!]$)"
+      "default" : "([.?!][ \\t\\n\\r\\f<])|([.?!]$)"
     }, {
       "name" : "excludeScope",
       "default" : null
@@ -1514,7 +1514,7 @@
       "default" : "ANNOTATION"
     }, {
       "name" : "ignoreStringsRegexp",
-      "default" : "^"
+      "default" : "^\"\"$"
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -1778,7 +1778,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "format",
-      "default" : "\"^[a-z]+(\\.[a-zA-Z_][a-zA-Z0-9_]*)*$\""
+      "default" : "^[a-z]+(\\.[a-zA-Z_][a-zA-Z0-9_]*)*$"
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -2214,7 +2214,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "format",
-      "default" : "\"^\\s*+$\""
+      "default" : "^\\s*+$"
     }, {
       "name" : "tokens",
       "default" : "CLASS_DEF, INTERFACE_DEF, ENUM_DEF, ANNOTATION_DEF, ANNOTATION_FIELD_DEF, ENUM_CONSTANT_DEF, PARAMETER_DEF, VARIABLE_DEF, METHOD_DEF, CTOR_DEF, COMPACT_CTOR_DEF, RECORD_DEF"
@@ -2260,7 +2260,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "format",
-      "default" : "\"^[\\s});]*$\""
+      "default" : "^[\\s});]*$"
     }, {
       "name" : "legalComment",
       "default" : null

@@ -79,7 +79,7 @@ object DocGenerator {
                     // Remove spaces and breaklines in default values
                     val defVal = default.text.replaceAll("""\n\s+""", "").trim.stripSuffix(".")
                     // Remove quotes around regular expressions
-                    if (tpe.text.trim == "Regular Expression" && defVal != "null") {
+                    if (tpe.text.trim == "Pattern" && defVal != "null") {
                       // Leaves only what's inside outer quotes.
                       val f: Char => Boolean = _ != '"'
                       defVal.dropWhile(f).reverse.dropWhile(f).reverse.stripPrefix("\"").stripSuffix("\"")

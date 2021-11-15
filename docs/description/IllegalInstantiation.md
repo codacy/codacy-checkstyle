@@ -5,7 +5,7 @@ preferable to create instances through factory methods rather than
 calling the constructor.
 
 A simple example is the `java.lang.Boolean` class. For performance
-reasons, it is preferable to use the predefined constants ` TRUE` and
+reasons, it is preferable to use the predefined constants `  TRUE ` and
 `FALSE`. Constructor invocations should be replaced by calls to
 `Boolean.valueOf()`.
 

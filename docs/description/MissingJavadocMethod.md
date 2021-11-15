@@ -12,17 +12,20 @@ Checkstyle supports using the convention of using a single
 For getters and setters for the property `allowMissingPropertyJavadoc`,
 the methods must match exactly the structures below.
 
-    public void setNumber(final int number)
-    {
-        mNumber = number;
-    }
+``` 
+public void setNumber(final int number)
+{
+    mNumber = number;
+}
 
-    public int getNumber()
-    {
-        return mNumber;
-    }
+public int getNumber()
+{
+    return mNumber;
+}
 
-    public boolean isSomething()
-    {
-        return false;
-    }
+public boolean isSomething()
+{
+    return false;
+}
+        
+```

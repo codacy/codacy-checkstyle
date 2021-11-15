@@ -2,32 +2,36 @@ Checks that a token is surrounded by whitespace. Empty constructor,
 method, class, enum, interface, loop bodies (blocks), lambdas of the
 form
 
-    public MyClass() {}      // empty constructor
-    public void func() {}    // empty method
-    public interface Foo {} // empty interface
-    public class Foo {} // empty class
-    public enum Foo {} // empty enum
-    MyClass c = new MyClass() {}; // empty anonymous class
-    while (i = 1) {} // empty while loop
-    for (int i = 1; i > 1; i++) {} // empty for loop
-    do {} while (i = 1); // empty do-while loop
-    Runnable noop = () -> {}; // empty lambda
-    public @interface Beta {} // empty annotation type
-            
+``` 
+public MyClass() {}      // empty constructor
+public void func() {}    // empty method
+public interface Foo {} // empty interface
+public class Foo {} // empty class
+public enum Foo {} // empty enum
+MyClass c = new MyClass() {}; // empty anonymous class
+while (i = 1) {} // empty while loop
+for (int i = 1; i > 1; i++) {} // empty for loop
+do {} while (i = 1); // empty do-while loop
+Runnable noop = () -> {}; // empty lambda
+public @interface Beta {} // empty annotation type
+        
+```
 
-may optionally be exempted from the policy using the
-`           allowEmptyMethods`, `allowEmptyConstructors`,
-`allowEmptyTypes`, `allowEmptyLoops`, `allowEmptyLambdas` and
-`allowEmptyCatches` properties.
+may optionally be exempted from the policy using the ` 
+allowEmptyMethods `, `allowEmptyConstructors`, `allowEmptyTypes`,
+`allowEmptyLoops`, `allowEmptyLambdas` and `allowEmptyCatches`
+properties.
 
 This check does not flag as violation double brace initialization like:
 
 <div class="wrapper">
 
-    new Properties() {{
-        setProperty("key", "value");
-    }};
-              
+``` 
+new Properties() {{
+    setProperty("key", "value");
+}};
+          
+```
 
 </div>
 
@@ -37,10 +41,12 @@ whitespace and catch block is empty, for example:
 
 <div class="wrapper">
 
-    try {
-        k = 5 / i;
-    } catch (ArithmeticException ex) {}
-              
+``` 
+try {
+    k = 5 / i;
+} catch (ArithmeticException ex) {}
+          
+```
 
 </div>
 
