@@ -16,24 +16,21 @@ Methods defined in anonymous classes are not counted towards any totals.
 Counts only go towards the main type declaration parent, and are kept
 separate from it's children's inner types.
 
-``` 
-public class ExampleClass {
-  public enum Colors {
-    RED, GREEN, YELLOW;
+    public class ExampleClass {
+      public enum Colors {
+        RED, GREEN, YELLOW;
 
-    public String getRGB() { ... } // NOT counted towards ExampleClass
-  }
+        public String getRGB() { ... } // NOT counted towards ExampleClass
+      }
 
-  public void example() { // counted towards ExampleClass
-    Runnable r = (new Runnable() {
-      public void run() { ... } // NOT counted towards ExampleClass, won't produce any violations
-    });
-  }
+      public void example() { // counted towards ExampleClass
+        Runnable r = (new Runnable() {
+          public void run() { ... } // NOT counted towards ExampleClass, won't produce any violations
+        });
+      }
 
-  public static class InnerExampleClass {
-    protected void example2() { ... } // NOT counted towards ExampleClass,
-                                   // but counted towards InnerExampleClass
-  }
-}
-        
-```
+      public static class InnerExampleClass {
+        protected void example2() { ... } // NOT counted towards ExampleClass,
+                                       // but counted towards InnerExampleClass
+      }
+    }

@@ -5,14 +5,9 @@ article](https://stackoverflow.com/questions/513832/how-do-i-compare-strings-in-
 
 Rationale: Novice Java programmers often use code like:
 
-``` 
-if (x == "something")
-        
-```
+    if (x == "something")
+            
 
 when they mean
 
-``` 
-if ("something".equals(x))
-        
-```
+    if ("something".equals(x))

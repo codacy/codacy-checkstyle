@@ -4,15 +4,15 @@ not configurable.
 
 Left angle bracket ("\<"):
 
-  - should be preceded with whitespace only in generic methods
+-   should be preceded with whitespace only in generic methods
     definitions.
-  - should not be preceded with whitespace when it is precede method
+-   should not be preceded with whitespace when it is preceded method
     name or constructor.
-  - should not be preceded with whitespace when following type name.
-  - should not be followed with whitespace in all cases.
+-   should not be preceded with whitespace when following type name.
+-   should not be followed with whitespace in all cases.
 
 Right angle bracket ("\>"):
 
-  - should not be preceded with whitespace in all cases.
-  - should be followed with whitespace in almost all cases, except
+-   should not be preceded with whitespace in all cases.
+-   should be followed with whitespace in almost all cases, except
     diamond operators and when preceding method name or constructor.

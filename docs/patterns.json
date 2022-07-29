@@ -1,6 +1,6 @@
 {
   "name" : "checkstyle",
-  "version" : "8.44",
+  "version" : "10.3.1",
   "patterns" : [ {
     "patternId" : "AbbreviationAsWordInName",
     "level" : "Info",
@@ -129,7 +129,7 @@
       "default" : "@author, @deprecated, @exception, @param,@return, @see, @serial, @serialData, @serialField,@since, @throws, @version"
     }, {
       "name" : "target",
-      "default" : "CLASS_DEF, INTERFACE_DEF, ENUM_DEF, METHOD_DEF, CTOR_DEF, VARIABLE_DEF,RECORD_DEF,COMPACT_CTOR_DEF"
+      "default" : "CLASS_DEF, COMPACT_CTOR_DEF, CTOR_DEF, ENUM_DEF, INTERFACE_DEF, METHOD_DEF, RECORD_DEF, VARIABLE_DEF"
     }, {
       "name" : "violateExecutionOnNonTightHtml",
       "default" : false
@@ -1212,7 +1212,7 @@
       "default" : ""
     }, {
       "name" : "ignorePattern",
-      "default" : "^$"
+      "default" : "^(package|import) .*"
     }, {
       "name" : "max",
       "default" : 80
@@ -1251,7 +1251,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "constantWaiverParentToken",
-      "default" : "TYPECAST, METHOD_CALL, EXPR, ARRAY_INIT, UNARY_MINUS, UNARY_PLUS, ELIST, STAR, ASSIGN, PLUS, MINUS, DIV, LITERAL_NEW"
+      "default" : "ARRAY_INIT, ASSIGN, DIV, ELIST, EXPR, LITERAL_NEW, METHOD_CALL, MINUS, PLUS, STAR, TYPECAST, UNARY_MINUS, UNARY_PLUS"
     }, {
       "name" : "ignoreAnnotation",
       "default" : false
@@ -1679,6 +1679,13 @@
     "languages" : [ ],
     "enabled" : false
   }, {
+    "patternId" : "NoWhitespaceBeforeCaseDefaultColon",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
     "patternId" : "NonEmptyAtclauseDescription",
     "level" : "Info",
     "category" : "CodeStyle",
@@ -1890,7 +1897,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "tokens",
-      "default" : "METHOD_DEF, VARIABLE_DEF, ANNOTATION_FIELD_DEF, INTERFACE_DEF, CTOR_DEF, CLASS_DEF, ENUM_DEF, RESOURCE"
+      "default" : "METHOD_DEF, VARIABLE_DEF, ANNOTATION_FIELD_DEF, INTERFACE_DEF, CTOR_DEF, CLASS_DEF, ENUM_DEF, RESOURCE, ANNOTATION_DEF, RECORD_DEF"
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -2344,7 +2351,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "tokens",
-      "default" : "EXPR, IDENT, NUM_DOUBLE, NUM_FLOAT, NUM_INT, NUM_LONG, STRING_LITERAL, LITERAL_NULL, LITERAL_FALSE, LITERAL_TRUE, ASSIGN, BAND_ASSIGN, BOR_ASSIGN, BSR_ASSIGN, BXOR_ASSIGN, DIV_ASSIGN, MINUS_ASSIGN, MOD_ASSIGN, PLUS_ASSIGN, SL_ASSIGN, SR_ASSIGN, STAR_ASSIGN, LAMBDA,TEXT_BLOCK_LITERAL_BEGIN,LAND,LITERAL_INSTANCEOF,GT,LT,GE,LE,EQUAL,NOT_EQUAL,UNARY_MINUS,UNARY_PLUS,INC,DEC,LNOT,BNOT,POST_INC,POST_DEC"
+      "default" : "EXPR, IDENT, NUM_DOUBLE, NUM_FLOAT, NUM_INT, NUM_LONG, STRING_LITERAL, LITERAL_NULL, LITERAL_FALSE, LITERAL_TRUE, ASSIGN, BAND_ASSIGN, BOR_ASSIGN, BSR_ASSIGN, BXOR_ASSIGN, DIV_ASSIGN, MINUS_ASSIGN, MOD_ASSIGN, PLUS_ASSIGN, SL_ASSIGN, SR_ASSIGN, STAR_ASSIGN, LAMBDA,TEXT_BLOCK_LITERAL_BEGIN,LAND,LOR,LITERAL_INSTANCEOF,GT,LT,GE,LE,EQUAL,NOT_EQUAL,UNARY_MINUS,UNARY_PLUS,INC,DEC,LNOT,BNOT,POST_INC,POST_DEC"
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -2395,6 +2402,13 @@
     } ],
     "languages" : [ ],
     "enabled" : true
+  }, {
+    "patternId" : "UnusedLocalVariable",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "UpperEll",
     "level" : "Info",
@@ -2455,7 +2469,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "tokens",
-      "default" : "COMMA, SEMI, TYPECAST, LITERAL_IF, LITERAL_ELSE, LITERAL_WHILE, LITERAL_DO, LITERAL_FOR, DO_WHILE"
+      "default" : "COMMA, SEMI, TYPECAST, LITERAL_IF, LITERAL_ELSE, LITERAL_WHILE, LITERAL_DO, LITERAL_FOR, LITERAL_FINALLY, LITERAL_RETURN, LITERAL_YIELD, LITERAL_CATCH, DO_WHILE, ELLIPSIS, LITERAL_SWITCH, LITERAL_SYNCHRONIZED, LITERAL_TRY, LITERAL_CASE, LAMBDA"
     } ],
     "languages" : [ ],
     "enabled" : false

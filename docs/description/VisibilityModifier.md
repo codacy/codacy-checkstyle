@@ -17,8 +17,8 @@ Rationale: Enforce encapsulation.
 Check also has options making it less strict:
 
 **ignoreAnnotationCanonicalNames** - the list of annotations which
-ignore variables in consideration. If user will provide short annotation
-name that type will match to any named the same type without
+ignore variables in consideration. If user want to provide short
+annotation name that type will match to any named the same type without
 consideration of package.
 
 **allowPublicFinalFields** - which allows public final fields.
@@ -28,9 +28,9 @@ declared as public if defined in final class.
 
 Field is known to be immutable if:
 
-  - It's declared as final
-  - Has either a primitive type or instance of class user defined to be
-    immutable (such as String, ImmutableCollection from Guava and etc)
+-   It's declared as final
+-   Has either a primitive type or instance of class user defined to be
+    immutable (such as String, ImmutableCollection from Guava, etc.)
 
 Classes known to be immutable are listed in
 **immutableClassCanonicalNames** by their canonical names.

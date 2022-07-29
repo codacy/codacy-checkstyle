@@ -20,15 +20,12 @@ increased on top of the line wrap and any indentations above it.
 
 Example:
 
-``` 
-if ((condition1 && condition2)
-        || (condition3 && condition4)    // line wrap with bigger indentation
-        ||!(condition5 && condition6)) { // line wrap with bigger indentation
-  field.doSomething()                    // basic offset
-      .doSomething()                     // line wrap
-      .doSomething( c -> {               // line wrap
-        return c.doSome();               // basic offset
-      });
-}
-        
-```
+    if ((condition1 && condition2)
+            || (condition3 && condition4)    // line wrap with bigger indentation
+            ||!(condition5 && condition6)) { // line wrap with bigger indentation
+      field.doSomething()                    // basic offset
+          .doSomething()                     // line wrap
+          .doSomething( c -> {               // line wrap
+            return c.doSome();               // basic offset
+          });
+    }

@@ -8,7 +8,7 @@ leak, if the anonymous class instance is returned outside and other
 object(s) hold reference to it. Created anonymous class is not static,
 it holds an implicit reference to the outer class instance. See this
 [blog
-post](https://blog.jooq.org/2014/12/08/dont-be-clever-the-double-curly-braces-anti-pattern/)
+post](https://blog.jooq.org/dont-be-clever-the-double-curly-braces-anti-pattern/)
 and [article](https://www.baeldung.com/java-double-brace-initialization)
 for more details. Check ignores any comments and semicolons in class
 body.

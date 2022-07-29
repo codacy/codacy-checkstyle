@@ -64,51 +64,46 @@ provide empty "hooks" that can be implemented by subclasses.
 
 Example of code that cause violation as it is designed for extension:
 
-``` 
-public abstract class Plant {
-  private String roots;
-  private String trunk;
+    public abstract class Plant {
+      private String roots;
+      private String trunk;
 
-  protected void validate() {
-    if (roots == null) throw new IllegalArgumentException("No roots!");
-    if (trunk == null) throw new IllegalArgumentException("No trunk!");
-  }
+      protected void validate() {
+        if (roots == null) throw new IllegalArgumentException("No roots!");
+        if (trunk == null) throw new IllegalArgumentException("No trunk!");
+      }
 
-  public abstract void grow();
-}
+      public abstract void grow();
+    }
 
-public class Tree extends Plant {
-  private List leaves;
+    public class Tree extends Plant {
+      private List leaves;
 
-  @Overrides
-  protected void validate() {
-    super.validate();
-    if (leaves == null) throw new IllegalArgumentException("No leaves!");
-  }
+      @Overrides
+      protected void validate() {
+        super.validate();
+        if (leaves == null) throw new IllegalArgumentException("No leaves!");
+      }
 
-  public void grow() {
-    validate();
-  }
-}
-        
-```
+      public void grow() {
+        validate();
+      }
+    }
+            
 
 Example of code without violation:
 
-``` 
-public abstract class Plant {
-  private String roots;
-  private String trunk;
+    public abstract class Plant {
+      private String roots;
+      private String trunk;
 
-  private void validate() {
-    if (roots == null) throw new IllegalArgumentException("No roots!");
-    if (trunk == null) throw new IllegalArgumentException("No trunk!");
-    validateEx();
-  }
+      private void validate() {
+        if (roots == null) throw new IllegalArgumentException("No roots!");
+        if (trunk == null) throw new IllegalArgumentException("No trunk!");
+        validateEx();
+      }
 
-  protected void validateEx() { }
+      protected void validateEx() { }
 
-  public abstract void grow();
-}
-        
-```
+      public abstract void grow();
+    }
