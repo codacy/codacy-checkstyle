@@ -21,10 +21,8 @@ containers.
 Programmers sometimes mistakenly use the type of their class `Foo` as
 the type of the parameter to `equals()`:
 
-``` 
-public boolean equals(Foo obj) {...}
-        
-```
+    public boolean equals(Foo obj) {...}
+            
 
 This covariant version of `equals()` does not override the version in
 the `Object` class, and it may lead to unexpected behavior at runtime,

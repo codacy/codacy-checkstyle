@@ -2,9 +2,9 @@ Checks the style of elements in annotations.
 
 Annotations have three element styles starting with the least verbose.
 
-  - `ElementStyleOption.COMPACT_NO_ARRAY`
-  - `ElementStyleOption.COMPACT`
-  - `ElementStyleOption.EXPANDED`
+-   `ElementStyleOption.COMPACT_NO_ARRAY`
+-   `ElementStyleOption.COMPACT`
+-   `ElementStyleOption.EXPANDED`
 
 To not enforce an element style a `ElementStyleOption.IGNORE` type is
 provided. The desired style can be set through the `elementStyle`
@@ -38,7 +38,7 @@ type. To not enforce a trailing array comma preference a
 `TrailingArrayCommaOption.IGNORE` type is provided. Set this through the
 `trailingArrayComma` property.
 
-By default the `ElementStyleOption` is set to `COMPACT_NO_ARRAY`, the
+By default, the `ElementStyleOption` is set to `COMPACT_NO_ARRAY`, the
 `TrailingArrayCommaOption` is set to `NEVER`, and the
 `ClosingParensOption` is set to `NEVER`.
 

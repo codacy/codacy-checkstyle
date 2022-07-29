@@ -6,7 +6,7 @@
     "description" : "Indicate the number of consecutive capital letters allowed in targeted identifiers (abbreviations in the classes, interfaces, variables and methods names, ... )."
   }, {
     "name" : "allowedAbbreviations",
-    "description" : "Specify list of abbreviations that must be skipped for checking. Abbreviations should be separated by comma."
+    "description" : "Specify abbreviations that must be skipped for checking."
   }, {
     "name" : "ignoreFinal",
     "description" : "Allow to skip variables with final modifier."
@@ -101,7 +101,7 @@
     "description" : "Specify the order by tags."
   }, {
     "name" : "target",
-    "description" : "Specify the list of block tags targeted."
+    "description" : "Specify block tags targeted."
   }, {
     "name" : "violateExecutionOnNonTightHtml",
     "description" : "Control when to print violations if the Javadoc being examined by this check violates the tight html rules defined at Tight-HTML Rules."
@@ -152,7 +152,7 @@
     "description" : "Control whether to allow starred static member imports like import static org.junit.Assert.*;."
   }, {
     "name" : "excludes",
-    "description" : "Specify packages where star imports are allowed."
+    "description" : "Specify packages where starred class imports are allowed and classes where starred static member imports are allowed."
   } ]
 }, {
   "patternId" : "AvoidStaticImport",
@@ -628,7 +628,7 @@
     "description" : "Define abstract classes that may be used as types."
   }, {
     "name" : "memberModifiers",
-    "description" : "Control whether to check only methods and fields with any of the specified modifiers. This property does not affect method calls nor method references."
+    "description" : "memberModifiers"
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -651,7 +651,7 @@
   "title" : "ImportOrder",
   "parameters" : [ {
     "name" : "caseSensitive",
-    "description" : "control whether string comparison should be case sensitive or not. Case sensitive sorting is in ASCII sort order. It affects both type imports and static imports."
+    "description" : "control whether string comparison should be case-sensitive or not. Case-sensitive sorting is in ASCII sort order. It affects both type imports and static imports."
   }, {
     "name" : "groups",
     "description" : "groups"
@@ -803,7 +803,7 @@
     "description" : "Control whether to ignore violations when a method returns non-void type and does not have a return tag in the javadoc."
   }, {
     "name" : "allowedAnnotations",
-    "description" : "Specify the list of annotations that allow missed documentation."
+    "description" : "Specify annotations that allow missed documentation."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -891,7 +891,7 @@
     "description" : "Control whether to ignore violations when a Javadoc tag is not recognised."
   }, {
     "name" : "allowedAnnotations",
-    "description" : "Specify the list of annotations that allow missed documentation. Only short names are allowed, e.g. Generated."
+    "description" : "Specify annotations that allow missed documentation. Only short names are allowed, e.g. Generated."
   }, {
     "name" : "authorFormat",
     "description" : "Specify the pattern for @author tag."
@@ -1062,7 +1062,7 @@
   "title" : "MethodLength",
   "parameters" : [ {
     "name" : "countEmpty",
-    "description" : "Control whether to count empty lines and single line comments of the form //."
+    "description" : "Control whether to count empty lines and comments."
   }, {
     "name" : "max",
     "description" : "Specify the maximum number of lines allowed."
@@ -1131,7 +1131,7 @@
     "description" : "Control whether to allow missing Javadoc on accessor methods for properties (setters and getters)."
   }, {
     "name" : "allowedAnnotations",
-    "description" : "Configure the list of annotations that allow missed documentation."
+    "description" : "Configure annotations that allow missed documentation."
   }, {
     "name" : "excludeScope",
     "description" : "Specify the visibility scope where Javadoc comments are not checked."
@@ -1163,7 +1163,7 @@
     "description" : "specify the visibility scope where Javadoc comments are checked."
   }, {
     "name" : "skipAnnotations",
-    "description" : "specify the list of annotations that allow missed documentation. Only short names are allowed, e.g. Generated."
+    "description" : "specify annotations that allow missed documentation. Only short names are allowed, e.g. Generated."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -1315,6 +1315,10 @@
     "name" : "tokens",
     "description" : "tokens to check"
   } ]
+}, {
+  "patternId" : "NoWhitespaceBeforeCaseDefaultColon",
+  "title" : "NoWhitespaceBeforeCaseDefaultColon",
+  "parameters" : [ ]
 }, {
   "patternId" : "NonEmptyAtclauseDescription",
   "title" : "NonEmptyAtclauseDescription",
@@ -1548,7 +1552,7 @@
     "description" : "Control whether to ignore the file extension for the file name match."
   }, {
     "name" : "match",
-    "description" : "Control whether to look for a match or mis-match on the file name, if the fileNamePattern is supplied, otherwise it is applied on the folderPattern."
+    "description" : "Control whether to look for a match or mismatch on the file name, if the fileNamePattern is supplied, otherwise it is applied on the folderPattern."
   } ]
 }, {
   "patternId" : "RegexpSingleline",
@@ -1764,7 +1768,7 @@
     "description" : "Specify pattern for strings allowed before the comment."
   }, {
     "name" : "legalComment",
-    "description" : "Define pattern for text allowed in trailing comments. (This pattern will not be applied to multiline comments and the text of the comment will be trimmed before matching.)"
+    "description" : "Define pattern for text allowed in trailing comments. This pattern will not be applied to multiline comments."
   } ]
 }, {
   "patternId" : "Translation",
@@ -1862,6 +1866,10 @@
     "description" : "Control whether to process Javadoc comments."
   } ]
 }, {
+  "patternId" : "UnusedLocalVariable",
+  "title" : "UnusedLocalVariable",
+  "parameters" : [ ]
+}, {
   "patternId" : "UpperEll",
   "title" : "UpperEll",
   "parameters" : [ ]
@@ -1892,7 +1900,7 @@
     "description" : "Allow immutable fields to be declared as public if defined in final class."
   }, {
     "name" : "ignoreAnnotationCanonicalNames",
-    "description" : "Specify the list of annotations canonical names which ignore variables in consideration."
+    "description" : "Specify annotations canonical names which ignore variables in consideration."
   }, {
     "name" : "immutableClassCanonicalNames",
     "description" : "Specify immutable classes canonical names."

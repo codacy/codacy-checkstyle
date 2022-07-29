@@ -12,6 +12,6 @@ Please read more about Xpath syntax at [Xpath
 Syntax](https://www.saxonica.com/html/documentation10/expressions/).
 Information regarding Xpath functions can be found at [XSLT/XPath
 Reference](https://www.saxonica.com/html/documentation10/functions/fn/).
-Note, that **@text** attribute can used only with token types that are
-listed in
+Note, that **@text** attribute can be used only with token types that
+are listed in
 [XpathUtil](https://github.com/checkstyle/checkstyle/search?q=%22TOKEN_TYPES_WITH_TEXT_ATTRIBUTE+%3D+Arrays.asList%22).

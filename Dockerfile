@@ -1,4 +1,4 @@
-FROM amazoncorretto:8-alpine3.14-jre
+FROM eclipse-temurin:11-jre-alpine
 RUN apk add bash
 COPY docs /docs
 COPY target/universal/stage/ /opt/docker/

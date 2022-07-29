@@ -2,7 +2,7 @@ Checks the NPATH complexity against a specified limit.
 
 The NPATH metric computes the number of possible execution paths through
 a function(method). It takes into account the nesting of conditional
-statements and multi-part boolean expressions (A && B, C || D, E ? F :G
+statements and multipart boolean expressions (A && B, C || D, E ? F :G
 and their combinations).
 
 The NPATH metric was designed base on Cyclomatic complexity to avoid
@@ -17,15 +17,15 @@ well written and have number of examples and details.
 Here is some quotes:
 
 > An NPATH threshold value of 200 has been established for a function.
-> The value 200 is based on studies done at AT\&T Bell Laboratories
+> The value 200 is based on studies done at AT&T Bell Laboratories
 > \[1988 year\].
 
 > Some of the most effective methods of reducing the NPATH value
 > include:
-> 
->   - distributing functionality;
->   - implementing multiple if statements as a switch statement;
->   - creating a separate function for logical expressions with a high
+>
+> -   distributing functionality;
+> -   implementing multiple if statements as a switch statement;
+> -   creating a separate function for logical expressions with a high
 >     count of variables and (&&) and or (||) operators.
 
 > Although strategies to reduce the NPATH complexity of functions are
@@ -67,7 +67,8 @@ Here is some quotes:
 <td>NP(for-range) + NP(expr1) + NP(expr2) + NP(expr3) + 1</td>
 </tr>
 <tr class="even">
-<td>switch ([expr]) { case : [case-range] default: [default-range] }</td>
+<td>switch ([expr]) { case : [case-range] default: [default-range]
+}</td>
 <td>S(i=1:i=n)NP(case-range[i]) + NP(default-range) + NP(expr)</td>
 </tr>
 <tr class="odd">
@@ -84,7 +85,8 @@ Here is some quotes:
 </tr>
 <tr class="even">
 <td>Expressions</td>
-<td>Number of &amp;&amp; and || operators in expression. No operators - 0</td>
+<td>Number of &amp;&amp; and || operators in expression. No operators -
+0</td>
 </tr>
 <tr class="odd">
 <td>continue</td>
@@ -113,6 +115,8 @@ Here is some quotes:
 </tbody>
 </table>
 
+Examples
+
 </div>
 
 **Rationale:** Nejmeh says that his group had an informal NPATH limit of
@@ -120,4 +124,4 @@ Here is some quotes:
 were candidates for further decomposition - or at least a closer look.
 **Please do not be fanatic with limit 200** - choose number that suites
 your project style. Limit 200 is empirical number base on some sources
-of at AT\&T Bell Laboratories of 1988 year.
+of at AT&T Bell Laboratories of 1988 year.
