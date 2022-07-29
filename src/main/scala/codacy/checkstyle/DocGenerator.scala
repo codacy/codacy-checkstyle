@@ -190,7 +190,7 @@ object DocGenerator {
       s"git clone https://github.com/checkstyle/checkstyle -c advice.detachedHead=false --depth 1 -b checkstyle-${Versions.checkstyleVersion} $directory".!!
       block(directory)
     }
-  } //https://github.com/checkstyle/checkstyle.git
+  }
 
   private val deleteRecursivelyVisitor = new SimpleFileVisitor[Path] {
     override def visitFile(file: Path, attrs: BasicFileAttributes): FileVisitResult = {
