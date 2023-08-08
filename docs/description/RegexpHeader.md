@@ -3,9 +3,9 @@ Checks the header of a source file against a header that contains a
 for each line of the source header.
 
 Rationale: In some projects [checking against a fixed
-header](https://checkstyle.org/config_header.html#Header) is not
-sufficient, e.g. the header might require a copyright line where the
-year information is not static.
+header](https://checkstyle.org/header.html#Header) is not sufficient,
+e.g. the header might require a copyright line where the year
+information is not static.
 
 For example, consider the following header:
 

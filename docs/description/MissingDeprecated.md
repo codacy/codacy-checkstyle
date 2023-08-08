@@ -17,9 +17,9 @@ it is supported or will cause an error. See
 deprecated javadoc tag is currently the only way to say why the package
 is deprecated and what to use instead. Until this is resolved, if you
 don't want to print violations on package-info, you can use a
-[filter](https://checkstyle.org/config_filters.html) to ignore these
-files until the javadoc tool faithfully supports it. An example config
-using SuppressionSingleFilter is:
+[filter](../../filters/index.html) to ignore these files until the
+javadoc tool faithfully supports it. An example config using
+SuppressionSingleFilter is:
 
     <!-- required till https://bugs.openjdk.org/browse/JDK-8160601 -->
     <module name="SuppressionSingleFilter">

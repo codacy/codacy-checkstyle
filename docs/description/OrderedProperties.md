@@ -9,7 +9,7 @@ checkstyle/src/main/resources/com/puppycrawl/tools/checkstyle/messages.propertie
 You may suppress warnings of this check for files that have a logical
 structure like build files or log4j configuration files. See
 SuppressionFilter.
-`               <suppress checks="OrderedProperties"                   files="log4j.properties|ResourceBundle/Bug.*.properties|logging.properties"/>           `
+` <suppress checks="OrderedProperties" files="log4j.properties|ResourceBundle/Bug.*.properties|logging.properties"/> `
 
 Known limitation: The key should not contain a newline. The string
 compare will work, but not the line number reporting.

@@ -16,9 +16,9 @@ form
             
 
 may optionally be exempted from the policy using the
-`           allowEmptyMethods`, `allowEmptyConstructors`,
-`allowEmptyTypes`, `allowEmptyLoops`, `allowEmptyLambdas` and
-`allowEmptyCatches` properties.
+` allowEmptyMethods`, `allowEmptyConstructors`, `allowEmptyTypes`,
+`allowEmptyLoops`, `allowEmptyLambdas` and `allowEmptyCatches`
+properties.
 
 This check does not flag as violation double brace initialization like:
 

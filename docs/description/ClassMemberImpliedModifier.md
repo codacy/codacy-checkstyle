@@ -1,7 +1,7 @@
 Checks for implicit modifiers on nested types in classes and records.
 
 This check is effectively the opposite of
-[RedundantModifier](https://checkstyle.org/config_modifier.html#RedundantModifier).
+[RedundantModifier](https://checkstyle.org/redundantmodifier.html#RedundantModifier).
 It checks the modifiers on nested types in classes and records, ensuring
 that certain modifiers are explicitly specified even though they are
 actually redundant.

@@ -1,7 +1,7 @@
 Checks for implicit modifiers on interface members and nested types.
 
 This check is effectively the opposite of
-[RedundantModifier](https://checkstyle.org/config_modifier.html#RedundantModifier).
+[RedundantModifier](https://checkstyle.org/redundantmodifier.html#RedundantModifier).
 It checks the modifiers on interface members, ensuring that certain
 modifiers are explicitly specified even though they are actually
 redundant.

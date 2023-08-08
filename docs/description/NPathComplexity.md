@@ -23,10 +23,10 @@ Here is some quotes:
 > Some of the most effective methods of reducing the NPATH value
 > include:
 >
-> -   distributing functionality;
-> -   implementing multiple if statements as a switch statement;
-> -   creating a separate function for logical expressions with a high
->     count of variables and (&&) and or (||) operators.
+> - distributing functionality;
+> - implementing multiple if statements as a switch statement;
+> - creating a separate function for logical expressions with a high
+>   count of variables and (&&) and or (||) operators.
 
 > Although strategies to reduce the NPATH complexity of functions are
 > important, care must be taken not to distort the logical clarity of

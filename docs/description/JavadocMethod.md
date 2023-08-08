@@ -11,14 +11,14 @@ method signature or by `throw new` in the method body), but for which no
 throws tag is present by activation of property `validateThrows`. Note
 that `throw new` is not checked in the following places:
 
--   Inside a try block (with catch). It is not possible to determine if
-    the thrown exception can be caught by the catch block as there is no
-    knowledge of the inheritance hierarchy, so the try block is ignored
-    entirely. However, catch and finally blocks, as well as try blocks
-    without catch, are still checked.
--   Local classes, anonymous classes and lambda expressions. It is not
-    known when the throw statements inside such classes are going to be
-    evaluated, so they are ignored.
+- Inside a try block (with catch). It is not possible to determine if
+  the thrown exception can be caught by the catch block as there is no
+  knowledge of the inheritance hierarchy, so the try block is ignored
+  entirely. However, catch and finally blocks, as well as try blocks
+  without catch, are still checked.
+- Local classes, anonymous classes and lambda expressions. It is not
+  known when the throw statements inside such classes are going to be
+  evaluated, so they are ignored.
 
 ATTENTION: Checkstyle does not have information about hierarchy of
 exception types so usage of base class is considered as separate

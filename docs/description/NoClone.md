@@ -15,25 +15,25 @@ Java: Programming Language Guide First Edition by Joshua Bloch pages
 
 Below are some rules/reasons why the clone method should be avoided.
 
--   Classes supporting the clone method should implement the Cloneable
-    interface but the Cloneable interface does not include the clone
-    method. As a result, it doesn't enforce the method override.
--   The Cloneable interface forces the Object's clone method to work
-    correctly. Without implementing it, the Object's clone method will
-    throw a CloneNotSupportedException.
--   Non-final classes must return the object returned from a call to
-    super.clone().
--   Final classes can use a constructor to create a clone which is
-    different from non-final classes.
--   If a super class implements the clone method incorrectly all
-    subclasses calling super.clone() are doomed to failure.
--   If a class has references to mutable objects then those object
-    references must be replaced with copies in the clone method after
-    calling super.clone().
--   The clone method does not work correctly with final mutable object
-    references because final references cannot be reassigned.
--   If a super class overrides the clone method then all subclasses must
-    provide a correct clone implementation.
+- Classes supporting the clone method should implement the Cloneable
+  interface but the Cloneable interface does not include the clone
+  method. As a result, it doesn't enforce the method override.
+- The Cloneable interface forces the Object's clone method to work
+  correctly. Without implementing it, the Object's clone method will
+  throw a CloneNotSupportedException.
+- Non-final classes must return the object returned from a call to
+  super.clone().
+- Final classes can use a constructor to create a clone which is
+  different from non-final classes.
+- If a super class implements the clone method incorrectly all
+  subclasses calling super.clone() are doomed to failure.
+- If a class has references to mutable objects then those object
+  references must be replaced with copies in the clone method after
+  calling super.clone().
+- The clone method does not work correctly with final mutable object
+  references because final references cannot be reassigned.
+- If a super class overrides the clone method then all subclasses must
+  provide a correct clone implementation.
 
 Two alternatives to the clone method, in some cases, is a copy
 constructor or a static factory method to return copies of an object.

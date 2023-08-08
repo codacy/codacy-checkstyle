@@ -3,7 +3,9 @@ using `accessModifiers` property it is possible to specify different
 formats for methods at different visibility levels.
 
 To validate `catch` parameters please use
-[CatchParameterName](https://checkstyle.org/config_naming.html#CatchParameterName).
+[CatchParameterName](https://checkstyle.org/catchparametername.html#CatchParameterName)
+.
 
 To validate lambda parameters please use
-[LambdaParameterName](https://checkstyle.org/config_naming.html#LambdaParameterName).
+[LambdaParameterName](https://checkstyle.org/lambdaparametername.html#LambdaParameterName)
+.

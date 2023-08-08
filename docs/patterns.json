@@ -1,6 +1,6 @@
 {
   "name" : "checkstyle",
-  "version" : "10.3.1",
+  "version" : "10.12.2",
   "patterns" : [ {
     "patternId" : "AbbreviationAsWordInName",
     "level" : "Info",
@@ -737,9 +737,6 @@
     "parameters" : [ {
       "name" : "classes",
       "default" : ""
-    }, {
-      "name" : "tokens",
-      "default" : "CLASS_DEF"
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -857,9 +854,6 @@
     }, {
       "name" : "staticGroups",
       "default" : ""
-    }, {
-      "name" : "tokens",
-      "default" : "STATIC_IMPORT"
     }, {
       "name" : "useContainerOrderingForStatic",
       "default" : false
@@ -1785,7 +1779,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "format",
-      "default" : "^[a-z]+(\\.[a-zA-Z_][a-zA-Z0-9_]*)*$"
+      "default" : "^[a-z]+(\\.[a-zA-Z_]\\w*)*$"
     } ],
     "languages" : [ ],
     "enabled" : false

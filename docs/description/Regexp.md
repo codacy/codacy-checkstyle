@@ -2,8 +2,8 @@ Checks that a specified pattern exists, exists less than a set number of
 times, or does not exist in the file.
 
 This check combines all the functionality provided by
-[RegexpHeader](https://checkstyle.org/config_header.html#RegexpHeader)
-except supplying the regular expression from a file.
+[RegexpHeader](../header/regexpheader.html#RegexpHeader) except
+supplying the regular expression from a file.
 
 It differs from them in that it works in multiline mode. Its regular
 expression can span multiple lines and it checks this against the whole
@@ -16,12 +16,12 @@ changes in the regular expressions used to achieve a particular end.
 
 In multiline mode...
 
--   `^` means the beginning of a line, as opposed to beginning of the
-    input.
--   For beginning of the input use `\A`.
--   `$` means the end of a line, as opposed to the end of the input.
--   For end of input use `\Z`.
--   Each line in the file is terminated with a line feed character.
+- `^` means the beginning of a line, as opposed to beginning of the
+  input.
+- For beginning of the input use `\A`.
+- `$` means the end of a line, as opposed to the end of the input.
+- For end of input use `\Z`.
+- Each line in the file is terminated with a line feed character.
 
 **Note:** Not all regular expression engines are created equal. Some
 provide extra functions that others do not and some elements of the
