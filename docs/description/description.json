@@ -571,9 +571,6 @@
   "parameters" : [ {
     "name" : "classes",
     "description" : "Specify fully qualified class names that should not be instantiated."
-  }, {
-    "name" : "tokens",
-    "description" : "tokens to check"
   } ]
 }, {
   "patternId" : "IllegalThrows",
@@ -673,9 +670,6 @@
   }, {
     "name" : "staticGroups",
     "description" : "staticGroups"
-  }, {
-    "name" : "tokens",
-    "description" : "tokens to check"
   }, {
     "name" : "useContainerOrderingForStatic",
     "description" : "control whether to use container ordering (Eclipse IDE term) for static imports or not."
@@ -891,7 +885,7 @@
     "description" : "Control whether to ignore violations when a Javadoc tag is not recognised."
   }, {
     "name" : "allowedAnnotations",
-    "description" : "Specify annotations that allow missed documentation. Only short names are allowed, e.g. Generated."
+    "description" : "Specify annotations that allow skipping validation at all. Only short names are allowed, e.g. Generated."
   }, {
     "name" : "authorFormat",
     "description" : "Specify the pattern for @author tag."
@@ -1163,7 +1157,7 @@
     "description" : "specify the visibility scope where Javadoc comments are checked."
   }, {
     "name" : "skipAnnotations",
-    "description" : "specify annotations that allow missed documentation. Only short names are allowed, e.g. Generated."
+    "description" : "specify annotations that allow missed documentation. If annotation is present in target sources in multiple forms of qualified name, all forms should be listed in this property."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"

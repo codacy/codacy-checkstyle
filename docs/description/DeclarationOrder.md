@@ -4,7 +4,7 @@ Programming
 Language](https://checkstyle.org/styleguides/sun-code-conventions-19990420/CodeConventions.doc2.html#a1852).
 
 According to [Code Conventions for the Java Programming
-Language](styleguides/sun-code-conventions-19990420/CodeConventions.doc2.html#a1852)
+Language](../../styleguides/sun-code-conventions-19990420/CodeConventions.doc2.html#a1852)
 , the parts of a class or interface declaration should appear in the
 following order:
 

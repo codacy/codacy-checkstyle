@@ -4,7 +4,8 @@ Rationale: Any source files and text files in general should end with a
 line separator to let other easily add new content at the end of file
 and "diff" command does not show previous lines as changed.
 
-Example (line 36 should not be in diff):
+Example (the line with 'No newline at end of file' should not be in the
+diff):
 
     @@ -32,4 +32,5 @@ ForbidWildcardAsReturnTypeCheck.returnTypeClassNamesIgnoreRegex
     PublicReferenceToPrivateTypeCheck.name = Public Reference To Private Type
@@ -26,7 +27,6 @@ warning when it encounters a file that doesn't end with a line
 separator.
 
 Attention: property fileExtensions works with files that are passed by
-similar property for at
-[Checker](https://checkstyle.org/config.html#Checker). Please make sure
-required file extensions are mentioned at Checker's fileExtensions
-property.
+similar property for at [Checker](../../config.html#Checker). Please
+make sure required file extensions are mentioned at Checker's
+fileExtensions property.

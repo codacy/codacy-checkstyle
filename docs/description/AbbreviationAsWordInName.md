@@ -4,6 +4,8 @@ read more at [Google Style
 Guide](https://checkstyle.org/styleguides/google-java-style-20180523/javaguide.html#s5.3-camel-case)
 to get to know how to avoid long abbreviations in names.
 
+'\_' is considered as word separator in identifier name.
+
 `allowedAbbreviationLength` specifies how many consecutive capital
 letters are allowed in the identifier. A value of *3* indicates that up
 to 4 consecutive capital letters are allowed, one after the other,

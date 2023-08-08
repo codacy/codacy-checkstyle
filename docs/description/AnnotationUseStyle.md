@@ -2,9 +2,9 @@ Checks the style of elements in annotations.
 
 Annotations have three element styles starting with the least verbose.
 
--   `ElementStyleOption.COMPACT_NO_ARRAY`
--   `ElementStyleOption.COMPACT`
--   `ElementStyleOption.EXPANDED`
+- `ElementStyleOption.COMPACT_NO_ARRAY`
+- `ElementStyleOption.COMPACT`
+- `ElementStyleOption.EXPANDED`
 
 To not enforce an element style a `ElementStyleOption.IGNORE` type is
 provided. The desired style can be set through the `elementStyle`

@@ -9,6 +9,9 @@ versionFormat respectively to a
 Does not perform checks for author and version tags for inner classes,
 as they should be redundant because of outer class.
 
+Does not perform checks for type definitions that do not have any
+Javadoc comments.
+
 Error messages about type parameters and record components for which no
 param tags are present can be suppressed by defining property
 `allowMissingParamTags`.
