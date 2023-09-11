@@ -5,7 +5,7 @@ import sjsonnew.support.scalajson.unsafe._
 
 name := "codacy-checkstyle"
 
-scalaVersion := "2.13.12"
+scalaVersion := "2.13.3"
 
 lazy val checkstyleVersion = "10.12.3"
 
