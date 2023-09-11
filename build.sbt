@@ -5,9 +5,9 @@ import sjsonnew.support.scalajson.unsafe._
 
 name := "codacy-checkstyle"
 
-scalaVersion := "2.13.3"
+scalaVersion := "2.13.12"
 
-lazy val checkstyleVersion = "10.12.2"
+lazy val checkstyleVersion = "10.12.3"
 
 Compile / sourceGenerators += Def.task {
   val file = (Compile / sourceManaged).value / "codacy" / "checkstyle" / "Versions.scala"
