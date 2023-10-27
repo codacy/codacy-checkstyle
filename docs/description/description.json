@@ -300,10 +300,10 @@
   "title" : "DeclarationOrder",
   "parameters" : [ {
     "name" : "ignoreConstructors",
-    "description" : "control whether to ignore constructors."
+    "description" : "Control whether to ignore constructors."
   }, {
     "name" : "ignoreModifiers",
-    "description" : "control whether to ignore modifiers (fields, ...)."
+    "description" : "Control whether to ignore modifiers (fields, ...)."
   } ]
 }, {
   "patternId" : "DefaultComesLast",
@@ -358,7 +358,7 @@
   "title" : "EmptyBlock",
   "parameters" : [ {
     "name" : "option",
-    "description" : "specify the policy on block contents."
+    "description" : "Specify the policy on block contents."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -433,7 +433,7 @@
   "title" : "ExplicitInitialization",
   "parameters" : [ {
     "name" : "onlyObjectReferences",
-    "description" : "control whether only explicit initializations made to null for objects should be checked."
+    "description" : "Control whether only explicit initializations made to null for objects should be checked."
   } ]
 }, {
   "patternId" : "FallThrough",
@@ -577,7 +577,7 @@
   "title" : "IllegalThrows",
   "parameters" : [ {
     "name" : "ignoreOverriddenMethods",
-    "description" : "allow to ignore checking overridden methods (marked with Override or java.lang.Override annotation)."
+    "description" : "Allow to ignore checking overridden methods (marked with Override or java.lang.Override annotation)."
   }, {
     "name" : "ignoredMethodNames",
     "description" : "Specify names of methods to ignore."
@@ -648,31 +648,31 @@
   "title" : "ImportOrder",
   "parameters" : [ {
     "name" : "caseSensitive",
-    "description" : "control whether string comparison should be case-sensitive or not. Case-sensitive sorting is in ASCII sort order. It affects both type imports and static imports."
+    "description" : "Control whether string comparison should be case-sensitive or not. Case-sensitive sorting is in ASCII sort order. It affects both type imports and static imports."
   }, {
     "name" : "groups",
     "description" : "groups"
   }, {
     "name" : "option",
-    "description" : "specify policy on the relative order between type imports and static imports."
+    "description" : "Specify policy on the relative order between type imports and static imports."
   }, {
     "name" : "ordered",
-    "description" : "control whether type imports within each group should be sorted. It doesn't affect sorting for static imports."
+    "description" : "Control whether type imports within each group should be sorted. It doesn't affect sorting for static imports."
   }, {
     "name" : "separated",
-    "description" : "control whether type import groups should be separated by, at least, one blank line or comment and aren't separated internally. It doesn't affect separations for static imports."
+    "description" : "Control whether type import groups should be separated by, at least, one blank line or comment and aren't separated internally. It doesn't affect separations for static imports."
   }, {
     "name" : "separatedStaticGroups",
     "description" : "separatedStaticGroups"
   }, {
     "name" : "sortStaticImportsAlphabetically",
-    "description" : "control whether static imports located at top or bottom are sorted within the group."
+    "description" : "Control whether static imports located at top or bottom are sorted within the group."
   }, {
     "name" : "staticGroups",
     "description" : "staticGroups"
   }, {
     "name" : "useContainerOrderingForStatic",
-    "description" : "control whether to use container ordering (Eclipse IDE term) for static imports or not."
+    "description" : "Control whether to use container ordering (Eclipse IDE term) for static imports or not."
   } ]
 }, {
   "patternId" : "Indentation",
@@ -1131,7 +1131,7 @@
     "description" : "Specify the visibility scope where Javadoc comments are not checked."
   }, {
     "name" : "ignoreMethodNamesRegex",
-    "description" : "ignore method whose names are matching specified regex."
+    "description" : "Ignore method whose names are matching specified regex."
   }, {
     "name" : "minLineCount",
     "description" : "Control the minimal amount of lines in method to allow no documentation."
@@ -1151,13 +1151,13 @@
   "title" : "MissingJavadocType",
   "parameters" : [ {
     "name" : "excludeScope",
-    "description" : "specify the visibility scope where Javadoc comments are not checked."
+    "description" : "Specify the visibility scope where Javadoc comments are not checked."
   }, {
     "name" : "scope",
-    "description" : "specify the visibility scope where Javadoc comments are checked."
+    "description" : "Specify the visibility scope where Javadoc comments are checked."
   }, {
     "name" : "skipAnnotations",
-    "description" : "specify annotations that allow missed documentation. If annotation is present in target sources in multiple forms of qualified name, all forms should be listed in this property."
+    "description" : "Specify annotations that allow missed documentation. If annotation is present in target sources in multiple forms of qualified name, all forms should be listed in this property."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -1223,10 +1223,10 @@
   "title" : "NeedBraces",
   "parameters" : [ {
     "name" : "allowEmptyLoopBody",
-    "description" : "allow loops with empty bodies."
+    "description" : "Allow loops with empty bodies."
   }, {
     "name" : "allowSingleLineStatement",
-    "description" : "allow single-line statements without braces."
+    "description" : "Allow single-line statements without braces."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
