@@ -1,6 +1,6 @@
 {
   "name" : "checkstyle",
-  "version" : "10.12.3",
+  "version" : "10.12.4",
   "patterns" : [ {
     "patternId" : "AbbreviationAsWordInName",
     "level" : "Info",

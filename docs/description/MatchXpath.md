@@ -9,9 +9,9 @@ abstract. To customize a message you need to add `message` element with
 attribute.
 
 Please read more about Xpath syntax at [Xpath
-Syntax](https://www.saxonica.com/html/documentation10/expressions/).
+Syntax](https://www.saxonica.com/html/documentation10/expressions/index.html).
 Information regarding Xpath functions can be found at [XSLT/XPath
-Reference](https://www.saxonica.com/html/documentation10/functions/fn/).
+Reference](https://www.saxonica.com/html/documentation10/functions/fn/index.html).
 Note, that **@text** attribute can be used only with token types that
 are listed in
 [XpathUtil](https://github.com/checkstyle/checkstyle/search?q=%22TOKEN_TYPES_WITH_TEXT_ATTRIBUTE+%3D+Arrays.asList%22).
