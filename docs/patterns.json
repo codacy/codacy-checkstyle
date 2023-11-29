@@ -1,6 +1,6 @@
 {
   "name" : "checkstyle",
-  "version" : "10.12.4",
+  "version" : "10.12.5",
   "patterns" : [ {
     "patternId" : "AbbreviationAsWordInName",
     "level" : "Info",
@@ -680,7 +680,7 @@
       "default" : false
     }, {
       "name" : "tokens",
-      "default" : "VARIABLE_DEF, PARAMETER_DEF, PATTERN_VARIABLE_DEF, LAMBDA,RECORD_COMPONENT_DEF"
+      "default" : "VARIABLE_DEF, PARAMETER_DEF, PATTERN_VARIABLE_DEF, LAMBDA, RECORD_COMPONENT_DEF"
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -697,7 +697,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "illegalClassNames",
-      "default" : "Error, Exception, RuntimeException, Throwable, java.lang.Error,java.lang.Exception, java.lang.RuntimeException, java.lang.Throwable"
+      "default" : "Error, Exception, RuntimeException, Throwable, java.lang.Error, java.lang.Exception, java.lang.RuntimeException, java.lang.Throwable"
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -752,7 +752,7 @@
       "default" : "finalize"
     }, {
       "name" : "illegalClassNames",
-      "default" : "Error, RuntimeException, Throwable, java.lang.Error,java.lang.RuntimeException, java.lang.Throwable"
+      "default" : "Error, RuntimeException, Throwable, java.lang.Error, java.lang.RuntimeException, java.lang.Throwable"
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -797,7 +797,7 @@
       "default" : "^(.*[.])?Abstract.*$"
     }, {
       "name" : "illegalClassNames",
-      "default" : "HashMap, HashSet, LinkedHashMap, LinkedHashSet, TreeMap, TreeSet,java.util.HashMap, java.util.HashSet, java.util.LinkedHashMap,java.util.LinkedHashSet, java.util.TreeMap, java.util.TreeSet"
+      "default" : "HashMap, HashSet, LinkedHashMap, LinkedHashSet, TreeMap, TreeSet, java.util.HashMap, java.util.HashSet, java.util.LinkedHashMap, java.util.LinkedHashSet, java.util.TreeMap, java.util.TreeSet"
     }, {
       "name" : "legalAbstractClassNames",
       "default" : ""
@@ -1193,7 +1193,7 @@
       "default" : "eol"
     }, {
       "name" : "tokens",
-      "default" : "ANNOTATION_DEF, CLASS_DEF, CTOR_DEF, ENUM_CONSTANT_DEF, ENUM_DEF, INTERFACE_DEF, LAMBDA, LITERAL_CASE, LITERAL_CATCH, LITERAL_DEFAULT, LITERAL_DO, LITERAL_ELSE, LITERAL_FINALLY, LITERAL_FOR, LITERAL_IF, LITERAL_SWITCH, LITERAL_SYNCHRONIZED, LITERAL_TRY, LITERAL_WHILE, METHOD_DEF, OBJBLOCK, STATIC_INIT,RECORD_DEF,COMPACT_CTOR_DEF"
+      "default" : "ANNOTATION_DEF, CLASS_DEF, CTOR_DEF, ENUM_CONSTANT_DEF, ENUM_DEF, INTERFACE_DEF, LAMBDA, LITERAL_CASE, LITERAL_CATCH, LITERAL_DEFAULT, LITERAL_DO, LITERAL_ELSE, LITERAL_FINALLY, LITERAL_FOR, LITERAL_IF, LITERAL_SWITCH, LITERAL_SYNCHRONIZED, LITERAL_TRY, LITERAL_WHILE, METHOD_DEF, OBJBLOCK, STATIC_INIT, RECORD_DEF, COMPACT_CTOR_DEF"
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -2345,7 +2345,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "tokens",
-      "default" : "EXPR, IDENT, NUM_DOUBLE, NUM_FLOAT, NUM_INT, NUM_LONG, STRING_LITERAL, LITERAL_NULL, LITERAL_FALSE, LITERAL_TRUE, ASSIGN, BAND_ASSIGN, BOR_ASSIGN, BSR_ASSIGN, BXOR_ASSIGN, DIV_ASSIGN, MINUS_ASSIGN, MOD_ASSIGN, PLUS_ASSIGN, SL_ASSIGN, SR_ASSIGN, STAR_ASSIGN, LAMBDA,TEXT_BLOCK_LITERAL_BEGIN,LAND,LOR,LITERAL_INSTANCEOF,GT,LT,GE,LE,EQUAL,NOT_EQUAL,UNARY_MINUS,UNARY_PLUS,INC,DEC,LNOT,BNOT,POST_INC,POST_DEC"
+      "default" : "EXPR, IDENT, NUM_DOUBLE, NUM_FLOAT, NUM_INT, NUM_LONG, STRING_LITERAL, LITERAL_NULL, LITERAL_FALSE, LITERAL_TRUE, ASSIGN, BAND_ASSIGN, BOR_ASSIGN, BSR_ASSIGN, BXOR_ASSIGN, DIV_ASSIGN, MINUS_ASSIGN, MOD_ASSIGN, PLUS_ASSIGN, SL_ASSIGN, SR_ASSIGN, STAR_ASSIGN, LAMBDA, TEXT_BLOCK_LITERAL_BEGIN, LAND, LOR, LITERAL_INSTANCEOF, GT, LT, GE, LE, EQUAL, NOT_EQUAL, UNARY_MINUS, UNARY_PLUS, INC, DEC, LNOT, BNOT, POST_INC, POST_DEC"
     } ],
     "languages" : [ ],
     "enabled" : false
