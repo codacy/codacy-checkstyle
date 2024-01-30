@@ -13,4 +13,5 @@ could be written as
             
 
 The idea for this Check has been shamelessly stolen from the equivalent
-[PMD](https://pmd.github.io/) rule.
+[PMD](https://pmd.github.io/pmd/pmd_rules_java_design.html#simplifybooleanreturns)
+rule.

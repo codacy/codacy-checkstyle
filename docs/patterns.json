@@ -1,6 +1,6 @@
 {
   "name" : "checkstyle",
-  "version" : "10.12.5",
+  "version" : "10.13.0",
   "patterns" : [ {
     "patternId" : "AbbreviationAsWordInName",
     "level" : "Info",
@@ -126,7 +126,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "tagOrder",
-      "default" : "@author, @deprecated, @exception, @param,@return, @see, @serial, @serialData, @serialField,@since, @throws, @version"
+      "default" : "@author, @deprecated, @exception, @param, @return, @see, @serial, @serialData, @serialField, @since, @throws, @version"
     }, {
       "name" : "target",
       "default" : "CLASS_DEF, COMPACT_CTOR_DEF, CTOR_DEF, ENUM_DEF, INTERFACE_DEF, METHOD_DEF, RECORD_DEF, VARIABLE_DEF"
@@ -244,7 +244,7 @@
       "default" : "^$"
     }, {
       "name" : "excludedClasses",
-      "default" : "ArrayIndexOutOfBoundsException, ArrayList, Boolean, Byte,Character, Class, Collection, Deprecated, Deque, Double, DoubleStream, EnumSet,Exception, Float, FunctionalInterface, HashMap, HashSet, IllegalArgumentException,IllegalStateException, IndexOutOfBoundsException, IntStream, Integer,LinkedHashMap, LinkedHashSet, LinkedList, List, Long, LongStream, Map,NullPointerException, Object, Optional, OptionalDouble, OptionalInt, OptionalLong,Override, Queue, RuntimeException, SafeVarargs, SecurityException, Set, Short,SortedMap, SortedSet, Stream, String, StringBuffer, StringBuilder,SuppressWarnings, Throwable, TreeMap, TreeSet, UnsupportedOperationException, Void,boolean, byte, char, double, float, int, long, short, var, void"
+      "default" : "ArrayIndexOutOfBoundsException, ArrayList, Boolean, Byte, Character, Class, Collection, Deprecated, Deque, Double, DoubleStream, EnumSet, Exception, Float, FunctionalInterface, HashMap, HashSet, IllegalArgumentException, IllegalStateException, IndexOutOfBoundsException, IntStream, Integer, LinkedHashMap, LinkedHashSet, LinkedList, List, Long, LongStream, Map, NullPointerException, Object, Optional, OptionalDouble, OptionalInt, OptionalLong, Override, Queue, RuntimeException, SafeVarargs, SecurityException, Set, Short, SortedMap, SortedSet, Stream, String, StringBuffer, StringBuilder, SuppressWarnings, Throwable, TreeMap, TreeSet, UnsupportedOperationException, Void, boolean, byte, char, double, float, int, long, short, var, void"
     }, {
       "name" : "excludedPackages",
       "default" : ""
@@ -263,7 +263,7 @@
       "default" : "^$"
     }, {
       "name" : "excludedClasses",
-      "default" : "ArrayIndexOutOfBoundsException, ArrayList, Boolean, Byte,Character, Class, Collection, Deprecated, Deque, Double, DoubleStream, EnumSet,Exception, Float, FunctionalInterface, HashMap, HashSet, IllegalArgumentException,IllegalStateException, IndexOutOfBoundsException, IntStream, Integer,LinkedHashMap, LinkedHashSet, LinkedList, List, Long, LongStream, Map,NullPointerException, Object, Optional, OptionalDouble, OptionalInt, OptionalLong,Override, Queue, RuntimeException, SafeVarargs, SecurityException, Set, Short,SortedMap, SortedSet, Stream, String, StringBuffer, StringBuilder,SuppressWarnings, Throwable, TreeMap, TreeSet, UnsupportedOperationException, Void,boolean, byte, char, double, float, int, long, short, var, void"
+      "default" : "ArrayIndexOutOfBoundsException, ArrayList, Boolean, Byte, Character, Class, Collection, Deprecated, Deque, Double, DoubleStream, EnumSet, Exception, Float, FunctionalInterface, HashMap, HashSet, IllegalArgumentException, IllegalStateException, IndexOutOfBoundsException, IntStream, Integer, LinkedHashMap, LinkedHashSet, LinkedList, List, Long, LongStream, Map, NullPointerException, Object, Optional, OptionalDouble, OptionalInt, OptionalLong, Override, Queue, RuntimeException, SafeVarargs, SecurityException, Set, Short, SortedMap, SortedSet, Stream, String, StringBuffer, StringBuilder, SuppressWarnings, Throwable, TreeMap, TreeSet, UnsupportedOperationException, Void, boolean, byte, char, double, float, int, long, short, var, void"
     }, {
       "name" : "excludedPackages",
       "default" : ""
@@ -710,7 +710,7 @@
       "default" : "(?i)^(?!(record|yield|var|permits|sealed|_)$).+$"
     }, {
       "name" : "tokens",
-      "default" : "CLASS_DEF,INTERFACE_DEF,ENUM_DEF,ANNOTATION_DEF,ANNOTATION_FIELD_DEF,PARAMETER_DEF,VARIABLE_DEF,METHOD_DEF,ENUM_CONSTANT_DEF,PATTERN_VARIABLE_DEF,RECORD_DEF,RECORD_COMPONENT_DEF,LAMBDA"
+      "default" : "CLASS_DEF, INTERFACE_DEF, ENUM_DEF, ANNOTATION_DEF, ANNOTATION_FIELD_DEF, PARAMETER_DEF, VARIABLE_DEF, METHOD_DEF, ENUM_CONSTANT_DEF, PATTERN_VARIABLE_DEF, RECORD_DEF, RECORD_COMPONENT_DEF, LAMBDA"
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -982,7 +982,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "tags",
-      "default" : "author, deprecated, exception, hidden, param, provides, return,see, serial, serialData, serialField, since, throws, uses, version"
+      "default" : "author, deprecated, exception, hidden, param, provides, return, see, serial, serialData, serialField, since, throws, uses, version"
     }, {
       "name" : "violateExecutionOnNonTightHtml",
       "default" : false
@@ -1017,7 +1017,7 @@
       "default" : "Override"
     }, {
       "name" : "tokens",
-      "default" : "METHOD_DEF, CTOR_DEF, ANNOTATION_FIELD_DEF,COMPACT_CTOR_DEF"
+      "default" : "METHOD_DEF, CTOR_DEF, ANNOTATION_FIELD_DEF, COMPACT_CTOR_DEF"
     }, {
       "name" : "validateThrows",
       "default" : false
@@ -1094,7 +1094,7 @@
       "default" : "private"
     }, {
       "name" : "tokens",
-      "default" : "ANNOTATION_DEF, ANNOTATION_FIELD_DEF, CLASS_DEF, CTOR_DEF, ENUM_CONSTANT_DEF, ENUM_DEF, INTERFACE_DEF, METHOD_DEF, PACKAGE_DEF, VARIABLE_DEF,RECORD_DEF,COMPACT_CTOR_DEF"
+      "default" : "ANNOTATION_DEF, ANNOTATION_FIELD_DEF, CLASS_DEF, CTOR_DEF, ENUM_CONSTANT_DEF, ENUM_DEF, INTERFACE_DEF, METHOD_DEF, PACKAGE_DEF, VARIABLE_DEF, RECORD_DEF, COMPACT_CTOR_DEF"
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -1135,7 +1135,7 @@
       "default" : "private"
     }, {
       "name" : "tokens",
-      "default" : "INTERFACE_DEF, CLASS_DEF, ENUM_DEF, ANNOTATION_DEF,RECORD_DEF"
+      "default" : "INTERFACE_DEF, CLASS_DEF, ENUM_DEF, ANNOTATION_DEF, RECORD_DEF"
     }, {
       "name" : "versionFormat",
       "default" : null
@@ -2228,7 +2228,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "aliasList",
-      "default" : null
+      "default" : ""
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -2305,7 +2305,7 @@
       "default" : "^[A-Z][a-zA-Z0-9]*$"
     }, {
       "name" : "tokens",
-      "default" : "CLASS_DEF, INTERFACE_DEF, ENUM_DEF, ANNOTATION_DEF,RECORD_DEF"
+      "default" : "CLASS_DEF, INTERFACE_DEF, ENUM_DEF, ANNOTATION_DEF, RECORD_DEF"
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -2441,10 +2441,10 @@
       "default" : false
     }, {
       "name" : "ignoreAnnotationCanonicalNames",
-      "default" : "com.google.common.annotations.VisibleForTesting,org.junit.ClassRule, org.junit.Rule"
+      "default" : "com.google.common.annotations.VisibleForTesting, org.junit.ClassRule, org.junit.Rule"
     }, {
       "name" : "immutableClassCanonicalNames",
-      "default" : "java.io.File, java.lang.Boolean, java.lang.Byte, java.lang.Character,java.lang.Double, java.lang.Float, java.lang.Integer, java.lang.Long,java.lang.Short, java.lang.StackTraceElement, java.lang.String,java.math.BigDecimal, java.math.BigInteger, java.net.Inet4Address,java.net.Inet6Address, java.net.InetSocketAddress, java.net.URI,java.net.URL, java.util.Locale, java.util.UUID"
+      "default" : "java.io.File, java.lang.Boolean, java.lang.Byte, java.lang.Character, java.lang.Double, java.lang.Float, java.lang.Integer, java.lang.Long, java.lang.Short, java.lang.StackTraceElement, java.lang.String, java.math.BigDecimal, java.math.BigInteger, java.net.Inet4Address, java.net.Inet6Address, java.net.InetSocketAddress, java.net.URI, java.net.URL, java.util.Locale, java.util.UUID"
     }, {
       "name" : "packageAllowed",
       "default" : false
@@ -2513,7 +2513,7 @@
       "default" : "info"
     }, {
       "name" : "tokens",
-      "default" : "INTERFACE_DEF, CLASS_DEF, ENUM_DEF, ANNOTATION_DEF,RECORD_DEF"
+      "default" : "INTERFACE_DEF, CLASS_DEF, ENUM_DEF, ANNOTATION_DEF, RECORD_DEF"
     } ],
     "languages" : [ ],
     "enabled" : false
