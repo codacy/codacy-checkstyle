@@ -95,8 +95,11 @@ object Checkstyle extends Tool {
       val xmlConfig =
         <module name="Checker">
           {globalPatterns.map(generatePatternConfig)}
+          <module name="SuppressWarningsFilter" />
           <module name="TreeWalker">
             {localPatterns.map(generatePatternConfig)}
+            <module name="SuppressionCommentFilter" />
+            <module name="SuppressWarningsHolder" />
           </module>
         </module>
 
