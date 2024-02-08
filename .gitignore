@@ -12,3 +12,4 @@ project/.bloop/
 .bsp/
 .vscode
 .version
+metals.sbt
