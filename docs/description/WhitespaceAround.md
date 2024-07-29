@@ -47,3 +47,6 @@ whitespace and catch block is empty, for example:
 With this property turned off, this raises violation because the
 beginning of the catch block (left curly bracket) is not separated from
 the end of the catch block (right curly bracket).
+
+Note: [Switch expressions](https://openjdk.org/jeps/361) are ignored by
+this check.

@@ -7,6 +7,9 @@ unused if:
 - The class imported is from the `java.lang` package. For example
   importing `java.lang.String`.
 - The class imported is from the same package.
+- A static method is imported when used as method reference. In that
+  case, only the type needs to be imported and that's enough to resolve
+  the method.
 - **Optionally:** it is referenced in Javadoc comments. This check is on
   by default, but it is considered bad practice to introduce a
   compile-time dependency for documentation purposes only. As an

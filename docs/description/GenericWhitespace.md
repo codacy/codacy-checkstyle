@@ -15,4 +15,5 @@ Right angle bracket ("\>"):
 
 - should not be preceded with whitespace in all cases.
 - should be followed with whitespace in almost all cases, except diamond
-  operators and when preceding method name or constructor.
+  operators and when preceding a method name, constructor, or record
+  header.
