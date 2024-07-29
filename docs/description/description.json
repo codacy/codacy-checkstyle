@@ -257,6 +257,10 @@
     "description" : "Sets the pattern to match valid identifiers."
   } ]
 }, {
+  "patternId" : "ConstructorsDeclarationGrouping",
+  "title" : "ConstructorsDeclarationGrouping",
+  "parameters" : [ ]
+}, {
   "patternId" : "CovariantEquals",
   "title" : "CovariantEquals",
   "parameters" : [ ]
@@ -271,7 +275,7 @@
     "description" : "Force empty line separator between import groups."
   }, {
     "name" : "sortImportsInGroupAlphabetically",
-    "description" : "Force grouping alphabetically, in  ASCII sort order."
+    "description" : "Force grouping alphabetically, in ASCII sort order."
   }, {
     "name" : "specialImportsRegExp",
     "description" : "Specify RegExp for SPECIAL_IMPORTS group imports."
@@ -1405,6 +1409,9 @@
   "patternId" : "ParameterNumber",
   "title" : "ParameterNumber",
   "parameters" : [ {
+    "name" : "ignoreAnnotatedBy",
+    "description" : "Ignore methods and constructors annotated with the specified annotation(s)."
+  }, {
     "name" : "ignoreOverriddenMethods",
     "description" : "Ignore number of parameters for methods with @Override annotation."
   }, {

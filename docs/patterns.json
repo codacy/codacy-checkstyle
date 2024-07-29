@@ -1,6 +1,6 @@
 {
   "name" : "checkstyle",
-  "version" : "10.13.0",
+  "version" : "10.17.0",
   "patterns" : [ {
     "patternId" : "AbbreviationAsWordInName",
     "level" : "Info",
@@ -329,6 +329,13 @@
       "name" : "format",
       "default" : "^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$"
     } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "ConstructorsDeclarationGrouping",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
     "languages" : [ ],
     "enabled" : false
   }, {
@@ -1811,6 +1818,9 @@
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
+      "name" : "ignoreAnnotatedBy",
+      "default" : ""
+    }, {
       "name" : "ignoreOverriddenMethods",
       "default" : false
     }, {

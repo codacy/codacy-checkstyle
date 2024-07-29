@@ -3,11 +3,13 @@ Validates Javadoc comments to help ensure they are well formed.
 The following checks are performed:
 
 - Ensures the first sentence ends with proper punctuation (That is a
-  period, question mark, or exclamation mark, by default). Javadoc
-  automatically places the first sentence in the method summary table
-  and index. Without proper punctuation the Javadoc may be malformed.
-  All items eligible for the `{@inheritDoc}` tag are exempt from this
-  requirement.
+  period, question mark, or exclamation mark, by default). Note that
+  this check is not applied to inline `@return` tags, because the
+  Javadoc tools automatically appends a period to the end of the tag
+  content. Javadoc automatically places the first sentence in the method
+  summary table and index. Without proper punctuation the Javadoc may be
+  malformed. All items eligible for the `{@inheritDoc}` tag are exempt
+  from this requirement.
 - Check text for Javadoc statements that do not have any description.
   This includes both completely empty Javadoc, and Javadoc with only
   tags such as `@param` and `@return`.
