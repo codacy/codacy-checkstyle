@@ -1,6 +1,6 @@
 {
   "name" : "checkstyle",
-  "version" : "10.17.0",
+  "version" : "10.18.2",
   "patterns" : [ {
     "patternId" : "AbbreviationAsWordInName",
     "level" : "Info",
@@ -231,7 +231,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "format",
-      "default" : "^(e|t|ex|[a-z][a-z][a-zA-Z]+)$"
+      "default" : "^(e|t|ex|[a-z][a-z][a-zA-Z]+|_)$"
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -382,7 +382,7 @@
       "default" : false
     }, {
       "name" : "tokens",
-      "default" : "LITERAL_WHILE, LITERAL_DO, LITERAL_FOR, LITERAL_IF, LITERAL_SWITCH, LITERAL_CASE, LITERAL_CATCH, QUESTION, LAND, LOR"
+      "default" : "LITERAL_WHILE, LITERAL_DO, LITERAL_FOR, LITERAL_IF, LITERAL_SWITCH, LITERAL_CASE, LITERAL_CATCH, QUESTION, LAND, LOR, LITERAL_WHEN"
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -624,6 +624,9 @@
     }, {
       "name" : "validateEnhancedForLoopVariable",
       "default" : false
+    }, {
+      "name" : "validateUnnamedVariables",
+      "default" : false
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -634,6 +637,9 @@
     "parameters" : [ {
       "name" : "ignorePrimitiveTypes",
       "default" : false
+    }, {
+      "name" : "ignoreUnnamedParameters",
+      "default" : true
     }, {
       "name" : "tokens",
       "default" : "METHOD_DEF, CTOR_DEF"
@@ -714,7 +720,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "format",
-      "default" : "(?i)^(?!(record|yield|var|permits|sealed|_)$).+$"
+      "default" : "(?i)^(?!(record|yield|var|permits|sealed)$).+$"
     }, {
       "name" : "tokens",
       "default" : "CLASS_DEF, INTERFACE_DEF, ENUM_DEF, ANNOTATION_DEF, ANNOTATION_FIELD_DEF, PARAMETER_DEF, VARIABLE_DEF, METHOD_DEF, ENUM_CONSTANT_DEF, PATTERN_VARIABLE_DEF, RECORD_DEF, RECORD_COMPONENT_DEF, LAMBDA"
@@ -813,7 +819,7 @@
       "default" : ""
     }, {
       "name" : "tokens",
-      "default" : "ANNOTATION_FIELD_DEF, CLASS_DEF, INTERFACE_DEF, METHOD_CALL, METHOD_DEF, METHOD_REF, PARAMETER_DEF, VARIABLE_DEF, PATTERN_VARIABLE_DEF, RECORD_DEF, RECORD_COMPONENT_DEF"
+      "default" : "ANNOTATION_FIELD_DEF, CLASS_DEF, INTERFACE_DEF, METHOD_CALL, METHOD_DEF, METHOD_REF, PARAMETER_DEF, VARIABLE_DEF, PATTERN_VARIABLE_DEF, RECORD_DEF, RECORD_COMPONENT_DEF, RECORD_PATTERN_DEF"
     }, {
       "name" : "validateAbstractClassNames",
       "default" : false
@@ -1007,6 +1013,16 @@
     "languages" : [ ],
     "enabled" : false
   }, {
+    "patternId" : "JavadocLeadingAsteriskAlign",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "violateExecutionOnNonTightHtml",
+      "default" : false
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
     "patternId" : "JavadocMethod",
     "level" : "Info",
     "category" : "CodeStyle",
@@ -1184,7 +1200,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "format",
-      "default" : "^[a-z][a-zA-Z0-9]*$"
+      "default" : "^([a-z][a-zA-Z0-9]*|_)$"
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -1226,7 +1242,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "format",
-      "default" : "^[a-z][a-zA-Z0-9]*$"
+      "default" : "^([a-z][a-zA-Z0-9]*|_)$"
     }, {
       "name" : "tokens",
       "default" : "VARIABLE_DEF, PARAMETER_DEF, RESOURCE"
@@ -1242,7 +1258,7 @@
       "default" : false
     }, {
       "name" : "format",
-      "default" : "^[a-z][a-zA-Z0-9]*$"
+      "default" : "^([a-z][a-zA-Z0-9]*|_)$"
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -1384,7 +1400,7 @@
       "default" : "nospace"
     }, {
       "name" : "tokens",
-      "default" : "CTOR_DEF, LITERAL_NEW, METHOD_CALL, METHOD_DEF, SUPER_CTOR_CALL, ENUM_CONSTANT_DEF, RECORD_DEF"
+      "default" : "CTOR_DEF, CTOR_CALL, LITERAL_NEW, METHOD_CALL, METHOD_DEF, SUPER_CTOR_CALL, ENUM_CONSTANT_DEF, RECORD_DEF, RECORD_PATTERN_DEF"
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -1467,6 +1483,13 @@
       "name" : "tokens",
       "default" : "INTERFACE_DEF, CLASS_DEF, ENUM_DEF, ANNOTATION_DEF, RECORD_DEF"
     } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "MissingNullCaseInSwitch",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
     "languages" : [ ],
     "enabled" : false
   }, {
@@ -1841,7 +1864,7 @@
       "default" : "nospace"
     }, {
       "name" : "tokens",
-      "default" : "ANNOTATION, ANNOTATION_FIELD_DEF, CTOR_CALL, CTOR_DEF, DOT, ENUM_CONSTANT_DEF, EXPR, LITERAL_CATCH, LITERAL_DO, LITERAL_FOR, LITERAL_IF, LITERAL_NEW, LITERAL_SWITCH, LITERAL_SYNCHRONIZED, LITERAL_WHILE, METHOD_CALL, METHOD_DEF, QUESTION, RESOURCE_SPECIFICATION, SUPER_CTOR_CALL, LAMBDA, RECORD_DEF"
+      "default" : "ANNOTATION, ANNOTATION_FIELD_DEF, CTOR_CALL, CTOR_DEF, DOT, ENUM_CONSTANT_DEF, EXPR, LITERAL_CATCH, LITERAL_DO, LITERAL_FOR, LITERAL_IF, LITERAL_NEW, LITERAL_SWITCH, LITERAL_SYNCHRONIZED, LITERAL_WHILE, METHOD_CALL, METHOD_DEF, QUESTION, RESOURCE_SPECIFICATION, SUPER_CTOR_CALL, LAMBDA, RECORD_DEF, RECORD_PATTERN_DEF"
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -1851,7 +1874,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "format",
-      "default" : "^[a-z][a-zA-Z0-9]*$"
+      "default" : "^([a-z][a-zA-Z0-9]*|_)$"
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -1900,8 +1923,11 @@
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
+      "name" : "jdkVersion",
+      "default" : "22"
+    }, {
       "name" : "tokens",
-      "default" : "METHOD_DEF, VARIABLE_DEF, ANNOTATION_FIELD_DEF, INTERFACE_DEF, CTOR_DEF, CLASS_DEF, ENUM_DEF, RESOURCE, ANNOTATION_DEF, RECORD_DEF"
+      "default" : "METHOD_DEF, VARIABLE_DEF, ANNOTATION_FIELD_DEF, INTERFACE_DEF, CTOR_DEF, CLASS_DEF, ENUM_DEF, RESOURCE, ANNOTATION_DEF, RECORD_DEF, PATTERN_VARIABLE_DEF, LITERAL_CATCH, LAMBDA"
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -2108,6 +2134,13 @@
     "languages" : [ ],
     "enabled" : false
   }, {
+    "patternId" : "SealedShouldHavePermitsList",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
     "patternId" : "SeparatorWrap",
     "level" : "Info",
     "category" : "CodeStyle",
@@ -2228,7 +2261,7 @@
       "default" : "^\\s*+$"
     }, {
       "name" : "tokens",
-      "default" : "CLASS_DEF, INTERFACE_DEF, ENUM_DEF, ANNOTATION_DEF, ANNOTATION_FIELD_DEF, ENUM_CONSTANT_DEF, PARAMETER_DEF, VARIABLE_DEF, METHOD_DEF, CTOR_DEF, COMPACT_CTOR_DEF, RECORD_DEF"
+      "default" : "CLASS_DEF, INTERFACE_DEF, ENUM_DEF, ANNOTATION_DEF, ANNOTATION_FIELD_DEF, ENUM_CONSTANT_DEF, PARAMETER_DEF, VARIABLE_DEF, METHOD_DEF, CTOR_DEF, COMPACT_CTOR_DEF, RECORD_DEF, PATTERN_VARIABLE_DEF"
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -2397,6 +2430,13 @@
     "languages" : [ ],
     "enabled" : false
   }, {
+    "patternId" : "UnusedCatchParameterShouldBeUnnamed",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
     "patternId" : "UnusedImports",
     "level" : "Info",
     "category" : "CodeStyle",
@@ -2407,10 +2447,20 @@
     "languages" : [ ],
     "enabled" : true
   }, {
-    "patternId" : "UnusedLocalVariable",
+    "patternId" : "UnusedLambdaParameterShouldBeUnnamed",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "UnusedLocalVariable",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "allowUnnamedVariables",
+      "default" : true
+    } ],
     "languages" : [ ],
     "enabled" : false
   }, {
@@ -2468,12 +2518,19 @@
     "languages" : [ ],
     "enabled" : false
   }, {
+    "patternId" : "WhenShouldBeUsed",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
     "patternId" : "WhitespaceAfter",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "tokens",
-      "default" : "COMMA, SEMI, TYPECAST, LITERAL_IF, LITERAL_ELSE, LITERAL_WHILE, LITERAL_DO, LITERAL_FOR, LITERAL_FINALLY, LITERAL_RETURN, LITERAL_YIELD, LITERAL_CATCH, DO_WHILE, ELLIPSIS, LITERAL_SWITCH, LITERAL_SYNCHRONIZED, LITERAL_TRY, LITERAL_CASE, LAMBDA"
+      "default" : "COMMA, SEMI, TYPECAST, LITERAL_IF, LITERAL_ELSE, LITERAL_WHILE, LITERAL_DO, LITERAL_FOR, LITERAL_FINALLY, LITERAL_RETURN, LITERAL_YIELD, LITERAL_CATCH, DO_WHILE, ELLIPSIS, LITERAL_SWITCH, LITERAL_SYNCHRONIZED, LITERAL_TRY, LITERAL_CASE, LAMBDA, LITERAL_WHEN"
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -2504,7 +2561,7 @@
       "default" : true
     }, {
       "name" : "tokens",
-      "default" : "ASSIGN, BAND, BAND_ASSIGN, BOR, BOR_ASSIGN, BSR, BSR_ASSIGN, BXOR, BXOR_ASSIGN, COLON, DIV, DIV_ASSIGN, DO_WHILE, EQUAL, GE, GT, LAMBDA, LAND, LCURLY, LE, LITERAL_CATCH, LITERAL_DO, LITERAL_ELSE, LITERAL_FINALLY, LITERAL_FOR, LITERAL_IF, LITERAL_RETURN, LITERAL_SWITCH, LITERAL_SYNCHRONIZED, LITERAL_TRY, LITERAL_WHILE, LOR, LT, MINUS, MINUS_ASSIGN, MOD, MOD_ASSIGN, NOT_EQUAL, PLUS, PLUS_ASSIGN, QUESTION, RCURLY, SL, SLIST, SL_ASSIGN, SR, SR_ASSIGN, STAR, STAR_ASSIGN, LITERAL_ASSERT, TYPE_EXTENSION_AND"
+      "default" : "ASSIGN, BAND, BAND_ASSIGN, BOR, BOR_ASSIGN, BSR, BSR_ASSIGN, BXOR, BXOR_ASSIGN, COLON, DIV, DIV_ASSIGN, DO_WHILE, EQUAL, GE, GT, LAMBDA, LAND, LCURLY, LE, LITERAL_CATCH, LITERAL_DO, LITERAL_ELSE, LITERAL_FINALLY, LITERAL_FOR, LITERAL_IF, LITERAL_RETURN, LITERAL_SWITCH, LITERAL_SYNCHRONIZED, LITERAL_TRY, LITERAL_WHILE, LOR, LT, MINUS, MINUS_ASSIGN, MOD, MOD_ASSIGN, NOT_EQUAL, PLUS, PLUS_ASSIGN, QUESTION, RCURLY, SL, SLIST, SL_ASSIGN, SR, SR_ASSIGN, STAR, STAR_ASSIGN, LITERAL_ASSERT, TYPE_EXTENSION_AND, LITERAL_WHEN"
     } ],
     "languages" : [ ],
     "enabled" : false

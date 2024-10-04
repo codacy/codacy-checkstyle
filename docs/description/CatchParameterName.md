@@ -7,6 +7,7 @@ Default pattern has the following characteristic:
 - allows `e` abbreviation (suitable for exceptions end errors)
 - allows `ex` abbreviation (suitable for exceptions)
 - allows `t` abbreviation (suitable for throwables)
+- allows `_` for unnamed catch parameters
 - prohibits numbered abbreviations like `e1` or `t2`
 - prohibits one letter prefixes like `pException`
 - prohibits two letter abbreviations like `ie` or `ee`

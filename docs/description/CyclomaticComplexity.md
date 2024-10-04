@@ -4,9 +4,13 @@ the number of required tests, it is not about quality of code! It is
 only applied to methods, c-tors, [static initializers and instance
 initializers](https://docs.oracle.com/javase/tutorial/java/javaOO/initial.html).
 
-The complexity is equal to the number of decision points ` + 1`.
-Decision points: `if`, `while` , `do`, `for`, `?:`, `catch` , `switch`,
-`case` statements and operators `&&` and `||` in the body of target.
+The complexity is equal to the number of decision points `+ 1`. Decision
+points:
+
+- `if`, `while`, `do`, `for`, `?:`, `catch`, `switch`, `case`
+  statements.
+- Operators `&&` and `||` in the body of target.
+- `when` expression in case labels, also known as guards.
 
 By pure theory level 1-4 is considered easy to test, 5-7 OK, 8-10
 consider re-factoring to ease testing, and 11+ re-factor now as testing

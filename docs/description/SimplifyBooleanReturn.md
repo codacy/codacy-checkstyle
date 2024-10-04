@@ -1,5 +1,5 @@
-Checks for over-complicated boolean return statements. For example the
-following code
+Checks for over-complicated boolean return or yield statements. For
+example the following code
 
     if (valid())
       return false;

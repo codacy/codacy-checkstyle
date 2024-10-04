@@ -14,6 +14,9 @@ The check validates:
 5.  Nested `enum` definitions that are declared as `static`.
 6.  `record` definitions that are declared as `final` and nested
     `record` definitions that are declared as `static`.
+7.  `strictfp` modifier when using JDK 17 or later. See reason at [JEP
+    306](https://openjdk.org/jeps/306)
+8.  `final` modifier on unnamed variables when using JDK 22 or later.
 
 interfaces by definition are abstract so the `abstract` modifier is
 redundant on them.
