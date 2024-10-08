@@ -17,5 +17,9 @@ checked by the compiler for exhaustiveness. This means that all possible
 inputs must be covered.
 
 See the [Java Language
-Specification](https://docs.oracle.com/javase/specs/jls/se17/html/jls-15.html#jls-15.28)
+Specification](https://docs.oracle.com/javase/specs/jls/se22/html/jls-15.html#jls-15.28)
 for more information about switch statements and expressions.
+
+See the [Java Language
+Specification](https://docs.oracle.com/javase/specs/jls/se22/html/jls-14.html#jls-14.30)
+for more information about patterns.

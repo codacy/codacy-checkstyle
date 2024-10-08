@@ -482,6 +482,9 @@
   }, {
     "name" : "validateEnhancedForLoopVariable",
     "description" : "Control whether to check enhanced for-loop variable."
+  }, {
+    "name" : "validateUnnamedVariables",
+    "description" : "Control whether to check unnamed variables."
   } ]
 }, {
   "patternId" : "FinalParameters",
@@ -489,6 +492,9 @@
   "parameters" : [ {
     "name" : "ignorePrimitiveTypes",
     "description" : "Ignore primitive types as parameters."
+  }, {
+    "name" : "ignoreUnnamedParameters",
+    "description" : "Ignore unnamed parameters."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -786,6 +792,13 @@
   "parameters" : [ {
     "name" : "location",
     "description" : "Specify the policy on placement of the Javadoc content."
+  } ]
+}, {
+  "patternId" : "JavadocLeadingAsteriskAlign",
+  "title" : "JavadocLeadingAsteriskAlign",
+  "parameters" : [ {
+    "name" : "violateExecutionOnNonTightHtml",
+    "description" : "Control when to print violations if the Javadoc being examined by this check violates the tight html rules defined at Tight-HTML Rules."
   } ]
 }, {
   "patternId" : "JavadocMethod",
@@ -1167,6 +1180,10 @@
     "description" : "tokens to check"
   } ]
 }, {
+  "patternId" : "MissingNullCaseInSwitch",
+  "title" : "MissingNullCaseInSwitch",
+  "parameters" : [ ]
+}, {
   "patternId" : "MissingOverride",
   "title" : "MissingOverride",
   "parameters" : [ {
@@ -1470,6 +1487,9 @@
   "patternId" : "RedundantModifier",
   "title" : "RedundantModifier",
   "parameters" : [ {
+    "name" : "jdkVersion",
+    "description" : "jdkVersion"
+  }, {
     "name" : "tokens",
     "description" : "tokens to check"
   } ]
@@ -1646,6 +1666,10 @@
     "description" : "tokens to check"
   } ]
 }, {
+  "patternId" : "SealedShouldHavePermitsList",
+  "title" : "SealedShouldHavePermitsList",
+  "parameters" : [ ]
+}, {
   "patternId" : "SeparatorWrap",
   "title" : "SeparatorWrap",
   "parameters" : [ {
@@ -1714,7 +1738,7 @@
     "description" : "Specify the regexp for forbidden summary fragments."
   }, {
     "name" : "period",
-    "description" : "Specify the period symbol at the end of first javadoc sentence."
+    "description" : "period"
   }, {
     "name" : "violateExecutionOnNonTightHtml",
     "description" : "Control when to print violations if the Javadoc being examined by this check violates the tight html rules defined at Tight-HTML Rules."
@@ -1860,6 +1884,10 @@
     "description" : "Allow unnecessary semicolon if closing paren is not on the same line."
   } ]
 }, {
+  "patternId" : "UnusedCatchParameterShouldBeUnnamed",
+  "title" : "UnusedCatchParameterShouldBeUnnamed",
+  "parameters" : [ ]
+}, {
   "patternId" : "UnusedImports",
   "title" : "UnusedImports",
   "parameters" : [ {
@@ -1867,9 +1895,16 @@
     "description" : "Control whether to process Javadoc comments."
   } ]
 }, {
+  "patternId" : "UnusedLambdaParameterShouldBeUnnamed",
+  "title" : "UnusedLambdaParameterShouldBeUnnamed",
+  "parameters" : [ ]
+}, {
   "patternId" : "UnusedLocalVariable",
   "title" : "UnusedLocalVariable",
-  "parameters" : [ ]
+  "parameters" : [ {
+    "name" : "allowUnnamedVariables",
+    "description" : "Allow variables named with a single underscore (known as unnamed variables in Java 21+)."
+  } ]
 }, {
   "patternId" : "UpperEll",
   "title" : "UpperEll",
@@ -1915,6 +1950,10 @@
     "name" : "publicMemberPattern",
     "description" : "Specify pattern for public members that should be ignored."
   } ]
+}, {
+  "patternId" : "WhenShouldBeUsed",
+  "title" : "WhenShouldBeUsed",
+  "parameters" : [ ]
 }, {
   "patternId" : "WhitespaceAfter",
   "title" : "WhitespaceAfter",

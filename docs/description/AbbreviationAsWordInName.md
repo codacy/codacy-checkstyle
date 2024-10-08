@@ -1,7 +1,7 @@
 Validates abbreviations (consecutive capital letters) length in
 identifier name, it also allows to enforce camel case naming. Please
 read more at [Google Style
-Guide](https://checkstyle.org/styleguides/google-java-style-20180523/javaguide.html#s5.3-camel-case)
+Guide](../../styleguides/google-java-style-20220203/javaguide.html#s5.3-camel-case)
 to get to know how to avoid long abbreviations in names.
 
 '\_' is considered as word separator in identifier name.
