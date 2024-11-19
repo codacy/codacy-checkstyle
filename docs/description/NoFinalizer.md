@@ -1,4 +1,8 @@
+<div>
+
 Checks that there is no method `finalize` with zero parameters.
+
+</div>
 
 See
 [Object.finalize()](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#finalize())

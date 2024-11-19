@@ -1,4 +1,8 @@
+<div>
+
 Checks that there are no tab characters (`'\t'`) in the source code.
+
+</div>
 
 Rationale:
 

@@ -1,9 +1,13 @@
+<div>
+
 Checks location of annotation on language elements. By default, Check
 enforce to locate annotations immediately after documentation block and
 before target element, annotation should be located on separate line
 from target element. This check also verifies that the annotations are
 on the same indenting level as the annotated element if they are not on
 the same line.
+
+</div>
 
 Attention: Elements that cannot have JavaDoc comments like local
 variables are not in the scope of this check even though a token type

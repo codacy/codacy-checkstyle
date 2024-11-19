@@ -1,5 +1,9 @@
+<div>
+
 Checks for redundant import statements. An import statement is
 considered redundant if:
+
+</div>
 
 - It is a duplicate of another import. This is, when a class is imported
   more than once.

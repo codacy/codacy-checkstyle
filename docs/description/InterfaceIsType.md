@@ -1,5 +1,9 @@
+<div>
+
 Implements Joshua Bloch, Effective Java, Item 17 - Use Interfaces only
 to define types.
+
+</div>
 
 According to Bloch, an interface should describe a *type*. It is
 therefore inappropriate to define an interface that does not contain any

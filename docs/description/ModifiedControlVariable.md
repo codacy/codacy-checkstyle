@@ -1,5 +1,9 @@
+<div>
+
 Checks that for loop control variables are not modified inside the for
 block. An example is:
+
+</div>
 
     for (int i = 0; i < 1; i++) {
       i++; // violation

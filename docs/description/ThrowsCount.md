@@ -1,6 +1,10 @@
+<div>
+
 Restricts throws statements to a specified count. Methods with
 "Override" or "java.lang.Override" annotation are skipped from
 validation as current class cannot change signature of these methods.
+
+</div>
 
 Rationale: Exceptions form part of a method's interface. Declaring a
 method to throw too many differently rooted exceptions makes exception

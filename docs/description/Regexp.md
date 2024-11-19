@@ -1,5 +1,9 @@
+<div>
+
 Checks that a specified pattern exists, exists less than a set number of
 times, or does not exist in the file.
+
+</div>
 
 This check combines all the functionality provided by
 [RegexpHeader](../header/regexpheader.html#RegexpHeader) except

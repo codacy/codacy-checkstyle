@@ -1,5 +1,9 @@
+<div>
+
 Checks that classes and records which define a covariant `equals()`
 method also override method `equals(Object)`.
+
+</div>
 
 Covariant `equals()` - method that is similar to `equals(Object)`, but
 with a covariant parameter type (any subtype of Object).

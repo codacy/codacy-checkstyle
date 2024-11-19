@@ -1,4 +1,8 @@
+<div>
+
 Checks that there is only one statement per line.
+
+</div>
 
 Rationale: It's very difficult to read multiple statements on one line.
 

@@ -1,6 +1,10 @@
+<div>
+
 Checks for empty line separators before package, all import
 declarations, fields, constructors, methods, nested classes, static
 initializers and instance initializers.
+
+</div>
 
 Checks for empty line separators before not only statements but
 implementation and documentation comments and blocks as well.

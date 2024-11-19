@@ -1,4 +1,8 @@
+<div>
+
 Checks for implicit modifiers on nested types in classes and records.
+
+</div>
 
 This check is effectively the opposite of
 [RedundantModifier](https://checkstyle.org/redundantmodifier.html#RedundantModifier).

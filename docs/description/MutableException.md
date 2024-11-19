@@ -1,6 +1,10 @@
+<div>
+
 Ensures that exception classes (classes with names conforming to some
 pattern and explicitly extending classes with names conforming to other
 pattern) are immutable, that is, that they have only final fields.
+
+</div>
 
 The current algorithm is very simple: it checks that all members of
 exception are final. The user can still mutate an exception's instance

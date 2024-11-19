@@ -1,4 +1,8 @@
+<div>
+
 Checks for illegal tokens. By default, labels are prohibited.
+
+</div>
 
 Rationale: Certain language features can harm readability, lead to
 confusion or are not obvious to novice developers. Other features may be

@@ -1,4 +1,8 @@
+<div>
+
 Checks the style of elements in annotations.
+
+</div>
 
 Annotations have three element styles starting with the least verbose.
 

@@ -1,4 +1,8 @@
+<div>
+
 Detects if keys in properties files are in correct order.
+
+</div>
 
 Rationale: Sorted properties make it easy for people to find required
 properties by name in file. This makes it easier to merge. While there

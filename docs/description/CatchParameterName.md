@@ -1,4 +1,8 @@
+<div>
+
 Checks that `catch` parameter names conform to a specified pattern.
+
+</div>
 
 Default pattern has the following characteristic:
 

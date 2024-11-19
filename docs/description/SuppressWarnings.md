@@ -1,6 +1,10 @@
+<div>
+
 Allows to specify what warnings that `@SuppressWarnings` is not allowed
 to suppress. You can also specify a list of TokenTypes that the
 configured warning(s) cannot be suppressed on.
+
+</div>
 
 Limitations: This check does not consider conditionals inside the
 @SuppressWarnings annotation.

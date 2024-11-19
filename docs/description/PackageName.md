@@ -1,4 +1,8 @@
+<div>
+
 Checks that package names conform to a specified pattern.
+
+</div>
 
 The default value of `format` for module `PackageName` has been chosen
 to match the requirements in the [Java Language

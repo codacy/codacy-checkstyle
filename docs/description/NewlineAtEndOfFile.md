@@ -1,4 +1,8 @@
+<div>
+
 Checks whether files end with a line separator.
+
+</div>
 
 Rationale: Any source files and text files in general should end with a
 line separator to let other easily add new content at the end of file

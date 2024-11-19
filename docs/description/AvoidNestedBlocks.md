@@ -1,4 +1,8 @@
+<div>
+
 Finds nested blocks (blocks that are used freely in the code).
+
+</div>
 
 Rationale: Nested blocks are often leftovers from the debugging process,
 they confuse the reader.

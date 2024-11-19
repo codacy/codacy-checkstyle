@@ -1,4 +1,8 @@
+<div>
+
 Checks that array initialization contains a trailing comma.
+
+</div>
 
     int[] a = new int[]
     {

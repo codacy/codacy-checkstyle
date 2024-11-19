@@ -1,5 +1,9 @@
+<div>
+
 Checks if unnecessary parentheses are used in a statement or expression.
 The check will flag the following with warnings:
+
+</div>
 
     return (x);          // parens around identifier
     return (x + 1);      // parens around return value

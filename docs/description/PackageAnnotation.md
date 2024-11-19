@@ -1,4 +1,8 @@
+<div>
+
 Checks that all package annotations are in the package-info.java file.
+
+</div>
 
 For Java SE8 and above, placement of package annotations in the
 package-info.java file is enforced by the compiler and this check is not

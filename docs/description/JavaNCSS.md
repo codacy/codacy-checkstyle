@@ -1,8 +1,12 @@
+<div>
+
 Determines complexity of methods, classes and files by counting the Non
 Commenting Source Statements (NCSS). This check adheres to the
 [specification](http://www.kclee.de/clemens/java/javancss/#specification)
 for the [JavaNCSS-Tool](http://www.kclee.de/clemens/java/javancss/)
 written by **Chr. Clemens Lee**.
+
+</div>
 
 Roughly said the NCSS metric is calculated by counting the source lines
 which are not comments, (nearly) equivalent to counting the semicolons

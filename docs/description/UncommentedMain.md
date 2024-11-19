@@ -1,4 +1,8 @@
+<div>
+
 Detects uncommented `main` methods.
+
+</div>
 
 Rationale: A `main` method is often used for debugging purposes. When
 debugging is finished, developers often forget to remove the method,

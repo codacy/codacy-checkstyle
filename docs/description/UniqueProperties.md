@@ -1,4 +1,8 @@
+<div>
+
 Detects duplicated keys in properties files.
+
+</div>
 
 Rationale: Multiple property keys usually appear after merge or rebase
 of several branches. While there are no problems in runtime, there can

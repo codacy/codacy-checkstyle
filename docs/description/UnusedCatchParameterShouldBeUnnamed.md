@@ -1,5 +1,9 @@
+<div>
+
 Ensures that catch parameters that are not used are declared as an
 unnamed variable.
+
+</div>
 
 Rationale:
 

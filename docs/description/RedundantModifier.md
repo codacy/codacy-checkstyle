@@ -1,4 +1,8 @@
+<div>
+
 Checks for redundant modifiers.
+
+</div>
 
 Rationale: The Java Language Specification strongly discourages the
 usage of `public` and `abstract` for method declarations in interface

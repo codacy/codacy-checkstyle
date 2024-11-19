@@ -1,6 +1,10 @@
+<div>
+
 Checks that the whitespace around the Generic tokens (angle brackets)
 "\<" and "\>" are correct to the *typical* convention. The convention is
 not configurable.
+
+</div>
 
 Left angle bracket ("\<"):
 

@@ -1,4 +1,8 @@
+<div>
+
 Checks that particular classes or interfaces are never used.
+
+</div>
 
 Rationale: Helps reduce coupling on concrete classes.
 

@@ -1,5 +1,9 @@
+<div>
+
 Checks for assignments in subexpressions, such as in
 `String s = Integer.toString(i = 2);`.
+
+</div>
 
 Rationale: Except for the loop idioms, all assignments should occur in
 their own top-level statement to increase readability. With inner

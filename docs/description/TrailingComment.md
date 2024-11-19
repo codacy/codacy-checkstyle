@@ -1,9 +1,13 @@
+<div>
+
 The check to ensure that lines with code do not end with comment. For
 the case of `//` comments that means that the only thing that should
 precede it is whitespace. It doesn't check comments if they do not end a
 line; for example, it accepts the following:
 `Thread.sleep( 10 /*some comment here*/ );` Format property is intended
 to deal with the `} // while` example.
+
+</div>
 
 Rationale: Steve McConnell in Code Complete suggests that endline
 comments are a bad practice. An end line comment would be one that is on

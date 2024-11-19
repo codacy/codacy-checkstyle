@@ -1,5 +1,9 @@
+<div>
+
 Verifies that the annotation `@Deprecated` and the Javadoc tag
 `@deprecated` are both present when either of them is present.
+
+</div>
 
 Both ways of flagging deprecation serve their own purpose. The
 @Deprecated annotation is used for compilers and development tools. The

@@ -1,3 +1,5 @@
+<div>
+
 Checks the policy on the padding of parentheses; that is whether a space
 is required after a left parenthesis and before a right parenthesis, or
 such spaces are forbidden. No check occurs at the right parenthesis
@@ -12,3 +14,5 @@ to validate empty for initializers. Typecasts are also not checked, as
 there is
 [TypecastParenPad](https://checkstyle.org/typecastparenpad.html#TypecastParenPad)
 to validate them.
+
+</div>

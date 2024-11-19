@@ -1,4 +1,8 @@
+<div>
+
 Checks that sealed classes and interfaces have a permits list.
+
+</div>
 
 Rationale: When a permits clause is omitted from a sealed class, any
 class within the same compilation unit can extend it. This differs from

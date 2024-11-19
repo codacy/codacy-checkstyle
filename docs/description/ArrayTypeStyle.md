@@ -1,6 +1,10 @@
+<div>
+
 Checks the style of array type definitions. Some like Java style:
 `public static void main(String[] args)` and some like C style:
 `public static void main(String args[])`.
+
+</div>
 
 By default, the Check enforces Java style.
 

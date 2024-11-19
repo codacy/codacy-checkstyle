@@ -1,6 +1,10 @@
+<div>
+
 Evaluates Xpath query and report violation on all matching AST nodes.
 This check allows user to implement custom checks using Xpath. If Xpath
 query is not specified explicitly, then the check does nothing.
+
+</div>
 
 It is recommended to define custom message for violation to explain what
 is not allowed and what to use instead, default message might be too

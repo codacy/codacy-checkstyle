@@ -1,5 +1,9 @@
+<div>
+
 Ensures that the names of abstract classes conforming to some pattern
 and check that `abstract` modifier exists.
+
+</div>
 
 Rationale: Abstract classes are convenience base class implementations
 of interfaces. For this reason, it should be made obvious that a given

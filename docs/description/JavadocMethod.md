@@ -1,4 +1,8 @@
+<div>
+
 Checks the Javadoc of a method or constructor.
+
+</div>
 
 Violates parameters and type parameters for which no param tags are
 present can be suppressed by defining property `allowMissingParamTags`.

@@ -1,5 +1,9 @@
+<div>
+
 Restricts the number of return statements in methods, constructors and
 lambda expressions. Ignores specified methods (`equals` by default).
+
+</div>
 
 **max** property will only check returns in methods and lambdas that
 return a specific value (Ex: 'return 1;').

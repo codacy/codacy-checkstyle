@@ -1,4 +1,8 @@
+<div>
+
 Checks that switch statement has a `default` clause.
+
+</div>
 
 Rationale: It's usually a good idea to introduce a default case in every
 switch statement. Even if the developer is sure that all currently
