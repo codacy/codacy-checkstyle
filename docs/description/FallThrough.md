@@ -1,6 +1,10 @@
+<div>
+
 Checks for fall-through in `switch` statements. Finds locations where a
 `case` **contains** Java code but lacks a `break`, `return`, `yield`,
 `throw` or `continue` statement.
+
+</div>
 
 The check honors special comments to suppress the warning. By default,
 the texts "fallthru", "fall thru", "fall-thru", "fallthrough", "fall

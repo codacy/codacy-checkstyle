@@ -1,5 +1,9 @@
+<div>
+
 Checks the number of methods declared in each type declaration by access
 modifier or total count.
+
+</div>
 
 This check can be configured to flag classes that define too many
 methods to prevent the class from getting too complex. Counting can be

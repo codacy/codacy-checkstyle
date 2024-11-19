@@ -1,6 +1,10 @@
+<div>
+
 Checks that a token is surrounded by whitespace. Empty constructor,
 method, class, enum, interface, loop bodies (blocks), lambdas of the
 form
+
+</div>
 
     public MyClass() {}      // empty constructor
     public void func() {}    // empty method
@@ -17,8 +21,8 @@ form
 
 may optionally be exempted from the policy using the
 ` allowEmptyMethods`, `allowEmptyConstructors`, `allowEmptyTypes`,
-`allowEmptyLoops`, `allowEmptyLambdas` and `allowEmptyCatches`
-properties.
+`allowEmptyLoops`, `allowEmptyLambdas`, `allowEmptyCatches` and
+`allowEmptySwitchBlockStatements` properties.
 
 This check does not flag as violation double brace initialization like:
 

@@ -1,5 +1,9 @@
+<div>
+
 Checks that certain exception types do not appear in a `catch`
 statement.
+
+</div>
 
 Rationale: catching `java.lang.Exception`, `java.lang.Error` or
 `java.lang.RuntimeException` is almost never acceptable. Novice

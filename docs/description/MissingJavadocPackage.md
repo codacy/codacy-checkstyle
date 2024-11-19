@@ -1,5 +1,9 @@
+<div>
+
 Checks for missing package definition Javadoc comments in
 package-info.java files.
+
+</div>
 
 Rationale: description and other related documentation for a package can
 be written up in the package-info.java file and it gets used in the

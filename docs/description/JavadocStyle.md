@@ -1,4 +1,8 @@
+<div>
+
 Validates Javadoc comments to help ensure they are well formed.
+
+</div>
 
 The following checks are performed:
 

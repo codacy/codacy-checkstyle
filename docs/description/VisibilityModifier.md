@@ -1,7 +1,11 @@
+<div>
+
 Checks visibility of class members. Only static final, immutable or
 annotated by specified annotation members may be public; other class
 members must be private unless the property `protectedAllowed` or
 `packageAllowed` is set.
+
+</div>
 
 Public members are not flagged if the name matches the public member
 regular expression (contains `"^serialVersionUID$"` by default).

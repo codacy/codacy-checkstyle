@@ -1,5 +1,9 @@
+<div>
+
 Restricts the number of boolean operators (`&&`, `||`, `&`, `|` and `^`)
 in an expression.
+
+</div>
 
 Rationale: Too many conditions leads to code that is difficult to read
 and hence debug and maintain.

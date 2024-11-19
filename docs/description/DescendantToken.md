@@ -1,4 +1,8 @@
+<div>
+
 Checks for restricted tokens beneath other tokens.
+
+</div>
 
 WARNING: This is a very powerful and flexible check, but, at the same
 time, it is low-level and very implementation-dependent because its

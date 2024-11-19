@@ -1,9 +1,13 @@
+<div>
+
 Checks that a [javadoc block
 tag](https://docs.oracle.com/en/java/javase/11/docs/specs/doc-comment-spec.html#block-tags)
 appears only at the beginning of a line, ignoring leading asterisks and
 white space. A block tag is a token that starts with `@` symbol and is
 preceded by a whitespace. This check ignores block tags in comments and
 inside inline tags {@code } and {@literal }.
+
+</div>
 
 Rationale: according to [the
 specification](https://docs.oracle.com/en/java/javase/11/docs/specs/doc-comment-spec.html#block-tags)

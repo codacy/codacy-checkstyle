@@ -1,7 +1,11 @@
+<div>
+
 Checks the number of other types a given
 class/record/interface/enum/annotation relies on. Also, the square of
 this has been shown to indicate the amount of maintenance required in
 functional programs (on a file basis) at least.
+
+</div>
 
 This check processes files in the following way:
 

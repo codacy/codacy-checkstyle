@@ -1,3 +1,5 @@
+<div>
+
 Checks the placement of right curly braces (`'}'`) for code blocks. This
 check supports if-else, try-catch-finally blocks, switch statements,
 switch cases, while-loops, for-loops, method definitions, class
@@ -8,3 +10,5 @@ follow issue
 [\#5945](https://github.com/checkstyle/checkstyle/issues/5945). For
 right curly brace of enum constant please follow issue
 [\#7519](https://github.com/checkstyle/checkstyle/issues/7519).
+
+</div>

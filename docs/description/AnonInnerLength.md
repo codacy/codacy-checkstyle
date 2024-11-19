@@ -1,4 +1,8 @@
+<div>
+
 Checks for long anonymous inner classes.
+
+</div>
 
 Rationale: If an anonymous inner class becomes very long it is hard to
 understand and to see the flow of the method where the class is defined.

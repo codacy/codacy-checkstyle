@@ -544,7 +544,10 @@
 }, {
   "patternId" : "HideUtilityClassConstructor",
   "title" : "HideUtilityClassConstructor",
-  "parameters" : [ ]
+  "parameters" : [ {
+    "name" : "ignoreAnnotatedBy",
+    "description" : "ignoreAnnotatedBy"
+  } ]
 }, {
   "patternId" : "IllegalCatch",
   "title" : "IllegalCatch",
@@ -1881,7 +1884,7 @@
   "title" : "UnnecessarySemicolonInTryWithResources",
   "parameters" : [ {
     "name" : "allowWhenNoBraceAfterSemicolon",
-    "description" : "Allow unnecessary semicolon if closing paren is not on the same line."
+    "description" : "Allow unnecessary semicolon if closing parenthesis is not on the same line."
   } ]
 }, {
   "patternId" : "UnusedCatchParameterShouldBeUnnamed",
@@ -1979,6 +1982,9 @@
   }, {
     "name" : "allowEmptyMethods",
     "description" : "Allow empty method bodies."
+  }, {
+    "name" : "allowEmptySwitchBlockStatements",
+    "description" : "Allow empty switch blocks and block statements."
   }, {
     "name" : "allowEmptyTypes",
     "description" : "Allow empty class, interface and enum bodies."

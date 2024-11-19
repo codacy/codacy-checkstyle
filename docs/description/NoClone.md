@@ -1,4 +1,8 @@
+<div>
+
 Checks that the clone method is not overridden from the Object class.
+
+</div>
 
 This check is almost exactly the same as the `NoFinalizerCheck`.
 

@@ -1,5 +1,9 @@
+<div>
+
 Checks for over-complicated boolean return or yield statements. For
 example the following code
+
+</div>
 
     if (valid())
       return false;

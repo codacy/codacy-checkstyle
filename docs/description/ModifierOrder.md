@@ -1,9 +1,13 @@
+<div>
+
 Checks that the order of modifiers conforms to the suggestions in the
 [Java Language specification, § 8.1.1, 8.3.1,
 8.4.3](https://docs.oracle.com/javase/specs/jls/se16/preview/specs/sealed-classes-jls.html)
 and
 [9.4](https://docs.oracle.com/javase/specs/jls/se11/html/jls-9.html).
 The correct order is:
+
+</div>
 
 1.  `public`
 2.  `protected`

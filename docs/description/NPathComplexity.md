@@ -1,4 +1,8 @@
+<div>
+
 Checks the NPATH complexity against a specified limit.
+
+</div>
 
 The NPATH metric computes the number of possible execution paths through
 a function(method). It takes into account the nesting of conditional

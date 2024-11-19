@@ -1,4 +1,8 @@
+<div>
+
 Checks correct indentation of Java code.
+
+</div>
 
 The idea behind this is that while pretty printers are sometimes
 convenient for bulk reformats of legacy code, they often either aren't

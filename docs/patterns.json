@@ -1,6 +1,6 @@
 {
   "name" : "checkstyle",
-  "version" : "10.18.2",
+  "version" : "10.20.1",
   "patterns" : [ {
     "patternId" : "AbbreviationAsWordInName",
     "level" : "Info",
@@ -701,7 +701,10 @@
     "patternId" : "HideUtilityClassConstructor",
     "level" : "Info",
     "category" : "CodeStyle",
-    "parameters" : [ ],
+    "parameters" : [ {
+      "name" : "ignoreAnnotatedBy",
+      "default" : ""
+    } ],
     "languages" : [ ],
     "enabled" : false
   }, {
@@ -2552,6 +2555,9 @@
       "default" : false
     }, {
       "name" : "allowEmptyMethods",
+      "default" : false
+    }, {
+      "name" : "allowEmptySwitchBlockStatements",
       "default" : false
     }, {
       "name" : "allowEmptyTypes",

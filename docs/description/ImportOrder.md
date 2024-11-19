@@ -1,4 +1,8 @@
+<div>
+
 Checks the ordering/grouping of imports. Features are:
+
+</div>
 
 - groups type/static imports: ensures that groups of imports come in a
   specific order (e.g., java. comes first, javax. comes second, then

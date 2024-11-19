@@ -1,4 +1,8 @@
+<div>
+
 Detects double brace initialization.
+
+</div>
 
 Rationale: Double brace initialization (set of [Instance
 Initializers](https://docs.oracle.com/javase/specs/jls/se12/html/jls-8.html#jls-8.6)

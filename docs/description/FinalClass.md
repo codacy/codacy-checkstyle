@@ -1,6 +1,10 @@
+<div>
+
 Ensures that identifies classes that can be effectively declared as
 final are explicitly marked as final. The following are different types
 of classes that can be identified:
+
+</div>
 
 1.  Private classes with no declared constructors.
 2.  Classes with any modifier, and contains only private constructors.

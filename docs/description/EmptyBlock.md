@@ -1,14 +1,11 @@
-Checks for empty blocks. This check does not validate sequential blocks.
+<div>
 
-Sequential blocks won't be checked. Also, no violations for fallthrough:
+Checks for empty blocks.
 
-    switch (a) {
-      case 1:                          // no violation
-      case 2:                          // no violation
-      case 3: someMethod(); { }        // no violation
-      default: break;
-    }
-            
+</div>
+
+This check does not validate sequential blocks. This check does not
+violate fallthrough.
 
 NOTE: This check processes LITERAL_CASE and LITERAL_DEFAULT separately.
 Verification empty block is done for single nearest {@code case} or

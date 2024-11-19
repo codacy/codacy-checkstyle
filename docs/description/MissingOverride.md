@@ -1,5 +1,9 @@
+<div>
+
 Verifies that the `@Override` annotation is present when the
 `@inheritDoc` javadoc tag is present.
+
+</div>
 
 Rationale: The @Override annotation helps compiler tools ensure that an
 override is actually occurring. It is quite easy to accidentally

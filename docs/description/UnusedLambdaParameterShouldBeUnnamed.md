@@ -1,5 +1,9 @@
+<div>
+
 Ensures that lambda parameters that are not used are declared as an
 unnamed variable.
+
+</div>
 
 Rationale:
 

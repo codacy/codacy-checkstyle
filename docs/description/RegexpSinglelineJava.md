@@ -1,4 +1,8 @@
+<div>
+
 Checks that a specified pattern matches a single-line in Java files.
+
+</div>
 
 This class is variation on
 [RegexpSingleline](https://checkstyle.org/regexpsingleline.html#RegexpSingleline)

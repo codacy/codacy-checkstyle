@@ -1,4 +1,8 @@
+<div>
+
 Checks that classes are designed for extension (subclass creation).
+
+</div>
 
 Nothing wrong could be with founded classes. This check makes sense only
 for library projects (not application projects) which care of ideal

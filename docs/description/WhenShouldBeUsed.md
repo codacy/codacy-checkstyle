@@ -1,5 +1,9 @@
+<div>
+
 Ensures that `when` is used instead of a single `if` statement inside a
 case block.
+
+</div>
 
 Rationale: Java 21 has introduced enhancements for switch statements and
 expressions that allow the use of patterns in case labels. The `when`

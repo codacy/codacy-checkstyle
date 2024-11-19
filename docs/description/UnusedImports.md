@@ -1,5 +1,9 @@
+<div>
+
 Checks for unused import statements. An import statement is considered
 unused if:
+
+</div>
 
 - It is not referenced in the file. The algorithm does not support
   wild-card imports like `import java.io.*;`. Most IDE's provide very

@@ -1,8 +1,12 @@
+<div>
+
 Checks cyclomatic complexity against a specified limit. It is a measure
 of the minimum number of possible paths through the source and therefore
 the number of required tests, it is not about quality of code! It is
 only applied to methods, c-tors, [static initializers and instance
 initializers](https://docs.oracle.com/javase/tutorial/java/javaOO/initial.html).
+
+</div>
 
 The complexity is equal to the number of decision points `+ 1`. Decision
 points:

@@ -1,5 +1,9 @@
+<div>
+
 Checks that a given switch statement or expression that use a reference
 type in its selector expression has a `null` case label.
+
+</div>
 
 Rationale: switch statements and expressions in Java throw a
 `NullPointerException` if the selector expression evaluates to `null`.

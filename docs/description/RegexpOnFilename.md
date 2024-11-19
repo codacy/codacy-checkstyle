@@ -1,6 +1,10 @@
+<div>
+
 Checks that a specified pattern matches based on file and/or folder
 path. It can also be used to verify files match specific naming patterns
 not covered by other checks (Ex: properties, xml, etc.).
+
+</div>
 
 When customizing the check, the properties are applied in a specific
 order. The fileExtensions property first picks only files that match any

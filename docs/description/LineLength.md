@@ -1,4 +1,8 @@
+<div>
+
 Checks for long lines.
+
+</div>
 
 Rationale: Long lines are hard to read in printouts or if developers
 have limited screen space for the source code, e.g. if the IDE displays
