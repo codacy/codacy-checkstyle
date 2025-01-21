@@ -1,6 +1,6 @@
 {
   "name" : "checkstyle",
-  "version" : "10.20.1",
+  "version" : "10.21.1",
   "patterns" : [ {
     "patternId" : "AbbreviationAsWordInName",
     "level" : "Info",
@@ -1271,7 +1271,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "constantWaiverParentToken",
-      "default" : "ARRAY_INIT, ASSIGN, DIV, ELIST, EXPR, LITERAL_NEW, METHOD_CALL, MINUS, PLUS, STAR, TYPECAST, UNARY_MINUS, UNARY_PLUS"
+      "default" : "ARRAY_INIT, ASSIGN, BAND, BNOT, BOR, BSR, BXOR, COLON, DIV, ELIST, EQUAL, EXPR, GE, GT, LE, LITERAL_NEW, LT, METHOD_CALL, MINUS, MOD, NOT_EQUAL, PLUS, QUESTION, SL, SR, STAR, TYPECAST, UNARY_MINUS, UNARY_PLUS"
     }, {
       "name" : "ignoreAnnotation",
       "default" : false
