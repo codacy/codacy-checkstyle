@@ -34,7 +34,7 @@ object DocGenerator {
 
   def main(args: Array[String]): Unit = {
     withRepository { directory =>
-      val xdocs = directory / "src" / "xdocs"
+      val xdocs = directory / "src" / "site" / "xdoc"
       val genPatterns = for {
         xml <- XML.loadFile((xdocs / "checks.xml").toJava).to(List)
         tr <- xml \\ "tr"

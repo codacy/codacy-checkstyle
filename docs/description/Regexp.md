@@ -38,3 +38,12 @@ expression to achieve a particular goal.
 config file you must also take into account the XML rules. e.g. if you
 want to match a \< symbol you need to enter &lt;. The regular expression
 should be entered on one line.
+
+**Note:** To search for parentheses () in a regular expression you must
+escape them like \\\\. This is required by the regexp engine, otherwise
+it will think they are special instruction characters.
+
+**Note:** To search for things that mean something in XML, like \< you
+need to escape them like &lt;. This is required so the XML parser does
+not act on them, but instead passes the correct character to the regexp
+engine.
