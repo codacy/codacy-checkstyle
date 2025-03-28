@@ -517,7 +517,7 @@
     "description" : "Specify the name of the file containing the required header."
   }, {
     "name" : "ignoreLines",
-    "description" : "Specify the line numbers to ignore."
+    "description" : "Specifies the line numbers to ignore when matching lines in a content of headerFile."
   } ]
 }, {
   "patternId" : "HiddenField",
