@@ -4,9 +4,9 @@ Checks whether files end with a line separator.
 
 </div>
 
-Rationale: Any source files and text files in general should end with a
-line separator to let other easily add new content at the end of file
-and "diff" command does not show previous lines as changed.
+Rationale: Any not empty source files and text files in general should
+end with a line separator to let other easily add new content at the end
+of file and "diff" command does not show previous lines as changed.
 
 Example (the line with 'No newline at end of file' should not be in the
 diff):

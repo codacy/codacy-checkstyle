@@ -1,6 +1,6 @@
 {
   "name" : "checkstyle",
-  "version" : "10.21.4",
+  "version" : "10.26.1",
   "patterns" : [ {
     "patternId" : "AbbreviationAsWordInName",
     "level" : "Info",
@@ -723,7 +723,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "format",
-      "default" : "(?i)^(?!(record|yield|var|permits|sealed)$).+$"
+      "default" : "^(?!var$|\\S*\\$)\\S+$"
     }, {
       "name" : "tokens",
       "default" : "CLASS_DEF, INTERFACE_DEF, ENUM_DEF, ANNOTATION_DEF, ANNOTATION_FIELD_DEF, PARAMETER_DEF, VARIABLE_DEF, METHOD_DEF, ENUM_CONSTANT_DEF, PATTERN_VARIABLE_DEF, RECORD_DEF, RECORD_COMPONENT_DEF, LAMBDA"
@@ -1033,6 +1033,9 @@
       "name" : "accessModifiers",
       "default" : "public, protected, package, private"
     }, {
+      "name" : "allowInlineReturn",
+      "default" : false
+    }, {
       "name" : "allowMissingParamTags",
       "default" : false
     }, {
@@ -1173,14 +1176,11 @@
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
-      "name" : "excludeScope",
-      "default" : null
+      "name" : "accessModifiers",
+      "default" : "public, protected, package, private"
     }, {
       "name" : "ignoreNamePattern",
       "default" : null
-    }, {
-      "name" : "scope",
-      "default" : "private"
     }, {
       "name" : "tokens",
       "default" : "ENUM_CONSTANT_DEF"
@@ -1530,6 +1530,19 @@
     "languages" : [ ],
     "enabled" : false
   }, {
+    "patternId" : "MultiFileRegexpHeader",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "fileExtensions",
+      "default" : ""
+    }, {
+      "name" : "headerFiles",
+      "default" : null
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
     "patternId" : "MultipleStringLiterals",
     "level" : "Info",
     "category" : "CodeStyle",
@@ -1869,6 +1882,13 @@
       "name" : "tokens",
       "default" : "ANNOTATION, ANNOTATION_FIELD_DEF, CTOR_CALL, CTOR_DEF, DOT, ENUM_CONSTANT_DEF, EXPR, LITERAL_CATCH, LITERAL_DO, LITERAL_FOR, LITERAL_IF, LITERAL_NEW, LITERAL_SWITCH, LITERAL_SYNCHRONIZED, LITERAL_WHILE, METHOD_CALL, METHOD_DEF, QUESTION, RESOURCE_SPECIFICATION, SUPER_CTOR_CALL, LAMBDA, RECORD_DEF, RECORD_PATTERN_DEF"
     } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "PatternVariableAssignment",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
     "languages" : [ ],
     "enabled" : false
   }, {
@@ -2383,6 +2403,13 @@
       "name" : "fileExtensions",
       "default" : ".properties"
     } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "UnnecessaryNullCheckWithInstanceOf",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
     "languages" : [ ],
     "enabled" : false
   }, {

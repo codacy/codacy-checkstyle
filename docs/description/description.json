@@ -810,6 +810,9 @@
     "name" : "accessModifiers",
     "description" : "Specify the access modifiers where Javadoc comments are checked."
   }, {
+    "name" : "allowInlineReturn",
+    "description" : "Control whether to allow inline return tags."
+  }, {
     "name" : "allowMissingParamTags",
     "description" : "Control whether to ignore violations when a method has parameters but does not have matching param tags in the javadoc."
   }, {
@@ -926,14 +929,11 @@
   "patternId" : "JavadocVariable",
   "title" : "JavadocVariable",
   "parameters" : [ {
-    "name" : "excludeScope",
-    "description" : "Specify the visibility scope where Javadoc comments are not checked."
+    "name" : "accessModifiers",
+    "description" : "accessModifiers"
   }, {
     "name" : "ignoreNamePattern",
     "description" : "Specify the regexp to define variable names to ignore."
-  }, {
-    "name" : "scope",
-    "description" : "Specify the visibility scope where Javadoc comments are checked."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
@@ -1209,6 +1209,16 @@
   "title" : "ModifierOrder",
   "parameters" : [ ]
 }, {
+  "patternId" : "MultiFileRegexpHeader",
+  "title" : "MultiFileRegexpHeader",
+  "parameters" : [ {
+    "name" : "fileExtensions",
+    "description" : "Specify the file extensions of the files to process."
+  }, {
+    "name" : "headerFiles",
+    "description" : "Specify a comma-separated list of files containing the required headers. If a file's header matches none, the violation references the first file in this list. Users can order files to set a preferred header for such reporting."
+  } ]
+}, {
   "patternId" : "MultipleStringLiterals",
   "title" : "MultipleStringLiterals",
   "parameters" : [ {
@@ -1451,6 +1461,10 @@
     "name" : "tokens",
     "description" : "tokens to check"
   } ]
+}, {
+  "patternId" : "PatternVariableAssignment",
+  "title" : "PatternVariableAssignment",
+  "parameters" : [ ]
 }, {
   "patternId" : "PatternVariableName",
   "title" : "PatternVariableName",
@@ -1855,6 +1869,10 @@
     "description" : "Specify the file extensions of the files to process."
   } ]
 }, {
+  "patternId" : "UnnecessaryNullCheckWithInstanceOf",
+  "title" : "UnnecessaryNullCheckWithInstanceOf",
+  "parameters" : [ ]
+}, {
   "patternId" : "UnnecessaryParentheses",
   "title" : "UnnecessaryParentheses",
   "parameters" : [ {
@@ -1917,7 +1935,7 @@
   "title" : "VariableDeclarationUsageDistance",
   "parameters" : [ {
     "name" : "allowedDistance",
-    "description" : "Specify distance between declaration of variable and its first usage. Values should be greater than 0."
+    "description" : "Specify the maximum distance between a variable's declaration and its first usage. Value should be greater than 0."
   }, {
     "name" : "ignoreFinal",
     "description" : "Allow to ignore variables with a 'final' modifier."
@@ -1926,7 +1944,7 @@
     "description" : "Define RegExp to ignore distance calculation for variables listed in this pattern."
   }, {
     "name" : "validateBetweenScopes",
-    "description" : "Allow to calculate the distance between declaration of variable and its first usage in the different scopes."
+    "description" : "Allow to calculate the distance between a variable's declaration and its first usage across different scopes."
   } ]
 }, {
   "patternId" : "VisibilityModifier",

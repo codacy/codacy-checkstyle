@@ -18,5 +18,5 @@ element of an array.
 
     String[] foo = new String[] {
       "FOO",
-      "BAR", //violation
+      "BAR", // violation
     }

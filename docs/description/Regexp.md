@@ -40,8 +40,8 @@ want to match a \< symbol you need to enter &lt;. The regular expression
 should be entered on one line.
 
 **Note:** To search for parentheses () in a regular expression you must
-escape them like \\\\. This is required by the regexp engine, otherwise
-it will think they are special instruction characters.
+escape them like \\(\\). This is required by the regexp engine,
+otherwise it will think they are special instruction characters.
 
 **Note:** To search for things that mean something in XML, like \< you
 need to escape them like &lt;. This is required so the XML parser does
