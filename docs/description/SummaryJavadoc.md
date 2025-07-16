@@ -9,3 +9,6 @@ that does not contain first sentence, though with {@code {@return}} a
 period is not required as the Javadoc tool adds it.
 
 </div>
+
+Note: For defining a summary, both the first sentence and the @summary
+tag approaches are supported.

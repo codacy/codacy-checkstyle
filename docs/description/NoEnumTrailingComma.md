@@ -18,5 +18,5 @@ in enum definition.
 
     enum Foo1 {
       FOO,
-      BAR, //violation
+      BAR, // violation
     }

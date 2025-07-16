@@ -1,11 +1,9 @@
 <div>
 
-Checks identifiers with a pattern for a set of illegal names, such as
-those that are restricted or contextual keywords. Examples include
-"yield", "record", and "var". Please read more at [Java Language
-Specification](https://docs.oracle.com/javase/specs/jls/se22/html/jls-3.html#jls-3.9)
-to get to know more about restricted keywords. Since this check uses a
-pattern to specify valid identifiers, users can also prohibit the usage
-of certain symbols, such as "$", or any non-ascii character.
+Checks identifiers against a regular expression pattern to detect
+illegal names. Since this check uses a pattern to define *valid*
+identifiers, users will need to use negative lookaheads to explicitly
+ban certain names (e.g., "var") or patterns (e.g., any identifier
+containing $) while still allowing all other valid identifiers.
 
 </div>
