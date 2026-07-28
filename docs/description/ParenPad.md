@@ -7,12 +7,12 @@ after an empty for iterator, at the left parenthesis before an empty for
 initialization, or at the right parenthesis of a try-with-resources
 resource specification where the last resource variable has a trailing
 semicolon. Use Check
-[EmptyForIteratorPad](https://checkstyle.org/emptyforiteratorpad.html#EmptyForIteratorPad)
+[EmptyForIteratorPad](https://checkstyle.org/checks/whitespace/emptyforiteratorpad.html)
 to validate empty for iterators and
-[EmptyForInitializerPad](https://checkstyle.org/emptyforinitializerpad.html#EmptyForInitializerPad)
+[EmptyForInitializerPad](https://checkstyle.org/checks/whitespace/emptyforinitializerpad.html)
 to validate empty for initializers. Typecasts are also not checked, as
 there is
-[TypecastParenPad](https://checkstyle.org/typecastparenpad.html#TypecastParenPad)
+[TypecastParenPad](https://checkstyle.org/checks/whitespace/typecastparenpad.html)
 to validate them.
 
 </div>

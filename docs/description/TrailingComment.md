@@ -13,9 +13,15 @@ Rationale: Steve McConnell in Code Complete suggests that endline
 comments are a bad practice. An end line comment would be one that is on
 the same line as actual code. For example:
 
-    a = b + c;      // Some insightful comment
-    d = e / f;        // Another comment for this line
-            
+<div class="wrapper">
+
+``` prettyprint
+a = b + c;      // Some insightful comment
+d = e / f;      /* Some insightful block comment */
+        
+```
+
+</div>
 
 Quoting Code Complete for the justification:
 

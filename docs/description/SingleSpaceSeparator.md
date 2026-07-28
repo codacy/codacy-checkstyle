@@ -10,15 +10,28 @@ inspect whitespaces before and after comments, set the property
 
 Setting `validateComments` to false will ignore cases like:
 
-    int i;  // Multiple whitespaces before comment tokens will be ignored.
-    private void foo(int  /* whitespaces before and after block-comments will be
-    ignored */  i) {
-            
+<div class="wrapper">
+
+``` prettyprint
+int i;  // Multiple whitespaces before comment tokens will be ignored.
+private void foo(int  /* whitespaces before and after block-comments will be
+ignored */  i) {
+        
+```
+
+</div>
 
 Sometimes, users like to space similar items on different lines to the
 same column position for easier reading. This feature isn't supported by
 this check, so both braces in the following case will be reported as
 violations.
 
-    public long toNanos(long d)  { return d;             } // 2 violations
-    public long toMicros(long d) { return d / (C1 / C0); }
+<div class="wrapper">
+
+``` prettyprint
+public long toNanos(long d)  { return d;             } // 2 violations
+public long toMicros(long d) { return d / (C1 / C0); }
+        
+```
+
+</div>

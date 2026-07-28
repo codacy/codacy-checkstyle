@@ -7,16 +7,29 @@ use of trailing commas should be prohibited.
 
 </div>
 
-    enum Foo1 {
-      FOO,
-      BAR;
-    }
-            
+<div class="wrapper">
+
+``` prettyprint
+enum Foo1 {
+  FOO,
+  BAR;
+}
+        
+```
+
+</div>
 
 The check demands that there should not be any comma after last constant
 in enum definition.
 
-    enum Foo1 {
-      FOO,
-      BAR, // violation
-    }
+<div class="wrapper">
+
+``` prettyprint
+enum Foo1 {
+  FOO,
+  BAR, // violation
+}
+        
+```
+
+</div>

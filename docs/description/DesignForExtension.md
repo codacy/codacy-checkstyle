@@ -16,7 +16,7 @@ team/user attention.
 
 ATTENTION: Only user can decide whether a class is designed for
 extension or not. The check just shows all classes which are possibly
-designed for extension. If smth inappropriate is found please use
+designed for extension. If something inappropriate is found please use
 suppression.
 
 ATTENTION: If the method which can be overridden in a subclass has a
@@ -68,46 +68,59 @@ provide empty "hooks" that can be implemented by subclasses.
 
 Example of code that cause violation as it is designed for extension:
 
-    public abstract class Plant {
-      private String roots;
-      private String trunk;
+<div class="wrapper">
 
-      protected void validate() {
-        if (roots == null) throw new IllegalArgumentException("No roots!");
-        if (trunk == null) throw new IllegalArgumentException("No trunk!");
-      }
+``` prettyprint
+public abstract class Plant {
+  private String roots;
+  private String trunk;
 
-      public abstract void grow();
-    }
+  protected void validate() {
+    if (roots == null) throw new IllegalArgumentException("No roots!");
+    if (trunk == null) throw new IllegalArgumentException("No trunk!");
+  }
 
-    public class Tree extends Plant {
-      private List leaves;
+  public abstract void grow();
+}
 
-      @Overrides
-      protected void validate() {
-        super.validate();
-        if (leaves == null) throw new IllegalArgumentException("No leaves!");
-      }
+public class Tree extends Plant {
+  private List leaves;
 
-      public void grow() {
-        validate();
-      }
-    }
-            
+  @Overrides
+  protected void validate() {
+    super.validate();
+    if (leaves == null) throw new IllegalArgumentException("No leaves!");
+  }
+
+  public void grow() {
+    validate();
+  }
+}
+        
+```
+
+</div>
 
 Example of code without violation:
 
-    public abstract class Plant {
-      private String roots;
-      private String trunk;
+<div class="wrapper">
 
-      private void validate() {
-        if (roots == null) throw new IllegalArgumentException("No roots!");
-        if (trunk == null) throw new IllegalArgumentException("No trunk!");
-        validateEx();
-      }
+``` prettyprint
+public abstract class Plant {
+  private String roots;
+  private String trunk;
 
-      protected void validateEx() { }
+  private void validate() {
+    if (roots == null) throw new IllegalArgumentException("No roots!");
+    if (trunk == null) throw new IllegalArgumentException("No trunk!");
+    validateEx();
+  }
 
-      public abstract void grow();
-    }
+  protected void validateEx() { }
+
+  public abstract void grow();
+}
+        
+```
+
+</div>

@@ -7,6 +7,13 @@ in
 
 </div>
 
-    for (Iterator foo = very.long.line.iterator();
-          foo.hasNext();
-         )
+<div class="wrapper">
+
+``` prettyprint
+for (Iterator foo = very.long.line.iterator();
+    foo.hasNext();
+   )
+        
+```
+
+</div>

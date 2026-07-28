@@ -9,9 +9,22 @@ article](https://stackoverflow.com/questions/513832/how-do-i-compare-strings-in-
 
 Rationale: Novice Java programmers often use code like:
 
-    if (x == "something")
-            
+<div class="wrapper">
+
+``` prettyprint
+if (x == "something")
+        
+```
+
+</div>
 
 when they mean
 
-    if ("something".equals(x))
+<div class="wrapper">
+
+``` prettyprint
+if ("something".equals(x))
+        
+```
+
+</div>

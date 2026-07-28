@@ -7,4 +7,4 @@ local, final variables.
 </div>
 
 This check does not support final pattern variables. Instead, use
-[PatternVariableName](https://checkstyle.org/patternvariablename.html#PatternVariableName).
+[PatternVariableName](https://checkstyle.org/checks/naming/patternvariablename.html).

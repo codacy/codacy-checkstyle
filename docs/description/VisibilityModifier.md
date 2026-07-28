@@ -7,15 +7,6 @@ members must be private unless the property `protectedAllowed` or
 
 </div>
 
-Public members are not flagged if the name matches the public member
-regular expression (contains `"^serialVersionUID$"` by default).
-
-Note that Checkstyle 2 used to include `"^f[A-Z][a-zA-Z0-9]*$"` in the
-default pattern to allow names used in container-managed persistence for
-Enterprise JavaBeans (EJB) 1.1 with the default settings. With EJB 2.0
-it is no longer necessary to have public access for persistent fields,
-so the default has been changed.
-
 Rationale: Enforce encapsulation.
 
 Check also has options making it less strict:

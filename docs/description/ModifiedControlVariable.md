@@ -5,10 +5,16 @@ block. An example is:
 
 </div>
 
-    for (int i = 0; i < 1; i++) {
-      i++; // violation
-    }
-            
+<div class="wrapper">
+
+``` prettyprint
+for (int i = 0; i < 1; i++) {
+  i++; // violation
+}
+        
+```
+
+</div>
 
 Rationale: If the control variable is modified inside the loop body, the
 program flow becomes more difficult to follow. See [FOR
@@ -17,14 +23,27 @@ specification for more details.
 
 Such loop would be suppressed:
 
-    for (int i = 0; i < 10;) {
-      i++;
-    }
-            
+<div class="wrapper">
+
+``` prettyprint
+for (int i = 0; i < 10;) {
+  i++;
+}
+        
+```
+
+</div>
 
 NOTE:The check works with only primitive type variables. The check will
-not work for arrays used as control variable.An example is
+not work for arrays used as control variable. An example is
 
-    for (int a[]={0};a[0] < 10;a[0]++) {
-     a[0]++;   // it will skip this violation
-    }
+<div class="wrapper">
+
+``` prettyprint
+for (int a[]={0};a[0] < 10;a[0]++) {
+ a[0]++;   // it will skip this violation
+}
+        
+```
+
+</div>

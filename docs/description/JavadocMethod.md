@@ -42,7 +42,14 @@ private non-static methods and constructors are not inheritable.
 For example, if the following method is implementing a method required
 by an interface, then the Javadoc could be done as:
 
-    /** {@inheritDoc} */
-    public int checkReturnTag(final int aTagIndex,
-                              JavadocTag[] aTags,
-                              int aLineNo)
+<div class="wrapper">
+
+``` prettyprint
+/** {@inheritDoc} */
+public int checkReturnTag(final int aTagIndex,
+                          JavadocTag[] aTags,
+                          int aLineNo)
+        
+```
+
+</div>

@@ -17,10 +17,10 @@ unused if:
 - **Optionally:** it is referenced in Javadoc comments. This check is on
   by default, but it is considered bad practice to introduce a
   compile-time dependency for documentation purposes only. As an
-  example, the import `java.util.List` would be considered referenced
-  with the Javadoc comment `{@link List}`. The alternative to avoid
+  example, the import `java.util.Set` would be considered referenced
+  with the Javadoc comment `{@link Set}`. The alternative to avoid
   introducing a compile-time dependency would be to write the Javadoc
-  comment as `{@link java.util.List}`.
+  comment as `{@link Set}`.
 
 The main limitation of this check is handling the cases where:
 
@@ -30,3 +30,7 @@ The main limitation of this check is handling the cases where:
   can distinguish imports with same name but different parameters, but
   checkstyle can not due to
   [limitation.](https://checkstyle.org/writingchecks.html#Limitations))
+- Module import declarations are used. Checkstyle does not resolve
+  modules and therefore cannot determine which packages or types are
+  brought into scope by an `import module` declaration. See
+  [limitations.](https://checkstyle.org/writingchecks.html#Limitations)

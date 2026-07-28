@@ -1,12 +1,15 @@
 <div>
 
-Checks for empty line separators before package, all import
-declarations, fields, constructors, methods, nested classes, static
-initializers and instance initializers.
+Checks for empty line separators after, fields, constructors, methods,
+nested classes, static initializers and instance initializers.
 
 </div>
 
-Checks for empty line separators before not only statements but
+For package declaration it checks for both before and after line
+separators and for import declarations it checks for empty line
+separator after last import declaration.
+
+Checks for empty line separators after not only statements but
 implementation and documentation comments and blocks as well.
 
 ATTENTION: empty line separator is required between token siblings, not

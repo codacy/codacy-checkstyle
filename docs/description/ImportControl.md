@@ -12,8 +12,8 @@ declared package will be controlled by this check. To specify
 differences between a main package and a sub-package, you must define
 the sub-package inside the main package. When controlling file, only the
 file name is considered and only files processed by
-[TreeWalker](../../config.html#TreeWalker). The file's extension is
-ignored.
+[TreeWalker](https://checkstyle.org/config.html#TreeWalker). The file's
+extension is ignored.
 
 Short description of the behaviour:
 
@@ -43,8 +43,8 @@ Short description of the behaviour:
   import is disallowed by default.
 
 The DTD for an import control XML document is at
-[https://checkstyle.org/dtds/import_control_1\_4.dtd](/dtds/import_control_1_4.dtd).
-It contains documentation on each of the elements and attributes.
+<https://checkstyle.org/dtds/import_control_1_5.dtd>. It contains
+documentation on each of the elements and attributes.
 
 The check validates a XML document when it loads the document. To
 validate against the above DTD, include the following document type
@@ -52,9 +52,11 @@ declaration in your XML document:
 
 <div class="wrapper">
 
-    <!DOCTYPE import-control PUBLIC
-        "-//Checkstyle//DTD ImportControl Configuration 1.4//EN"
-        "https://checkstyle.org/dtds/import_control_1_4.dtd">
-              
+``` prettyprint
+<!DOCTYPE import-control PUBLIC
+    "-//Checkstyle//DTD ImportControl Configuration 1.5//EN"
+    "https://checkstyle.org/dtds/import_control_1_5.dtd">
+        
+```
 
 </div>
