@@ -99,6 +99,7 @@ Look at recent bump commits for the shape of a typical diff: `git log --oneline 
 6. **Iterate on failures** (see table below), re-running only the relevant `DockerTest` command after each fix — no need to rebuild the whole loop from step 1 unless `build.sbt`/source changed.
 7. **Commit** the version bump(s) together with the regenerated `docs/` files in one change (this matches historical commits like `dc394fc`, `d104910`).
 8. **Push and open a PR.** CI (`.circleci/config.yml`) runs, in order: `codacy/checkout_and_version` → `publish_docker_local` (scalafmt + `universal:stage` + `docker build` + `docker save`) → `plugins_test` (`codacy_plugins_test/run`, `run_multiple_tests: true`) → `codacy/publish_docker` (master only) → `codacy/tag_version`. A failure in `publish_docker_local` is almost always scalafmt or a compile error; a failure in `plugins_test` means the generated patterns/docs don't match what the engine actually outputs for the fixtures.
+9. **Poll the PR's real CI checks until they all pass — local validation is NOT the finish line.** After every push, run `gh pr checks <pr-url>` and keep re-polling (short sleep while any check is `pending`) until all checks finish. If a check fails, fetch its actual log (CircleCI API/UI for the failing job — don't guess), find the true root cause, fix it, push again (never `--no-verify`, never force-push), and re-poll. Repeat until every check is green. **The CI environment's toolchain can differ from your local one**, so a clean local run does not guarantee CI passes. Concrete example this playbook has already hit: the 13.x bump compiled fine locally under a manually-installed JDK 21, but `publish_docker_local` went red with `Class java.lang.Record not found` because the CircleCI `codacy/sbt` job's *build* JDK defaulted to Java 8 — a different concern from the Dockerfile's *runtime* JDK. It was only caught by polling the real CI check, and fixed by passing `openjdk_version: "21"` to the job (and bumping the `codacy/base` orb to a version that supports it). Only stop iterating when every check passes, or you hit a genuine product/infra decision that needs a human — in which case explain it in the PR rather than guessing.
 
 ### 4. Common failure modes and fixes
 
@@ -120,6 +121,7 @@ Look at recent bump commits for the shape of a typical diff: `git log --oneline 
 - `docker build -t codacy-checkstyle .` succeeds.
 - `codacy-plugins-test`'s `pattern`, `json`, and `multiple` commands all pass locally against the freshly built image.
 - The diff looks like previous version-bump commits in shape (`git log --oneline --all | grep -i bump` for reference).
+- **After pushing and opening/updating the PR, every CI check on it is green.** Poll `gh pr checks <pr-url>` and iterate on any failure (fetch the real CI log, fix, push, re-poll) until all pass — a passing local build is not sufficient, because the CI toolchain (e.g. the CircleCI build JDK) can differ from your local one (see step 9).
 
 ## What is Codacy
 
