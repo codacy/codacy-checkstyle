@@ -22,6 +22,9 @@ The check validates:
     306](https://openjdk.org/jeps/306)
 8.  `final` modifier on unnamed variables when using JDK 22 or later.
 
+ATTENTION: Top-level members of compact source files are skipped from
+validation by this check.
+
 interfaces by definition are abstract so the `abstract` modifier is
 redundant on them.
 

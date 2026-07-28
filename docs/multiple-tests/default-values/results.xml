@@ -6,6 +6,6 @@
         <error source="OperatorWrap" line="18" message="&apos;+&apos; should be on a new line." severity="info" />
     </file>
     <file name="LineLength.java">
-         <error source="ImportOrder" line="3" message="Wrong order for &apos;java.lang.Integer&apos; import." severity="info" />
+         <error source="ImportOrder" line="3" message="Wrong lexicographical order for &apos;java.lang.Integer&apos; import. Should be before &apos;java.lang.String&apos;." severity="info" />
     </file>
 </checkstyle>

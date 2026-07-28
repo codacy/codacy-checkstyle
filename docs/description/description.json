@@ -37,6 +37,19 @@
     "description" : "Control whether to ignore checking the name. Realistically only useful if using the check to identify that match name and do not have the abstract modifier."
   } ]
 }, {
+  "patternId" : "AnnotatedDeclarationVisibility",
+  "title" : "AnnotatedDeclarationVisibility",
+  "parameters" : [ {
+    "name" : "annotations",
+    "description" : "Setter for annotation canonical names."
+  }, {
+    "name" : "tokens",
+    "description" : "tokens to check"
+  }, {
+    "name" : "visibility",
+    "description" : "Setter for allowed visibility modifiers. Allowed values: public, protected, package, private."
+  } ]
+}, {
   "patternId" : "AnnotationLocation",
   "title" : "AnnotationLocation",
   "parameters" : [ {
@@ -153,6 +166,9 @@
   }, {
     "name" : "excludes",
     "description" : "Specify packages where starred class imports are allowed and classes where starred static member imports are allowed."
+  }, {
+    "name" : "maxAllowedStarImports",
+    "description" : "Control how many star imports are allowed."
   } ]
 }, {
   "patternId" : "AvoidStaticImport",
@@ -259,7 +275,10 @@
 }, {
   "patternId" : "ConstructorsDeclarationGrouping",
   "title" : "ConstructorsDeclarationGrouping",
-  "parameters" : [ ]
+  "parameters" : [ {
+    "name" : "orderByIncreasingParameterCount",
+    "description" : "Control whether to enforce order by increasing parameter count (arity) or not."
+  } ]
 }, {
   "patternId" : "CovariantEquals",
   "title" : "CovariantEquals",
@@ -504,6 +523,10 @@
   "title" : "GenericWhitespace",
   "parameters" : [ ]
 }, {
+  "patternId" : "GoogleNonConstantFieldName",
+  "title" : "GoogleNonConstantFieldName",
+  "parameters" : [ ]
+}, {
   "patternId" : "Header",
   "title" : "Header",
   "parameters" : [ {
@@ -591,6 +614,16 @@
   "parameters" : [ {
     "name" : "classes",
     "description" : "Specify fully qualified class names that should not be instantiated."
+  } ]
+}, {
+  "patternId" : "IllegalSymbol",
+  "title" : "IllegalSymbol",
+  "parameters" : [ {
+    "name" : "symbolCodes",
+    "description" : "Specify the symbols to check for."
+  }, {
+    "name" : "tokens",
+    "description" : "tokens to check"
   } ]
 }, {
   "patternId" : "IllegalThrows",
@@ -834,6 +867,9 @@
   }, {
     "name" : "validateThrows",
     "description" : "Control whether to validate throws tags."
+  }, {
+    "name" : "violateExecutionOnNonTightHtml",
+    "description" : "Control when to print violations if the Javadoc being examined by this check violates the tight html rules defined at Tight-HTML Rules."
   } ]
 }, {
   "patternId" : "JavadocMissingLeadingAsterisk",
@@ -868,31 +904,6 @@
   }, {
     "name" : "violateExecutionOnNonTightHtml",
     "description" : "Control when to print violations if the Javadoc being examined by this check violates the tight html rules defined at Tight-HTML Rules."
-  } ]
-}, {
-  "patternId" : "JavadocStyle",
-  "title" : "JavadocStyle",
-  "parameters" : [ {
-    "name" : "checkEmptyJavadoc",
-    "description" : "Control whether to check if the Javadoc is missing a describing text."
-  }, {
-    "name" : "checkFirstSentence",
-    "description" : "Control whether to check the first sentence for proper end of sentence."
-  }, {
-    "name" : "checkHtml",
-    "description" : "Control whether to check for incomplete HTML tags."
-  }, {
-    "name" : "endOfSentenceFormat",
-    "description" : "Specify the format for matching the end of a sentence."
-  }, {
-    "name" : "excludeScope",
-    "description" : "Specify the visibility scope where Javadoc comments are not checked."
-  }, {
-    "name" : "scope",
-    "description" : "Specify the visibility scope where Javadoc comments are checked."
-  }, {
-    "name" : "tokens",
-    "description" : "tokens to check"
   } ]
 }, {
   "patternId" : "JavadocTagContinuationIndentation",
@@ -931,6 +942,9 @@
   }, {
     "name" : "versionFormat",
     "description" : "Specify the pattern for @version tag."
+  }, {
+    "name" : "violateExecutionOnNonTightHtml",
+    "description" : "Control when to print violations if the Javadoc being examined by this check violates the tight html rules defined at Tight-HTML Rules."
   } ]
 }, {
   "patternId" : "JavadocVariable",
@@ -971,6 +985,16 @@
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
+  } ]
+}, {
+  "patternId" : "LineEnding",
+  "title" : "LineEnding",
+  "parameters" : [ {
+    "name" : "fileExtensions",
+    "description" : "Specify the file extensions of the files to process."
+  }, {
+    "name" : "lineEnding",
+    "description" : "Set lineEnding."
   } ]
 }, {
   "patternId" : "LineLength",
@@ -1188,6 +1212,9 @@
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
+  }, {
+    "name" : "violateExecutionOnNonTightHtml",
+    "description" : "Control when to print violations if the Javadoc being examined by this check violates the tight html rules defined at Tight-HTML Rules."
   } ]
 }, {
   "patternId" : "MissingNullCaseInSwitch",
@@ -1200,6 +1227,10 @@
     "name" : "javaFiveCompatibility",
     "description" : "Enable java 5 compatibility mode."
   } ]
+}, {
+  "patternId" : "MissingOverrideOnRecordAccessor",
+  "title" : "MissingOverrideOnRecordAccessor",
+  "parameters" : [ ]
 }, {
   "patternId" : "MissingSwitchDefault",
   "title" : "MissingSwitchDefault",
@@ -1225,6 +1256,10 @@
     "name" : "headerFiles",
     "description" : "Specify a comma-separated list of files containing the required headers. If a file's header matches none, the violation references the first file in this list. Users can order files to set a preferred header for such reporting."
   } ]
+}, {
+  "patternId" : "MultilineCommentLeadingAsteriskPresence",
+  "title" : "MultilineCommentLeadingAsteriskPresence",
+  "parameters" : [ ]
 }, {
   "patternId" : "MultipleStringLiterals",
   "title" : "MultipleStringLiterals",
@@ -1327,6 +1362,9 @@
   "patternId" : "NoLineWrap",
   "title" : "NoLineWrap",
   "parameters" : [ {
+    "name" : "skipAnnotations",
+    "description" : "Specify whether to skip annotations to be part of target token."
+  }, {
     "name" : "tokens",
     "description" : "tokens to check"
   } ]
@@ -1365,6 +1403,10 @@
     "description" : "Control when to print violations if the Javadoc being examined by this check violates the tight html rules defined at Tight-HTML Rules."
   } ]
 }, {
+  "patternId" : "NumericalPrefixesInfixesSuffixesCharacterCase",
+  "title" : "NumericalPrefixesInfixesSuffixesCharacterCase",
+  "parameters" : [ ]
+}, {
   "patternId" : "OneStatementPerLine",
   "title" : "OneStatementPerLine",
   "parameters" : [ {
@@ -1375,6 +1417,13 @@
   "patternId" : "OneTopLevelClass",
   "title" : "OneTopLevelClass",
   "parameters" : [ ]
+}, {
+  "patternId" : "OpenjdkAnnotationLocation",
+  "title" : "OpenjdkAnnotationLocation",
+  "parameters" : [ {
+    "name" : "tokens",
+    "description" : "tokens to check"
+  } ]
 }, {
   "patternId" : "OperatorWrap",
   "title" : "OperatorWrap",
@@ -1406,7 +1455,10 @@
 }, {
   "patternId" : "OverloadMethodsDeclarationOrder",
   "title" : "OverloadMethodsDeclarationOrder",
-  "parameters" : [ ]
+  "parameters" : [ {
+    "name" : "orderByIncreasingParameterCount",
+    "description" : "Control whether to enforce order by increasing parameter count (arity) or not."
+  } ]
 }, {
   "patternId" : "PackageAnnotation",
   "title" : "PackageAnnotation",
@@ -1837,6 +1889,28 @@
     "description" : "Specify language codes of required translations which must exist in project."
   } ]
 }, {
+  "patternId" : "TypeBodyPadding",
+  "title" : "TypeBodyPadding",
+  "parameters" : [ {
+    "name" : "allowEmpty",
+    "description" : "Allow empty type bodies to omit blank line padding."
+  }, {
+    "name" : "atEndOfBody",
+    "description" : "Require a blank line before the type body closing brace."
+  }, {
+    "name" : "atStartOfBody",
+    "description" : "Require a blank line after the type body opening brace."
+  }, {
+    "name" : "skipInner",
+    "description" : "Control whether to skip checking of inner types."
+  }, {
+    "name" : "skipLocal",
+    "description" : "Control whether to skip checking of local types."
+  }, {
+    "name" : "tokens",
+    "description" : "tokens to check"
+  } ]
+}, {
   "patternId" : "TypeName",
   "title" : "TypeName",
   "parameters" : [ {
@@ -1916,6 +1990,10 @@
     "description" : "Allow unnecessary semicolon if closing parenthesis is not on the same line."
   } ]
 }, {
+  "patternId" : "UnnecessaryTypeArgumentsWithRecordPattern",
+  "title" : "UnnecessaryTypeArgumentsWithRecordPattern",
+  "parameters" : [ ]
+}, {
   "patternId" : "UnusedCatchParameterShouldBeUnnamed",
   "title" : "UnusedCatchParameterShouldBeUnnamed",
   "parameters" : [ ]
@@ -1925,6 +2003,9 @@
   "parameters" : [ {
     "name" : "processJavadoc",
     "description" : "Control whether to process Javadoc comments."
+  }, {
+    "name" : "violateExecutionOnNonTightHtml",
+    "description" : "Control when to print violations if the Javadoc being examined by this check violates the tight html rules defined at Tight-HTML Rules."
   } ]
 }, {
   "patternId" : "UnusedLambdaParameterShouldBeUnnamed",
@@ -1936,10 +2017,21 @@
   "parameters" : [ {
     "name" : "allowUnnamedVariables",
     "description" : "Allow variables named with a single underscore (known as unnamed variables in Java 21+)."
+  }, {
+    "name" : "jdkVersion",
+    "description" : "jdkVersion"
   } ]
+}, {
+  "patternId" : "UnusedTryResourceShouldBeUnnamed",
+  "title" : "UnusedTryResourceShouldBeUnnamed",
+  "parameters" : [ ]
 }, {
   "patternId" : "UpperEll",
   "title" : "UpperEll",
+  "parameters" : [ ]
+}, {
+  "patternId" : "UseEnhancedSwitch",
+  "title" : "UseEnhancedSwitch",
   "parameters" : [ ]
 }, {
   "patternId" : "VariableDeclarationUsageDistance",
@@ -2025,6 +2117,13 @@
     "description" : "tokens to check"
   } ]
 }, {
+  "patternId" : "WhitespaceBeforeEmptyBody",
+  "title" : "WhitespaceBeforeEmptyBody",
+  "parameters" : [ {
+    "name" : "tokens",
+    "description" : "tokens to check"
+  } ]
+}, {
   "patternId" : "WriteTag",
   "title" : "WriteTag",
   "parameters" : [ {
@@ -2039,5 +2138,8 @@
   }, {
     "name" : "tokens",
     "description" : "tokens to check"
+  }, {
+    "name" : "violateExecutionOnNonTightHtml",
+    "description" : "Control when to print violations if the Javadoc being examined by this check violates the tight html rules defined at Tight-HTML Rules."
   } ]
 } ]

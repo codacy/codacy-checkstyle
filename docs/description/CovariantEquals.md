@@ -14,6 +14,13 @@ with a covariant parameter type (any subtype of Object).
 two different enum values that are equal using covariant enum method,
 and not equal when compared normally.
 
+Note: Compact source files ([JEP 512](https://openjdk.org/jeps/512)) are
+skipped by design. Implicit classes in compact source files are not
+reusable types and cannot be referenced by name, so they cannot
+participate in the polymorphic contexts and collections where covariant
+`equals()` silently falls back to identity comparison. The rationale for
+this check does not extend to compact source files.
+
 Inspired by [Finding Bugs is Easy, chapter '4.5 Bad Covariant Definition
 of Equals (Eq)'](https://www.cs.jhu.edu/~daveho/pubs/oopsla2004.pdf):
 

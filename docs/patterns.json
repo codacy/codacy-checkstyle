@@ -1,6 +1,6 @@
 {
   "name" : "checkstyle",
-  "version" : "12.3.1",
+  "version" : "13.9.0",
   "patterns" : [ {
     "patternId" : "AbbreviationAsWordInName",
     "level" : "Info",
@@ -42,6 +42,22 @@
     }, {
       "name" : "ignoreName",
       "default" : false
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "AnnotatedDeclarationVisibility",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "annotations",
+      "default" : "com.google.common.annotations.VisibleForTesting"
+    }, {
+      "name" : "tokens",
+      "default" : "CLASS_DEF, INTERFACE_DEF, ENUM_DEF, RECORD_DEF, METHOD_DEF, CTOR_DEF, VARIABLE_DEF, ANNOTATION_DEF"
+    }, {
+      "name" : "visibility",
+      "default" : "protected, package"
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -199,6 +215,9 @@
     }, {
       "name" : "excludes",
       "default" : ""
+    }, {
+      "name" : "maxAllowedStarImports",
+      "default" : 0
     } ],
     "languages" : [ ],
     "enabled" : true
@@ -335,7 +354,10 @@
     "patternId" : "ConstructorsDeclarationGrouping",
     "level" : "Info",
     "category" : "CodeStyle",
-    "parameters" : [ ],
+    "parameters" : [ {
+      "name" : "orderByIncreasingParameterCount",
+      "default" : false
+    } ],
     "languages" : [ ],
     "enabled" : false
   }, {
@@ -517,7 +539,7 @@
       "default" : false
     }, {
       "name" : "tokens",
-      "default" : "PACKAGE_DEF, IMPORT, STATIC_IMPORT, CLASS_DEF, INTERFACE_DEF, ENUM_DEF, STATIC_INIT, INSTANCE_INIT, METHOD_DEF, CTOR_DEF, VARIABLE_DEF, RECORD_DEF, COMPACT_CTOR_DEF"
+      "default" : "PACKAGE_DEF, IMPORT, STATIC_IMPORT, MODULE_IMPORT, CLASS_DEF, INTERFACE_DEF, ENUM_DEF, STATIC_INIT, INSTANCE_INIT, METHOD_DEF, CTOR_DEF, VARIABLE_DEF, RECORD_DEF, COMPACT_CTOR_DEF"
     } ],
     "languages" : [ ],
     "enabled" : true
@@ -654,6 +676,13 @@
     "languages" : [ ],
     "enabled" : false
   }, {
+    "patternId" : "GoogleNonConstantFieldName",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
     "patternId" : "Header",
     "level" : "Info",
     "category" : "CodeStyle",
@@ -763,6 +792,19 @@
     "parameters" : [ {
       "name" : "classes",
       "default" : ""
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "IllegalSymbol",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "symbolCodes",
+      "default" : "0x2190-0x27BF, 0x1F600-0x1F64F, 0x1F680-0x1F6FF, 0x1F700-0x10FFFF"
+    }, {
+      "name" : "tokens",
+      "default" : "COMMENT_CONTENT"
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -1060,6 +1102,9 @@
     }, {
       "name" : "validateThrows",
       "default" : false
+    }, {
+      "name" : "violateExecutionOnNonTightHtml",
+      "default" : false
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -1110,34 +1155,6 @@
     "languages" : [ ],
     "enabled" : false
   }, {
-    "patternId" : "JavadocStyle",
-    "level" : "Info",
-    "category" : "CodeStyle",
-    "parameters" : [ {
-      "name" : "checkEmptyJavadoc",
-      "default" : false
-    }, {
-      "name" : "checkFirstSentence",
-      "default" : true
-    }, {
-      "name" : "checkHtml",
-      "default" : true
-    }, {
-      "name" : "endOfSentenceFormat",
-      "default" : "([.?!][ \\t\\n\\r\\f<])|([.?!]$)"
-    }, {
-      "name" : "excludeScope",
-      "default" : null
-    }, {
-      "name" : "scope",
-      "default" : "private"
-    }, {
-      "name" : "tokens",
-      "default" : "ANNOTATION_DEF, ANNOTATION_FIELD_DEF, CLASS_DEF, CTOR_DEF, ENUM_CONSTANT_DEF, ENUM_DEF, INTERFACE_DEF, METHOD_DEF, PACKAGE_DEF, VARIABLE_DEF, RECORD_DEF, COMPACT_CTOR_DEF"
-    } ],
-    "languages" : [ ],
-    "enabled" : false
-  }, {
     "patternId" : "JavadocTagContinuationIndentation",
     "level" : "Info",
     "category" : "CodeStyle",
@@ -1178,6 +1195,9 @@
     }, {
       "name" : "versionFormat",
       "default" : null
+    }, {
+      "name" : "violateExecutionOnNonTightHtml",
+      "default" : false
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -1229,7 +1249,20 @@
       "default" : "eol"
     }, {
       "name" : "tokens",
-      "default" : "ANNOTATION_DEF, CLASS_DEF, CTOR_DEF, ENUM_CONSTANT_DEF, ENUM_DEF, INTERFACE_DEF, LAMBDA, LITERAL_CASE, LITERAL_CATCH, LITERAL_DEFAULT, LITERAL_DO, LITERAL_ELSE, LITERAL_FINALLY, LITERAL_FOR, LITERAL_IF, LITERAL_SWITCH, LITERAL_SYNCHRONIZED, LITERAL_TRY, LITERAL_WHILE, METHOD_DEF, OBJBLOCK, STATIC_INIT, RECORD_DEF, COMPACT_CTOR_DEF"
+      "default" : "ANNOTATION_DEF, CLASS_DEF, CTOR_DEF, ENUM_CONSTANT_DEF, ENUM_DEF, INTERFACE_DEF, LAMBDA, LITERAL_CASE, LITERAL_CATCH, LITERAL_DEFAULT, LITERAL_DO, LITERAL_ELSE, LITERAL_FINALLY, LITERAL_FOR, LITERAL_IF, LITERAL_SWITCH, LITERAL_SYNCHRONIZED, LITERAL_TRY, LITERAL_WHILE, METHOD_DEF, OBJBLOCK, STATIC_INIT, RECORD_DEF, COMPACT_CTOR_DEF, SWITCH_RULE"
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "LineEnding",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "fileExtensions",
+      "default" : ""
+    }, {
+      "name" : "lineEnding",
+      "default" : "lf"
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -1356,7 +1389,7 @@
       "default" : 100
     }, {
       "name" : "tokens",
-      "default" : "CLASS_DEF, ENUM_CONSTANT_DEF, ENUM_DEF, INTERFACE_DEF, ANNOTATION_DEF, RECORD_DEF"
+      "default" : "CLASS_DEF, ENUM_CONSTANT_DEF, ENUM_DEF, INTERFACE_DEF, ANNOTATION_DEF, RECORD_DEF, COMPACT_COMPILATION_UNIT"
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -1495,6 +1528,9 @@
     }, {
       "name" : "tokens",
       "default" : "INTERFACE_DEF, CLASS_DEF, ENUM_DEF, ANNOTATION_DEF, RECORD_DEF"
+    }, {
+      "name" : "violateExecutionOnNonTightHtml",
+      "default" : false
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -1513,6 +1549,13 @@
       "name" : "javaFiveCompatibility",
       "default" : false
     } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "MissingOverrideOnRecordAccessor",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
     "languages" : [ ],
     "enabled" : false
   }, {
@@ -1550,6 +1593,13 @@
       "name" : "headerFiles",
       "default" : null
     } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "MultilineCommentLeadingAsteriskPresence",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
     "languages" : [ ],
     "enabled" : false
   }, {
@@ -1697,8 +1747,11 @@
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ {
+      "name" : "skipAnnotations",
+      "default" : true
+    }, {
       "name" : "tokens",
-      "default" : "PACKAGE_DEF, IMPORT, STATIC_IMPORT"
+      "default" : "PACKAGE_DEF, IMPORT, STATIC_IMPORT, MODULE_IMPORT"
     } ],
     "languages" : [ ],
     "enabled" : true
@@ -1749,6 +1802,13 @@
     "languages" : [ ],
     "enabled" : false
   }, {
+    "patternId" : "NumericalPrefixesInfixesSuffixesCharacterCase",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
     "patternId" : "OneStatementPerLine",
     "level" : "Info",
     "category" : "CodeStyle",
@@ -1765,6 +1825,16 @@
     "parameters" : [ ],
     "languages" : [ ],
     "enabled" : true
+  }, {
+    "patternId" : "OpenjdkAnnotationLocation",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "tokens",
+      "default" : "CLASS_DEF, INTERFACE_DEF, PACKAGE_DEF, ENUM_CONSTANT_DEF, ENUM_DEF, METHOD_DEF, CTOR_DEF, VARIABLE_DEF, ANNOTATION_DEF, ANNOTATION_FIELD_DEF, RECORD_DEF, COMPACT_CTOR_DEF"
+    } ],
+    "languages" : [ ],
+    "enabled" : false
   }, {
     "patternId" : "OperatorWrap",
     "level" : "Info",
@@ -1809,7 +1879,10 @@
     "patternId" : "OverloadMethodsDeclarationOrder",
     "level" : "Info",
     "category" : "CodeStyle",
-    "parameters" : [ ],
+    "parameters" : [ {
+      "name" : "orderByIncreasingParameterCount",
+      "default" : false
+    } ],
     "languages" : [ ],
     "enabled" : false
   }, {
@@ -2368,6 +2441,31 @@
     "languages" : [ ],
     "enabled" : false
   }, {
+    "patternId" : "TypeBodyPadding",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "allowEmpty",
+      "default" : true
+    }, {
+      "name" : "atEndOfBody",
+      "default" : true
+    }, {
+      "name" : "atStartOfBody",
+      "default" : true
+    }, {
+      "name" : "skipInner",
+      "default" : true
+    }, {
+      "name" : "skipLocal",
+      "default" : true
+    }, {
+      "name" : "tokens",
+      "default" : "CLASS_DEF, INTERFACE_DEF, ENUM_DEF, RECORD_DEF, ANNOTATION_DEF"
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
     "patternId" : "TypeName",
     "level" : "Info",
     "category" : "CodeStyle",
@@ -2435,7 +2533,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "tokens",
-      "default" : "EXPR, IDENT, NUM_DOUBLE, NUM_FLOAT, NUM_INT, NUM_LONG, STRING_LITERAL, LITERAL_NULL, LITERAL_FALSE, LITERAL_TRUE, ASSIGN, BAND_ASSIGN, BOR_ASSIGN, BSR_ASSIGN, BXOR_ASSIGN, DIV_ASSIGN, MINUS_ASSIGN, MOD_ASSIGN, PLUS_ASSIGN, SL_ASSIGN, SR_ASSIGN, STAR_ASSIGN, LAMBDA, TEXT_BLOCK_LITERAL_BEGIN, LAND, LOR, LITERAL_INSTANCEOF, GT, LT, GE, LE, EQUAL, NOT_EQUAL, UNARY_MINUS, UNARY_PLUS, INC, DEC, LNOT, BNOT, POST_INC, POST_DEC"
+      "default" : "EXPR, IDENT, NUM_DOUBLE, NUM_FLOAT, NUM_INT, NUM_LONG, STRING_LITERAL, LITERAL_NULL, LITERAL_FALSE, LITERAL_TRUE, ASSIGN, BAND_ASSIGN, BOR_ASSIGN, BSR_ASSIGN, BXOR_ASSIGN, DIV_ASSIGN, MINUS_ASSIGN, MOD_ASSIGN, PLUS_ASSIGN, SL_ASSIGN, SR_ASSIGN, STAR_ASSIGN, LAMBDA, TEXT_BLOCK_LITERAL_BEGIN, LAND, LOR, LITERAL_INSTANCEOF, GT, LT, GE, LE, EQUAL, NOT_EQUAL, UNARY_MINUS, UNARY_PLUS, INC, DEC, LNOT, BNOT, POST_INC, POST_DEC, INDEX_OP, DOT"
     } ],
     "languages" : [ ],
     "enabled" : false
@@ -2477,6 +2575,13 @@
     "languages" : [ ],
     "enabled" : false
   }, {
+    "patternId" : "UnnecessaryTypeArgumentsWithRecordPattern",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
     "patternId" : "UnusedCatchParameterShouldBeUnnamed",
     "level" : "Info",
     "category" : "CodeStyle",
@@ -2490,6 +2595,9 @@
     "parameters" : [ {
       "name" : "processJavadoc",
       "default" : true
+    }, {
+      "name" : "violateExecutionOnNonTightHtml",
+      "default" : false
     } ],
     "languages" : [ ],
     "enabled" : true
@@ -2507,11 +2615,28 @@
     "parameters" : [ {
       "name" : "allowUnnamedVariables",
       "default" : true
+    }, {
+      "name" : "jdkVersion",
+      "default" : 22
     } ],
     "languages" : [ ],
     "enabled" : false
   }, {
+    "patternId" : "UnusedTryResourceShouldBeUnnamed",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
     "patternId" : "UpperEll",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "UseEnhancedSwitch",
     "level" : "Info",
     "category" : "CodeStyle",
     "parameters" : [ ],
@@ -2616,6 +2741,16 @@
     "languages" : [ ],
     "enabled" : false
   }, {
+    "patternId" : "WhitespaceBeforeEmptyBody",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ {
+      "name" : "tokens",
+      "default" : "METHOD_DEF, CTOR_DEF, COMPACT_CTOR_DEF, CLASS_DEF, INTERFACE_DEF, RECORD_DEF, ENUM_DEF, ANNOTATION_DEF, LITERAL_NEW, LITERAL_DO, LITERAL_WHILE, LITERAL_FOR, LITERAL_IF, LITERAL_ELSE, STATIC_INIT, LITERAL_TRY, LITERAL_CATCH, LITERAL_FINALLY, LITERAL_SYNCHRONIZED, LITERAL_SWITCH, LAMBDA"
+    } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
     "patternId" : "WriteTag",
     "level" : "Info",
     "category" : "CodeStyle",
@@ -2631,6 +2766,9 @@
     }, {
       "name" : "tokens",
       "default" : "INTERFACE_DEF, CLASS_DEF, ENUM_DEF, ANNOTATION_DEF, RECORD_DEF"
+    }, {
+      "name" : "violateExecutionOnNonTightHtml",
+      "default" : false
     } ],
     "languages" : [ ],
     "enabled" : false

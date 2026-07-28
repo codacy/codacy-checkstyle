@@ -43,7 +43,7 @@ Short description of the behaviour:
   import is disallowed by default.
 
 The DTD for an import control XML document is at
-<https://checkstyle.org/dtds/import_control_1_4.dtd>. It contains
+<https://checkstyle.org/dtds/import_control_1_5.dtd>. It contains
 documentation on each of the elements and attributes.
 
 The check validates a XML document when it loads the document. To
@@ -54,8 +54,8 @@ declaration in your XML document:
 
 ``` prettyprint
 <!DOCTYPE import-control PUBLIC
-    "-//Checkstyle//DTD ImportControl Configuration 1.4//EN"
-    "https://checkstyle.org/dtds/import_control_1_4.dtd">
+    "-//Checkstyle//DTD ImportControl Configuration 1.5//EN"
+    "https://checkstyle.org/dtds/import_control_1_5.dtd">
         
 ```
 

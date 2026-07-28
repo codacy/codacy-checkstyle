@@ -19,3 +19,9 @@ Reference](https://www.saxonica.com/html/documentation10/functions/fn/index.html
 Note, that **@text** attribute can be used only with token types that
 are listed in
 [XpathUtil](https://github.com/checkstyle/checkstyle/search?q=%22TOKEN_TYPES_WITH_TEXT_ATTRIBUTE+%3D+Arrays.asList%22).
+
+Checkstyle supports XPath 3.1 or higher, for exact version please find
+"Saxon-HE" version in our [dependency
+report](../../project-info.html#Dependencies) and find related
+documentation at
+[saxonica.com](https://www.saxonica.com/welcome/welcome.xml).

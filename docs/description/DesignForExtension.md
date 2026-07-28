@@ -16,7 +16,7 @@ team/user attention.
 
 ATTENTION: Only user can decide whether a class is designed for
 extension or not. The check just shows all classes which are possibly
-designed for extension. If smth inappropriate is found please use
+designed for extension. If something inappropriate is found please use
 suppression.
 
 ATTENTION: If the method which can be overridden in a subclass has a
