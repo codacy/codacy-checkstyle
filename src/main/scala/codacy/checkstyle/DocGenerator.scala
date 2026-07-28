@@ -74,19 +74,18 @@ object DocGenerator {
               .collect {
                 // charset parameter has a default value that comes from another pattern
                 // and can only be supported with a configuration file.
-                case name :: description :: tpe :: default :: _ if name.text != "charset" =>
-                  val defaultValue = Option({
-                    // Remove spaces and breaklines in default values
-                    val defVal = default.text.replaceAll("""\n\s+""", "").trim.stripSuffix(".")
-                    // Remove quotes around regular expressions
-                    if (tpe.text.trim == "Pattern" && defVal != "null") {
-                      // Leaves only what's inside outer quotes.
-                      val f: Char => Boolean = _ != '"'
-                      defVal.dropWhile(f).reverse.dropWhile(f).reverse.stripPrefix("\"").stripSuffix("\"")
-                    } else {
-                      defVal
-                    }
-                  }) // Filter out null values
+                case name :: description :: _ :: default :: _ if name.text != "charset" =>
+                  // Checkstyle documents a scalar default (String/Pattern/number/boolean)
+                  // inside a single <code> element and it is taken verbatim -- regex
+                  // patterns are no longer wrapped in the surrounding double quotes older
+                  // versions used. Token-set defaults are instead rendered as a list of
+                  // token links terminated by a sentence period, so strip that trailing
+                  // '.' when there is no <code> value.
+                  val defaultValue = Option {
+                    val code = default \ "code"
+                    if (code.nonEmpty) code.text.replaceAll("""\n\s+""", "").trim
+                    else default.text.replaceAll("""\n\s+""", "").trim.stripSuffix(".")
+                  } // Filter out null values
                     .filterNot(value => value.equalsIgnoreCase("null") || value.equalsIgnoreCase("empty"))
                     .orNull
 

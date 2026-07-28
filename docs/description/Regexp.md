@@ -6,8 +6,8 @@ times, or does not exist in the file.
 </div>
 
 This check combines all the functionality provided by
-[RegexpHeader](../header/regexpheader.html#RegexpHeader) except
-supplying the regular expression from a file.
+[RegexpHeader](https://checkstyle.org/checks/header/regexpheader.html)
+except supplying the regular expression from a file.
 
 It differs from them in that it works in multiline mode. Its regular
 expression can span multiple lines and it checks this against the whole
@@ -30,7 +30,7 @@ In multiline mode...
 **Note:** Not all regular expression engines are created equal. Some
 provide extra functions that others do not and some elements of the
 syntax may vary. This check makes use of the [java.util.regex
-package](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/regex/package-summary.html);
+package](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/util/regex/package-summary.html);
 please check its documentation for details of how to construct a regular
 expression to achieve a particular goal.
 

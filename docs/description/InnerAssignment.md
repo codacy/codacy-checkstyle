@@ -12,20 +12,26 @@ where a variable is set.
 
 Note: Check allows usage of the popular assignments in loops:
 
-    String line;
-    while ((line = bufferedReader.readLine()) != null) { // OK
-      // process the line
-    }
+<div class="wrapper">
 
-    for (;(line = bufferedReader.readLine()) != null;) { // OK
-      // process the line
-    }
+``` prettyprint
+String line;
+while ((line = bufferedReader.readLine()) != null) { // OK
+  // process the line
+}
 
-    do {
-      // process the line
-    }
-    while ((line = bufferedReader.readLine()) != null); // OK
-            
+for (;(line = bufferedReader.readLine()) != null;) { // OK
+  // process the line
+}
+
+do {
+  // process the line
+}
+while ((line = bufferedReader.readLine()) != null); // OK
+        
+```
+
+</div>
 
 Assignment inside a condition is not a problem here, as the assignment
 is surrounded by an extra pair of parentheses. The comparison is

@@ -1,6 +1,6 @@
 {
   "name" : "checkstyle",
-  "version" : "10.26.1",
+  "version" : "12.3.1",
   "patterns" : [ {
     "patternId" : "AbbreviationAsWordInName",
     "level" : "Info",
@@ -126,7 +126,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "tagOrder",
-      "default" : "@author, @deprecated, @exception, @param, @return, @see, @serial, @serialData, @serialField, @since, @throws, @version"
+      "default" : "@author, @version, @param, @return, @throws, @exception, @see, @since, @serial, @serialField, @serialData, @deprecated"
     }, {
       "name" : "target",
       "default" : "CLASS_DEF, COMPACT_CTOR_DEF, CTOR_DEF, ENUM_DEF, INTERFACE_DEF, METHOD_DEF, RECORD_DEF, VARIABLE_DEF"
@@ -673,6 +673,13 @@
     "languages" : [ ],
     "enabled" : false
   }, {
+    "patternId" : "HexLiteralCase",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
     "patternId" : "HiddenField",
     "level" : "Info",
     "category" : "CodeStyle",
@@ -736,6 +743,9 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "illegalClasses",
+      "default" : ""
+    }, {
+      "name" : "illegalModules",
       "default" : ""
     }, {
       "name" : "illegalPkgs",
@@ -1731,7 +1741,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "javadocTokens",
-      "default" : "PARAM_LITERAL, RETURN_LITERAL, THROWS_LITERAL, EXCEPTION_LITERAL, DEPRECATED_LITERAL"
+      "default" : "PARAM_BLOCK_TAG, RETURN_BLOCK_TAG, THROWS_BLOCK_TAG, EXCEPTION_BLOCK_TAG, DEPRECATED_BLOCK_TAG"
     }, {
       "name" : "violateExecutionOnNonTightHtml",
       "default" : false
@@ -1947,7 +1957,7 @@
     "category" : "CodeStyle",
     "parameters" : [ {
       "name" : "jdkVersion",
-      "default" : "22"
+      "default" : 22
     }, {
       "name" : "tokens",
       "default" : "METHOD_DEF, VARIABLE_DEF, ANNOTATION_FIELD_DEF, INTERFACE_DEF, CTOR_DEF, CLASS_DEF, ENUM_DEF, RESOURCE, ANNOTATION_DEF, RECORD_DEF, PATTERN_VARIABLE_DEF, LITERAL_CATCH, LAMBDA"
@@ -2296,6 +2306,13 @@
       "name" : "aliasList",
       "default" : ""
     } ],
+    "languages" : [ ],
+    "enabled" : false
+  }, {
+    "patternId" : "TextBlockGoogleStyleFormatting",
+    "level" : "Info",
+    "category" : "CodeStyle",
+    "parameters" : [ ],
     "languages" : [ ],
     "enabled" : false
   }, {

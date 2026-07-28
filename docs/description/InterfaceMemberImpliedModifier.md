@@ -5,7 +5,7 @@ Checks for implicit modifiers on interface members and nested types.
 </div>
 
 This check is effectively the opposite of
-[RedundantModifier](https://checkstyle.org/redundantmodifier.html#RedundantModifier).
+[RedundantModifier](https://checkstyle.org/checks/modifier/redundantmodifier.html).
 It checks the modifiers on interface members, ensuring that certain
 modifiers are explicitly specified even though they are actually
 redundant.
@@ -31,30 +31,36 @@ the compiler does not require the `public static` modifiers. This check
 provides the ability to enforce that the `public` and `static` modifiers
 are explicitly coded and not implicitly added by the compiler.
 
-    public interface AddressFactory {
-      // check enforces code contains "public static final"
-      public static final String UNKNOWN = "Unknown";
+<div class="wrapper">
 
-      String OTHER = "Other";  // violation
+``` prettyprint
+public interface AddressFactory {
+  // check enforces code contains "public static final"
+  public static final String UNKNOWN = "Unknown";
 
-      // check enforces code contains "public" or "private"
-      public static AddressFactory instance();
+  String OTHER = "Other";  // violation
 
-      // check enforces code contains "public abstract"
-      public abstract Address createAddress(String addressLine, String city);
+  // check enforces code contains "public" or "private"
+  public static AddressFactory instance();
 
-      List<Address> findAddresses(String city);  // violation
+  // check enforces code contains "public abstract"
+  public abstract Address createAddress(String addressLine, String city);
 
-      // check enforces default methods are explicitly declared "public"
-      public default Address createAddress(String city) {
-        return createAddress(UNKNOWN, city);
-      }
+  List<Address> findAddresses(String city);  // violation
 
-      default Address createOtherAddress() {  // violation
-        return createAddress(OTHER, OTHER);
-      }
-    }
-            
+  // check enforces default methods are explicitly declared "public"
+  public default Address createAddress(String city) {
+    return createAddress(UNKNOWN, city);
+  }
+
+  default Address createOtherAddress() {  // violation
+    return createAddress(OTHER, OTHER);
+  }
+}
+        
+```
+
+</div>
 
 Rationale for this check: Methods, fields and nested types are treated
 differently depending on whether they are part of an interface or part

@@ -9,23 +9,35 @@ they confuse the reader.
 
 For example, this check finds the obsolete braces in
 
-    public void guessTheOutput()
-    {
-      int whichIsWhich = 0;
-      {
-        whichIsWhich = 2;
-      }
-      System.out.println("value = " + whichIsWhich);
-    }
-            
+<div class="wrapper">
+
+``` prettyprint
+public void guessTheOutput()
+{
+  int whichIsWhich = 0;
+  {
+    whichIsWhich = 2;
+  }
+  System.out.println("value = " + whichIsWhich);
+}
+        
+```
+
+</div>
 
 and debugging / refactoring leftovers such as
 
-    // if (conditionThatIsNotUsedAnyLonger)
-    {
-      System.out.println("unconditional");
-    }
-            
+<div class="wrapper">
+
+``` prettyprint
+// if (conditionThatIsNotUsedAnyLonger)
+{
+  System.out.println("unconditional");
+}
+        
+```
+
+</div>
 
 A case in a switch statement does not implicitly form a block. Thus, to
 be able to introduce local variables that have case scope it is

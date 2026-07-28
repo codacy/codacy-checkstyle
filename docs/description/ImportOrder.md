@@ -18,4 +18,4 @@ Checks the ordering/grouping of imports. Features are:
   order](https://en.wikipedia.org/wiki/ASCII#Order)
 - arrange static imports: ensures the relative order between type
   imports and static imports (see
-  [ImportOrderOption](../../property_types.html#ImportOrderOption))
+  [ImportOrderOption](https://checkstyle.org/property_types.html#ImportOrderOption))

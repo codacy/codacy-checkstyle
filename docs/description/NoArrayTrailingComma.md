@@ -7,16 +7,29 @@ use of trailing commas should be prohibited.
 
 </div>
 
-    int[] foo = new int[] {
-      1,
-      2
-    };
-            
+<div class="wrapper">
+
+``` prettyprint
+int[] foo = new int[] {
+  1,
+  2
+};
+        
+```
+
+</div>
 
 The check demands that there should not be any comma after the last
 element of an array.
 
-    String[] foo = new String[] {
-      "FOO",
-      "BAR", // violation
-    }
+<div class="wrapper">
+
+``` prettyprint
+String[] foo = new String[] {
+  "FOO",
+  "BAR", // violation
+}
+        
+```
+
+</div>

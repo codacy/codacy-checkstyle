@@ -30,3 +30,7 @@ The main limitation of this check is handling the cases where:
   can distinguish imports with same name but different parameters, but
   checkstyle can not due to
   [limitation.](https://checkstyle.org/writingchecks.html#Limitations))
+- Module import declarations are used. Checkstyle does not resolve
+  modules and therefore cannot determine which packages or types are
+  brought into scope by an `import module` declaration. See
+  [limitations.](https://checkstyle.org/writingchecks.html#Limitations)

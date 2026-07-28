@@ -5,7 +5,7 @@ Checks for implicit modifiers on nested types in classes and records.
 </div>
 
 This check is effectively the opposite of
-[RedundantModifier](https://checkstyle.org/redundantmodifier.html#RedundantModifier).
+[RedundantModifier](https://checkstyle.org/checks/modifier/redundantmodifier.html).
 It checks the modifiers on nested types in classes and records, ensuring
 that certain modifiers are explicitly specified even though they are
 actually redundant.
@@ -15,12 +15,18 @@ and as such the compiler does not require the `static` modifier. This
 check provides the ability to enforce that the `static` modifier is
 explicitly coded and not implicitly added by the compiler.
 
-    public final class Person {
-      enum Age {  // violation
-        CHILD, ADULT
-      }
-    }
-            
+<div class="wrapper">
+
+``` prettyprint
+public final class Person {
+  enum Age {  // violation
+    CHILD, ADULT
+  }
+}
+        
+```
+
+</div>
 
 Rationale for this check: Nested enums, interfaces, and records are
 treated differently from nested classes as they are only allowed to be

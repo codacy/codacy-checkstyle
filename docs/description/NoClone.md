@@ -7,7 +7,7 @@ Checks that the clone method is not overridden from the Object class.
 This check is almost exactly the same as the `NoFinalizerCheck`.
 
 See
-[Object.clone()](https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/lang/Object.html#clone())
+[Object.clone()](https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Object.html#clone())
 
 Rationale: The clone method relies on strange, hard to follow rules that
 are difficult to get right and do not work in all situations. In some
@@ -52,25 +52,43 @@ alternative to the clone method. The example below highlights the
 limitation of a copy constructor (or static factory). Assume Square is a
 subclass for Shape.
 
-    Shape s1 = new Square();
-    System.out.println(s1 instanceof Square); //true
-            
+<div class="wrapper">
+
+``` prettyprint
+Shape s1 = new Square();
+System.out.println(s1 instanceof Square); //true
+        
+```
+
+</div>
 
 ...assume at this point the code knows nothing of s1 being a Square
 that's the beauty of polymorphism but the code wants to copy the Square
 which is declared as a Shape, its super type...
 
-    Shape s2 = new Shape(s1); //using the copy constructor
-    System.out.println(s2 instanceof Square); //false
-            
+<div class="wrapper">
+
+``` prettyprint
+Shape s2 = new Shape(s1); //using the copy constructor
+System.out.println(s2 instanceof Square); //false
+        
+```
+
+</div>
 
 The working solution (without knowing about all subclasses and doing
 many casts) is to do the following (assuming correct clone
 implementation).
 
-    Shape s2 = s1.clone();
-    System.out.println(s2 instanceof Square); //true
-            
+<div class="wrapper">
+
+``` prettyprint
+Shape s2 = s1.clone();
+System.out.println(s2 instanceof Square); //true
+        
+```
+
+</div>
 
 Just keep in mind if this type of polymorphic cloning is required then a
 properly implemented clone method may be the best choice.

@@ -56,7 +56,7 @@ Here is some quotes:
 </tr>
 <tr class="even">
 <td>if ([expr]) { [if-range] } else { [else-range] }</td>
-<td>NP(if-range) + NP(else-range) + NP(expr)</td>
+<td>NP(if-range)+ NP(else-range) + NP(expr)</td>
 </tr>
 <tr class="odd">
 <td>while ([expr]) { [while-range] }</td>
@@ -68,7 +68,7 @@ Here is some quotes:
 </tr>
 <tr class="odd">
 <td>for([expr1]; [expr2]; [expr3]) { [for-range] }</td>
-<td>NP(for-range) + NP(expr1) + NP(expr2) + NP(expr3) + 1</td>
+<td>NP(for-range) + NP(expr1)+ NP(expr2) + NP(expr3) + 1</td>
 </tr>
 <tr class="even">
 <td>switch ([expr]) { case : [case-range] default: [default-range]

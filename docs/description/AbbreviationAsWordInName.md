@@ -3,7 +3,7 @@
 Validates abbreviations (consecutive capital letters) length in
 identifier name, it also allows to enforce camel case naming. Please
 read more at [Google Style
-Guide](../../styleguides/google-java-style-20220203/javaguide.html#s5.3-camel-case)
+Guide](https://checkstyle.org/styleguides/google-java-style-20250426/javaguide.html#s5.3-camel-case)
 to get to know how to avoid long abbreviations in names.
 
 </div>

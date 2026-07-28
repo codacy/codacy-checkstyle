@@ -6,6 +6,9 @@ not configurable.
 
 </div>
 
+Whitespace is defined by implementation of
+java.lang.Character.isWhitespace(char)
+
 Left angle bracket ("\<"):
 
 - should be preceded with whitespace only in generic methods

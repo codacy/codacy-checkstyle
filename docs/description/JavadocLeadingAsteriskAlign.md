@@ -13,4 +13,4 @@ considered, the closing Javadoc tag will be ignored.
 </div>
 
 If you're using tabs then specify the the tab width in the
-[tabWidth](../../config.html#tabWidth) property.
+[tabWidth](https://checkstyle.org/config.html#tabWidth) property.
