@@ -13,7 +13,7 @@ option is set to 'false' and not that actual nowadays.
 Rationale:
 
 1.  The same notation/habit for C++ and Java (C++ have global methods,
-    so having "this." do make sense in it to distinguish call of method
-    of class instead of global).
+    so having `"this"`; do make sense in it to distinguish call of
+    method of class instead of global).
 2.  Non-IDE development (ease of refactoring, some clearness to
     distinguish static and non-static methods).

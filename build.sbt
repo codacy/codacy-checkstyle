@@ -7,7 +7,7 @@ name := "codacy-checkstyle"
 
 scalaVersion := "2.13.16"
 
-lazy val checkstyleVersion = "13.9.0"
+lazy val checkstyleVersion = "14.1.0"
 
 Compile / sourceGenerators += Def.task {
   val file = (Compile / sourceManaged).value / "codacy" / "checkstyle" / "Versions.scala"

@@ -4,7 +4,7 @@ The check to ensure that lines with code do not end with comment. For
 the case of `//` comments that means that the only thing that should
 precede it is whitespace. It doesn't check comments if they do not end a
 line; for example, it accepts the following:
-`Thread.sleep( 10 /*some comment here*/ );` Format property is intended
+`Thread.sleep( 10 /*some comment here* / );` Format property is intended
 to deal with the `} // while` example.
 
 </div>
@@ -17,7 +17,7 @@ the same line as actual code. For example:
 
 ``` prettyprint
 a = b + c;      // Some insightful comment
-d = e / f;      /* Some insightful block comment */
+d = e / f;      /* Some insightful block comment * /
         
 ```
 

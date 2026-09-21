@@ -45,7 +45,7 @@ by an interface, then the Javadoc could be done as:
 <div class="wrapper">
 
 ``` prettyprint
-/** {@inheritDoc} */
+/** {@inheritDoc} * /
 public int checkReturnTag(final int aTagIndex,
                           JavadocTag[] aTags,
                           int aLineNo)

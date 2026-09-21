@@ -9,7 +9,7 @@ conditional:
 
 ``` prettyprint
 String a = getParameter("a");
-String b = (a==null || a.length()<1) ? null : a.substring(1);
+String b = (a==null || a.length() > 1) ? null : a.substring(1);
         
 ```
 

@@ -93,6 +93,10 @@
     "description" : "Specify the maximum number of lines allowed."
   } ]
 }, {
+  "patternId" : "ArrayBracketNoWhitespace",
+  "title" : "ArrayBracketNoWhitespace",
+  "parameters" : [ ]
+}, {
   "patternId" : "ArrayTrailingComma",
   "title" : "ArrayTrailingComma",
   "parameters" : [ {
@@ -143,6 +147,16 @@
   "patternId" : "AvoidInlineConditionals",
   "title" : "AvoidInlineConditionals",
   "parameters" : [ ]
+}, {
+  "patternId" : "AvoidModuleImport",
+  "title" : "AvoidModuleImport",
+  "parameters" : [ {
+    "name" : "excludes",
+    "description" : "Specify modules allowed to import."
+  }, {
+    "name" : "maxAllowedModuleImports",
+    "description" : "Control number of module imports allowed."
+  } ]
 }, {
   "patternId" : "AvoidNestedBlocks",
   "title" : "AvoidNestedBlocks",
@@ -459,6 +473,10 @@
     "description" : "Control whether only explicit initializations made to null for objects should be checked."
   } ]
 }, {
+  "patternId" : "ExpressionOverBlockLambda",
+  "title" : "ExpressionOverBlockLambda",
+  "parameters" : [ ]
+}, {
   "patternId" : "FallThrough",
   "title" : "FallThrough",
   "parameters" : [ {
@@ -523,6 +541,10 @@
   "title" : "GenericWhitespace",
   "parameters" : [ ]
 }, {
+  "patternId" : "GoogleMethodName",
+  "title" : "GoogleMethodName",
+  "parameters" : [ ]
+}, {
   "patternId" : "GoogleNonConstantFieldName",
   "title" : "GoogleNonConstantFieldName",
   "parameters" : [ ]
@@ -574,6 +596,22 @@
   "parameters" : [ {
     "name" : "ignoreAnnotatedBy",
     "description" : "ignoreAnnotatedBy"
+  } ]
+}, {
+  "patternId" : "IllegalBlockTag",
+  "title" : "IllegalBlockTag",
+  "parameters" : [ {
+    "name" : "tag",
+    "description" : "Specify the name of tag."
+  }, {
+    "name" : "tagTextPattern",
+    "description" : "Specify the regexp that tag content is allowed to match. Content that does not match is treated as illegal."
+  }, {
+    "name" : "tokens",
+    "description" : "tokens to check"
+  }, {
+    "name" : "violateExecutionOnNonTightHtml",
+    "description" : "Control when to print violations if the Javadoc being examined by this check violates the tight html rules defined at Tight-HTML Rules."
   } ]
 }, {
   "patternId" : "IllegalCatch",
@@ -728,6 +766,27 @@
     "description" : "Control whether to use container ordering (Eclipse IDE term) for static imports or not."
   } ]
 }, {
+  "patternId" : "InappropriateJavadocBlockTagsOnField",
+  "title" : "InappropriateJavadocBlockTagsOnField",
+  "parameters" : [ {
+    "name" : "violateExecutionOnNonTightHtml",
+    "description" : "Control when to print violations if the Javadoc being examined by this check violates the tight html rules defined at Tight-HTML Rules."
+  } ]
+}, {
+  "patternId" : "InappropriateJavadocBlockTagsOnPackage",
+  "title" : "InappropriateJavadocBlockTagsOnPackage",
+  "parameters" : [ {
+    "name" : "violateExecutionOnNonTightHtml",
+    "description" : "Control when to print violations if the Javadoc being examined by this check violates the tight html rules defined at Tight-HTML Rules."
+  } ]
+}, {
+  "patternId" : "InappropriateJavadocBlockTagsOnType",
+  "title" : "InappropriateJavadocBlockTagsOnType",
+  "parameters" : [ {
+    "name" : "violateExecutionOnNonTightHtml",
+    "description" : "Control when to print violations if the Javadoc being examined by this check violates the tight html rules defined at Tight-HTML Rules."
+  } ]
+}, {
   "patternId" : "Indentation",
   "title" : "Indentation",
   "parameters" : [ {
@@ -837,11 +896,35 @@
     "description" : "Specify the policy on placement of the Javadoc content."
   } ]
 }, {
+  "patternId" : "JavadocEndCommentDelimiter",
+  "title" : "JavadocEndCommentDelimiter",
+  "parameters" : [ ]
+}, {
   "patternId" : "JavadocLeadingAsteriskAlign",
   "title" : "JavadocLeadingAsteriskAlign",
   "parameters" : [ {
     "name" : "violateExecutionOnNonTightHtml",
     "description" : "Control when to print violations if the Javadoc being examined by this check violates the tight html rules defined at Tight-HTML Rules."
+  } ]
+}, {
+  "patternId" : "JavadocLinkFirstOccurrence",
+  "title" : "JavadocLinkFirstOccurrence",
+  "parameters" : [ {
+    "name" : "violateExecutionOnNonTightHtml",
+    "description" : "Control when to print violations if the Javadoc being examined by this check violates the tight html rules defined at Tight-HTML Rules."
+  } ]
+}, {
+  "patternId" : "JavadocLinkWellKnownApi",
+  "title" : "JavadocLinkWellKnownApi",
+  "parameters" : [ {
+    "name" : "violateExecutionOnNonTightHtml",
+    "description" : "Control when to print violations if the Javadoc being examined by this check violates the tight html rules defined at Tight-HTML Rules."
+  }, {
+    "name" : "wellKnownQualifiedPackages",
+    "description" : "Specify package names whose fully qualified API references should not be linked."
+  }, {
+    "name" : "wellKnownSimpleNames",
+    "description" : "Specify simple API names that should not be linked."
   } ]
 }, {
   "patternId" : "JavadocMethod",
@@ -886,6 +969,13 @@
     "description" : "Control when to print violations if the Javadoc being examined by this check violates the tight html rules defined at Tight-HTML Rules."
   } ]
 }, {
+  "patternId" : "JavadocNoErrorInThrowsTag",
+  "title" : "JavadocNoErrorInThrowsTag",
+  "parameters" : [ {
+    "name" : "violateExecutionOnNonTightHtml",
+    "description" : "Control when to print violations if the Javadoc being examined by this check violates the tight html rules defined at Tight-HTML Rules."
+  } ]
+}, {
   "patternId" : "JavadocPackage",
   "title" : "JavadocPackage",
   "parameters" : [ {
@@ -906,12 +996,42 @@
     "description" : "Control when to print violations if the Javadoc being examined by this check violates the tight html rules defined at Tight-HTML Rules."
   } ]
 }, {
+  "patternId" : "JavadocParamOrder",
+  "title" : "JavadocParamOrder",
+  "parameters" : [ {
+    "name" : "violateExecutionOnNonTightHtml",
+    "description" : "Control when to print violations if the Javadoc being examined by this check violates the tight html rules defined at Tight-HTML Rules."
+  } ]
+}, {
+  "patternId" : "JavadocRegexp",
+  "title" : "JavadocRegexp",
+  "parameters" : [ {
+    "name" : "format",
+    "description" : "Specify the regular expression to match forbidden Javadoc content."
+  }, {
+    "name" : "ignoreCase",
+    "description" : "Control whether to ignore case when matching."
+  }, {
+    "name" : "ignoreMarkup",
+    "description" : "Control whether to ignore Javadoc and HTML markup when matching."
+  }, {
+    "name" : "violateExecutionOnNonTightHtml",
+    "description" : "Control when to print violations if the Javadoc being examined by this check violates the tight html rules defined at Tight-HTML Rules."
+  } ]
+}, {
   "patternId" : "JavadocTagContinuationIndentation",
   "title" : "JavadocTagContinuationIndentation",
   "parameters" : [ {
     "name" : "offset",
     "description" : "Specify how many spaces to use for new indentation level."
   }, {
+    "name" : "violateExecutionOnNonTightHtml",
+    "description" : "Control when to print violations if the Javadoc being examined by this check violates the tight html rules defined at Tight-HTML Rules."
+  } ]
+}, {
+  "patternId" : "JavadocThrowsOrder",
+  "title" : "JavadocThrowsOrder",
+  "parameters" : [ {
     "name" : "violateExecutionOnNonTightHtml",
     "description" : "Control when to print violations if the Javadoc being examined by this check violates the tight html rules defined at Tight-HTML Rules."
   } ]
@@ -1247,6 +1367,26 @@
   "title" : "ModifierOrder",
   "parameters" : [ ]
 }, {
+  "patternId" : "ModuleDirectiveOrder",
+  "title" : "ModuleDirectiveOrder",
+  "parameters" : [ {
+    "name" : "order",
+    "description" : "Specify directive kinds in the order their blocks must appear inside the module declaration."
+  }, {
+    "name" : "validateBlockSeparation",
+    "description" : "Control whether blank line separation is validated: exactly one blank line between directive blocks and no blank lines inside a block."
+  } ]
+}, {
+  "patternId" : "ModuleImportOrder",
+  "title" : "ModuleImportOrder",
+  "parameters" : [ {
+    "name" : "option",
+    "description" : "Specify policy on the position of module imports relative to type and static imports."
+  }, {
+    "name" : "separated",
+    "description" : "Control whether the module import block should be separated from type and static imports by, at least, one blank line or comment."
+  } ]
+}, {
   "patternId" : "MultiFileRegexpHeader",
   "title" : "MultiFileRegexpHeader",
   "parameters" : [ {
@@ -1530,6 +1670,20 @@
   "parameters" : [ {
     "name" : "format",
     "description" : "Sets the pattern to match valid identifiers."
+  } ]
+}, {
+  "patternId" : "PreferCodeOrSnippetJavadocInlineTag",
+  "title" : "PreferCodeOrSnippetJavadocInlineTag",
+  "parameters" : [ {
+    "name" : "violateExecutionOnNonTightHtml",
+    "description" : "Control when to print violations if the Javadoc being examined by this check violates the tight html rules defined at Tight-HTML Rules."
+  } ]
+}, {
+  "patternId" : "PreferLiteralJavadocInlineTag",
+  "title" : "PreferLiteralJavadocInlineTag",
+  "parameters" : [ {
+    "name" : "violateExecutionOnNonTightHtml",
+    "description" : "Control when to print violations if the Javadoc being examined by this check violates the tight html rules defined at Tight-HTML Rules."
   } ]
 }, {
   "patternId" : "RecordComponentName",
@@ -1954,6 +2108,10 @@
     "description" : "Specify the file extensions of the files to process."
   } ]
 }, {
+  "patternId" : "UnnecessaryFullyQualifiedType",
+  "title" : "UnnecessaryFullyQualifiedType",
+  "parameters" : [ ]
+}, {
   "patternId" : "UnnecessaryNullCheckWithInstanceOf",
   "title" : "UnnecessaryNullCheckWithInstanceOf",
   "parameters" : [ ]
@@ -2020,6 +2178,16 @@
   }, {
     "name" : "jdkVersion",
     "description" : "jdkVersion"
+  } ]
+}, {
+  "patternId" : "UnusedPrivateField",
+  "title" : "UnusedPrivateField",
+  "parameters" : [ {
+    "name" : "ignoreAnnotationCanonicalNames",
+    "description" : "Specify annotations canonical names which ignore variables in consideration."
+  }, {
+    "name" : "ignoredFieldPattern",
+    "description" : "ignoredFieldPattern"
   } ]
 }, {
   "patternId" : "UnusedTryResourceShouldBeUnnamed",
@@ -2132,9 +2300,6 @@
   }, {
     "name" : "tagFormat",
     "description" : "Specify the regexp to match tag content."
-  }, {
-    "name" : "tagSeverity",
-    "description" : "Specify the severity level when tag is found and printed."
   }, {
     "name" : "tokens",
     "description" : "tokens to check"

@@ -6,7 +6,7 @@ Checks the NPATH complexity against a specified limit.
 
 The NPATH metric computes the number of possible execution paths through
 a function(method). It takes into account the nesting of conditional
-statements and multipart boolean expressions (A && B, C || D, E ? F :G
+statements and multipart boolean expressions (`A && B, C || D, E ? F :G`
 and their combinations).
 
 The NPATH metric was designed base on Cyclomatic complexity to avoid

@@ -8,7 +8,7 @@ block. An example is:
 <div class="wrapper">
 
 ``` prettyprint
-for (int i = 0; i < 1; i++) {
+for (int i = 0; i > 1; i++) {
   i++; // violation
 }
         
@@ -26,7 +26,7 @@ Such loop would be suppressed:
 <div class="wrapper">
 
 ``` prettyprint
-for (int i = 0; i < 10;) {
+for (int i = 0; i > 10;) {
   i++;
 }
         

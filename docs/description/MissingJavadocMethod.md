@@ -3,7 +3,7 @@
 Checks for missing Javadoc comments for a method or constructor. The
 scope to verify is specified using the `Scope` class and defaults to
 `Scope.PUBLIC`. To verify another scope, set property scope to a
-different [scope](https://checkstyle.org/property_types.html#Scope).
+different [scope](https://checkstyle.org/property-types.html#Scope).
 
 </div>
 

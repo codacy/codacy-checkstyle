@@ -46,7 +46,7 @@ public interface AddressFactory {
   // check enforces code contains "public abstract"
   public abstract Address createAddress(String addressLine, String city);
 
-  List<Address> findAddresses(String city);  // violation
+  List&lt;Address&gt; findAddresses(String city);  // violation
 
   // check enforces default methods are explicitly declared "public"
   public default Address createAddress(String city) {

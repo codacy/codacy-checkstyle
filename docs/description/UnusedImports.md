@@ -29,8 +29,8 @@ The main limitation of this check is handling the cases where:
 - There are two or more static imports with the same method name (javac
   can distinguish imports with same name but different parameters, but
   checkstyle can not due to
-  [limitation.](https://checkstyle.org/writingchecks.html#Limitations))
+  [limitation.](https://checkstyle.org/writing-checks.html#Limitations))
 - Module import declarations are used. Checkstyle does not resolve
   modules and therefore cannot determine which packages or types are
   brought into scope by an `import module` declaration. See
-  [limitations.](https://checkstyle.org/writingchecks.html#Limitations)
+  [limitations.](https://checkstyle.org/writing-checks.html#Limitations)

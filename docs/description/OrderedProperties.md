@@ -16,9 +16,15 @@ SuppressionFilter.
 
 <div class="wrapper">
 
-    <suppress checks="OrderedProperties"
-      files="log4j.properties|ResourceBundle/Bug.*.properties|logging.properties"/>
-            
+<div class="wrapper">
+
+``` prettyprint
+<suppress checks="OrderedProperties"
+  files="log4j.properties|ResourceBundle/Bug.*.properties|logging.properties"/>
+        
+```
+
+</div>
 
 </div>
 
