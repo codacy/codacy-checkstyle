@@ -16,3 +16,7 @@ the `case` triggering the warning or on the same line before the
 line.
 
 Note: The check assumes that there is no unreachable code in the `case`.
+
+A `case` whose code ends in an infinite loop is not flagged, e.g.
+`while (true) {}`, `for (;;) {}`, `for (;true;) {}` or
+`do {} while (true);`.

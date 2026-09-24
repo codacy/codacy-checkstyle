@@ -17,7 +17,7 @@ the same line as actual code. For example:
 
 ``` prettyprint
 a = b + c;      // Some insightful comment
-d = e / f;      /* Some insightful block comment */
+d = e / f;      /* Some insightful block comment * /
         
 ```
 

@@ -35,7 +35,7 @@ the type of the parameter to `equals()`:
 <div class="wrapper">
 
 ``` prettyprint
-public boolean equals(Foo obj) {...}
+public boolean equals(Foo obj) { }
         
 ```
 

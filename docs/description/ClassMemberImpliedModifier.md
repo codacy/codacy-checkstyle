@@ -28,6 +28,23 @@ public final class Person {
 
 </div>
 
+Enum, interface, and record declarations in a compact source file are
+members of the implicitly declared class, so they are also implicitly
+`static`.
+
+<div class="wrapper">
+
+``` prettyprint
+enum Age {  // violation
+  CHILD, ADULT
+}
+
+void main() {}
+        
+```
+
+</div>
+
 Rationale for this check: Nested enums, interfaces, and records are
 treated differently from nested classes as they are only allowed to be
 `static`. Developers should not need to remember this rule, and this
